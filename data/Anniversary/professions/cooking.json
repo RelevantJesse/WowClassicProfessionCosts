@@ -1,6 +1,6 @@
 {
   "professionId": 185,
-  "professionName": "Cooking (Sample)",
+  "professionName": "Cooking",
   "recipes": [
     {
       "recipeId": "spice-bread",
@@ -18,4 +18,3 @@
     }
   ]
 }
-

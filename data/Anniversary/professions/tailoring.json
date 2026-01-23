@@ -1,0 +1,33 @@
+{
+  "professionId": 197,
+  "professionName": "Tailoring",
+  "recipes": [
+    {
+      "recipeId": "linen-cloth-roll",
+      "professionId": 197,
+      "name": "Linen Cloth Roll",
+      "minSkill": 1,
+      "orangeUntil": 45,
+      "yellowUntil": 70,
+      "greenUntil": 95,
+      "grayAt": 120,
+      "reagents": [
+        { "itemId": 2589, "qty": 2 }
+      ]
+    },
+    {
+      "recipeId": "handstitched-linen-belt",
+      "professionId": 197,
+      "name": "Handstitched Linen Belt",
+      "minSkill": 1,
+      "orangeUntil": 35,
+      "yellowUntil": 55,
+      "greenUntil": 75,
+      "grayAt": 95,
+      "reagents": [
+        { "itemId": 2589, "qty": 6 },
+        { "itemId": 2320, "qty": 1 }
+      ]
+    }
+  ]
+}

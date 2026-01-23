@@ -28,6 +28,11 @@ Then open the printed URL (default `https://localhost:5001`).
 - Target itemId list endpoints:
   - `GET /api/scans/targets?version=Anniversary`
   - `GET /api/scans/targets.lua?version=Anniversary`
+  - Optional filters: `&professionId=185&currentSkill=150&maxSkillDelta=100`
+- Recommended recipe-target endpoint (addon filters by your skill + configurable delta):
+  - `GET /api/scans/recipeTargets.lua?version=Anniversary&professionId=185`
+  - Note: this also includes `WowAhPlannerScan_TargetItemIds` as a fallback list
+- UI helper: `/targets` (download or install targets into your WoW AddOns folder)
 - Upload UI: `/upload` (stores prices as provider `UploadedSnapshot` in SQLite)
 - Addon skeleton + instructions: `addon/WowAhPlannerScan/WowAhPlannerScan.lua`, `docs/addon.md`
 

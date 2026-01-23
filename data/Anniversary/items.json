@@ -1,8 +1,12 @@
 [
   { "itemId": 2678, "name": "Mild Spices" },
+  { "itemId": 2320, "name": "Coarse Thread" },
+  { "itemId": 2589, "name": "Linen Cloth" },
+  { "itemId": 2835, "name": "Rough Stone" },
+  { "itemId": 2840, "name": "Copper Bar" },
+  { "itemId": 2880, "name": "Weak Flux" },
   { "itemId": 3173, "name": "Bear Meat" },
   { "itemId": 6889, "name": "Small Egg" },
   { "itemId": 769, "name": "Chunk of Boar Meat" },
   { "itemId": 30817, "name": "Simple Flour" }
 ]
-

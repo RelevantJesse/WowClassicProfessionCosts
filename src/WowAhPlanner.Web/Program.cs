@@ -15,6 +15,7 @@ builder.Services.AddHttpClient();
 builder.Services.AddSingleton<RealmCatalog>();
 builder.Services.AddScoped<LocalStorageService>();
 builder.Services.AddScoped<SelectionState>();
+builder.Services.AddSingleton<WowAddonInstaller>();
 builder.Services.AddScoped<PlannerService>();
 
 var dbDir = Path.Combine(builder.Environment.ContentRootPath, "App_Data");
@@ -24,7 +25,18 @@ builder.Services.AddWowAhPlannerSqlite($"Data Source={Path.Combine(dbDir, "wowah
 builder.Services.AddWowAhPlannerInfrastructure(
     configureDataPacks: o =>
     {
-        o.RootPath = builder.Configuration["DataPacks:RootPath"] ?? Path.Combine(AppContext.BaseDirectory, "data");
+        var configured = builder.Configuration["DataPacks:RootPath"];
+        if (!string.IsNullOrWhiteSpace(configured))
+        {
+            o.RootPath = configured;
+        }
+        else
+        {
+            var baseDir = Path.Combine(AppContext.BaseDirectory, "data");
+            o.RootPath = Directory.Exists(baseDir)
+                ? baseDir
+                : Path.Combine(builder.Environment.ContentRootPath, "data");
+        }
     },
     configurePricing: o =>
     {

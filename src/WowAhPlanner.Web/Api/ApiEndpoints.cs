@@ -108,6 +108,8 @@ public static class ApiEndpoints
         api.MapGet("/scans/targets", async (
             [FromQuery] string version,
             [FromQuery] int? professionId,
+            [FromQuery] int? currentSkill,
+            [FromQuery] int? maxSkillDelta,
             IRecipeRepository repo,
             CancellationToken ct) =>
         {
@@ -116,11 +118,17 @@ public static class ApiEndpoints
                 return Results.BadRequest(new { message = $"Invalid version '{version}'." });
             }
 
+            var minSkill = currentSkill;
+            var maxSkill = currentSkill is int cs
+                ? cs + Math.Max(0, maxSkillDelta ?? 100)
+                : (int?)null;
+
             var itemIds = new HashSet<int>();
 
             if (professionId is int pid)
             {
                 var recipes = await repo.GetRecipesAsync(v, pid, ct);
+                recipes = FilterRecipes(recipes, minSkill, maxSkill);
                 foreach (var reagent in recipes.SelectMany(r => r.Reagents))
                 {
                     itemIds.Add(reagent.ItemId);
@@ -132,6 +140,7 @@ public static class ApiEndpoints
                 foreach (var prof in professions)
                 {
                     var recipes = await repo.GetRecipesAsync(v, prof.ProfessionId, ct);
+                    recipes = FilterRecipes(recipes, minSkill, maxSkill);
                     foreach (var reagent in recipes.SelectMany(r => r.Reagents))
                     {
                         itemIds.Add(reagent.ItemId);
@@ -145,6 +154,8 @@ public static class ApiEndpoints
         api.MapGet("/scans/targets.lua", async (
             [FromQuery] string version,
             [FromQuery] int? professionId,
+            [FromQuery] int? currentSkill,
+            [FromQuery] int? maxSkillDelta,
             IRecipeRepository repo,
             CancellationToken ct) =>
         {
@@ -153,11 +164,17 @@ public static class ApiEndpoints
                 return Results.BadRequest(new { message = $"Invalid version '{version}'." });
             }
 
+            var minSkill = currentSkill;
+            var maxSkill = currentSkill is int cs
+                ? cs + Math.Max(0, maxSkillDelta ?? 100)
+                : (int?)null;
+
             var itemIds = new HashSet<int>();
 
             if (professionId is int pid)
             {
                 var recipes = await repo.GetRecipesAsync(v, pid, ct);
+                recipes = FilterRecipes(recipes, minSkill, maxSkill);
                 foreach (var reagent in recipes.SelectMany(r => r.Reagents))
                 {
                     itemIds.Add(reagent.ItemId);
@@ -169,6 +186,7 @@ public static class ApiEndpoints
                 foreach (var prof in professions)
                 {
                     var recipes = await repo.GetRecipesAsync(v, prof.ProfessionId, ct);
+                    recipes = FilterRecipes(recipes, minSkill, maxSkill);
                     foreach (var reagent in recipes.SelectMany(r => r.Reagents))
                     {
                         itemIds.Add(reagent.ItemId);
@@ -180,7 +198,124 @@ public static class ApiEndpoints
             return Results.Text(content, "text/plain");
         });
 
+        api.MapGet("/scans/recipeTargets.lua", async (
+            [FromQuery] string version,
+            [FromQuery] int professionId,
+            IRecipeRepository repo,
+            CancellationToken ct) =>
+        {
+            if (!Enum.TryParse<GameVersion>(version, true, out var v))
+            {
+                return Results.BadRequest(new { message = $"Invalid version '{version}'." });
+            }
+
+            var professionName = (await repo.GetProfessionsAsync(v, ct))
+                .FirstOrDefault(p => p.ProfessionId == professionId)
+                ?.Name;
+
+            var recipes = await repo.GetRecipesAsync(v, professionId, ct);
+            if (recipes.Count == 0)
+            {
+                return Results.NotFound(new { message = $"No recipes found for professionId={professionId} ({v})." });
+            }
+
+            return Results.Text(GenerateRecipeTargetsLua(professionId, professionName, recipes), "text/plain");
+        });
+
+        api.MapPost("/scans/installTargets", async (
+            [FromBody] InstallTargetsRequest request,
+            IRecipeRepository repo,
+            WowAddonInstaller installer,
+            CancellationToken ct) =>
+        {
+            var version = request.GameVersion;
+            if (!installer.TryResolveAddonFolder(version, out var addonFolder, out var err))
+            {
+                return Results.BadRequest(new { message = err });
+            }
+
+            var recipes = await repo.GetRecipesAsync(version, request.ProfessionId, ct);
+            if (recipes.Count == 0)
+            {
+                return Results.NotFound(new { message = $"No recipes found for professionId={request.ProfessionId} ({version})." });
+            }
+
+            var professionName = (await repo.GetProfessionsAsync(version, ct))
+                .FirstOrDefault(p => p.ProfessionId == request.ProfessionId)
+                ?.Name;
+
+            var lua = GenerateRecipeTargetsLua(request.ProfessionId, professionName, recipes);
+
+            var targetPath = Path.Combine(addonFolder, "WowAhPlannerScan_Targets.lua");
+            try
+            {
+                File.WriteAllText(targetPath, lua);
+            }
+            catch (Exception ex)
+            {
+                return Results.Problem($"Failed to write {targetPath}: {ex.Message}");
+            }
+
+            return Results.Ok(new { message = $"Updated {targetPath}", addonFolder });
+        });
+
         return app;
+    }
+
+    private static string EscapeLuaString(string value)
+        => value.Replace("\\", "\\\\", StringComparison.Ordinal).Replace("\"", "\\\"", StringComparison.Ordinal);
+
+    private static string GenerateRecipeTargetsLua(int professionId, string? professionName, IReadOnlyList<Recipe> recipes)
+    {
+        var allReagentItemIds = recipes
+            .SelectMany(r => r.Reagents)
+            .Select(r => r.ItemId)
+            .Distinct()
+            .OrderBy(x => x)
+            .ToArray();
+
+        var lines = new List<string>
+        {
+            "-- Generated by WowAhPlanner",
+            $"WowAhPlannerScan_TargetProfessionId = {professionId}",
+            $"WowAhPlannerScan_TargetProfessionName = \"{EscapeLuaString(NormalizeProfessionName(professionName) ?? "")}\"",
+            $"WowAhPlannerScan_TargetItemIds = {{ {string.Join(", ", allReagentItemIds)} }}",
+            "WowAhPlannerScan_RecipeTargets = {",
+        };
+
+        foreach (var recipe in recipes.OrderBy(r => r.MinSkill).ThenBy(r => r.RecipeId))
+        {
+            var reagentIds = recipe.Reagents.Select(x => x.ItemId).Distinct().OrderBy(x => x).ToArray();
+            lines.Add(
+                $"  {{ recipeId = \"{EscapeLuaString(recipe.RecipeId)}\", minSkill = {recipe.MinSkill}, grayAt = {recipe.GrayAt}, reagents = {{ {string.Join(", ", reagentIds)} }} }},");
+        }
+
+        lines.Add("}");
+        lines.Add("");
+        return string.Join("\r\n", lines);
+    }
+
+    private static string? NormalizeProfessionName(string? name)
+    {
+        if (string.IsNullOrWhiteSpace(name)) return null;
+        var trimmed = name.Trim();
+        var idx = trimmed.IndexOf('(');
+        if (idx > 0) trimmed = trimmed[..idx].Trim();
+        return trimmed;
+    }
+
+    private static IReadOnlyList<Recipe> FilterRecipes(IReadOnlyList<Recipe> recipes, int? minSkill, int? maxSkill)
+    {
+        if (minSkill is null && maxSkill is null) return recipes;
+
+        return recipes
+            .Where(r =>
+            {
+                if (minSkill is int min && r.GrayAt <= min) return false;
+                if (maxSkill is int max && r.MinSkill > max) return false;
+                return true;
+            })
+            .ToArray();
     }
 
     public sealed record PlanApiRequest(
@@ -191,4 +326,6 @@ public static class ApiEndpoints
         int CurrentSkill,
         int TargetSkill,
         PriceMode PriceMode);
+
+    public sealed record InstallTargetsRequest(GameVersion GameVersion, int ProfessionId);
 }

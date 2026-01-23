@@ -1,0 +1,33 @@
+{
+  "professionId": 202,
+  "professionName": "Engineering",
+  "recipes": [
+    {
+      "recipeId": "rough-blasting-powder",
+      "professionId": 202,
+      "name": "Rough Blasting Powder",
+      "minSkill": 1,
+      "orangeUntil": 30,
+      "yellowUntil": 50,
+      "greenUntil": 70,
+      "grayAt": 90,
+      "reagents": [
+        { "itemId": 2835, "qty": 1 }
+      ]
+    },
+    {
+      "recipeId": "copper-tube",
+      "professionId": 202,
+      "name": "Copper Tube",
+      "minSkill": 20,
+      "orangeUntil": 60,
+      "yellowUntil": 80,
+      "greenUntil": 100,
+      "grayAt": 120,
+      "reagents": [
+        { "itemId": 2840, "qty": 2 },
+        { "itemId": 2880, "qty": 1 }
+      ]
+    }
+  ]
+}
