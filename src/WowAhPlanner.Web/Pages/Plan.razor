@@ -1,0 +1,180 @@
+@page "/plan"
+@inject SelectionState Selection
+@inject WowAhPlanner.Core.Ports.IRecipeRepository RecipeRepository
+@inject WowAhPlanner.Core.Services.PlannerService Planner
+
+<PageTitle>Plan</PageTitle>
+
+<h1>Plan</h1>
+
+<div class="card">
+    <h3>Inputs</h3>
+    <div class="grid">
+        <label>
+            Profession
+            <select @bind="_professionId" @bind:after="OnProfessionChanged">
+                @foreach (var p in _professions)
+                {
+                    <option value="@p.ProfessionId">@p.Name (@p.ProfessionId)</option>
+                }
+            </select>
+        </label>
+
+        <label>
+            Current skill
+            <input type="number" @bind="_currentSkill" min="0" max="450" />
+        </label>
+
+        <label>
+            Target skill
+            <input type="number" @bind="_targetSkill" min="0" max="450" />
+        </label>
+    </div>
+
+    <div style="margin-top:0.75rem">
+        <button @onclick="GenerateAsync" disabled="@(!_ready)">Generate plan</button>
+    </div>
+</div>
+
+@if (_result is not null)
+{
+    <div class="card">
+        <h3>Pricing</h3>
+        <p>
+            Provider: <span class="badge">@_result.PriceSnapshot.ProviderName</span>
+            Snapshot: <span class="badge">@_result.PriceSnapshot.SnapshotTimestampUtc.ToString("u")</span>
+            @if (_result.PriceSnapshot.IsStale)
+            {
+                <span class="badge badge-stale">stale</span>
+            }
+            @if (!string.IsNullOrWhiteSpace(_result.PriceSnapshot.ErrorMessage))
+            {
+                <div class="badge badge-unavailable">@_result.PriceSnapshot.ErrorMessage</div>
+            }
+        </p>
+    </div>
+
+    @if (_result.Plan is null)
+    {
+        <div class="card">
+            <h3>Unable to plan</h3>
+            <p>@_result.ErrorMessage</p>
+
+            @if (_result.MissingItemIds.Count > 0)
+            {
+                <p>Missing prices for:</p>
+                <ul>
+                    @foreach (var itemId in _result.MissingItemIds)
+                    {
+                        <li><code>@itemId</code></li>
+                    }
+                </ul>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="card">
+            <h3>Steps</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>Skill</th>
+                    <th>Recipe</th>
+                    <th>Chance</th>
+                    <th>Expected crafts</th>
+                    <th>Expected cost</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var step in _result.Plan.Steps)
+                {
+                    <tr>
+                        <td>@step.SkillFrom - @step.SkillTo</td>
+                        <td>@step.RecipeName <span class="badge">@step.RecipeId</span></td>
+                        <td>@step.SkillUpChance</td>
+                        <td>@step.ExpectedCrafts.ToString("0.##")</td>
+                        <td>@step.ExpectedCost</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h3>Shopping list</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity (expected)</th>
+                    <th>Unit price</th>
+                    <th>Line cost</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var line in _result.Plan.ShoppingList)
+                {
+                    <tr>
+                        <td><code>@line.ItemId</code></td>
+                        <td>@line.Quantity.ToString("0.##")</td>
+                        <td>@line.UnitPrice</td>
+                        <td>@line.LineCost</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+
+            <p>
+                Total: <span class="badge">@_result.Plan.TotalCost</span>
+            </p>
+        </div>
+    }
+}
+
+@code {
+    private IReadOnlyList<Profession> _professions = [];
+    private int _professionId;
+    private int _currentSkill = 1;
+    private int _targetSkill = 75;
+    private bool _ready;
+
+    private PlanComputationResult? _result;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender) return;
+
+        await Selection.EnsureLoadedAsync();
+        _professions = await RecipeRepository.GetProfessionsAsync(Selection.GameVersion, CancellationToken.None);
+
+        var preferred = Selection.ProfessionId;
+        _professionId = _professions.Any(p => p.ProfessionId == preferred)
+            ? preferred
+            : _professions.FirstOrDefault()?.ProfessionId ?? 0;
+
+        _ready = _professionId != 0;
+        StateHasChanged();
+    }
+
+    private async Task OnProfessionChanged()
+    {
+        Selection.ProfessionId = _professionId;
+        await Selection.PersistAsync();
+    }
+
+    private async Task GenerateAsync()
+    {
+        _result = null;
+
+        var request = new PlanRequest(
+            RealmKey: Selection.ToRealmKey(),
+            ProfessionId: _professionId,
+            CurrentSkill: _currentSkill,
+            TargetSkill: _targetSkill,
+            PriceMode: PriceMode.Min);
+
+        _result = await Planner.BuildPlanAsync(request, CancellationToken.None);
+    }
+}
+

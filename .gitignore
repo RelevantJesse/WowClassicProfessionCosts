@@ -416,3 +416,6 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Local SQLite (MVP)
+src/WowAhPlanner.Web/App_Data/

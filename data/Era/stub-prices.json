@@ -1,0 +1,11 @@
+{
+  "snapshotTimestampUtc": "2026-01-23T00:00:00Z",
+  "prices": [
+    { "itemId": 2678, "minBuyoutCopper": 50 },
+    { "itemId": 3173, "minBuyoutCopper": 200 },
+    { "itemId": 6889, "minBuyoutCopper": 100 },
+    { "itemId": 769, "minBuyoutCopper": 80 },
+    { "itemId": 30817, "minBuyoutCopper": 20 }
+  ]
+}
+
