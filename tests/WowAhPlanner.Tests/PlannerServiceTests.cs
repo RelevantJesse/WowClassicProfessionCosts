@@ -203,6 +203,111 @@ public sealed class PlannerServiceTests
     }
 
     [Fact]
+    public async Task Owned_intermediate_outputs_reduce_base_material_shopping_list()
+    {
+        var recipes = new[]
+        {
+            new Recipe(
+                RecipeId: "make-bolt",
+                ProfessionId: 197,
+                Name: "Bolt of Linen Cloth",
+                MinSkill: 1,
+                OrangeUntil: 0,
+                YellowUntil: 0,
+                GreenUntil: 0,
+                GrayAt: 1,
+                Reagents: [new Reagent(2589, 2)],
+                Output: new RecipeOutput(2996, 1)),
+            new Recipe(
+                RecipeId: "shirt",
+                ProfessionId: 197,
+                Name: "Brown Linen Shirt",
+                MinSkill: 1,
+                OrangeUntil: 100,
+                YellowUntil: 101,
+                GreenUntil: 102,
+                GrayAt: 103,
+                Reagents: [new Reagent(2996, 3), new Reagent(2320, 1)]),
+        };
+
+        var recipeRepo = new InMemoryRecipeRepository(recipes);
+        var priceService = new InMemoryPriceService(new Dictionary<int, long>
+        {
+            [2589] = 10,
+            [2320] = 5,
+        });
+        var vendorRepo = new InMemoryVendorPriceRepository(new Dictionary<int, long>());
+        var producerRepo = new InMemoryProducerRepository();
+
+        var planner = new PlannerService(recipeRepo, priceService, vendorRepo, producerRepo);
+        var result = await planner.BuildPlanAsync(
+            new PlanRequest(
+                RealmKey: new RealmKey(Region.US, GameVersion.Era, "whitemane"),
+                ProfessionId: 197,
+                CurrentSkill: 1,
+                TargetSkill: 2,
+                PriceMode: PriceMode.Min,
+                OwnedMaterials: new Dictionary<int, long> { [2996] = 3 }),
+            CancellationToken.None);
+
+        Assert.NotNull(result.Plan);
+        Assert.DoesNotContain(result.Plan!.ShoppingList, x => x.ItemId == 2589);
+        Assert.Contains(result.Plan!.OwnedMaterialsUsed, x => x.ItemId == 2996 && x.QuantityUsed == 3m);
+    }
+
+    [Fact]
+    public async Task Intermediate_skill_credit_advances_main_plan_start_skill()
+    {
+        const int currentSkill = 1;
+        var recipes = new[]
+        {
+            new Recipe(
+                RecipeId: "make-bolt",
+                ProfessionId: 197,
+                Name: "Bolt of Linen Cloth",
+                MinSkill: 1,
+                OrangeUntil: 0,
+                YellowUntil: 0,
+                GreenUntil: 100,
+                GrayAt: 101,
+                Reagents: [new Reagent(2589, 2)],
+                Output: new RecipeOutput(2996, 1)),
+            new Recipe(
+                RecipeId: "shirt",
+                ProfessionId: 197,
+                Name: "Brown Linen Shirt",
+                MinSkill: 1,
+                OrangeUntil: 100,
+                YellowUntil: 101,
+                GreenUntil: 102,
+                GrayAt: 103,
+                Reagents: [new Reagent(2996, 3)]),
+        };
+
+        var recipeRepo = new InMemoryRecipeRepository(recipes);
+        var priceService = new InMemoryPriceService(new Dictionary<int, long> { [2589] = 10 });
+        var vendorRepo = new InMemoryVendorPriceRepository(new Dictionary<int, long>());
+        var producerRepo = new InMemoryProducerRepository();
+
+        var planner = new PlannerService(recipeRepo, priceService, vendorRepo, producerRepo);
+        var result = await planner.BuildPlanAsync(
+            new PlanRequest(
+                RealmKey: new RealmKey(Region.US, GameVersion.Era, "whitemane"),
+                ProfessionId: 197,
+                CurrentSkill: currentSkill,
+                TargetSkill: 10,
+                PriceMode: PriceMode.Min),
+            CancellationToken.None);
+
+        Assert.NotNull(result.Plan);
+        Assert.True(result.Plan!.SkillCreditApplied > 0);
+        var expectedMainStartSkill = currentSkill + result.Plan.SkillCreditApplied;
+        Assert.All(
+            result.Plan.Steps.Where(s => !s.RecipeName.Contains("(Intermediate)", StringComparison.OrdinalIgnoreCase)),
+            s => Assert.True(s.SkillFrom >= expectedMainStartSkill));
+    }
+
+    [Fact]
     public async Task Vendor_items_do_not_require_auction_price()
     {
         var recipes = new[]

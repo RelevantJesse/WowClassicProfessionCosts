@@ -549,6 +549,16 @@ local function BuildWantedItemIdSet()
     end
   end
 
+  if type(WowAhPlannerScan_OwnedItemIds) == "table" then
+    for _, itemId in ipairs(WowAhPlannerScan_OwnedItemIds) do
+      local n = tonumber(itemId)
+      if n and n > 0 and not wanted[n] then
+        wanted[n] = true
+        count = count + 1
+      end
+    end
+  end
+
   if count == 0 and type(WowAhPlannerScan_RecipeTargets) == "table" then
     for _, r in ipairs(WowAhPlannerScan_RecipeTargets) do
       if type(r) == "table" and type(r.reagents) == "table" then

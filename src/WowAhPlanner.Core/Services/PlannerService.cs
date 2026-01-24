@@ -97,6 +97,8 @@ public sealed class PlannerService(
         var intermediateSteps = new List<PlanStep>();
         var skillCreditApplied = 0;
         var expectedSkillUpsFromIntermediates = 0m;
+        var ownedUsedIntermediate = new List<OwnedMaterialLine>();
+        Dictionary<int, decimal>? finalOwnedRemaining = null;
 
         (IReadOnlyList<PlanStep> MainSteps, Dictionary<int, decimal> Shopping, ReagentResolver Resolver)? final = null;
 
@@ -134,6 +136,23 @@ public sealed class PlannerService(
                 .Where(x => x.Recipe.ProfessionId == request.ProfessionId)
                 .ToArray();
 
+            var ownedRemaining = request.OwnedMaterials is { Count: > 0 }
+                ? request.OwnedMaterials.ToDictionary(kvp => kvp.Key, kvp => (decimal)kvp.Value)
+                : null;
+
+            if (ownedRemaining is not null)
+            {
+                ownedUsedIntermediate.Clear();
+                ApplyOwnedToIntermediateCrafts(
+                    intermediateCrafts: inProfessionIntermediates,
+                    resolver: iterResolver,
+                    skillForExpansion: request.TargetSkill,
+                    ownedRemaining: ownedRemaining,
+                    ownedUsed: ownedUsedIntermediate,
+                    shopping: shopping,
+                    out inProfessionIntermediates);
+            }
+
             (intermediateSteps, skillCreditApplied, expectedSkillUpsFromIntermediates) =
                 BuildIntermediateSkillUpSteps(
                     currentSkill: request.CurrentSkill,
@@ -141,21 +160,25 @@ public sealed class PlannerService(
                     intermediateCrafts: inProfessionIntermediates,
                     resolver: iterResolver);
 
-            var newStartingSkill = request.CurrentSkill + skillCreditApplied;
+            var baseStartingSkill = request.CurrentSkill + skillCreditApplied;
+            var newStartingSkill = Math.Max(startingSkill, baseStartingSkill);
             if (newStartingSkill == startingSkill)
             {
                 final = (mainSteps, shopping, iterResolver);
+                finalOwnedRemaining = ownedRemaining;
                 break;
             }
 
             if (newStartingSkill < request.CurrentSkill || newStartingSkill > request.TargetSkill)
             {
                 final = (mainSteps, shopping, iterResolver);
+                finalOwnedRemaining = ownedRemaining;
                 break;
             }
 
             startingSkill = newStartingSkill;
             final = (mainSteps, shopping, iterResolver);
+            finalOwnedRemaining = ownedRemaining;
         }
 
         var finalMainSteps = final!.Value.MainSteps;
@@ -190,19 +213,21 @@ public sealed class PlannerService(
             .ToArray();
 
         var ownedUsed = new List<OwnedMaterialLine>();
-        if (request.OwnedMaterials is { Count: > 0 })
+        ownedUsed.AddRange(ownedUsedIntermediate);
+
+        if (finalOwnedRemaining is not null)
         {
             var adjusted = new List<ShoppingListLine>(shoppingLines.Length);
 
             foreach (var line in shoppingLines)
             {
-                if (!request.OwnedMaterials.TryGetValue(line.ItemId, out var ownedQty) || ownedQty <= 0)
+                if (!finalOwnedRemaining.TryGetValue(line.ItemId, out var ownedQty) || ownedQty <= 0)
                 {
                     adjusted.Add(line);
                     continue;
                 }
 
-                var used = Math.Min(line.Quantity, (decimal)ownedQty);
+                var used = Math.Min(line.Quantity, ownedQty);
                 if (used > 0)
                 {
                     ownedUsed.Add(new OwnedMaterialLine(line.ItemId, used));
@@ -234,6 +259,77 @@ public sealed class PlannerService(
             PriceSnapshot: snapshot,
             MissingItemIds: [],
             ErrorMessage: null);
+    }
+
+    private void ApplyOwnedToIntermediateCrafts(
+        IReadOnlyList<(Recipe Recipe, decimal Crafts)> intermediateCrafts,
+        ReagentResolver resolver,
+        int skillForExpansion,
+        Dictionary<int, decimal> ownedRemaining,
+        List<OwnedMaterialLine> ownedUsed,
+        Dictionary<int, decimal> shopping,
+        out (Recipe Recipe, decimal Crafts)[] adjustedCrafts)
+    {
+        var updated = new List<(Recipe Recipe, decimal Crafts)>(intermediateCrafts.Count);
+
+        foreach (var (recipe, crafts) in intermediateCrafts)
+        {
+            if (crafts <= 0)
+            {
+                continue;
+            }
+
+            var output = recipe.Output;
+            if (output is null || output.ItemId <= 0)
+            {
+                updated.Add((recipe, crafts));
+                continue;
+            }
+
+            var outputQty = output.Quantity <= 0 ? 1 : output.Quantity;
+            if (!ownedRemaining.TryGetValue(output.ItemId, out var ownedQty) || ownedQty <= 0)
+            {
+                updated.Add((recipe, crafts));
+                continue;
+            }
+
+            var craftsCovered = Math.Min(crafts, ownedQty / outputQty);
+            if (craftsCovered <= 0)
+            {
+                updated.Add((recipe, crafts));
+                continue;
+            }
+
+            var usedOutputQty = craftsCovered * outputQty;
+            ownedRemaining[output.ItemId] = ownedQty - usedOutputQty;
+            ownedUsed.Add(new OwnedMaterialLine(output.ItemId, usedOutputQty));
+
+            foreach (var reagent in recipe.Reagents)
+            {
+                var reductions = resolver.ExpandToLeafQuantities(reagent.ItemId, reagent.Quantity * craftsCovered, skillForExpansion);
+                foreach (var kvp in reductions)
+                {
+                    if (!shopping.TryGetValue(kvp.Key, out var existing)) continue;
+                    var next = existing - kvp.Value;
+                    if (next <= 0)
+                    {
+                        shopping.Remove(kvp.Key);
+                    }
+                    else
+                    {
+                        shopping[kvp.Key] = next;
+                    }
+                }
+            }
+
+            var remainingCrafts = crafts - craftsCovered;
+            if (remainingCrafts > 0)
+            {
+                updated.Add((recipe, remainingCrafts));
+            }
+        }
+
+        adjustedCrafts = updated.ToArray();
     }
 
     private bool TryBuildStepsAndShopping(
@@ -322,11 +418,14 @@ public sealed class PlannerService(
         var remainingByRecipeId = intermediateCrafts
             .Where(x => x.Crafts > 0)
             .GroupBy(x => x.Recipe.RecipeId, StringComparer.OrdinalIgnoreCase)
-            .ToDictionary(g => g.Key, g => (Recipe: g.First().Recipe, Crafts: g.Sum(x => x.Crafts)), StringComparer.OrdinalIgnoreCase);
+            .ToDictionary(
+                g => g.Key,
+                g => (Recipe: g.First().Recipe, Crafts: g.Sum(x => x.Crafts)),
+                StringComparer.OrdinalIgnoreCase);
 
         while (remaining > 0)
         {
-            (Recipe Recipe, decimal Crafts, decimal Chance, Money CraftCost, Money CostPerExpectedSkill)? best = null;
+            (Recipe Recipe, decimal CraftsLeft, decimal Chance, Money CraftCost, Money CostPerExpectedSkill)? best = null;
 
             foreach (var kvp in remainingByRecipeId)
             {
@@ -357,17 +456,11 @@ public sealed class PlannerService(
                 break;
             }
 
-            var craftsToUse = Math.Min(best.Value.Crafts, remaining / best.Value.Chance);
-            if (craftsToUse <= 0)
-            {
-                break;
-            }
+            var craftsToMake = best.Value.CraftsLeft;
+            var expectedHere = craftsToMake * best.Value.Chance;
+            expectedSkillUps += expectedHere;
 
-            var appliedHere = Math.Min(remaining, (int)decimal.Floor(craftsToUse * best.Value.Chance));
-            if (appliedHere <= 0)
-            {
-                break;
-            }
+            var appliedHere = Math.Min(remaining, (int)decimal.Floor(expectedHere));
 
             steps.Add(new PlanStep(
                 SkillFrom: skill,
@@ -376,16 +469,15 @@ public sealed class PlannerService(
                 RecipeName: $"{best.Value.Recipe.Name} (Intermediate)",
                 LearnedByTrainer: best.Value.Recipe.LearnedByTrainer,
                 SkillUpChance: best.Value.Chance,
-                ExpectedCrafts: craftsToUse,
-                ExpectedCost: best.Value.CraftCost * craftsToUse));
+                ExpectedCrafts: craftsToMake,
+                ExpectedCost: best.Value.CraftCost * craftsToMake));
 
-            expectedSkillUps += craftsToUse * best.Value.Chance;
             credited += appliedHere;
             remaining -= appliedHere;
             skill += appliedHere;
 
             var key = best.Value.Recipe.RecipeId;
-            remainingByRecipeId[key] = (best.Value.Recipe, best.Value.Crafts - craftsToUse);
+            remainingByRecipeId[key] = (best.Value.Recipe, 0m);
         }
 
         return (steps, credited, expectedSkillUps);
@@ -556,6 +648,11 @@ public sealed class PlannerService(
         bool useCrossProfessionCraftIntermediates,
         bool useSmeltIntermediates)
     {
+        private readonly PriceMode _priceMode = priceMode;
+        private readonly IReadOnlyDictionary<int, long> _vendorPrices = vendorPrices;
+        private readonly FrozenDictionary<int, PriceSummary> _prices = prices;
+        private readonly CraftableIndex _craftables = craftables;
+        private readonly ProducerIndex _smelt = smelt;
         private readonly int _craftabilitySkillCap = craftabilitySkillCap;
         private readonly int _professionId = professionId;
         private readonly bool _useCrossProfessionCraftIntermediates = useCrossProfessionCraftIntermediates;
@@ -608,6 +705,26 @@ public sealed class PlannerService(
             return true;
         }
 
+        public Dictionary<int, decimal> ExpandToLeafQuantities(int itemId, decimal quantity, int skill)
+        {
+            var tmp = new ReagentResolver(
+                _priceMode,
+                _vendorPrices,
+                _prices,
+                _craftables,
+                _smelt,
+                _craftabilitySkillCap,
+                _professionId,
+                _useCrossProfessionCraftIntermediates,
+                _useSmeltIntermediates);
+
+            var dict = new Dictionary<int, decimal>();
+            var missing = new HashSet<int>();
+            var visiting = new HashSet<int>();
+            tmp.AddShoppingForItem(dict, itemId, quantity, skill, missing, visiting);
+            return dict;
+        }
+
         public void AddShoppingExpanded(Dictionary<int, decimal> shopping, Recipe recipe, decimal expectedCrafts, int skill)
         {
             var missing = new HashSet<int>();
@@ -640,7 +757,7 @@ public sealed class PlannerService(
 
             try
             {
-                if (vendorPrices.TryGetValue(itemId, out var vendorCopper))
+                if (_vendorPrices.TryGetValue(itemId, out var vendorCopper))
                 {
                     unitCost = new Money(vendorCopper);
                     _unitCostCache[(itemId, skill)] = unitCost;
@@ -662,8 +779,8 @@ public sealed class PlannerService(
                     return false;
                 }
 
-                var hasBuy = prices.TryGetValue(itemId, out var summary);
-                var buyCost = hasBuy ? GetUnitPrice(priceMode, summary!) : (Money?)null;
+                var hasBuy = _prices.TryGetValue(itemId, out var summary);
+                var buyCost = hasBuy ? GetUnitPrice(_priceMode, summary!) : (Money?)null;
 
                 if (_useSmeltIntermediates &&
                     TryGetBestSmeltProducer(itemId, skill, missing, visiting, out var smeltProducer, out var smeltOutputQty, out var smeltPerUnit))
@@ -709,7 +826,7 @@ public sealed class PlannerService(
             perUnitCost = Money.Zero;
             hasEligibleProducer = false;
 
-            if (!craftables.TryGetProducers(itemId, out var candidates))
+            if (!_craftables.TryGetProducers(itemId, out var candidates))
             {
                 return false;
             }
@@ -769,7 +886,7 @@ public sealed class PlannerService(
             outputQty = 0;
             perUnitCost = Money.Zero;
 
-            if (!smelt.TryGetProducers(itemId, out var candidates))
+            if (!_smelt.TryGetProducers(itemId, out var candidates))
             {
                 return false;
             }
@@ -819,7 +936,7 @@ public sealed class PlannerService(
             HashSet<int> missing,
             HashSet<int> visiting)
         {
-            if (vendorPrices.ContainsKey(itemId))
+            if (_vendorPrices.ContainsKey(itemId))
             {
                 AddLeaf(shopping, itemId, quantity);
                 return;
@@ -873,7 +990,7 @@ public sealed class PlannerService(
                     }
                 }
 
-                if (!prices.ContainsKey(itemId))
+                if (!_prices.ContainsKey(itemId))
                 {
                     missing.Add(itemId);
                     return;
