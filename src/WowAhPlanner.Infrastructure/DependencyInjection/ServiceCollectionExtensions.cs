@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using WowAhPlanner.Core.Ports;
 using WowAhPlanner.Infrastructure.DataPacks;
+using WowAhPlanner.Infrastructure.Owned;
 using WowAhPlanner.Infrastructure.Persistence;
 using WowAhPlanner.Infrastructure.Pricing;
 using WowAhPlanner.Infrastructure.Workers;
@@ -33,6 +34,7 @@ public static class ServiceCollectionExtensions
         configureCommunityUploads?.Invoke(communityOptions);
         services.AddSingleton(communityOptions);
         services.AddSingleton<UploadedSnapshotIngestService>();
+        services.AddSingleton<OwnedMaterialsService>();
 
         services.AddSingleton<JsonDataPackRepository>();
         services.AddSingleton<IRecipeRepository>(sp => sp.GetRequiredService<JsonDataPackRepository>());

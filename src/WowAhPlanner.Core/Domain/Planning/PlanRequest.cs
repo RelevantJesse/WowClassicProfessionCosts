@@ -9,4 +9,5 @@ public sealed record PlanRequest(
     int TargetSkill,
     PriceMode PriceMode,
     bool UseCraftIntermediates = true,
-    bool UseSmeltIntermediates = true);
+    bool UseSmeltIntermediates = true,
+    IReadOnlyDictionary<int, long>? OwnedMaterials = null);

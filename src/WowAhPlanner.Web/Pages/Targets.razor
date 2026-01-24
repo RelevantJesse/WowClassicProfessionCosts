@@ -23,7 +23,7 @@
 
         <label>
             <input type="checkbox" @bind="_useCraftIntermediates" @bind:after="OnOptionsChanged" />
-            Craft intermediates (bolts, etc.)
+            Craft other-profession intermediates (optional)
         </label>
 
         <label>
@@ -68,7 +68,7 @@
     private IReadOnlyList<Profession> _professions = [];
     private int _professionId;
     private int _maxSkillDelta = 100;
-    private bool _useCraftIntermediates = true;
+    private bool _useCraftIntermediates = false;
     private bool _useSmeltIntermediates = true;
 
     private string _recipeTargetsUrl = "";

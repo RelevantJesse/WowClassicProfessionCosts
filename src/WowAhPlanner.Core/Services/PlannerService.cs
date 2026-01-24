@@ -18,7 +18,7 @@ public sealed class PlannerService(
         if (request.TargetSkill <= request.CurrentSkill)
         {
             return new PlanComputationResult(
-                Plan: new PlanResult([], [], [], Money.Zero, DateTime.UtcNow),
+                Plan: new PlanResult([], [], [], [], 0, 0m, Money.Zero, DateTime.UtcNow),
                 PriceSnapshot: new PriceSnapshot(
                     request.RealmKey,
                     ProviderName: "n/a",
@@ -50,23 +50,39 @@ public sealed class PlannerService(
         var vendorPrices = await vendorPriceRepository.GetVendorPricesAsync(gameVersion, cancellationToken);
         var producers = await producerRepository.GetProducersAsync(gameVersion, cancellationToken);
 
-        var directReagentItemIds =
-            recipes.SelectMany(r => r.Reagents)
-                .Select(r => r.ItemId)
-                .Where(itemId => !vendorPrices.ContainsKey(itemId))
-                .Distinct()
-                .OrderBy(x => x)
-                .ToArray();
-
         var smelt = ProducerIndex.Build(producers.Where(p => p.Kind == ProducerKind.Smelt));
 
-        var allItemIds = directReagentItemIds.ToHashSet();
-        if (request.UseSmeltIntermediates)
+        IReadOnlyList<Recipe> craftableRecipes = recipes;
+        if (request.UseCraftIntermediates)
         {
-            foreach (var itemId in directReagentItemIds)
+            var professions = await recipeRepository.GetProfessionsAsync(gameVersion, cancellationToken);
+            var all = new List<Recipe>(recipes);
+            foreach (var p in professions)
             {
-                AddSmeltClosureItemIds(itemId, smelt, allItemIds);
+                if (p.ProfessionId == request.ProfessionId) continue;
+                var pr = await recipeRepository.GetRecipesAsync(gameVersion, p.ProfessionId, cancellationToken);
+                all.AddRange(pr);
             }
+
+            craftableRecipes = all;
+        }
+
+        var craftables = CraftableIndex.Build(craftableRecipes);
+
+        var allItemIds = new HashSet<int>();
+        foreach (var reagent in recipes.SelectMany(r => r.Reagents))
+        {
+            AddPricingClosureItemIds(
+                itemId: reagent.ItemId,
+                craftables: craftables,
+                smelt: smelt,
+                vendorPrices: vendorPrices,
+                professionId: request.ProfessionId,
+                useCrossProfessionCraftIntermediates: request.UseCraftIntermediates,
+                useSmeltIntermediates: request.UseSmeltIntermediates,
+                craftabilitySkillCap: request.TargetSkill,
+                into: allItemIds,
+                visiting: new HashSet<int>());
         }
 
         var snapshot = await priceService.GetPricesAsync(
@@ -76,67 +92,79 @@ public sealed class PlannerService(
             cancellationToken);
         var priceByItemId = snapshot.Prices.ToFrozenDictionary(kvp => kvp.Key, kvp => kvp.Value);
 
-        var craftables = CraftableIndex.Build(recipes);
-        var resolver = new ReagentResolver(
-            request.PriceMode,
-            vendorPrices,
-            priceByItemId,
-            craftables,
-            smelt,
-            request.TargetSkill,
-            request.UseCraftIntermediates,
-            request.UseSmeltIntermediates);
+        var desiredSkillUps = request.TargetSkill - request.CurrentSkill;
+        var startingSkill = request.CurrentSkill;
+        var intermediateSteps = new List<PlanStep>();
+        var skillCreditApplied = 0;
+        var expectedSkillUpsFromIntermediates = 0m;
 
-        var steps = new List<PlanStep>();
-        var shopping = new Dictionary<int, decimal>();
+        (IReadOnlyList<PlanStep> MainSteps, Dictionary<int, decimal> Shopping, ReagentResolver Resolver)? final = null;
 
-        var missingAcrossPlan = new HashSet<int>();
-
-        for (var skill = request.CurrentSkill; skill < request.TargetSkill; skill++)
+        for (var iter = 0; iter < 6; iter++)
         {
-            var best = FindBestRecipeAtSkill(recipes, skill, resolver, out var missingAtSkill);
-            if (best is null)
-            {
-                foreach (var itemId in missingAtSkill) missingAcrossPlan.Add(itemId);
+            var iterResolver = new ReagentResolver(
+                request.PriceMode,
+                vendorPrices,
+                priceByItemId,
+                craftables,
+                smelt,
+                request.TargetSkill,
+                professionId: request.ProfessionId,
+                useCrossProfessionCraftIntermediates: request.UseCraftIntermediates,
+                request.UseSmeltIntermediates);
 
+            if (!TryBuildStepsAndShopping(
+                startSkill: startingSkill,
+                targetSkill: request.TargetSkill,
+                recipes: recipes,
+                resolver: iterResolver,
+                out var mainSteps,
+                out var shopping,
+                out var missingAcrossPlan,
+                out var failedSkill))
+            {
                 return new PlanComputationResult(
                     Plan: null,
                     PriceSnapshot: snapshot,
                     MissingItemIds: missingAcrossPlan.OrderBy(x => x).ToArray(),
-                    ErrorMessage: $"No usable recipe with prices at skill {skill}.");
+                    ErrorMessage: $"No usable recipe with prices at skill {failedSkill}.");
             }
 
-            var (recipe, chance, craftCost, expectedCost, expectedCrafts) = best.Value;
+            var inProfessionIntermediates = iterResolver.GetIntermediateCrafts()
+                .Where(x => x.Recipe.ProfessionId == request.ProfessionId)
+                .ToArray();
 
-            resolver.AddShoppingExpanded(shopping, recipe, expectedCrafts, skill);
+            (intermediateSteps, skillCreditApplied, expectedSkillUpsFromIntermediates) =
+                BuildIntermediateSkillUpSteps(
+                    currentSkill: request.CurrentSkill,
+                    targetSkill: request.TargetSkill,
+                    intermediateCrafts: inProfessionIntermediates,
+                    resolver: iterResolver);
 
-            if (steps.Count > 0 &&
-                steps[^1].RecipeId == recipe.RecipeId &&
-                steps[^1].SkillUpChance == chance)
+            var newStartingSkill = request.CurrentSkill + skillCreditApplied;
+            if (newStartingSkill == startingSkill)
             {
-                var prev = steps[^1];
-                steps[^1] = prev with
-                {
-                    SkillTo = prev.SkillTo + 1,
-                    ExpectedCrafts = prev.ExpectedCrafts + expectedCrafts,
-                    ExpectedCost = prev.ExpectedCost + expectedCost,
-                };
+                final = (mainSteps, shopping, iterResolver);
+                break;
             }
-            else
+
+            if (newStartingSkill < request.CurrentSkill || newStartingSkill > request.TargetSkill)
             {
-                steps.Add(new PlanStep(
-                    SkillFrom: skill,
-                    SkillTo: skill + 1,
-                    RecipeId: recipe.RecipeId,
-                    RecipeName: recipe.Name,
-                    LearnedByTrainer: recipe.LearnedByTrainer,
-                    SkillUpChance: chance,
-                    ExpectedCrafts: expectedCrafts,
-                    ExpectedCost: expectedCost));
+                final = (mainSteps, shopping, iterResolver);
+                break;
             }
+
+            startingSkill = newStartingSkill;
+            final = (mainSteps, shopping, iterResolver);
         }
 
-        var shoppingLines = shopping
+        var finalMainSteps = final!.Value.MainSteps;
+        var finalShopping = final!.Value.Shopping;
+        var finalResolver = final!.Value.Resolver;
+
+        var finalSteps = intermediateSteps.Concat(finalMainSteps).ToArray();
+
+        var shoppingLines = finalShopping
             .OrderBy(kvp => kvp.Key)
             .Select(kvp =>
             {
@@ -161,14 +189,206 @@ public sealed class PlannerService(
             })
             .ToArray();
 
+        var ownedUsed = new List<OwnedMaterialLine>();
+        if (request.OwnedMaterials is { Count: > 0 })
+        {
+            var adjusted = new List<ShoppingListLine>(shoppingLines.Length);
+
+            foreach (var line in shoppingLines)
+            {
+                if (!request.OwnedMaterials.TryGetValue(line.ItemId, out var ownedQty) || ownedQty <= 0)
+                {
+                    adjusted.Add(line);
+                    continue;
+                }
+
+                var used = Math.Min(line.Quantity, (decimal)ownedQty);
+                if (used > 0)
+                {
+                    ownedUsed.Add(new OwnedMaterialLine(line.ItemId, used));
+                }
+
+                var buyQty = line.Quantity - used;
+                if (buyQty > 0)
+                {
+                    adjusted.Add(line with { Quantity = buyQty, LineCost = line.UnitPrice * buyQty });
+                }
+            }
+
+            shoppingLines = adjusted.ToArray();
+        }
+
         var total = shoppingLines.Aggregate(Money.Zero, (acc, line) => acc + line.LineCost);
-        var intermediates = resolver.GetIntermediates();
+        var intermediates = finalResolver.GetIntermediates();
 
         return new PlanComputationResult(
-            Plan: new PlanResult(steps, intermediates, shoppingLines, total, DateTime.UtcNow),
+            Plan: new PlanResult(
+                finalSteps,
+                intermediates,
+                shoppingLines,
+                ownedUsed.OrderBy(x => x.ItemId).ToArray(),
+                skillCreditApplied,
+                expectedSkillUpsFromIntermediates,
+                total,
+                DateTime.UtcNow),
             PriceSnapshot: snapshot,
             MissingItemIds: [],
             ErrorMessage: null);
+    }
+
+    private bool TryBuildStepsAndShopping(
+        int startSkill,
+        int targetSkill,
+        IReadOnlyList<Recipe> recipes,
+        ReagentResolver resolver,
+        out IReadOnlyList<PlanStep> steps,
+        out Dictionary<int, decimal> shopping,
+        out HashSet<int> missingItemIds,
+        out int failedAtSkill)
+    {
+        steps = [];
+        shopping = new Dictionary<int, decimal>();
+        missingItemIds = new HashSet<int>();
+        failedAtSkill = startSkill;
+
+        if (startSkill >= targetSkill)
+        {
+            steps = [];
+            return true;
+        }
+
+        var list = new List<PlanStep>();
+
+        for (var skill = startSkill; skill < targetSkill; skill++)
+        {
+            failedAtSkill = skill;
+            var best = FindBestRecipeAtSkill(recipes, skill, resolver, out var missingAtSkill);
+            if (best is null)
+            {
+                foreach (var itemId in missingAtSkill) missingItemIds.Add(itemId);
+                return false;
+            }
+
+            var (recipe, chance, _, expectedCost, expectedCrafts) = best.Value;
+            resolver.AddShoppingExpanded(shopping, recipe, expectedCrafts, skill);
+
+            if (list.Count > 0 &&
+                list[^1].RecipeId == recipe.RecipeId &&
+                list[^1].SkillUpChance == chance)
+            {
+                var prev = list[^1];
+                list[^1] = prev with
+                {
+                    SkillTo = prev.SkillTo + 1,
+                    ExpectedCrafts = prev.ExpectedCrafts + expectedCrafts,
+                    ExpectedCost = prev.ExpectedCost + expectedCost,
+                };
+            }
+            else
+            {
+                list.Add(new PlanStep(
+                    SkillFrom: skill,
+                    SkillTo: skill + 1,
+                    RecipeId: recipe.RecipeId,
+                    RecipeName: recipe.Name,
+                    LearnedByTrainer: recipe.LearnedByTrainer,
+                    SkillUpChance: chance,
+                    ExpectedCrafts: expectedCrafts,
+                    ExpectedCost: expectedCost));
+            }
+        }
+
+        steps = list;
+        return true;
+    }
+
+    private (List<PlanStep> Steps, int SkillCreditApplied, decimal ExpectedSkillUps) BuildIntermediateSkillUpSteps(
+        int currentSkill,
+        int targetSkill,
+        IReadOnlyList<(Recipe Recipe, decimal Crafts)> intermediateCrafts,
+        ReagentResolver resolver)
+    {
+        var remaining = Math.Max(0, targetSkill - currentSkill);
+        if (remaining == 0 || intermediateCrafts.Count == 0)
+        {
+            return ([], 0, 0m);
+        }
+
+        var skill = currentSkill;
+        var credited = 0;
+        var expectedSkillUps = 0m;
+        var steps = new List<PlanStep>();
+
+        var remainingByRecipeId = intermediateCrafts
+            .Where(x => x.Crafts > 0)
+            .GroupBy(x => x.Recipe.RecipeId, StringComparer.OrdinalIgnoreCase)
+            .ToDictionary(g => g.Key, g => (Recipe: g.First().Recipe, Crafts: g.Sum(x => x.Crafts)), StringComparer.OrdinalIgnoreCase);
+
+        while (remaining > 0)
+        {
+            (Recipe Recipe, decimal Crafts, decimal Chance, Money CraftCost, Money CostPerExpectedSkill)? best = null;
+
+            foreach (var kvp in remainingByRecipeId)
+            {
+                var recipe = kvp.Value.Recipe;
+                var craftsLeft = kvp.Value.Crafts;
+                if (craftsLeft <= 0) continue;
+                if (recipe.CooldownSeconds is int cd && cd > 0) continue;
+                if (recipe.OutputQuality is int q && q >= 3) continue;
+                if (skill < recipe.MinSkill) continue;
+
+                var p = _defaultChanceModel.GetChance(recipe.GetDifficultyAtSkill(skill));
+                if (p <= 0) continue;
+
+                if (!resolver.TryGetCraftCost(recipe, skill, out var craftCost, out _))
+                {
+                    continue;
+                }
+
+                var costPerExpectedSkill = Money.FromCopperDecimal(craftCost.Copper / p);
+                if (best is null || costPerExpectedSkill.Copper < best.Value.CostPerExpectedSkill.Copper)
+                {
+                    best = (recipe, craftsLeft, p, craftCost, costPerExpectedSkill);
+                }
+            }
+
+            if (best is null)
+            {
+                break;
+            }
+
+            var craftsToUse = Math.Min(best.Value.Crafts, remaining / best.Value.Chance);
+            if (craftsToUse <= 0)
+            {
+                break;
+            }
+
+            var appliedHere = Math.Min(remaining, (int)decimal.Floor(craftsToUse * best.Value.Chance));
+            if (appliedHere <= 0)
+            {
+                break;
+            }
+
+            steps.Add(new PlanStep(
+                SkillFrom: skill,
+                SkillTo: skill + appliedHere,
+                RecipeId: best.Value.Recipe.RecipeId,
+                RecipeName: $"{best.Value.Recipe.Name} (Intermediate)",
+                LearnedByTrainer: best.Value.Recipe.LearnedByTrainer,
+                SkillUpChance: best.Value.Chance,
+                ExpectedCrafts: craftsToUse,
+                ExpectedCost: best.Value.CraftCost * craftsToUse));
+
+            expectedSkillUps += craftsToUse * best.Value.Chance;
+            credited += appliedHere;
+            remaining -= appliedHere;
+            skill += appliedHere;
+
+            var key = best.Value.Recipe.RecipeId;
+            remainingByRecipeId[key] = (best.Value.Recipe, best.Value.Crafts - craftsToUse);
+        }
+
+        return (steps, credited, expectedSkillUps);
     }
 
     private static void AddSmeltClosureItemIds(int itemId, ProducerIndex smelt, HashSet<int> into)
@@ -197,6 +417,85 @@ public sealed class PlannerService(
             {
                 AddSmeltClosureItemIdsInner(reagent.ItemId, smelt, into, visited);
             }
+        }
+    }
+
+    private static void AddPricingClosureItemIds(
+        int itemId,
+        CraftableIndex craftables,
+        ProducerIndex smelt,
+        IReadOnlyDictionary<int, long> vendorPrices,
+        int professionId,
+        bool useCrossProfessionCraftIntermediates,
+        bool useSmeltIntermediates,
+        int craftabilitySkillCap,
+        HashSet<int> into,
+        HashSet<int> visiting)
+    {
+        if (itemId <= 0) return;
+
+        if (vendorPrices.ContainsKey(itemId))
+        {
+            return;
+        }
+
+        if (!visiting.Add(itemId))
+        {
+            return;
+        }
+
+        try
+        {
+            into.Add(itemId);
+
+            if (craftables.TryGetProducers(itemId, out var candidates))
+            {
+                foreach (var recipe in candidates)
+                {
+                    if (recipe.MinSkill > craftabilitySkillCap) continue;
+                    if (!useCrossProfessionCraftIntermediates && recipe.ProfessionId != professionId) continue;
+
+                    foreach (var reagent in recipe.Reagents)
+                    {
+                        AddPricingClosureItemIds(
+                            reagent.ItemId,
+                            craftables,
+                            smelt,
+                            vendorPrices,
+                            professionId,
+                            useCrossProfessionCraftIntermediates,
+                            useSmeltIntermediates,
+                            craftabilitySkillCap,
+                            into,
+                            visiting);
+                    }
+                }
+            }
+
+            if (useSmeltIntermediates && smelt.TryGetProducers(itemId, out var producers))
+            {
+                foreach (var producer in producers)
+                {
+                    foreach (var reagent in producer.Reagents)
+                    {
+                        AddPricingClosureItemIds(
+                            reagent.ItemId,
+                            craftables,
+                            smelt,
+                            vendorPrices,
+                            professionId,
+                            useCrossProfessionCraftIntermediates,
+                            useSmeltIntermediates,
+                            craftabilitySkillCap,
+                            into,
+                            visiting);
+                    }
+                }
+            }
+        }
+        finally
+        {
+            visiting.Remove(itemId);
         }
     }
 
@@ -253,16 +552,23 @@ public sealed class PlannerService(
         CraftableIndex craftables,
         ProducerIndex smelt,
         int craftabilitySkillCap,
-        bool useCraftIntermediates,
+        int professionId,
+        bool useCrossProfessionCraftIntermediates,
         bool useSmeltIntermediates)
     {
         private readonly int _craftabilitySkillCap = craftabilitySkillCap;
-        private readonly bool _useCraftIntermediates = useCraftIntermediates;
+        private readonly int _professionId = professionId;
+        private readonly bool _useCrossProfessionCraftIntermediates = useCrossProfessionCraftIntermediates;
         private readonly bool _useSmeltIntermediates = useSmeltIntermediates;
         private readonly Dictionary<(int itemId, int skill), Money> _unitCostCache = new();
         private readonly Dictionary<(int itemId, int skill), (Recipe recipe, int outputQty)> _craftProducerCache = new();
         private readonly Dictionary<(int itemId, int skill), (Producer producer, int outputQty)> _smeltProducerCache = new();
         private readonly Dictionary<(int itemId, ProducerKind kind, string producerName), decimal> _intermediates = new();
+        private readonly Dictionary<string, (Recipe recipe, decimal crafts)> _intermediateCraftsByRecipeId =
+            new(StringComparer.OrdinalIgnoreCase);
+
+        private bool IsCraftProducerAllowed(Recipe recipe) =>
+            recipe.ProfessionId == _professionId || _useCrossProfessionCraftIntermediates;
 
         public IReadOnlyList<IntermediateLine> GetIntermediates() =>
             _intermediates
@@ -270,6 +576,14 @@ public sealed class PlannerService(
                 .ThenBy(kvp => kvp.Key.itemId)
                 .ThenBy(kvp => kvp.Key.producerName, StringComparer.OrdinalIgnoreCase)
                 .Select(kvp => new IntermediateLine(kvp.Key.itemId, kvp.Value, kvp.Key.kind, kvp.Key.producerName))
+                .ToArray();
+
+        public IReadOnlyList<(Recipe Recipe, decimal Crafts)> GetIntermediateCrafts() =>
+            _intermediateCraftsByRecipeId.Values
+                .OrderBy(x => x.recipe.ProfessionId)
+                .ThenBy(x => x.recipe.MinSkill)
+                .ThenBy(x => x.recipe.RecipeId, StringComparer.OrdinalIgnoreCase)
+                .Select(x => (x.recipe, x.crafts))
                 .ToArray();
 
         public bool TryGetCraftCost(Recipe recipe, int skill, out Money craftCost, out int[] missingItemIds)
@@ -334,8 +648,7 @@ public sealed class PlannerService(
                 }
 
                 var hasEligibleProducer = false;
-                if (_useCraftIntermediates &&
-                    TryGetBestCraftProducer(itemId, skill, missing, visiting, out hasEligibleProducer, out var producer, out var outputQty, out var perUnitCost))
+                if (TryGetBestCraftProducer(itemId, skill, missing, visiting, out hasEligibleProducer, out var producer, out var outputQty, out var perUnitCost))
                 {
                     _craftProducerCache[(itemId, skill)] = (producer, outputQty);
                     unitCost = perUnitCost;
@@ -343,7 +656,7 @@ public sealed class PlannerService(
                     return true;
                 }
 
-                if (_useCraftIntermediates && hasEligibleProducer)
+                if (hasEligibleProducer)
                 {
                     unitCost = Money.Zero;
                     return false;
@@ -408,6 +721,7 @@ public sealed class PlannerService(
                 if (recipe.MinSkill > _craftabilitySkillCap) continue;
                 if (recipe.Output is null) continue;
                 if (recipe.Output.ItemId != itemId) continue;
+                if (!IsCraftProducerAllowed(recipe)) continue;
 
                 hasEligibleProducer = true;
 
@@ -519,31 +833,29 @@ public sealed class PlannerService(
 
             try
             {
-                if (_useCraftIntermediates)
+                if (!_craftProducerCache.TryGetValue((itemId, skill), out var craftCached))
                 {
-                    if (!_craftProducerCache.TryGetValue((itemId, skill), out var craftCached))
+                    if (TryGetBestCraftProducer(itemId, skill, missing, visiting, out var hasEligibleProducer, out var producer, out var outputQty, out _))
                     {
-                        if (TryGetBestCraftProducer(itemId, skill, missing, visiting, out var hasEligibleProducer, out var producer, out var outputQty, out _))
-                        {
-                            craftCached = (producer, outputQty);
-                            _craftProducerCache[(itemId, skill)] = craftCached;
-                        }
-                        else if (hasEligibleProducer)
-                        {
-                            return;
-                        }
+                        craftCached = (producer, outputQty);
+                        _craftProducerCache[(itemId, skill)] = craftCached;
                     }
-
-                    if (craftCached.recipe is not null)
+                    else if (hasEligibleProducer)
                     {
-                        AddIntermediate(itemId, quantity, ProducerKind.Craft, craftCached.recipe.Name);
-                        var crafts = quantity / craftCached.outputQty;
-                        foreach (var reagent in craftCached.recipe.Reagents)
-                        {
-                            AddShoppingForItem(shopping, reagent.ItemId, reagent.Quantity * crafts, skill, missing, visiting);
-                        }
                         return;
                     }
+                }
+
+                if (craftCached.recipe is not null)
+                {
+                    AddIntermediate(itemId, quantity, ProducerKind.Craft, craftCached.recipe.Name);
+                    var crafts = quantity / craftCached.outputQty;
+                    AddIntermediateCrafts(craftCached.recipe, crafts);
+                    foreach (var reagent in craftCached.recipe.Reagents)
+                    {
+                        AddShoppingForItem(shopping, reagent.ItemId, reagent.Quantity * crafts, skill, missing, visiting);
+                    }
+                    return;
                 }
 
                 if (_useSmeltIntermediates)
@@ -585,6 +897,20 @@ public sealed class PlannerService(
             else
             {
                 _intermediates[key] = quantity;
+            }
+        }
+
+        private void AddIntermediateCrafts(Recipe recipe, decimal crafts)
+        {
+            if (crafts <= 0) return;
+
+            if (_intermediateCraftsByRecipeId.TryGetValue(recipe.RecipeId, out var existing))
+            {
+                _intermediateCraftsByRecipeId[recipe.RecipeId] = (existing.recipe, existing.crafts + crafts);
+            }
+            else
+            {
+                _intermediateCraftsByRecipeId[recipe.RecipeId] = (recipe, crafts);
             }
         }
 

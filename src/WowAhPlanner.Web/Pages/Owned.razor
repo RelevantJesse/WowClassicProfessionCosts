@@ -1,0 +1,349 @@
+@page "/owned"
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+@inject SelectionState Selection
+@inject WowAhPlanner.Infrastructure.Owned.OwnedMaterialsService OwnedService
+@inject Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider AuthStateProvider
+
+<PageTitle>Owned materials</PageTitle>
+
+<h1>Owned Materials</h1>
+
+<div class="card">
+    <h3>Realm</h3>
+    <p>Saved per user for: <code>@Selection.ToRealmKey()</code></p>
+</div>
+
+<div class="card">
+    <h3>Import from SavedVariables (no copy/paste)</h3>
+    <p>
+        This reads <code>lastOwnedJson</code> from your <code>WTF\Account\...\SavedVariables\WowAhPlannerScan.lua</code> file.
+        Note: WoW writes SavedVariables on <code>/reload</code>, logout, or exit.
+    </p>
+    <input type="text" @bind="_savedVariablesPath" style="width:100%" placeholder="C:\Program Files (x86)\World of Warcraft\_anniversary_\WTF\Account\...\SavedVariables\WowAhPlannerScan.lua" />
+    <div style="margin-top:0.75rem">
+        <button @onclick="LoadFromSavedVariablesAsync" disabled="@_busy">Load into textarea</button>
+        <button @onclick="LoadAndSaveFromSavedVariablesAsync" disabled="@_busy">Load + Save</button>
+    </div>
+</div>
+
+<div class="card">
+    <h3>Paste owned mats JSON</h3>
+    <p>Schema: <span class="badge">wowahplanner-owned-v1</span></p>
+    <label style="display:block;margin-bottom:0.5rem">
+        <input type="checkbox" @bind="_allowSnapshotMismatch" />
+        Allow importing owned mats whose (region/version/realmSlug) do not match current selection
+    </label>
+    <textarea @bind="_json" style="width:100%;min-height:220px"></textarea>
+    <div style="margin-top:0.75rem">
+        <button @onclick="SaveAsync" disabled="@_busy">Save</button>
+        <button @onclick="LoadAsync" disabled="@_busy">Load</button>
+    </div>
+    @if (!string.IsNullOrWhiteSpace(_message))
+    {
+        <p>@_message</p>
+    }
+</div>
+
+@code {
+    private string _json = """
+{"schema":"wowahplanner-owned-v1","items":[{"itemId":2589,"qty":200}]}
+""";
+    private string _savedVariablesPath = "";
+    private bool _allowSnapshotMismatch;
+
+    private string? _message;
+    private bool _busy;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender) return;
+        await Selection.EnsureLoadedAsync();
+        StateHasChanged();
+    }
+
+    private async Task SaveAsync()
+    {
+        _busy = true;
+        _message = null;
+
+        try
+        {
+            await SaveJsonAsync(_json);
+        }
+        catch (Exception ex)
+        {
+            _message = ex.Message;
+        }
+        finally
+        {
+            _busy = false;
+        }
+    }
+
+    private async Task LoadFromSavedVariablesAsync()
+    {
+        _busy = true;
+        _message = null;
+
+        try
+        {
+            var json = await ReadLastOwnedJsonFromSavedVariablesAsync(_savedVariablesPath);
+            _json = json;
+            _message = "Loaded owned mats JSON from SavedVariables. Click Save to store it.";
+        }
+        catch (Exception ex)
+        {
+            _message = ex.Message;
+        }
+        finally
+        {
+            _busy = false;
+        }
+    }
+
+    private async Task LoadAndSaveFromSavedVariablesAsync()
+    {
+        _busy = true;
+        _message = null;
+
+        try
+        {
+            var json = await ReadLastOwnedJsonFromSavedVariablesAsync(_savedVariablesPath);
+            _json = json;
+            await SaveJsonAsync(json);
+        }
+        catch (Exception ex)
+        {
+            _message = ex.Message;
+        }
+        finally
+        {
+            _busy = false;
+        }
+    }
+
+    private async Task SaveJsonAsync(string json)
+    {
+        var dto = System.Text.Json.JsonSerializer.Deserialize<OwnedDto>(
+            json,
+            new System.Text.Json.JsonSerializerOptions(System.Text.Json.JsonSerializerDefaults.Web));
+
+        if (dto is null)
+        {
+            _message = "Invalid JSON (null).";
+            return;
+        }
+
+        if (!string.Equals(dto.Schema, "wowahplanner-owned-v1", StringComparison.OrdinalIgnoreCase))
+        {
+            _message = $"Unsupported schema '{dto.Schema}'.";
+            return;
+        }
+
+        if (dto.Items is null || dto.Items.Count == 0)
+        {
+            _message = "No items[] found.";
+            return;
+        }
+
+        var selectionKey = Selection.ToRealmKey();
+        var region = selectionKey.Region;
+        var version = selectionKey.GameVersion;
+        var realmSlug = selectionKey.RealmSlug;
+        var hasAnyMeta =
+            !string.IsNullOrWhiteSpace(dto.Region) ||
+            !string.IsNullOrWhiteSpace(dto.GameVersion) ||
+            !string.IsNullOrWhiteSpace(dto.RealmSlug);
+
+        if (!string.IsNullOrWhiteSpace(dto.Region) &&
+            !Enum.TryParse<WowAhPlanner.Core.Domain.Region>(dto.Region, true, out region))
+        {
+            _message = $"Invalid owned region '{dto.Region}'.";
+            return;
+        }
+
+        if (!string.IsNullOrWhiteSpace(dto.GameVersion) &&
+            !Enum.TryParse<WowAhPlanner.Core.Domain.GameVersion>(dto.GameVersion, true, out version))
+        {
+            _message = $"Invalid owned gameVersion '{dto.GameVersion}'.";
+            return;
+        }
+
+        if (!string.IsNullOrWhiteSpace(dto.RealmSlug))
+        {
+            realmSlug = dto.RealmSlug.Trim();
+        }
+
+        var targetKey = new WowAhPlanner.Core.Domain.RealmKey(region, version, realmSlug);
+        if (hasAnyMeta && targetKey != selectionKey && !_allowSnapshotMismatch)
+        {
+            _message =
+                $"Owned snapshot is for '{targetKey}', but current selection is '{selectionKey}'. " +
+                "Switch your selection to match, or check the box to allow mismatch.";
+            return;
+        }
+
+        var auth = await AuthStateProvider.GetAuthenticationStateAsync();
+        var userId = auth.User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+        if (string.IsNullOrWhiteSpace(userId))
+        {
+            _message = "Not logged in.";
+            return;
+        }
+
+        var realmKey = targetKey.ToString();
+        var rows = dto.Items
+            .Where(x => x.ItemId > 0 && x.Qty >= 0)
+            .Select(x => (x.ItemId, (long)x.Qty))
+            .ToArray();
+
+        var updated = await OwnedService.UpsertAsync(realmKey, userId, rows);
+        _message = $"Saved {updated} items.";
+    }
+
+    private async Task LoadAsync()
+    {
+        _busy = true;
+        _message = null;
+
+        try
+        {
+            var auth = await AuthStateProvider.GetAuthenticationStateAsync();
+            var userId = auth.User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrWhiteSpace(userId))
+            {
+                _message = "Not logged in.";
+                return;
+            }
+
+            var realmKey = Selection.ToRealmKey().ToString();
+            var owned = await OwnedService.GetOwnedAsync(realmKey, userId);
+
+            _json = System.Text.Json.JsonSerializer.Serialize(
+                new OwnedDto
+                {
+                    Schema = "wowahplanner-owned-v1",
+                    Items = owned.OrderBy(kvp => kvp.Key).Select(kvp => new OwnedItemDto { ItemId = kvp.Key, Qty = kvp.Value }).ToList(),
+                },
+                new System.Text.Json.JsonSerializerOptions(System.Text.Json.JsonSerializerDefaults.Web) { WriteIndented = true });
+
+            _message = $"Loaded {owned.Count} items.";
+        }
+        catch (Exception ex)
+        {
+            _message = ex.Message;
+        }
+        finally
+        {
+            _busy = false;
+        }
+    }
+
+    private sealed class OwnedDto
+    {
+        public string? Schema { get; set; }
+        public string? SnapshotTimestampUtc { get; set; }
+        public string? Region { get; set; }
+        public string? GameVersion { get; set; }
+        public string? RealmSlug { get; set; }
+        public List<OwnedItemDto>? Items { get; set; }
+    }
+
+    private sealed class OwnedItemDto
+    {
+        public int ItemId { get; set; }
+        public long Qty { get; set; }
+    }
+
+    private static async Task<string> ReadLastOwnedJsonFromSavedVariablesAsync(string path)
+    {
+        if (string.IsNullOrWhiteSpace(path))
+        {
+            throw new InvalidOperationException("SavedVariables path is required.");
+        }
+
+        if (!File.Exists(path))
+        {
+            throw new FileNotFoundException("SavedVariables file not found.", path);
+        }
+
+        var content = await File.ReadAllTextAsync(path);
+        var match = System.Text.RegularExpressions.Regex.Match(
+            content,
+            "(?:\\[\\s*\\\"lastOwnedJson\\\"\\s*\\]|lastOwnedJson)\\s*=\\s*\\\"(?<val>(?:\\\\.|[^\\\\\\\"])*?)\\\"",
+            System.Text.RegularExpressions.RegexOptions.Singleline);
+
+        if (!match.Success)
+        {
+            throw new InvalidOperationException("Could not find lastOwnedJson in SavedVariables. Run /wahpscan owned and then /reload (or logout/exit) so WoW writes SavedVariables.");
+        }
+
+        var escaped = match.Groups["val"].Value;
+        return UnescapeLuaString(escaped);
+    }
+
+    private static string UnescapeLuaString(string value)
+    {
+        var sb = new System.Text.StringBuilder(value.Length);
+
+        for (var i = 0; i < value.Length; i++)
+        {
+            var c = value[i];
+            if (c != '\\')
+            {
+                sb.Append(c);
+                continue;
+            }
+
+            if (i == value.Length - 1)
+            {
+                sb.Append('\\');
+                break;
+            }
+
+            var n = value[++i];
+            switch (n)
+            {
+                case '\\':
+                    sb.Append('\\');
+                    break;
+                case '\"':
+                    sb.Append('\"');
+                    break;
+                case 'n':
+                    sb.Append('\n');
+                    break;
+                case 'r':
+                    sb.Append('\r');
+                    break;
+                case 't':
+                    sb.Append('\t');
+                    break;
+                default:
+                    if (n >= '0' && n <= '9')
+                    {
+                        var num = n - '0';
+                        var digits = 1;
+                        while (digits < 3 && i + 1 < value.Length)
+                        {
+                            var d = value[i + 1];
+                            if (d < '0' || d > '9') break;
+                            num = (num * 10) + (d - '0');
+                            i++;
+                            digits++;
+                        }
+
+                        sb.Append((char)num);
+                    }
+                    else
+                    {
+                        sb.Append(n);
+                    }
+                    break;
+            }
+        }
+
+        return sb.ToString();
+    }
+}

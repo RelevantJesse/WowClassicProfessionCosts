@@ -46,6 +46,25 @@ public static class SqliteSchemaBootstrapper
                 ON PriceSnapshotItems (ItemId);
             """,
             cancellationToken);
+
+        await db.Database.ExecuteSqlRawAsync(
+            """
+            CREATE TABLE IF NOT EXISTS OwnedMaterials (
+                RealmKey TEXT NOT NULL,
+                UserId TEXT NOT NULL,
+                ItemId INTEGER NOT NULL,
+                Quantity INTEGER NOT NULL,
+                UpdatedAtUtc TEXT NOT NULL,
+                CONSTRAINT PK_OwnedMaterials PRIMARY KEY (RealmKey, UserId, ItemId)
+            );
+            """,
+            cancellationToken);
+
+        await db.Database.ExecuteSqlRawAsync(
+            """
+            CREATE INDEX IF NOT EXISTS IX_OwnedMaterials_RealmKey_UserId
+                ON OwnedMaterials (RealmKey, UserId);
+            """,
+            cancellationToken);
     }
 }
-

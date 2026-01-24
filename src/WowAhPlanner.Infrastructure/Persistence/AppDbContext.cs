@@ -7,6 +7,7 @@ public sealed class AppDbContext(DbContextOptions<AppDbContext> options) : DbCon
     public DbSet<ItemPriceSummaryEntity> ItemPriceSummaries => Set<ItemPriceSummaryEntity>();
     public DbSet<PriceSnapshotUploadEntity> PriceSnapshotUploads => Set<PriceSnapshotUploadEntity>();
     public DbSet<PriceSnapshotItemEntity> PriceSnapshotItems => Set<PriceSnapshotItemEntity>();
+    public DbSet<OwnedMaterialEntity> OwnedMaterials => Set<OwnedMaterialEntity>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -33,6 +34,14 @@ public sealed class AppDbContext(DbContextOptions<AppDbContext> options) : DbCon
                 .HasForeignKey(x => x.UploadId)
                 .OnDelete(DeleteBehavior.Cascade);
             b.HasIndex(x => x.ItemId);
+        });
+
+        modelBuilder.Entity<OwnedMaterialEntity>(b =>
+        {
+            b.HasKey(x => new { x.RealmKey, x.UserId, x.ItemId });
+            b.Property(x => x.RealmKey).HasMaxLength(128);
+            b.Property(x => x.UserId).HasMaxLength(450);
+            b.HasIndex(x => new { x.RealmKey, x.UserId });
         });
     }
 }

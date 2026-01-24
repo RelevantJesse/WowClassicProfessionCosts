@@ -134,21 +134,22 @@ public static class ApiEndpoints
                 ? cs + Math.Max(0, maxSkillDelta ?? 100)
                 : (int?)null;
 
-            var useCraft = useCraftIntermediates ?? true;
+            var useCraft = useCraftIntermediates ?? false;
             var useSmelt = useSmeltIntermediates ?? true;
 
             var itemIds = new HashSet<int>();
             var vendorItemIds = (await vendorPriceRepository.GetVendorPricesAsync(v, ct)).Keys.ToHashSet();
             var smelt = BuildSmeltProducerIndex(await producerRepository.GetProducersAsync(v, ct));
+            var allCraftables = useCraft ? await BuildCraftableProducerIndexAllAsync(repo, v, ct) : null;
 
             if (professionId is int pid)
             {
                 var recipes = await repo.GetRecipesAsync(v, pid, ct);
-                var craftables = BuildCraftableProducerIndex(recipes);
+                var craftables = allCraftables ?? BuildCraftableProducerIndex(recipes);
                 recipes = FilterRecipes(recipes, minSkill, maxSkill);
                 foreach (var reagent in recipes.SelectMany(r => r.Reagents))
                 {
-                    foreach (var leaf in ExpandScanItemIds(reagent.ItemId, craftables, smelt, vendorItemIds, useCraft, useSmelt))
+                    foreach (var leaf in ExpandScanItemIds(reagent.ItemId, pid, craftables, smelt, vendorItemIds, useCraft, useSmelt))
                     {
                         itemIds.Add(leaf);
                     }
@@ -160,11 +161,11 @@ public static class ApiEndpoints
                 foreach (var prof in professions)
                 {
                     var recipes = await repo.GetRecipesAsync(v, prof.ProfessionId, ct);
-                    var craftables = BuildCraftableProducerIndex(recipes);
+                    var craftables = allCraftables ?? BuildCraftableProducerIndex(recipes);
                     recipes = FilterRecipes(recipes, minSkill, maxSkill);
                     foreach (var reagent in recipes.SelectMany(r => r.Reagents))
                     {
-                        foreach (var leaf in ExpandScanItemIds(reagent.ItemId, craftables, smelt, vendorItemIds, useCraft, useSmelt))
+                        foreach (var leaf in ExpandScanItemIds(reagent.ItemId, prof.ProfessionId, craftables, smelt, vendorItemIds, useCraft, useSmelt))
                         {
                             itemIds.Add(leaf);
                         }
@@ -197,21 +198,22 @@ public static class ApiEndpoints
                 ? cs + Math.Max(0, maxSkillDelta ?? 100)
                 : (int?)null;
 
-            var useCraft = useCraftIntermediates ?? true;
+            var useCraft = useCraftIntermediates ?? false;
             var useSmelt = useSmeltIntermediates ?? true;
 
             var itemIds = new HashSet<int>();
             var vendorItemIds = (await vendorPriceRepository.GetVendorPricesAsync(v, ct)).Keys.ToHashSet();
             var smelt = BuildSmeltProducerIndex(await producerRepository.GetProducersAsync(v, ct));
+            var allCraftables = useCraft ? await BuildCraftableProducerIndexAllAsync(repo, v, ct) : null;
 
             if (professionId is int pid)
             {
                 var recipes = await repo.GetRecipesAsync(v, pid, ct);
-                var craftables = BuildCraftableProducerIndex(recipes);
+                var craftables = allCraftables ?? BuildCraftableProducerIndex(recipes);
                 recipes = FilterRecipes(recipes, minSkill, maxSkill);
                 foreach (var reagent in recipes.SelectMany(r => r.Reagents))
                 {
-                    foreach (var leaf in ExpandScanItemIds(reagent.ItemId, craftables, smelt, vendorItemIds, useCraft, useSmelt))
+                    foreach (var leaf in ExpandScanItemIds(reagent.ItemId, pid, craftables, smelt, vendorItemIds, useCraft, useSmelt))
                     {
                         itemIds.Add(leaf);
                     }
@@ -223,11 +225,11 @@ public static class ApiEndpoints
                 foreach (var prof in professions)
                 {
                     var recipes = await repo.GetRecipesAsync(v, prof.ProfessionId, ct);
-                    var craftables = BuildCraftableProducerIndex(recipes);
+                    var craftables = allCraftables ?? BuildCraftableProducerIndex(recipes);
                     recipes = FilterRecipes(recipes, minSkill, maxSkill);
                     foreach (var reagent in recipes.SelectMany(r => r.Reagents))
                     {
-                        foreach (var leaf in ExpandScanItemIds(reagent.ItemId, craftables, smelt, vendorItemIds, useCraft, useSmelt))
+                        foreach (var leaf in ExpandScanItemIds(reagent.ItemId, prof.ProfessionId, craftables, smelt, vendorItemIds, useCraft, useSmelt))
                         {
                             itemIds.Add(leaf);
                         }
@@ -269,7 +271,9 @@ public static class ApiEndpoints
             recipes = FilterRecipes(recipes, minSkill: null, maxSkill: null);
 
             var vendorItemIds = (await vendorPriceRepository.GetVendorPricesAsync(v, ct)).Keys.ToHashSet();
-            var craftables = BuildCraftableProducerIndex(recipes);
+            var craftables = (useCraftIntermediates ?? false)
+                ? await BuildCraftableProducerIndexAllAsync(repo, v, ct)
+                : BuildCraftableProducerIndex(recipes);
             var smelt = BuildSmeltProducerIndex(await producerRepository.GetProducersAsync(v, ct));
             return Results.Text(
                 GenerateRecipeTargetsLua(
@@ -279,7 +283,7 @@ public static class ApiEndpoints
                     craftables,
                     smelt,
                     vendorItemIds,
-                    useCraftIntermediates ?? true,
+                    useCraftIntermediates ?? false,
                     useSmeltIntermediates ?? true,
                     v,
                     region,
@@ -314,7 +318,9 @@ public static class ApiEndpoints
                 ?.Name;
 
             var vendorItemIds = (await vendorPriceRepository.GetVendorPricesAsync(version, ct)).Keys.ToHashSet();
-            var craftables = BuildCraftableProducerIndex(recipes);
+            var craftables = request.UseCraftIntermediates
+                ? await BuildCraftableProducerIndexAllAsync(repo, version, ct)
+                : BuildCraftableProducerIndex(recipes);
             var smelt = BuildSmeltProducerIndex(await producerRepository.GetProducersAsync(version, ct));
             var lua = GenerateRecipeTargetsLua(
                 request.ProfessionId,
@@ -364,7 +370,7 @@ public static class ApiEndpoints
         var allReagentItemIds = recipes
             .SelectMany(r => r.Reagents)
             .Select(r => r.ItemId)
-            .SelectMany(itemId => ExpandScanItemIds(itemId, craftables, smelt, vendorItemIds, useCraftIntermediates, useSmeltIntermediates))
+            .SelectMany(itemId => ExpandScanItemIds(itemId, professionId, craftables, smelt, vendorItemIds, useCraftIntermediates, useSmeltIntermediates))
             .Distinct()
             .OrderBy(x => x)
             .ToArray();
@@ -373,10 +379,9 @@ public static class ApiEndpoints
         {
             "-- Generated by WowAhPlanner",
             $"WowAhPlannerScan_TargetGameVersion = \"{EscapeLuaString(gameVersion.ToString())}\"",
-            string.IsNullOrWhiteSpace(region) ? "" : $"WowAhPlannerScan_TargetRegion = \"{EscapeLuaString(region)}\"",
-            string.IsNullOrWhiteSpace(realmSlug) ? "" : $"WowAhPlannerScan_TargetRealmSlug = \"{EscapeLuaString(realmSlug)}\"",
             $"WowAhPlannerScan_TargetProfessionId = {professionId}",
             $"WowAhPlannerScan_TargetProfessionName = \"{EscapeLuaString(NormalizeProfessionName(professionName) ?? "")}\"",
+            $"WowAhPlannerScan_VendorItemIds = {{ {string.Join(", ", vendorItemIds.OrderBy(x => x))} }}",
             $"WowAhPlannerScan_TargetItemIds = {{ {string.Join(", ", allReagentItemIds)} }}",
             "WowAhPlannerScan_RecipeTargets = {",
         };
@@ -386,7 +391,7 @@ public static class ApiEndpoints
         {
             var reagentIds = recipe.Reagents
                 .Select(x => x.ItemId)
-                .SelectMany(itemId => ExpandScanItemIds(itemId, craftables, smelt, vendorItemIds, useCraftIntermediates, useSmeltIntermediates))
+                .SelectMany(itemId => ExpandScanItemIds(itemId, professionId, craftables, smelt, vendorItemIds, useCraftIntermediates, useSmeltIntermediates))
                 .Distinct()
                 .OrderBy(x => x)
                 .ToArray();
@@ -428,6 +433,22 @@ public static class ApiEndpoints
         return byOutput;
     }
 
+    private static async Task<IReadOnlyDictionary<int, Recipe>> BuildCraftableProducerIndexAllAsync(
+        IRecipeRepository repo,
+        GameVersion version,
+        CancellationToken ct)
+    {
+        var professions = await repo.GetProfessionsAsync(version, ct);
+        var all = new List<Recipe>();
+        foreach (var prof in professions)
+        {
+            all.AddRange(await repo.GetRecipesAsync(version, prof.ProfessionId, ct));
+        }
+
+        var filtered = FilterRecipes(all, minSkill: null, maxSkill: null);
+        return BuildCraftableProducerIndex(filtered);
+    }
+
     private static IReadOnlyDictionary<int, IReadOnlyList<Producer>> BuildSmeltProducerIndex(IReadOnlyList<Producer> producers)
     {
         var byOutput = new Dictionary<int, List<Producer>>();
@@ -452,6 +473,7 @@ public static class ApiEndpoints
 
     private static IEnumerable<int> ExpandScanItemIds(
         int itemId,
+        int targetProfessionId,
         IReadOnlyDictionary<int, Recipe> craftables,
         IReadOnlyDictionary<int, IReadOnlyList<Producer>> smelt,
         IReadOnlySet<int> vendorItemIds,
@@ -460,12 +482,13 @@ public static class ApiEndpoints
     {
         var visited = new HashSet<int>();
         var results = new HashSet<int>();
-        ExpandScanItemIdsInner(itemId, craftables, smelt, vendorItemIds, useCraftIntermediates, useSmeltIntermediates, visited, results);
+        ExpandScanItemIdsInner(itemId, targetProfessionId, craftables, smelt, vendorItemIds, useCraftIntermediates, useSmeltIntermediates, visited, results);
         return results;
     }
 
     private static void ExpandScanItemIdsInner(
         int itemId,
+        int targetProfessionId,
         IReadOnlyDictionary<int, Recipe> craftables,
         IReadOnlyDictionary<int, IReadOnlyList<Producer>> smelt,
         IReadOnlySet<int> vendorItemIds,
@@ -487,11 +510,12 @@ public static class ApiEndpoints
 
         try
         {
-            if (useCraftIntermediates && craftables.TryGetValue(itemId, out var producerRecipe))
+            if (craftables.TryGetValue(itemId, out var producerRecipe) &&
+                (producerRecipe.ProfessionId == targetProfessionId || useCraftIntermediates))
             {
                 foreach (var reagent in producerRecipe.Reagents)
                 {
-                    ExpandScanItemIdsInner(reagent.ItemId, craftables, smelt, vendorItemIds, useCraftIntermediates, useSmeltIntermediates, visited, results);
+                    ExpandScanItemIdsInner(reagent.ItemId, targetProfessionId, craftables, smelt, vendorItemIds, useCraftIntermediates, useSmeltIntermediates, visited, results);
                 }
                 return;
             }
@@ -503,7 +527,7 @@ public static class ApiEndpoints
                 {
                     foreach (var reagent in producer.Reagents)
                     {
-                        ExpandScanItemIdsInner(reagent.ItemId, craftables, smelt, vendorItemIds, useCraftIntermediates, useSmeltIntermediates, visited, results);
+                        ExpandScanItemIdsInner(reagent.ItemId, targetProfessionId, craftables, smelt, vendorItemIds, useCraftIntermediates, useSmeltIntermediates, visited, results);
                     }
                 }
                 return;

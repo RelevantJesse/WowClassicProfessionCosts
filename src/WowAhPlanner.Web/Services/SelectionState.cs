@@ -36,7 +36,7 @@ public sealed class SelectionState(LocalStorageService localStorage)
     {
         try
         {
-            await localStorage.SetAsync(StorageKey, new SelectionDto(Region, GameVersion, RealmSlug, ProfessionId));
+            await localStorage.SetAsync(StorageKey, new SelectionDto(Region, GameVersion, RealmSlug.Trim().ToLowerInvariant(), ProfessionId));
         }
         catch
         {
@@ -47,4 +47,3 @@ public sealed class SelectionState(LocalStorageService localStorage)
 
     private sealed record SelectionDto(Region Region, GameVersion GameVersion, string? RealmSlug, int ProfessionId);
 }
-

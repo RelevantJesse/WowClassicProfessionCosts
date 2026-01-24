@@ -146,39 +146,40 @@
 
             var snapshotTs = dto.SnapshotTimestampUtc ?? DateTime.UtcNow;
             var selectionKey = Selection.ToRealmKey();
-            var targetKey = selectionKey;
-
-            if (!string.IsNullOrWhiteSpace(dto.Region) ||
+            var region = selectionKey.Region;
+            var version = selectionKey.GameVersion;
+            var realmSlug = selectionKey.RealmSlug;
+            var hasAnyMeta =
+                !string.IsNullOrWhiteSpace(dto.Region) ||
                 !string.IsNullOrWhiteSpace(dto.GameVersion) ||
-                !string.IsNullOrWhiteSpace(dto.RealmSlug))
+                !string.IsNullOrWhiteSpace(dto.RealmSlug);
+
+            if (!string.IsNullOrWhiteSpace(dto.Region) &&
+                !Enum.TryParse<WowAhPlanner.Core.Domain.Region>(dto.Region, true, out region))
             {
-                if (!Enum.TryParse<WowAhPlanner.Core.Domain.Region>(dto.Region, true, out var r))
-                {
-                    _message = $"Invalid snapshot region '{dto.Region}'.";
-                    return;
-                }
+                _message = $"Invalid snapshot region '{dto.Region}'.";
+                return;
+            }
 
-                if (!Enum.TryParse<WowAhPlanner.Core.Domain.GameVersion>(dto.GameVersion, true, out var gv))
-                {
-                    _message = $"Invalid snapshot gameVersion '{dto.GameVersion}'.";
-                    return;
-                }
+            if (!string.IsNullOrWhiteSpace(dto.GameVersion) &&
+                !Enum.TryParse<WowAhPlanner.Core.Domain.GameVersion>(dto.GameVersion, true, out version))
+            {
+                _message = $"Invalid snapshot gameVersion '{dto.GameVersion}'.";
+                return;
+            }
 
-                if (string.IsNullOrWhiteSpace(dto.RealmSlug))
-                {
-                    _message = "Snapshot is missing realmSlug.";
-                    return;
-                }
+            if (!string.IsNullOrWhiteSpace(dto.RealmSlug))
+            {
+                realmSlug = dto.RealmSlug.Trim();
+            }
 
-                targetKey = new WowAhPlanner.Core.Domain.RealmKey(r, gv, dto.RealmSlug.Trim());
-
-                if (targetKey != selectionKey && !_allowSnapshotMismatch)
-                {
-                    _message =
-                        $"Snapshot is for '{targetKey}', but current selection is '{selectionKey}'. " +
-                        "Switch your selection to match, or check the box to allow mismatch.";
-                    return;
-                }
+            var targetKey = new WowAhPlanner.Core.Domain.RealmKey(region, version, realmSlug);
+            if (hasAnyMeta && targetKey != selectionKey && !_allowSnapshotMismatch)
+            {
+                _message =
+                    $"Snapshot is for '{targetKey}', but current selection is '{selectionKey}'. " +
+                    "Switch your selection to match, or check the box to allow mismatch.";
+                return;
             }
 
             var realmKey = targetKey.ToString();

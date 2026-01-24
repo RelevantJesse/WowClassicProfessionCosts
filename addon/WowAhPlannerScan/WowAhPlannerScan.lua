@@ -386,6 +386,31 @@ local function StartSnapshot()
   state.canQueryFalseCount = 0
 end
 
+local function NormalizeRealmSlug(realmName)
+  local s = tostring(realmName or "")
+  s = string.lower(s)
+  s = s:gsub("'", "")
+  s = s:gsub("%s+", "-")
+  s = s:gsub("[^%w%-]", "")
+  return s
+end
+
+local function DetectRegion()
+  if GetCVar then
+    local portal = GetCVar("portal")
+    if portal and portal ~= "" then
+      return string.upper(tostring(portal))
+    end
+  end
+
+  local configured = WowAhPlannerScan_TargetRegion
+  if configured and tostring(configured) ~= "" then
+    return tostring(configured)
+  end
+
+  return nil
+end
+
 local function BuildExportJsonFromSnapshot(snap)
   if not snap then return nil end
 
@@ -424,13 +449,17 @@ local function FinishSnapshot()
   local rank = tonumber(GetSetting("priceRank", 3)) or 3
   if rank < 1 then rank = 1 end
 
+  local realmName = GetRealmName()
+  local realmSlug = NormalizeRealmSlug(realmName)
+  local region = DetectRegion()
+
   local snapshot = {
     schema = "wowahplanner-scan-v1",
     snapshotTimestampUtc = date("!%Y-%m-%dT%H:%M:%SZ", time()),
-    realmName = GetRealmName(),
+    realmName = realmName,
     faction = UnitFactionGroup("player"),
-    region = WowAhPlannerScan_TargetRegion,
-    realmSlug = WowAhPlannerScan_TargetRealmSlug,
+    region = region,
+    realmSlug = realmSlug,
     gameVersion = WowAhPlannerScan_TargetGameVersion,
     targetProfessionId = WowAhPlannerScan_TargetProfessionId,
     targetProfessionName = WowAhPlannerScan_TargetProfessionName,
@@ -475,8 +504,295 @@ local function BuildExportJson()
   return json
 end
 
+local function ParseItemRef(v)
+  if v == nil then return nil, nil end
+
+  local t = type(v)
+  if t == "number" then
+    local itemId = tonumber(v)
+    if itemId and itemId > 0 then return itemId, 1 end
+    return nil, nil
+  end
+
+  if t == "table" then
+    local itemId = tonumber(v.itemId or v.id or v.ItemId or v.ID)
+    local qty = tonumber(v.qty or v.count or v.Quantity or v.Count)
+    if itemId and itemId > 0 then
+      if not qty or qty < 1 then qty = 1 end
+      return itemId, qty
+    end
+    return nil, nil
+  end
+
+  if t ~= "string" then return nil, nil end
+
+  local s = tostring(v)
+  local itemId = tonumber(string.match(s, "item:(%d+)")) or tonumber(string.match(s, "^(%d+)"))
+  if not itemId or itemId <= 0 then return nil, nil end
+
+  local qty = tonumber(string.match(s, ";(%d+)$"))
+  if not qty or qty < 1 then qty = 1 end
+  return itemId, qty
+end
+
+local function BuildWantedItemIdSet()
+  local wanted = {}
+  local count = 0
+
+  if type(WowAhPlannerScan_TargetItemIds) == "table" then
+    for _, itemId in ipairs(WowAhPlannerScan_TargetItemIds) do
+      local n = tonumber(itemId)
+      if n and n > 0 and not wanted[n] then
+        wanted[n] = true
+        count = count + 1
+      end
+    end
+  end
+
+  if count == 0 and type(WowAhPlannerScan_RecipeTargets) == "table" then
+    for _, r in ipairs(WowAhPlannerScan_RecipeTargets) do
+      if type(r) == "table" and type(r.reagents) == "table" then
+        for _, itemId in ipairs(r.reagents) do
+          local n = tonumber(itemId)
+          if n and n > 0 and not wanted[n] then
+            wanted[n] = true
+            count = count + 1
+          end
+        end
+      end
+    end
+  end
+
+  if type(WowAhPlannerScan_VendorItemIds) == "table" then
+    for _, itemId in ipairs(WowAhPlannerScan_VendorItemIds) do
+      local n = tonumber(itemId)
+      if n and n > 0 and not wanted[n] then
+        wanted[n] = true
+        count = count + 1
+      end
+    end
+  end
+
+  return wanted, count
+end
+
+local function BuildOwnedCountsFromBagBrother(wantedSet)
+  local function IsAddOnLoadedSafe(addonName)
+    if C_AddOns and C_AddOns.IsAddOnLoaded then
+      return C_AddOns.IsAddOnLoaded(addonName)
+    end
+    if IsAddOnLoaded then
+      return IsAddOnLoaded(addonName)
+    end
+    return nil
+  end
+
+  local function LoadAddOnSafe(addonName)
+    if C_AddOns and C_AddOns.LoadAddOn then
+      return C_AddOns.LoadAddOn(addonName)
+    end
+    if LoadAddOn then
+      return LoadAddOn(addonName)
+    end
+    return false, "LoadAddOn not available"
+  end
+
+  local function DetectBagDb()
+    local candidates = {
+      { name = "BrotherBags", value = _G and _G.BrotherBags or nil },
+      { name = "BagBrother", value = _G and _G.BagBrother or nil },
+      { name = "BagnonDB", value = _G and _G.BagnonDB or nil },
+      { name = "BagnonDB2", value = _G and _G.BagnonDB2 or nil },
+      { name = "BagnonDB3", value = _G and _G.BagnonDB3 or nil },
+    }
+    for _, c in ipairs(candidates) do
+      if type(c.value) == "table" then
+        return c.value, c.name
+      end
+    end
+    return nil, nil
+  end
+
+  local bb, source = DetectBagDb()
+  if type(bb) ~= "table" then
+    local bbLoaded = IsAddOnLoadedSafe("BagBrother")
+    local bagnonLoaded = IsAddOnLoadedSafe("Bagnon")
+    DebugPrint("Owned export: bag DB not found (BagBrother loaded=" .. tostring(bbLoaded) .. ", Bagnon loaded=" .. tostring(bagnonLoaded) .. "). Attempting LoadAddOn(BagBrother)...")
+    LoadAddOnSafe("BagBrother")
+    bb, source = DetectBagDb()
+  end
+
+  if type(bb) ~= "table" then
+    return nil, "BagBrother/Bagnon data not found. Expected global BrotherBags (preferred) or BagBrother/BagnonDB. If you have Bagnon/BagBrother installed, enable BagBrother and /reload. Use /wahpscan owneddebug for diagnostics."
+  end
+
+  local realmName = GetRealmName()
+
+  local nodes = {}
+  if source == "BrotherBags" or source == "BagBrother" then
+    local realmTable = bb[realmName] or bb[string.lower(realmName)] or bb[NormalizeRealmSlug(realmName)]
+    if type(realmTable) == "table" then
+      table.insert(nodes, realmTable)
+    end
+  elseif source == "BagnonDB" or source == "BagnonDB2" or source == "BagnonDB3" then
+    if type(bb.characters) == "table" then
+      local suffix = " - " .. tostring(realmName)
+      for k, v in pairs(bb.characters) do
+        if type(k) == "string" and string.sub(k, -string.len(suffix)) == suffix then
+          table.insert(nodes, v)
+        end
+      end
+    end
+  end
+
+  if #nodes == 0 then
+    DebugPrint("Owned export: could not find realm-specific section in " .. tostring(source) .. "; scanning entire DB (may include other realms).")
+    table.insert(nodes, bb)
+  else
+    DebugPrint("Owned export: using " .. tostring(source) .. " realm=\"" .. tostring(realmName) .. "\" nodes=" .. tostring(#nodes))
+  end
+
+  local counts = {}
+  local visited = {}
+
+  local function Walk(node)
+    local tt = type(node)
+    if tt == "table" then
+      if visited[node] then return end
+      visited[node] = true
+      for _, v in pairs(node) do
+        Walk(v)
+      end
+      return
+    end
+
+    if tt == "string" then
+      local itemId, qty = ParseItemRef(node)
+      if itemId and qty and wantedSet[itemId] then
+        counts[itemId] = (counts[itemId] or 0) + qty
+      end
+    end
+  end
+
+  for _, root in ipairs(nodes) do
+    Walk(root)
+  end
+
+  return counts, nil
+end
+
+local function OwnedDebug()
+  local realmName = GetRealmName()
+  Print("Owned debug: realm=\"" .. tostring(realmName) .. "\" slug=\"" .. tostring(NormalizeRealmSlug(realmName)) .. "\"")
+  local function IsAddOnLoadedSafe(addonName)
+    if C_AddOns and C_AddOns.IsAddOnLoaded then
+      return C_AddOns.IsAddOnLoaded(addonName)
+    end
+    if IsAddOnLoaded then
+      return IsAddOnLoaded(addonName)
+    end
+    return nil
+  end
+
+  Print("AddOns: Bagnon loaded=" .. tostring(IsAddOnLoadedSafe("Bagnon")) .. ", BagBrother loaded=" .. tostring(IsAddOnLoadedSafe("BagBrother")))
+  Print("Globals: BrotherBags=" .. tostring(type(_G and _G.BrotherBags)) .. ", BagBrother=" .. tostring(type(_G and _G.BagBrother)) .. ", BagnonDB=" .. tostring(type(_G and _G.BagnonDB)))
+
+  local function DumpTableKeys(label, t)
+    if type(t) ~= "table" then
+      Print(label .. ": (not a table)")
+      return
+    end
+    local n = 0
+    local sample = {}
+    for k, _ in pairs(t) do
+      n = n + 1
+      if #sample < 8 then
+        table.insert(sample, tostring(k))
+      end
+    end
+    Print(label .. ": keys=" .. tostring(n) .. " sample=[" .. table.concat(sample, ", ") .. "]")
+  end
+
+  DumpTableKeys("BrotherBags", _G and _G.BrotherBags or nil)
+  DumpTableKeys("BagBrother", _G and _G.BagBrother or nil)
+  DumpTableKeys("BagnonDB.characters", (_G and _G.BagnonDB and _G.BagnonDB.characters) or nil)
+end
+
+local function BuildOwnedExportJsonFromCounts(snapshot, items)
+  local parts = {}
+  table.insert(parts, '{"schema":"wowahplanner-owned-v1"')
+  table.insert(parts, ',"snapshotTimestampUtc":"' .. (snapshot.snapshotTimestampUtc or "") .. '"')
+  table.insert(parts, ',"realmName":"' .. (snapshot.realmName or "") .. '"')
+  if snapshot.region then
+    table.insert(parts, ',"region":"' .. tostring(snapshot.region) .. '"')
+  end
+  if snapshot.gameVersion then
+    table.insert(parts, ',"gameVersion":"' .. tostring(snapshot.gameVersion) .. '"')
+  end
+  if snapshot.realmSlug then
+    table.insert(parts, ',"realmSlug":"' .. tostring(snapshot.realmSlug) .. '"')
+  end
+  table.insert(parts, ',"items":[')
+
+  for i, it in ipairs(items or {}) do
+    if i > 1 then table.insert(parts, ",") end
+    table.insert(parts, string.format('{"itemId":%d,"qty":%d}', it.itemId, it.qty or 0))
+  end
+
+  table.insert(parts, "]}")
+  return table.concat(parts)
+end
+
 local exportFrame
-local function ShowExportFrame(textOverride, titleOverride)
+local ShowExportFrame
+
+local function ExportOwned()
+  EnsureDb()
+
+  local wantedSet, wantedCount = BuildWantedItemIdSet()
+  if wantedCount == 0 then
+    Print("No target itemIds loaded. Install targets from the web app first.")
+    return
+  end
+
+  local counts, err = BuildOwnedCountsFromBagBrother(wantedSet)
+  if not counts then
+    Print("Owned export failed: " .. tostring(err))
+    return
+  end
+
+  local realmName = GetRealmName()
+  local realmSlug = NormalizeRealmSlug(realmName)
+  local region = DetectRegion()
+
+  local items = {}
+  for itemId, qty in pairs(counts) do
+    if qty and qty > 0 then
+      table.insert(items, { itemId = itemId, qty = qty })
+    end
+  end
+  table.sort(items, function(a, b) return a.itemId < b.itemId end)
+
+  local snapshot = {
+    schema = "wowahplanner-owned-v1",
+    snapshotTimestampUtc = date("!%Y-%m-%dT%H:%M:%SZ", time()),
+    realmName = realmName,
+    realmSlug = realmSlug,
+    region = region,
+    gameVersion = WowAhPlannerScan_TargetGameVersion,
+    itemCount = #(items or {}),
+    items = items,
+  }
+
+  local json = BuildOwnedExportJsonFromCounts(snapshot, items)
+  WowAhPlannerScanDB.lastOwnedSnapshot = snapshot
+  WowAhPlannerScanDB.lastOwnedJson = json
+
+  ShowExportFrame(json, "WowAhPlanner Owned Items")
+  Print("Owned export ready (" .. tostring(snapshot.itemCount or 0) .. " items). /reload to save SavedVariables for the web app.")
+end
+
+ShowExportFrame = function(textOverride, titleOverride)
   local text = textOverride
   local titleText = titleOverride
   if not text then
@@ -1115,13 +1431,23 @@ SlashCmdList["WOWAHPLANNERSCAN"] = function(msg)
     return
   end
 
-  Print("Commands: /wahpscan start | item <id|link> | stop | status | export | options | panel | log | clearlog | debug | verbose")
+  if cmd == "owned" then
+    ExportOwned()
+    return
+  end
+
+  if cmd == "owneddebug" then
+    OwnedDebug()
+    return
+  end
+
+  Print("Commands: /wahpscan start | item <id|link> | stop | status | export | owned | owneddebug | options | panel | log | clearlog | debug | verbose")
 end
 
 -- Auction House panel UI
 local backdropTemplate = BackdropTemplateMixin and "BackdropTemplate" or nil
 local panel = CreateFrame("Frame", "WowAhPlannerScanPanel", UIParent, backdropTemplate)
-panel:SetSize(240, 170)
+panel:SetSize(240, 198)
 panel:SetFrameStrata("DIALOG")
 panel:SetFrameLevel(1000)
 panel:SetClampedToScreen(true)
@@ -1188,6 +1514,12 @@ logBtn:SetScript("OnClick", function()
   ShowExportFrame(table.concat(log or {}, "\n"), "WowAhPlannerScan Log")
 end)
 
+local ownedBtn = CreateFrame("Button", nil, panel, "UIPanelButtonTemplate")
+ownedBtn:SetPoint("TOPLEFT", 12, -122)
+ownedBtn:SetSize(102, 22)
+ownedBtn:SetText("Owned")
+ownedBtn:SetScript("OnClick", function() ExportOwned() end)
+
 local function UpdatePanelStatus()
   local current = state.currentItemId
   local remaining = #state.queue
@@ -1200,8 +1532,10 @@ local function UpdatePanelStatus()
     statusText:SetText("Scanning...\nCurrent itemId: " .. tostring(current) .. "\nRemaining: " .. tostring(remaining) .. suffix)
   else
     local last = WowAhPlannerScanDB.lastSnapshot and WowAhPlannerScanDB.lastSnapshot.snapshotTimestampUtc or nil
+    local lastOwned = WowAhPlannerScanDB.lastOwnedSnapshot and WowAhPlannerScanDB.lastOwnedSnapshot.snapshotTimestampUtc or nil
     if last then
-      statusText:SetText("Ready.\nLast snapshot: " .. tostring(last))
+      local ownedLine = lastOwned and ("\nOwned: " .. tostring(lastOwned)) or ""
+      statusText:SetText("Ready.\nLast snapshot: " .. tostring(last) .. ownedLine)
     else
       statusText:SetText("Ready.\nNo snapshot yet.")
     end
