@@ -30,6 +30,7 @@ The file defines (among other things):
 - `WowAhPlannerScan_TargetRealmSlug`
 - `WowAhPlannerScan_TargetProfessionId`
 - `WowAhPlannerScan_TargetProfessionName`
+- `WowAhPlannerScan_VendorItemIds`
 - `WowAhPlannerScan_TargetItemIds` (fallback list)
 - `WowAhPlannerScan_RecipeTargets` (preferred list with recipe metadata)
 
@@ -54,9 +55,10 @@ Options include:
 
 - Full scan from targets: `/wahpscan start`
 - Stop: `/wahpscan stop`
-- Export JSON (shows a copyable UI): `/wahpscan export`
-- Quick single-item scan: `/wahpscan item <itemId|itemLink>`
-  - Example: `/wahpscan item 14048`
+- Export scan JSON (shows a copyable UI): `/wahpscan export`
+- Quick single-item scan: `/wahpscan item <itemId|itemLink>` (example: `/wahpscan item 14048`)
+- Export owned materials JSON: `/wahpscan owned`
+- Owned diagnostics: `/wahpscan owneddebug`
 
 Notes:
 - Searches use **quoted names** (`"Item Name"`) to force exact name searches.
@@ -64,25 +66,41 @@ Notes:
 
 ## SavedVariables workflow (no copy/paste)
 
-The addon stores the last export JSON as:
+The addon stores the last exports as:
 - `WowAhPlannerScanDB.lastSnapshotJson`
+- `WowAhPlannerScanDB.lastOwnedJson`
 
 WoW only writes SavedVariables to disk on:
 - `/reload`
 - logout
 - exiting the game
 
-Web app flow:
+Web app flow (prices):
 1) scan in-game
 2) `/reload`
 3) go to `/upload` and use **Import from SavedVariables**
+
+Web app flow (owned):
+1) install targets (recommended) so the addon knows which items matter
+2) `/wahpscan owned`
+3) `/reload`
+4) go to `/owned` and use **Import from SavedVariables**
+
+## Owned materials notes
+
+- Owned export reads your bag/bank/mail/alt inventory from the Bagnon/BagBrother database (`BrotherBags`).
+- It only exports counts for the "wanted" itemIds:
+  - `WowAhPlannerScan_TargetItemIds` (when present), otherwise reagent ids from `WowAhPlannerScan_RecipeTargets`
+  - plus `WowAhPlannerScan_VendorItemIds` (so vendor mats can be excluded from scanning but still counted as owned)
 
 ## Troubleshooting
 
 - `/wahpscan debug` prints what the addon sees (profession info + settings).
 - If you see repeated `Query timeout ... Retrying`, try:
   - staying on the Browse tab
-  - increasing Min query interval (e.g. 4–6 seconds)
-  - lowering Max pages per item (e.g. 1–3)
+  - increasing Min query interval (e.g. 4-6 seconds)
+  - lowering Max pages per item (e.g. 1-3)
   - lowering Max timeout retries
-
+- If owned export says it can't find your bag DB:
+  - run `/wahpscan owneddebug`
+  - confirm `BagBrother` is enabled and then `/reload`

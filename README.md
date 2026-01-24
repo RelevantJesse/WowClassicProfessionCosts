@@ -1,10 +1,10 @@
 # WoW Classic Auction House Profession Planner
 
-Blazor Server app that loads versioned profession recipe data packs, fetches item prices from a pluggable provider (stub JSON for MVP), caches price summaries in SQLite, and generates a cheapest-expected-cost profession leveling plan + shopping list.
+Blazor Server app that loads versioned profession recipe data packs, ingests auction pricing snapshots, caches price summaries in SQLite, and generates a cheapest-expected-cost profession leveling plan + shopping list.
 
 ## Build
 
-`dotnet build`
+`dotnet build WowAhPlanner.slnx`
 
 ## Run
 
@@ -20,27 +20,38 @@ Then open the printed URL (default `https://localhost:5001`).
 
 - Profession + items data packs: `data/Era/items.json`, `data/Era/professions/cooking.json`
 - Anniversary packs (active development): `data/Anniversary/items.json`, `data/Anniversary/professions/*.json`, `data/Anniversary/producers.json`
-- Deterministic stub prices: `data/Era/stub-prices.json`
-  - Anniversary stub prices: `data/Anniversary/stub-prices.json`
+- Deterministic stub prices:
+  - `data/Era/stub-prices.json`
+  - `data/Anniversary/stub-prices.json`
 
-## Uploading real-ish prices (snapshot workflow)
+## In-game scanning + upload workflow
 
-- Target itemId list endpoints:
-  - `GET /api/scans/targets?version=Anniversary`
-  - `GET /api/scans/targets.lua?version=Anniversary`
-  - Optional filters: `&professionId=185&currentSkill=150&maxSkillDelta=100`
-- Recommended recipe-target endpoint (addon filters by your skill + configurable delta):
-  - `GET /api/scans/recipeTargets.lua?version=Anniversary&professionId=185&region=US&realmSlug=dreamscythe`
-  - Note: this also includes `WowAhPlannerScan_TargetItemIds` as a fallback list
-- UI helper: `/targets` (download or install targets into your WoW AddOns folder)
-- Upload UI: `/upload` (stores prices as provider `UploadedSnapshot` in SQLite)
-  - Supports importing from SavedVariables (no copy/paste) after `/reload` in-game
-- Addon + instructions: `addon/WowAhPlannerScan/WowAhPlannerScan.lua`, `docs/addon.md` (includes an AH panel UI and in-game options)
-  - Quick single-item scan: `/wahpscan item <itemId|itemLink>`
+- Generate/install targets (recommended):
+  - Web UI: `/targets` -> **Install targets**
+  - Writes `WowAhPlannerScan_Targets.lua` into `...\World of Warcraft\_anniversary_\Interface\AddOns\WowAhPlannerScan\`
+- In-game (at the Auction House):
+  - Scan: `/wahpscan start` (or use the AH panel)
+  - Optional one-off: `/wahpscan item <itemId|itemLink>`
+  - Export UI: `/wahpscan export`
+  - Then `/reload` so SavedVariables are written
+- Upload to the app:
+  - `/upload` -> **Import from SavedVariables** (no copy/paste)
+
+Addon docs: `docs/addon.md`
+
+## Owned materials workflow
+
+- In-game:
+  - `/wahpscan owned`
+  - `/reload`
+- In the web app:
+  - `/owned` -> **Import from SavedVariables**
+
+Owned mats are saved per user and per realm and can be subtracted from the plan shopping list.
 
 ## Phase 2
 
-See `Phase2.md` for the plan to scale to Anniversary/TBC and beyond (full recipe packs + real-ish time auction pricing).
+See `Phase2.md` for the plan to scale Anniversary/TBC and beyond (full recipe packs + additional price ingestion options).
 
 ## Status / notes
 
