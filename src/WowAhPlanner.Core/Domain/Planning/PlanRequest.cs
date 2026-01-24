@@ -7,5 +7,6 @@ public sealed record PlanRequest(
     int ProfessionId,
     int CurrentSkill,
     int TargetSkill,
-    PriceMode PriceMode);
-
+    PriceMode PriceMode,
+    bool UseCraftIntermediates = true,
+    bool UseSmeltIntermediates = true);

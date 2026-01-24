@@ -14,6 +14,19 @@
 </div>
 
 <div class="card">
+    <h3>Import from SavedVariables (no copy/paste)</h3>
+    <p>
+        Point this at your <code>WTF\Account\...\SavedVariables\WowAhPlannerScan.lua</code> file.
+        Note: WoW writes SavedVariables on <code>/reload</code>, logout, or exit.
+    </p>
+    <input type="text" @bind="_savedVariablesPath" style="width:100%" placeholder="C:\Program Files (x86)\World of Warcraft\_anniversary_\WTF\Account\...\SavedVariables\WowAhPlannerScan.lua" />
+    <div style="margin-top:0.75rem">
+        <button @onclick="LoadFromSavedVariablesAsync" disabled="@_busy">Load into textarea</button>
+        <button @onclick="LoadAndUploadFromSavedVariablesAsync" disabled="@_busy">Load + Upload</button>
+    </div>
+</div>
+
+<div class="card">
     <h3>Paste JSON</h3>
     <p>Expected schema: <span class="badge">wowahplanner-scan-v1</span></p>
     <textarea @bind="_json" style="width:100%;min-height:220px"></textarea>
@@ -28,6 +41,7 @@
 
 @code {
     private string _json = "";
+    private string _savedVariablesPath = "";
     private string? _message;
     private bool _busy;
 
@@ -45,8 +59,62 @@
 
         try
         {
+            await UploadJsonAsync(_json);
+        }
+        finally
+        {
+            _busy = false;
+        }
+    }
+
+    private async Task LoadFromSavedVariablesAsync()
+    {
+        _busy = true;
+        _message = null;
+
+        try
+        {
+            var json = await ReadLastSnapshotJsonFromSavedVariablesAsync(_savedVariablesPath);
+            _json = json;
+            _message = "Loaded snapshot JSON from SavedVariables. Click Upload to store it.";
+        }
+        catch (Exception ex)
+        {
+            _message = ex.Message;
+        }
+        finally
+        {
+            _busy = false;
+        }
+    }
+
+    private async Task LoadAndUploadFromSavedVariablesAsync()
+    {
+        _busy = true;
+        _message = null;
+
+        try
+        {
+            var json = await ReadLastSnapshotJsonFromSavedVariablesAsync(_savedVariablesPath);
+            _json = json;
+            await UploadJsonAsync(json);
+        }
+        catch (Exception ex)
+        {
+            _message = ex.Message;
+        }
+        finally
+        {
+            _busy = false;
+        }
+    }
+
+    private async Task UploadJsonAsync(string json)
+    {
+        try
+        {
             var dto = System.Text.Json.JsonSerializer.Deserialize<UploadSnapshotDto>(
-                _json,
+                json,
                 new System.Text.Json.JsonSerializerOptions(System.Text.Json.JsonSerializerDefaults.Web));
 
             if (dto is null)
@@ -111,10 +179,97 @@
         {
             _message = ex.Message;
         }
-        finally
+    }
+
+    private static async Task<string> ReadLastSnapshotJsonFromSavedVariablesAsync(string path)
+    {
+        if (string.IsNullOrWhiteSpace(path))
         {
-            _busy = false;
+            throw new InvalidOperationException("SavedVariables path is required.");
         }
+
+        if (!File.Exists(path))
+        {
+            throw new FileNotFoundException("SavedVariables file not found.", path);
+        }
+
+        var content = await File.ReadAllTextAsync(path);
+        var match = System.Text.RegularExpressions.Regex.Match(
+            content,
+            "(?:\\[\\s*\\\"lastSnapshotJson\\\"\\s*\\]|lastSnapshotJson)\\s*=\\s*\\\"(?<val>(?:\\\\.|[^\\\\\\\"])*?)\\\"",
+            System.Text.RegularExpressions.RegexOptions.Singleline);
+
+        if (!match.Success)
+        {
+            throw new InvalidOperationException("Could not find lastSnapshotJson in SavedVariables. Run a scan and then /reload (or logout/exit) so WoW writes SavedVariables.");
+        }
+
+        var escaped = match.Groups["val"].Value;
+        return UnescapeLuaString(escaped);
+    }
+
+    private static string UnescapeLuaString(string value)
+    {
+        var sb = new System.Text.StringBuilder(value.Length);
+
+        for (var i = 0; i < value.Length; i++)
+        {
+            var c = value[i];
+            if (c != '\\')
+            {
+                sb.Append(c);
+                continue;
+            }
+
+            if (i == value.Length - 1)
+            {
+                sb.Append('\\');
+                break;
+            }
+
+            var n = value[++i];
+            switch (n)
+            {
+                case '\\':
+                    sb.Append('\\');
+                    break;
+                case '\"':
+                    sb.Append('\"');
+                    break;
+                case 'n':
+                    sb.Append('\n');
+                    break;
+                case 'r':
+                    sb.Append('\r');
+                    break;
+                case 't':
+                    sb.Append('\t');
+                    break;
+                default:
+                    if (n >= '0' && n <= '9')
+                    {
+                        var num = n - '0';
+                        var digits = 1;
+                        while (digits < 3 && i + 1 < value.Length)
+                        {
+                            var d = value[i + 1];
+                            if (d < '0' || d > '9') break;
+                            num = (num * 10) + (d - '0');
+                            i++;
+                            digits++;
+                        }
+
+                        sb.Append((char)num);
+                    }
+                    else
+                    {
+                        sb.Append(n);
+                    }
+                    break;
+            }
+        }
+
+        return sb.ToString();
     }
 
     private sealed class UploadSnapshotDto

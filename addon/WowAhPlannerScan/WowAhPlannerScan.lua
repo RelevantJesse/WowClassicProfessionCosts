@@ -163,37 +163,27 @@ local function OpenOptionsUi()
 
   if Settings and Settings.OpenToCategory then
     local id = WowAhPlannerScanDB and WowAhPlannerScanDB._settingsCategoryId or nil
-    if id then
-      local ok1, err1 = pcall(Settings.OpenToCategory, id)
-      if not ok1 then
-        DebugPrint("Settings.OpenToCategory(id) failed: " .. tostring(err1))
-      end
 
-      -- Many clients require a second call (often after the settings frame is shown)
-      -- to actually navigate to the addon category.
-      if C_Timer and C_Timer.After then
-        C_Timer.After(0, function()
-          local ok2, err2 = pcall(Settings.OpenToCategory, id)
-          if not ok2 then
-            DebugPrint("Settings.OpenToCategory(id) retry failed: " .. tostring(err2))
-          end
-        end)
-      else
-        pcall(Settings.OpenToCategory, id)
-      end
-      return
-    end
-
-    do
+    local function TryOpen()
       pcall(Settings.OpenToCategory, "AddOns")
-      local ok1 = pcall(Settings.OpenToCategory, "WowAhPlannerScan")
-      if C_Timer and C_Timer.After then
-        C_Timer.After(0, function() pcall(Settings.OpenToCategory, "WowAhPlannerScan") end)
-      else
-        pcall(Settings.OpenToCategory, "WowAhPlannerScan")
+      if state and state.settingsCategory then
+        pcall(Settings.OpenToCategory, state.settingsCategory)
+        return
       end
-      if ok1 then return end
+      if id then
+        pcall(Settings.OpenToCategory, id)
+        return
+      end
+      pcall(Settings.OpenToCategory, "WowAhPlannerScan")
     end
+
+    TryOpen()
+    if C_Timer and C_Timer.After then
+      C_Timer.After(0, TryOpen)
+      C_Timer.After(0.05, TryOpen)
+      C_Timer.After(0.15, TryOpen)
+    end
+    return
   end
 
   if InterfaceOptionsFrame_OpenToCategory then
@@ -396,6 +386,25 @@ local function StartSnapshot()
   state.canQueryFalseCount = 0
 end
 
+local function BuildExportJsonFromSnapshot(snap)
+  if not snap then return nil end
+
+  local parts = {}
+  table.insert(parts, '{"schema":"wowahplanner-scan-v1"')
+  table.insert(parts, ',"snapshotTimestampUtc":"' .. (snap.snapshotTimestampUtc or "") .. '"')
+  table.insert(parts, ',"realmName":"' .. (snap.realmName or "") .. '"')
+  table.insert(parts, ',"faction":"' .. (snap.faction or "") .. '"')
+  table.insert(parts, ',"prices":[')
+
+  for i, p in ipairs(snap.prices or {}) do
+    if i > 1 then table.insert(parts, ",") end
+    table.insert(parts, string.format('{"itemId":%d,"minUnitBuyoutCopper":%d,"totalQuantity":%d}', p.itemId, p.minUnitBuyoutCopper or 0, p.totalQuantity or 0))
+  end
+
+  table.insert(parts, "]}")
+  return table.concat(parts)
+end
+
 local function FinishSnapshot()
   local rank = tonumber(GetSetting("priceRank", 3)) or 3
   if rank < 1 then rank = 1 end
@@ -427,6 +436,7 @@ local function FinishSnapshot()
   table.sort(snapshot.prices, function(a, b) return a.itemId < b.itemId end)
 
   WowAhPlannerScanDB.lastSnapshot = snapshot
+  WowAhPlannerScanDB.lastSnapshotJson = BuildExportJsonFromSnapshot(snapshot)
   WowAhPlannerScanDB.lastGeneratedAtEpochUtc = snapshot.generatedAtEpochUtc
 
   state.running = false
@@ -434,27 +444,15 @@ local function FinishSnapshot()
   state.queue = {}
   state.awaiting = false
 
-  Print("Scan complete. Items priced: " .. tostring(#(snapshot.prices or {})) .. ". Use /wahpscan export to copy JSON.")
+  Print("Scan complete. Items priced: " .. tostring(#(snapshot.prices or {})) .. ". Use /wahpscan export to copy JSON (or /reload to save SavedVariables for the web app).")
 end
 
 local function BuildExportJson()
   local snap = WowAhPlannerScanDB.lastSnapshot
   if not snap then return nil end
-
-  local parts = {}
-  table.insert(parts, '{"schema":"wowahplanner-scan-v1"')
-  table.insert(parts, ',"snapshotTimestampUtc":"' .. snap.snapshotTimestampUtc .. '"')
-  table.insert(parts, ',"realmName":"' .. (snap.realmName or "") .. '"')
-  table.insert(parts, ',"faction":"' .. (snap.faction or "") .. '"')
-  table.insert(parts, ',"prices":[')
-
-  for i, p in ipairs(snap.prices or {}) do
-    if i > 1 then table.insert(parts, ",") end
-    table.insert(parts, string.format('{"itemId":%d,"minUnitBuyoutCopper":%d,"totalQuantity":%d}', p.itemId, p.minUnitBuyoutCopper or 0, p.totalQuantity or 0))
-  end
-
-  table.insert(parts, "]}")
-  return table.concat(parts)
+  local json = BuildExportJsonFromSnapshot(snap)
+  WowAhPlannerScanDB.lastSnapshotJson = json
+  return json
 end
 
 local exportFrame
@@ -1216,23 +1214,24 @@ local optionsParent = InterfaceOptionsFramePanelContainer or UIParent
 local optionsFrame = CreateFrame("Frame", OPTIONS_FRAME_NAME, optionsParent)
 optionsFrame.name = "WowAhPlannerScan"
 
-local optionsRegistered = false
+local optionsLegacyRegistered = false
+local optionsSettingsRegistered = false
 TryRegisterOptions = function()
-  if optionsRegistered then return end
-  if InterfaceOptions_AddCategory then
+  if (not optionsLegacyRegistered) and InterfaceOptions_AddCategory then
     InterfaceOptions_AddCategory(optionsFrame)
-    optionsRegistered = true
+    optionsLegacyRegistered = true
     DebugPrint("Options registered via InterfaceOptions_AddCategory")
   end
-  if (not optionsRegistered) and Settings and Settings.RegisterCanvasLayoutCategory and Settings.RegisterAddOnCategory then
+  if (not optionsSettingsRegistered) and Settings and Settings.RegisterCanvasLayoutCategory and Settings.RegisterAddOnCategory then
     local category = Settings.RegisterCanvasLayoutCategory(optionsFrame, "WowAhPlannerScan")
     Settings.RegisterAddOnCategory(category)
+    state.settingsCategory = category
     if category and category.GetID then
       WowAhPlannerScanDB._settingsCategoryId = category:GetID()
     elseif category and category.ID then
       WowAhPlannerScanDB._settingsCategoryId = category.ID
     end
-    optionsRegistered = true
+    optionsSettingsRegistered = true
     DebugPrint("Options registered via Settings.RegisterAddOnCategory")
   end
 end

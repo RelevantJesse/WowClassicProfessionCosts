@@ -1,0 +1,88 @@
+{
+  "schema": "wowahplanner-producers-v1",
+  "producers": [
+    {
+      "producerId": "smelt-copper-bar",
+      "name": "Smelt Copper Bar",
+      "kind": "Smelt",
+      "output": { "itemId": 2840, "qty": 1 },
+      "reagents": [
+        { "itemId": 2770, "qty": 1 }
+      ]
+    },
+    {
+      "producerId": "smelt-tin-bar",
+      "name": "Smelt Tin Bar",
+      "kind": "Smelt",
+      "output": { "itemId": 3576, "qty": 1 },
+      "reagents": [
+        { "itemId": 2771, "qty": 1 }
+      ]
+    },
+    {
+      "producerId": "smelt-bronze-bar",
+      "name": "Smelt Bronze Bar",
+      "kind": "Smelt",
+      "output": { "itemId": 2841, "qty": 2 },
+      "reagents": [
+        { "itemId": 2840, "qty": 1 },
+        { "itemId": 3576, "qty": 1 }
+      ]
+    },
+    {
+      "producerId": "smelt-silver-bar",
+      "name": "Smelt Silver Bar",
+      "kind": "Smelt",
+      "output": { "itemId": 2842, "qty": 1 },
+      "reagents": [
+        { "itemId": 2775, "qty": 1 }
+      ]
+    },
+    {
+      "producerId": "smelt-gold-bar",
+      "name": "Smelt Gold Bar",
+      "kind": "Smelt",
+      "output": { "itemId": 3577, "qty": 1 },
+      "reagents": [
+        { "itemId": 2776, "qty": 1 }
+      ]
+    },
+    {
+      "producerId": "smelt-truesilver-bar",
+      "name": "Smelt Truesilver Bar",
+      "kind": "Smelt",
+      "output": { "itemId": 6037, "qty": 1 },
+      "reagents": [
+        { "itemId": 7911, "qty": 1 }
+      ]
+    },
+    {
+      "producerId": "smelt-iron-bar",
+      "name": "Smelt Iron Bar",
+      "kind": "Smelt",
+      "output": { "itemId": 3575, "qty": 1 },
+      "reagents": [
+        { "itemId": 2772, "qty": 1 }
+      ]
+    },
+    {
+      "producerId": "smelt-mithril-bar",
+      "name": "Smelt Mithril Bar",
+      "kind": "Smelt",
+      "output": { "itemId": 3860, "qty": 1 },
+      "reagents": [
+        { "itemId": 3858, "qty": 1 }
+      ]
+    },
+    {
+      "producerId": "smelt-thorium-bar",
+      "name": "Smelt Thorium Bar",
+      "kind": "Smelt",
+      "output": { "itemId": 12359, "qty": 1 },
+      "reagents": [
+        { "itemId": 10620, "qty": 1 }
+      ]
+    }
+  ]
+}
+

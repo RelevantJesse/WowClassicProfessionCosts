@@ -12,7 +12,8 @@ public sealed record Recipe(
     IReadOnlyList<Reagent> Reagents,
     bool? LearnedByTrainer = null,
     int? CooldownSeconds = null,
-    RecipeOutput? Output = null)
+    RecipeOutput? Output = null,
+    int? OutputQuality = null)
 {
     public DifficultyColor GetDifficultyAtSkill(int skill)
     {

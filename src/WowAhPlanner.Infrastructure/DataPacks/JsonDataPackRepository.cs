@@ -4,12 +4,13 @@ using System.Text.Json;
 using WowAhPlanner.Core.Domain;
 using WowAhPlanner.Core.Ports;
 
-public sealed class JsonDataPackRepository : IRecipeRepository, IItemRepository, IVendorPriceRepository
+public sealed class JsonDataPackRepository : IRecipeRepository, IItemRepository, IVendorPriceRepository, IProducerRepository
 {
     private readonly Dictionary<GameVersion, IReadOnlyList<Profession>> _professionsByVersion = new();
     private readonly Dictionary<(GameVersion Version, int ProfessionId), IReadOnlyList<Recipe>> _recipes = new();
     private readonly Dictionary<GameVersion, IReadOnlyDictionary<int, string>> _itemsByVersion = new();
     private readonly Dictionary<GameVersion, IReadOnlyDictionary<int, long>> _vendorPricesByVersion = new();
+    private readonly Dictionary<GameVersion, IReadOnlyList<Producer>> _producersByVersion = new();
 
     public JsonDataPackRepository(DataPackOptions options)
     {
@@ -56,6 +57,13 @@ public sealed class JsonDataPackRepository : IRecipeRepository, IItemRepository,
         return vendor.TryGetValue(itemId, out var v) ? v : null;
     }
 
+    public Task<IReadOnlyList<Producer>> GetProducersAsync(GameVersion gameVersion, CancellationToken cancellationToken)
+    {
+        _producersByVersion.TryGetValue(gameVersion, out var producers);
+        producers ??= [];
+        return Task.FromResult(producers);
+    }
+
     private void LoadAll(string rootPath)
     {
         if (!Directory.Exists(rootPath))
@@ -75,6 +83,8 @@ public sealed class JsonDataPackRepository : IRecipeRepository, IItemRepository,
             _itemsByVersion[version] = items;
             _vendorPricesByVersion[version] = vendorPrices;
 
+            _producersByVersion[version] = LoadProducers(versionDir);
+
             var professionsDir = Path.Combine(versionDir, "professions");
             if (!Directory.Exists(professionsDir))
             {
@@ -92,6 +102,32 @@ public sealed class JsonDataPackRepository : IRecipeRepository, IItemRepository,
             }
 
             _professionsByVersion[version] = professions.OrderBy(p => p.ProfessionId).ToArray();
+        }
+    }
+
+    private static IReadOnlyList<Producer> LoadProducers(string versionDir)
+    {
+        var path = Path.Combine(versionDir, "producers.json");
+        if (!File.Exists(path))
+        {
+            return [];
+        }
+
+        try
+        {
+            var json = File.ReadAllText(path);
+            var pack = JsonSerializer.Deserialize<ProducerPackDto>(json, JsonDefaults.Options);
+            if (pack is null)
+            {
+                throw new DataPackValidationException($"Invalid producers.json in {versionDir} (null).");
+            }
+
+            pack.Validate(path);
+            return (pack.Producers ?? []).Select(p => p.ToDomain()).ToArray();
+        }
+        catch (JsonException ex)
+        {
+            throw new DataPackValidationException($"Invalid JSON in {path}: {ex.Message}");
         }
     }
 
@@ -231,6 +267,7 @@ public sealed class JsonDataPackRepository : IRecipeRepository, IItemRepository,
         public string? Name { get; set; }
         public int? CreatesItemId { get; set; }
         public int? CreatesQuantity { get; set; }
+        public int? OutputQuality { get; set; }
         public bool? LearnedByTrainer { get; set; }
         public int? CooldownSeconds { get; set; }
         public int MinSkill { get; set; }
@@ -247,6 +284,7 @@ public sealed class JsonDataPackRepository : IRecipeRepository, IItemRepository,
             if (string.IsNullOrWhiteSpace(Name)) throw new DataPackValidationException($"Missing name in {path} (recipeId={RecipeId}).");
             if (CreatesItemId is int createsId && createsId <= 0) throw new DataPackValidationException($"Invalid createsItemId in {path} (recipeId={RecipeId}).");
             if (CreatesItemId is int && CreatesQuantity is int q && q <= 0) throw new DataPackValidationException($"Invalid createsQuantity in {path} (recipeId={RecipeId}).");
+            if (OutputQuality is int oq && (oq < 0 || oq > 5)) throw new DataPackValidationException($"Invalid outputQuality in {path} (recipeId={RecipeId}).");
             if (MinSkill < 0) throw new DataPackValidationException($"Invalid minSkill in {path} (recipeId={RecipeId}).");
             if (CooldownSeconds is int cd && cd < 0) throw new DataPackValidationException($"Invalid cooldownSeconds in {path} (recipeId={RecipeId}).");
             if (OrangeUntil < MinSkill) throw new DataPackValidationException($"Invalid orangeUntil in {path} (recipeId={RecipeId}).");
@@ -275,7 +313,8 @@ public sealed class JsonDataPackRepository : IRecipeRepository, IItemRepository,
             CooldownSeconds: CooldownSeconds,
             Output: CreatesItemId is int itemId && itemId > 0
                 ? new RecipeOutput(itemId, CreatesQuantity is int q && q > 0 ? q : 1)
-                : null);
+                : null,
+            OutputQuality: OutputQuality);
     }
 
     private sealed class ReagentDto
@@ -290,5 +329,83 @@ public sealed class JsonDataPackRepository : IRecipeRepository, IItemRepository,
         }
 
         public Reagent ToDomain() => new(ItemId, Qty);
+    }
+
+    private sealed class ProducerPackDto
+    {
+        public string? Schema { get; set; }
+        public List<ProducerDto>? Producers { get; set; }
+
+        public void Validate(string path)
+        {
+            if (!string.Equals(Schema, "wowahplanner-producers-v1", StringComparison.OrdinalIgnoreCase))
+            {
+                throw new DataPackValidationException($"Unsupported producers schema '{Schema}' in {path}.");
+            }
+
+            if (Producers is null || Producers.Count == 0)
+            {
+                throw new DataPackValidationException($"Missing producers[] in {path}.");
+            }
+
+            var ids = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            foreach (var producer in Producers)
+            {
+                producer.Validate(path);
+                if (!ids.Add(producer.ProducerId!))
+                {
+                    throw new DataPackValidationException($"Duplicate producerId '{producer.ProducerId}' in {path}.");
+                }
+            }
+        }
+    }
+
+    private sealed class ProducerDto
+    {
+        public string? ProducerId { get; set; }
+        public string? Name { get; set; }
+        public string? Kind { get; set; }
+        public OutputDto? Output { get; set; }
+        public int? MinSkill { get; set; }
+        public List<ReagentDto>? Reagents { get; set; }
+
+        public void Validate(string path)
+        {
+            if (string.IsNullOrWhiteSpace(ProducerId)) throw new DataPackValidationException($"Missing producerId in {path}.");
+            if (string.IsNullOrWhiteSpace(Name)) throw new DataPackValidationException($"Missing producer name in {path} (producerId={ProducerId}).");
+            if (string.IsNullOrWhiteSpace(Kind)) throw new DataPackValidationException($"Missing kind in {path} (producerId={ProducerId}).");
+            if (!Enum.TryParse<ProducerKind>(Kind, ignoreCase: true, out _)) throw new DataPackValidationException($"Invalid kind '{Kind}' in {path} (producerId={ProducerId}).");
+            if (Output is null) throw new DataPackValidationException($"Missing output in {path} (producerId={ProducerId}).");
+            Output.Validate(path, ProducerId);
+            if (MinSkill is int ms && ms < 0) throw new DataPackValidationException($"Invalid minSkill in {path} (producerId={ProducerId}).");
+            if (Reagents is null || Reagents.Count == 0) throw new DataPackValidationException($"Missing reagents[] in {path} (producerId={ProducerId}).");
+            foreach (var reagent in Reagents) reagent.Validate(path, ProducerId);
+        }
+
+        public Producer ToDomain()
+        {
+            Enum.TryParse<ProducerKind>(Kind!, ignoreCase: true, out var kind);
+            return new Producer(
+                ProducerId: ProducerId!,
+                Name: Name!,
+                Kind: kind,
+                Output: Output!.ToDomain(),
+                Reagents: (Reagents ?? []).Select(r => r.ToDomain()).ToArray(),
+                MinSkill: MinSkill);
+        }
+    }
+
+    private sealed class OutputDto
+    {
+        public int ItemId { get; set; }
+        public int Qty { get; set; }
+
+        public void Validate(string path, string? producerId)
+        {
+            if (ItemId <= 0) throw new DataPackValidationException($"Invalid output itemId in {path} (producerId={producerId}).");
+            if (Qty <= 0) throw new DataPackValidationException($"Invalid output qty in {path} (producerId={producerId}).");
+        }
+
+        public RecipeOutput ToDomain() => new(ItemId, Qty);
     }
 }

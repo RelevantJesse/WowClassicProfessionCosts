@@ -42,7 +42,9 @@ public sealed class PlannerServiceTests
         });
         var vendorRepo = new InMemoryVendorPriceRepository(new Dictionary<int, long>());
 
-        var planner = new PlannerService(recipeRepo, priceService, vendorRepo);
+        var producerRepo = new InMemoryProducerRepository();
+
+        var planner = new PlannerService(recipeRepo, priceService, vendorRepo, producerRepo);
         var result = await planner.BuildPlanAsync(
             new PlanRequest(
                 RealmKey: new RealmKey(Region.US, GameVersion.Era, "whitemane"),
@@ -92,7 +94,9 @@ public sealed class PlannerServiceTests
         });
         var vendorRepo = new InMemoryVendorPriceRepository(new Dictionary<int, long>());
 
-        var planner = new PlannerService(recipeRepo, priceService, vendorRepo);
+        var producerRepo = new InMemoryProducerRepository();
+
+        var planner = new PlannerService(recipeRepo, priceService, vendorRepo, producerRepo);
         var result = await planner.BuildPlanAsync(
             new PlanRequest(
                 RealmKey: new RealmKey(Region.US, GameVersion.Era, "whitemane"),
@@ -127,7 +131,9 @@ public sealed class PlannerServiceTests
         var priceService = new InMemoryPriceService(new Dictionary<int, long> { [100] = 10 });
         var vendorRepo = new InMemoryVendorPriceRepository(new Dictionary<int, long>());
 
-        var planner = new PlannerService(recipeRepo, priceService, vendorRepo);
+        var producerRepo = new InMemoryProducerRepository();
+
+        var planner = new PlannerService(recipeRepo, priceService, vendorRepo, producerRepo);
         var result = await planner.BuildPlanAsync(
             new PlanRequest(
                 RealmKey: new RealmKey(Region.US, GameVersion.Era, "whitemane"),
@@ -179,7 +185,9 @@ public sealed class PlannerServiceTests
         });
         var vendorRepo = new InMemoryVendorPriceRepository(new Dictionary<int, long>());
 
-        var planner = new PlannerService(recipeRepo, priceService, vendorRepo);
+        var producerRepo = new InMemoryProducerRepository();
+
+        var planner = new PlannerService(recipeRepo, priceService, vendorRepo, producerRepo);
         var result = await planner.BuildPlanAsync(
             new PlanRequest(
                 RealmKey: new RealmKey(Region.US, GameVersion.Era, "whitemane"),
@@ -215,7 +223,9 @@ public sealed class PlannerServiceTests
         var priceService = new InMemoryPriceService(new Dictionary<int, long>());
         var vendorRepo = new InMemoryVendorPriceRepository(new Dictionary<int, long> { [2320] = 40 });
 
-        var planner = new PlannerService(recipeRepo, priceService, vendorRepo);
+        var producerRepo = new InMemoryProducerRepository();
+
+        var planner = new PlannerService(recipeRepo, priceService, vendorRepo, producerRepo);
         var result = await planner.BuildPlanAsync(
             new PlanRequest(
                 RealmKey: new RealmKey(Region.US, GameVersion.Era, "whitemane"),
@@ -267,6 +277,12 @@ public sealed class PlannerServiceTests
 
         public Task<long?> GetVendorPriceCopperAsync(GameVersion gameVersion, int itemId, CancellationToken cancellationToken)
             => Task.FromResult(vendorPrices.TryGetValue(itemId, out var v) ? (long?)v : null);
+    }
+
+    private sealed class InMemoryProducerRepository(params Producer[] producers) : IProducerRepository
+    {
+        public Task<IReadOnlyList<Producer>> GetProducersAsync(GameVersion gameVersion, CancellationToken cancellationToken)
+            => Task.FromResult<IReadOnlyList<Producer>>(producers);
     }
 }
 

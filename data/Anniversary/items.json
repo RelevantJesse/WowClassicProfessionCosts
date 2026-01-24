@@ -9190,5 +9190,29 @@
   {
     "itemId": 191061,
     "name": "Brilliant Glass"
+  },
+  {
+    "itemId": 2770,
+    "name": "Copper Ore"
+  },
+  {
+    "itemId": 2771,
+    "name": "Tin Ore"
+  },
+  {
+    "itemId": 2775,
+    "name": "Silver Ore"
+  },
+  {
+    "itemId": 2776,
+    "name": "Gold Ore"
+  },
+  {
+    "itemId": 3576,
+    "name": "Tin Bar"
+  },
+  {
+    "itemId": 7911,
+    "name": "Truesilver Ore"
   }
 ]

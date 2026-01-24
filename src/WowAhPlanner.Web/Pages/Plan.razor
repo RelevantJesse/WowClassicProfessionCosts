@@ -31,6 +31,16 @@
             Target skill
             <input type="number" @bind="_targetSkill" min="0" max="450" />
         </label>
+
+        <label>
+            <input type="checkbox" @bind="_useCraftIntermediates" />
+            Craft intermediates (bolts, etc.)
+        </label>
+
+        <label>
+            <input type="checkbox" @bind="_useSmeltIntermediates" />
+            Smelt intermediates (bars from ore)
+        </label>
     </div>
 
     <div style="margin-top:0.75rem">
@@ -112,6 +122,37 @@
             </table>
         </div>
 
+        @if (_result.Plan.Intermediates.Count > 0)
+        {
+            <div class="card">
+                <h3>Intermediates</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity (expected)</th>
+                        <th>Method</th>
+                        <th>How</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var line in _result.Plan.Intermediates)
+                    {
+                        <tr>
+                            <td>
+                                @(_itemNames.GetValueOrDefault(line.ItemId) ?? $"Item {line.ItemId}")
+                                <span class="badge">@line.ItemId</span>
+                            </td>
+                            <td>@line.Quantity.ToString("0.##")</td>
+                            <td>@line.Kind</td>
+                            <td>@line.ProducerName</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        }
+
         <div class="card">
             <h3>Shopping list</h3>
             <table>
@@ -155,6 +196,8 @@
     private int _professionId;
     private int _currentSkill = 1;
     private int _targetSkill = 75;
+    private bool _useCraftIntermediates = true;
+    private bool _useSmeltIntermediates = true;
     private bool _ready;
     private Dictionary<int, string> _itemNames = new();
     private HashSet<int> _vendorItemIds = new();
@@ -194,7 +237,9 @@
             ProfessionId: _professionId,
             CurrentSkill: _currentSkill,
             TargetSkill: _targetSkill,
-            PriceMode: PriceMode.Min);
+            PriceMode: PriceMode.Min,
+            UseCraftIntermediates: _useCraftIntermediates,
+            UseSmeltIntermediates: _useSmeltIntermediates);
 
         _result = await Planner.BuildPlanAsync(request, CancellationToken.None);
 

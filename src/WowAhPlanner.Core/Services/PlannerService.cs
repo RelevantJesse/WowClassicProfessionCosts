@@ -8,7 +8,8 @@ using WowAhPlanner.Core.Ports;
 public sealed class PlannerService(
     IRecipeRepository recipeRepository,
     IPriceService priceService,
-    IVendorPriceRepository vendorPriceRepository)
+    IVendorPriceRepository vendorPriceRepository,
+    IProducerRepository producerRepository)
 {
     private readonly SkillUpChanceModel _defaultChanceModel = new();
 
@@ -17,7 +18,7 @@ public sealed class PlannerService(
         if (request.TargetSkill <= request.CurrentSkill)
         {
             return new PlanComputationResult(
-                Plan: new PlanResult([], [], Money.Zero, DateTime.UtcNow),
+                Plan: new PlanResult([], [], [], Money.Zero, DateTime.UtcNow),
                 PriceSnapshot: new PriceSnapshot(
                     request.RealmKey,
                     ProviderName: "n/a",
@@ -47,8 +48,9 @@ public sealed class PlannerService(
         }
 
         var vendorPrices = await vendorPriceRepository.GetVendorPricesAsync(gameVersion, cancellationToken);
+        var producers = await producerRepository.GetProducersAsync(gameVersion, cancellationToken);
 
-        var allItemIds =
+        var directReagentItemIds =
             recipes.SelectMany(r => r.Reagents)
                 .Select(r => r.ItemId)
                 .Where(itemId => !vendorPrices.ContainsKey(itemId))
@@ -56,11 +58,34 @@ public sealed class PlannerService(
                 .OrderBy(x => x)
                 .ToArray();
 
-        var snapshot = await priceService.GetPricesAsync(request.RealmKey, allItemIds, request.PriceMode, cancellationToken);
+        var smelt = ProducerIndex.Build(producers.Where(p => p.Kind == ProducerKind.Smelt));
+
+        var allItemIds = directReagentItemIds.ToHashSet();
+        if (request.UseSmeltIntermediates)
+        {
+            foreach (var itemId in directReagentItemIds)
+            {
+                AddSmeltClosureItemIds(itemId, smelt, allItemIds);
+            }
+        }
+
+        var snapshot = await priceService.GetPricesAsync(
+            request.RealmKey,
+            allItemIds.OrderBy(x => x).ToArray(),
+            request.PriceMode,
+            cancellationToken);
         var priceByItemId = snapshot.Prices.ToFrozenDictionary(kvp => kvp.Key, kvp => kvp.Value);
 
         var craftables = CraftableIndex.Build(recipes);
-        var resolver = new ReagentResolver(request.PriceMode, vendorPrices, priceByItemId, craftables, request.TargetSkill);
+        var resolver = new ReagentResolver(
+            request.PriceMode,
+            vendorPrices,
+            priceByItemId,
+            craftables,
+            smelt,
+            request.TargetSkill,
+            request.UseCraftIntermediates,
+            request.UseSmeltIntermediates);
 
         var steps = new List<PlanStep>();
         var shopping = new Dictionary<int, decimal>();
@@ -137,12 +162,42 @@ public sealed class PlannerService(
             .ToArray();
 
         var total = shoppingLines.Aggregate(Money.Zero, (acc, line) => acc + line.LineCost);
+        var intermediates = resolver.GetIntermediates();
 
         return new PlanComputationResult(
-            Plan: new PlanResult(steps, shoppingLines, total, DateTime.UtcNow),
+            Plan: new PlanResult(steps, intermediates, shoppingLines, total, DateTime.UtcNow),
             PriceSnapshot: snapshot,
             MissingItemIds: [],
             ErrorMessage: null);
+    }
+
+    private static void AddSmeltClosureItemIds(int itemId, ProducerIndex smelt, HashSet<int> into)
+    {
+        var visited = new HashSet<int>();
+        AddSmeltClosureItemIdsInner(itemId, smelt, into, visited);
+    }
+
+    private static void AddSmeltClosureItemIdsInner(int itemId, ProducerIndex smelt, HashSet<int> into, HashSet<int> visited)
+    {
+        if (!visited.Add(itemId))
+        {
+            return;
+        }
+
+        into.Add(itemId);
+
+        if (!smelt.TryGetProducers(itemId, out var producers))
+        {
+            return;
+        }
+
+        foreach (var producer in producers)
+        {
+            foreach (var reagent in producer.Reagents)
+            {
+                AddSmeltClosureItemIdsInner(reagent.ItemId, smelt, into, visited);
+            }
+        }
     }
 
     private (Recipe recipe, decimal chance, Money craftCost, Money expectedCost, decimal expectedCrafts)? FindBestRecipeAtSkill(
@@ -158,6 +213,7 @@ public sealed class PlannerService(
         {
             if (skill < recipe.MinSkill) continue;
             if (recipe.CooldownSeconds is int cd && cd > 0) continue;
+            if (recipe.OutputQuality is int q && q >= 3) continue;
 
             var color = recipe.GetDifficultyAtSkill(skill);
             var p = _defaultChanceModel.GetChance(color);
@@ -195,11 +251,26 @@ public sealed class PlannerService(
         IReadOnlyDictionary<int, long> vendorPrices,
         FrozenDictionary<int, PriceSummary> prices,
         CraftableIndex craftables,
-        int craftabilitySkillCap)
+        ProducerIndex smelt,
+        int craftabilitySkillCap,
+        bool useCraftIntermediates,
+        bool useSmeltIntermediates)
     {
         private readonly int _craftabilitySkillCap = craftabilitySkillCap;
+        private readonly bool _useCraftIntermediates = useCraftIntermediates;
+        private readonly bool _useSmeltIntermediates = useSmeltIntermediates;
         private readonly Dictionary<(int itemId, int skill), Money> _unitCostCache = new();
-        private readonly Dictionary<(int itemId, int skill), (Recipe recipe, int outputQty)> _producerCache = new();
+        private readonly Dictionary<(int itemId, int skill), (Recipe recipe, int outputQty)> _craftProducerCache = new();
+        private readonly Dictionary<(int itemId, int skill), (Producer producer, int outputQty)> _smeltProducerCache = new();
+        private readonly Dictionary<(int itemId, ProducerKind kind, string producerName), decimal> _intermediates = new();
+
+        public IReadOnlyList<IntermediateLine> GetIntermediates() =>
+            _intermediates
+                .OrderBy(kvp => kvp.Key.kind)
+                .ThenBy(kvp => kvp.Key.itemId)
+                .ThenBy(kvp => kvp.Key.producerName, StringComparer.OrdinalIgnoreCase)
+                .Select(kvp => new IntermediateLine(kvp.Key.itemId, kvp.Value, kvp.Key.kind, kvp.Key.producerName))
+                .ToArray();
 
         public bool TryGetCraftCost(Recipe recipe, int skill, out Money craftCost, out int[] missingItemIds)
         {
@@ -262,28 +333,45 @@ public sealed class PlannerService(
                     return true;
                 }
 
-                if (TryGetBestProducer(itemId, skill, missing, visiting, out var hasEligibleProducer, out var producer, out var outputQty, out var perUnitCost))
+                var hasEligibleProducer = false;
+                if (_useCraftIntermediates &&
+                    TryGetBestCraftProducer(itemId, skill, missing, visiting, out hasEligibleProducer, out var producer, out var outputQty, out var perUnitCost))
                 {
-                    _producerCache[(itemId, skill)] = (producer, outputQty);
+                    _craftProducerCache[(itemId, skill)] = (producer, outputQty);
                     unitCost = perUnitCost;
                     _unitCostCache[(itemId, skill)] = unitCost;
                     return true;
                 }
 
-                if (hasEligibleProducer)
+                if (_useCraftIntermediates && hasEligibleProducer)
                 {
                     unitCost = Money.Zero;
                     return false;
                 }
 
-                if (!prices.TryGetValue(itemId, out var summary))
+                var hasBuy = prices.TryGetValue(itemId, out var summary);
+                var buyCost = hasBuy ? GetUnitPrice(priceMode, summary!) : (Money?)null;
+
+                if (_useSmeltIntermediates &&
+                    TryGetBestSmeltProducer(itemId, skill, missing, visiting, out var smeltProducer, out var smeltOutputQty, out var smeltPerUnit))
+                {
+                    if (!hasBuy || smeltPerUnit.Copper < buyCost!.Value.Copper)
+                    {
+                        _smeltProducerCache[(itemId, skill)] = (smeltProducer, smeltOutputQty);
+                        unitCost = smeltPerUnit;
+                        _unitCostCache[(itemId, skill)] = unitCost;
+                        return true;
+                    }
+                }
+
+                if (!hasBuy)
                 {
                     missing.Add(itemId);
                     unitCost = Money.Zero;
                     return false;
                 }
 
-                unitCost = GetUnitPrice(priceMode, summary);
+                unitCost = buyCost!.Value;
                 _unitCostCache[(itemId, skill)] = unitCost;
                 return true;
             }
@@ -293,7 +381,7 @@ public sealed class PlannerService(
             }
         }
 
-        private bool TryGetBestProducer(
+        private bool TryGetBestCraftProducer(
             int itemId,
             int skill,
             HashSet<int> missing,
@@ -354,6 +442,61 @@ public sealed class PlannerService(
             return bestCost is not null;
         }
 
+        private bool TryGetBestSmeltProducer(
+            int itemId,
+            int skill,
+            HashSet<int> missing,
+            HashSet<int> visiting,
+            out Producer producer,
+            out int outputQty,
+            out Money perUnitCost)
+        {
+            producer = null!;
+            outputQty = 0;
+            perUnitCost = Money.Zero;
+
+            if (!smelt.TryGetProducers(itemId, out var candidates))
+            {
+                return false;
+            }
+
+            Money? bestCost = null;
+
+            foreach (var p in candidates)
+            {
+                if (p.Output.ItemId != itemId) continue;
+
+                var qty = p.Output.Quantity <= 0 ? 1 : p.Output.Quantity;
+
+                var cost = Money.Zero;
+                var failed = false;
+
+                foreach (var reagent in p.Reagents)
+                {
+                    if (!TryGetUnitCost(reagent.ItemId, skill, missing, visiting, out var unit))
+                    {
+                        failed = true;
+                        break;
+                    }
+
+                    cost += unit * reagent.Quantity;
+                }
+
+                if (failed) continue;
+
+                var candidatePerUnit = Money.FromCopperDecimal(cost.Copper / (decimal)qty);
+                if (bestCost is null || candidatePerUnit.Copper < bestCost.Value.Copper)
+                {
+                    bestCost = candidatePerUnit;
+                    producer = p;
+                    outputQty = qty;
+                    perUnitCost = candidatePerUnit;
+                }
+            }
+
+            return bestCost is not null;
+        }
+
         private void AddShoppingForItem(
             Dictionary<int, decimal> shopping,
             int itemId,
@@ -376,27 +519,46 @@ public sealed class PlannerService(
 
             try
             {
-                if (!_producerCache.TryGetValue((itemId, skill), out var cached))
+                if (_useCraftIntermediates)
                 {
-                    if (TryGetBestProducer(itemId, skill, missing, visiting, out var hasEligibleProducer, out var producer, out var outputQty, out _))
+                    if (!_craftProducerCache.TryGetValue((itemId, skill), out var craftCached))
                     {
-                        cached = (producer, outputQty);
-                        _producerCache[(itemId, skill)] = cached;
+                        if (TryGetBestCraftProducer(itemId, skill, missing, visiting, out var hasEligibleProducer, out var producer, out var outputQty, out _))
+                        {
+                            craftCached = (producer, outputQty);
+                            _craftProducerCache[(itemId, skill)] = craftCached;
+                        }
+                        else if (hasEligibleProducer)
+                        {
+                            return;
+                        }
                     }
-                    else if (hasEligibleProducer)
+
+                    if (craftCached.recipe is not null)
                     {
+                        AddIntermediate(itemId, quantity, ProducerKind.Craft, craftCached.recipe.Name);
+                        var crafts = quantity / craftCached.outputQty;
+                        foreach (var reagent in craftCached.recipe.Reagents)
+                        {
+                            AddShoppingForItem(shopping, reagent.ItemId, reagent.Quantity * crafts, skill, missing, visiting);
+                        }
                         return;
                     }
                 }
 
-                if (cached.recipe is not null)
+                if (_useSmeltIntermediates)
                 {
-                    var crafts = quantity / cached.outputQty;
-                    foreach (var reagent in cached.recipe.Reagents)
+                    _ = TryGetUnitCost(itemId, skill, missing, visiting, out _);
+                    if (_smeltProducerCache.TryGetValue((itemId, skill), out var smeltCached))
                     {
-                        AddShoppingForItem(shopping, reagent.ItemId, reagent.Quantity * crafts, skill, missing, visiting);
+                        AddIntermediate(itemId, quantity, ProducerKind.Smelt, smeltCached.producer.Name);
+                        var crafts = quantity / smeltCached.outputQty;
+                        foreach (var reagent in smeltCached.producer.Reagents)
+                        {
+                            AddShoppingForItem(shopping, reagent.ItemId, reagent.Quantity * crafts, skill, missing, visiting);
+                        }
+                        return;
                     }
-                    return;
                 }
 
                 if (!prices.ContainsKey(itemId))
@@ -410,6 +572,19 @@ public sealed class PlannerService(
             finally
             {
                 visiting.Remove(itemId);
+            }
+        }
+
+        private void AddIntermediate(int itemId, decimal quantity, ProducerKind kind, string producerName)
+        {
+            var key = (itemId, kind, producerName);
+            if (_intermediates.TryGetValue(key, out var existing))
+            {
+                _intermediates[key] = existing + quantity;
+            }
+            else
+            {
+                _intermediates[key] = quantity;
             }
         }
 
@@ -453,5 +628,32 @@ public sealed class PlannerService(
 
         public bool TryGetProducers(int itemId, out IReadOnlyList<Recipe> recipes) =>
             byOutputItemId.TryGetValue(itemId, out recipes!);
+    }
+
+    private sealed class ProducerIndex(IReadOnlyDictionary<int, IReadOnlyList<Producer>> byOutputItemId)
+    {
+        public static ProducerIndex Build(IEnumerable<Producer> producers)
+        {
+            var dict = new Dictionary<int, List<Producer>>();
+
+            foreach (var p in producers)
+            {
+                if (p.Output.ItemId <= 0) continue;
+                if (p.Output.Quantity <= 0) continue;
+
+                if (!dict.TryGetValue(p.Output.ItemId, out var list))
+                {
+                    list = new List<Producer>();
+                    dict[p.Output.ItemId] = list;
+                }
+
+                list.Add(p);
+            }
+
+            return new ProducerIndex(dict.ToDictionary(kvp => kvp.Key, kvp => (IReadOnlyList<Producer>)kvp.Value.ToArray()));
+        }
+
+        public bool TryGetProducers(int itemId, out IReadOnlyList<Producer> producers) =>
+            byOutputItemId.TryGetValue(itemId, out producers!);
     }
 }
