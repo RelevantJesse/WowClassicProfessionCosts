@@ -111,6 +111,7 @@ public static class ApiEndpoints
             [FromQuery] int? currentSkill,
             [FromQuery] int? maxSkillDelta,
             IRecipeRepository repo,
+            IVendorPriceRepository vendorPriceRepository,
             CancellationToken ct) =>
         {
             if (!Enum.TryParse<GameVersion>(version, true, out var v))
@@ -124,6 +125,7 @@ public static class ApiEndpoints
                 : (int?)null;
 
             var itemIds = new HashSet<int>();
+            var vendorItemIds = (await vendorPriceRepository.GetVendorPricesAsync(v, ct)).Keys.ToHashSet();
 
             if (professionId is int pid)
             {
@@ -131,6 +133,7 @@ public static class ApiEndpoints
                 recipes = FilterRecipes(recipes, minSkill, maxSkill);
                 foreach (var reagent in recipes.SelectMany(r => r.Reagents))
                 {
+                    if (vendorItemIds.Contains(reagent.ItemId)) continue;
                     itemIds.Add(reagent.ItemId);
                 }
             }
@@ -143,6 +146,7 @@ public static class ApiEndpoints
                     recipes = FilterRecipes(recipes, minSkill, maxSkill);
                     foreach (var reagent in recipes.SelectMany(r => r.Reagents))
                     {
+                        if (vendorItemIds.Contains(reagent.ItemId)) continue;
                         itemIds.Add(reagent.ItemId);
                     }
                 }
@@ -157,6 +161,7 @@ public static class ApiEndpoints
             [FromQuery] int? currentSkill,
             [FromQuery] int? maxSkillDelta,
             IRecipeRepository repo,
+            IVendorPriceRepository vendorPriceRepository,
             CancellationToken ct) =>
         {
             if (!Enum.TryParse<GameVersion>(version, true, out var v))
@@ -170,6 +175,7 @@ public static class ApiEndpoints
                 : (int?)null;
 
             var itemIds = new HashSet<int>();
+            var vendorItemIds = (await vendorPriceRepository.GetVendorPricesAsync(v, ct)).Keys.ToHashSet();
 
             if (professionId is int pid)
             {
@@ -177,6 +183,7 @@ public static class ApiEndpoints
                 recipes = FilterRecipes(recipes, minSkill, maxSkill);
                 foreach (var reagent in recipes.SelectMany(r => r.Reagents))
                 {
+                    if (vendorItemIds.Contains(reagent.ItemId)) continue;
                     itemIds.Add(reagent.ItemId);
                 }
             }
@@ -189,6 +196,7 @@ public static class ApiEndpoints
                     recipes = FilterRecipes(recipes, minSkill, maxSkill);
                     foreach (var reagent in recipes.SelectMany(r => r.Reagents))
                     {
+                        if (vendorItemIds.Contains(reagent.ItemId)) continue;
                         itemIds.Add(reagent.ItemId);
                     }
                 }
@@ -202,6 +210,7 @@ public static class ApiEndpoints
             [FromQuery] string version,
             [FromQuery] int professionId,
             IRecipeRepository repo,
+            IVendorPriceRepository vendorPriceRepository,
             CancellationToken ct) =>
         {
             if (!Enum.TryParse<GameVersion>(version, true, out var v))
@@ -219,12 +228,14 @@ public static class ApiEndpoints
                 return Results.NotFound(new { message = $"No recipes found for professionId={professionId} ({v})." });
             }
 
-            return Results.Text(GenerateRecipeTargetsLua(professionId, professionName, recipes), "text/plain");
+            var vendorItemIds = (await vendorPriceRepository.GetVendorPricesAsync(v, ct)).Keys.ToHashSet();
+            return Results.Text(GenerateRecipeTargetsLua(professionId, professionName, recipes, vendorItemIds), "text/plain");
         });
 
         api.MapPost("/scans/installTargets", async (
             [FromBody] InstallTargetsRequest request,
             IRecipeRepository repo,
+            IVendorPriceRepository vendorPriceRepository,
             WowAddonInstaller installer,
             CancellationToken ct) =>
         {
@@ -244,7 +255,8 @@ public static class ApiEndpoints
                 .FirstOrDefault(p => p.ProfessionId == request.ProfessionId)
                 ?.Name;
 
-            var lua = GenerateRecipeTargetsLua(request.ProfessionId, professionName, recipes);
+            var vendorItemIds = (await vendorPriceRepository.GetVendorPricesAsync(version, ct)).Keys.ToHashSet();
+            var lua = GenerateRecipeTargetsLua(request.ProfessionId, professionName, recipes, vendorItemIds);
 
             var targetPath = Path.Combine(addonFolder, "WowAhPlannerScan_Targets.lua");
             try
@@ -265,11 +277,12 @@ public static class ApiEndpoints
     private static string EscapeLuaString(string value)
         => value.Replace("\\", "\\\\", StringComparison.Ordinal).Replace("\"", "\\\"", StringComparison.Ordinal);
 
-    private static string GenerateRecipeTargetsLua(int professionId, string? professionName, IReadOnlyList<Recipe> recipes)
+    private static string GenerateRecipeTargetsLua(int professionId, string? professionName, IReadOnlyList<Recipe> recipes, IReadOnlySet<int> vendorItemIds)
     {
         var allReagentItemIds = recipes
             .SelectMany(r => r.Reagents)
             .Select(r => r.ItemId)
+            .Where(itemId => !vendorItemIds.Contains(itemId))
             .Distinct()
             .OrderBy(x => x)
             .ToArray();
@@ -285,7 +298,12 @@ public static class ApiEndpoints
 
         foreach (var recipe in recipes.OrderBy(r => r.MinSkill).ThenBy(r => r.RecipeId))
         {
-            var reagentIds = recipe.Reagents.Select(x => x.ItemId).Distinct().OrderBy(x => x).ToArray();
+            var reagentIds = recipe.Reagents
+                .Select(x => x.ItemId)
+                .Where(itemId => !vendorItemIds.Contains(itemId))
+                .Distinct()
+                .OrderBy(x => x)
+                .ToArray();
             lines.Add(
                 $"  {{ recipeId = \"{EscapeLuaString(recipe.RecipeId)}\", minSkill = {recipe.MinSkill}, grayAt = {recipe.GrayAt}, reagents = {{ {string.Join(", ", reagentIds)} }} }},");
         }

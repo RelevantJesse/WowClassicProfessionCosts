@@ -7,6 +7,7 @@ public sealed record PlanStep(
     int SkillTo,
     string RecipeId,
     string RecipeName,
+    bool? LearnedByTrainer,
     decimal SkillUpChance,
     decimal ExpectedCrafts,
     Money ExpectedCost);

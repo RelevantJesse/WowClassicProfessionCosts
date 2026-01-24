@@ -104,6 +104,7 @@ public sealed class PlannerService(
                     SkillTo: skill + 1,
                     RecipeId: recipe.RecipeId,
                     RecipeName: recipe.Name,
+                    LearnedByTrainer: recipe.LearnedByTrainer,
                     SkillUpChance: chance,
                     ExpectedCrafts: expectedCrafts,
                     ExpectedCost: expectedCost));

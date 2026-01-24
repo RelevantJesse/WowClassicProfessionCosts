@@ -10,6 +10,7 @@ public sealed record Recipe(
     int GreenUntil,
     int GrayAt,
     IReadOnlyList<Reagent> Reagents,
+    bool? LearnedByTrainer = null,
     RecipeOutput? Output = null)
 {
     public DifficultyColor GetDifficultyAtSkill(int skill)

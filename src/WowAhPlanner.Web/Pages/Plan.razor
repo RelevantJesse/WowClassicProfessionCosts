@@ -93,7 +93,13 @@
                 {
                     <tr>
                         <td>@step.SkillFrom - @step.SkillTo</td>
-                        <td>@step.RecipeName <span class="badge">@step.RecipeId</span></td>
+                        <td>
+                            @step.RecipeName <span class="badge">@step.RecipeId</span>
+                            @if (step.LearnedByTrainer == false)
+                            {
+                                <span class="badge badge-stale">recipe not from trainer</span>
+                            }
+                        </td>
                         <td>@step.SkillUpChance</td>
                         <td>@step.ExpectedCrafts.ToString("0.##")</td>
                         <td>@step.ExpectedCost</td>
@@ -119,7 +125,7 @@
                 {
                     <tr>
                         <td>
-                            @_itemNames.GetValueOrDefault(line.ItemId) ?? $"Item {line.ItemId}"
+                            @(_itemNames.GetValueOrDefault(line.ItemId) ?? $"Item {line.ItemId}")
                             <span class="badge">@line.ItemId</span>
                             @if (_vendorItemIds.Contains(line.ItemId))
                             {

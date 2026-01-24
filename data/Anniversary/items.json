@@ -5,7 +5,8 @@
   },
   {
     "itemId": 159,
-    "name": "Refreshing Spring Water"
+    "name": "Refreshing Spring Water",
+    "vendorPriceCopper": 18
   },
   {
     "itemId": 723,
@@ -93,7 +94,8 @@
   },
   {
     "itemId": 1179,
-    "name": "Ice Cold Milk"
+    "name": "Ice Cold Milk",
+    "vendorPriceCopper": 90
   },
   {
     "itemId": 1206,
@@ -219,7 +221,8 @@
   },
   {
     "itemId": 2325,
-    "name": "Black Dye"
+    "name": "Black Dye",
+    "vendorPriceCopper": 720
   },
   {
     "itemId": 2447,
@@ -351,11 +354,13 @@
   },
   {
     "itemId": 2604,
-    "name": "Red Dye"
+    "name": "Red Dye",
+    "vendorPriceCopper": 36
   },
   {
     "itemId": 2605,
-    "name": "Green Dye"
+    "name": "Green Dye",
+    "vendorPriceCopper": 72
   },
   {
     "itemId": 2665,
@@ -383,7 +388,8 @@
   },
   {
     "itemId": 2678,
-    "name": "Mild Spices"
+    "name": "Mild Spices",
+    "vendorPriceCopper": 7
   },
   {
     "itemId": 2679,
@@ -419,7 +425,8 @@
   },
   {
     "itemId": 2692,
-    "name": "Hot Spices"
+    "name": "Hot Spices",
+    "vendorPriceCopper": 28
   },
   {
     "itemId": 2772,
@@ -531,7 +538,8 @@
   },
   {
     "itemId": 2880,
-    "name": "Weak Flux"
+    "name": "Weak Flux",
+    "vendorPriceCopper": 72
   },
   {
     "itemId": 2886,
@@ -619,11 +627,13 @@
   },
   {
     "itemId": 3371,
-    "name": "Empty Vial"
+    "name": "Empty Vial",
+    "vendorPriceCopper": 14
   },
   {
     "itemId": 3372,
-    "name": "Leaded Vial"
+    "name": "Leaded Vial",
+    "vendorPriceCopper": 144
   },
   {
     "itemId": 3382,
@@ -671,7 +681,8 @@
   },
   {
     "itemId": 3466,
-    "name": "Strong Flux"
+    "name": "Strong Flux",
+    "vendorPriceCopper": 1440
   },
   {
     "itemId": 3469,
@@ -803,7 +814,8 @@
   },
   {
     "itemId": 3713,
-    "name": "Soothing Spices"
+    "name": "Soothing Spices",
+    "vendorPriceCopper": 115
   },
   {
     "itemId": 3719,
@@ -1115,11 +1127,13 @@
   },
   {
     "itemId": 4289,
-    "name": "Salt"
+    "name": "Salt",
+    "vendorPriceCopper": 36
   },
   {
     "itemId": 4291,
-    "name": "Silken Thread"
+    "name": "Silken Thread",
+    "vendorPriceCopper": 360
   },
   {
     "itemId": 4304,
@@ -1267,15 +1281,18 @@
   },
   {
     "itemId": 4340,
-    "name": "Gray Dye"
+    "name": "Gray Dye",
+    "vendorPriceCopper": 252
   },
   {
     "itemId": 4341,
-    "name": "Yellow Dye"
+    "name": "Yellow Dye",
+    "vendorPriceCopper": 360
   },
   {
     "itemId": 4342,
-    "name": "Purple Dye"
+    "name": "Purple Dye",
+    "vendorPriceCopper": 1800
   },
   {
     "itemId": 4343,
@@ -1855,7 +1872,8 @@
   },
   {
     "itemId": 6217,
-    "name": "Copper Rod"
+    "name": "Copper Rod",
+    "vendorPriceCopper": 89
   },
   {
     "itemId": 6218,
@@ -1887,11 +1905,13 @@
   },
   {
     "itemId": 6260,
-    "name": "Blue Dye"
+    "name": "Blue Dye",
+    "vendorPriceCopper": 36
   },
   {
     "itemId": 6261,
-    "name": "Orange Dye"
+    "name": "Orange Dye",
+    "vendorPriceCopper": 720
   },
   {
     "itemId": 6263,
@@ -2771,7 +2791,8 @@
   },
   {
     "itemId": 8343,
-    "name": "Heavy Silken Thread"
+    "name": "Heavy Silken Thread",
+    "vendorPriceCopper": 1440
   },
   {
     "itemId": 8345,
@@ -2843,7 +2864,8 @@
   },
   {
     "itemId": 8925,
-    "name": "Crystal Vial"
+    "name": "Crystal Vial",
+    "vendorPriceCopper": 1800
   },
   {
     "itemId": 8949,
@@ -3123,7 +3145,8 @@
   },
   {
     "itemId": 10290,
-    "name": "Pink Dye"
+    "name": "Pink Dye",
+    "vendorPriceCopper": 1800
   },
   {
     "itemId": 10421,
@@ -3283,7 +3306,8 @@
   },
   {
     "itemId": 10648,
-    "name": "Blank Parchment"
+    "name": "Blank Parchment",
+    "vendorPriceCopper": 360
   },
   {
     "itemId": 10713,
@@ -4295,7 +4319,8 @@
   },
   {
     "itemId": 14341,
-    "name": "Rune Thread"
+    "name": "Rune Thread",
+    "vendorPriceCopper": 3600
   },
   {
     "itemId": 14342,
@@ -4775,7 +4800,8 @@
   },
   {
     "itemId": 17194,
-    "name": "Holiday Spices"
+    "name": "Holiday Spices",
+    "vendorPriceCopper": 9
   },
   {
     "itemId": 17196,
@@ -4859,7 +4885,8 @@
   },
   {
     "itemId": 18256,
-    "name": "Imbued Vial"
+    "name": "Imbued Vial",
+    "vendorPriceCopper": 14400
   },
   {
     "itemId": 18258,
@@ -7675,7 +7702,8 @@
   },
   {
     "itemId": 27860,
-    "name": "Purified Draenic Water"
+    "name": "Purified Draenic Water",
+    "vendorPriceCopper": 4608
   },
   {
     "itemId": 28100,
@@ -8227,7 +8255,8 @@
   },
   {
     "itemId": 30817,
-    "name": "Simple Flour"
+    "name": "Simple Flour",
+    "vendorPriceCopper": 22
   },
   {
     "itemId": 30825,

@@ -231,6 +231,7 @@ public sealed class JsonDataPackRepository : IRecipeRepository, IItemRepository,
         public string? Name { get; set; }
         public int? CreatesItemId { get; set; }
         public int? CreatesQuantity { get; set; }
+        public bool? LearnedByTrainer { get; set; }
         public int MinSkill { get; set; }
         public int OrangeUntil { get; set; }
         public int YellowUntil { get; set; }
@@ -268,6 +269,7 @@ public sealed class JsonDataPackRepository : IRecipeRepository, IItemRepository,
             GreenUntil: GreenUntil,
             GrayAt: GrayAt,
             Reagents: (Reagents ?? []).Select(r => r.ToDomain()).ToArray(),
+            LearnedByTrainer: LearnedByTrainer,
             Output: CreatesItemId is int itemId && itemId > 0
                 ? new RecipeOutput(itemId, CreatesQuantity is int q && q > 0 ? q : 1)
                 : null);

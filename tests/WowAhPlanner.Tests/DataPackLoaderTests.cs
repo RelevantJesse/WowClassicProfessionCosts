@@ -48,5 +48,50 @@ public sealed class DataPackLoaderTests
             try { Directory.Delete(root, recursive: true); } catch { }
         }
     }
-}
 
+    [Fact]
+    public void Allows_missing_learnedByTrainer_for_legacy_packs()
+    {
+        var root = Path.Combine(Path.GetTempPath(), "WowAhPlannerTests", Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(root);
+
+        try
+        {
+            var era = Path.Combine(root, "Era");
+            var professions = Path.Combine(era, "professions");
+            Directory.CreateDirectory(professions);
+
+            File.WriteAllText(
+                Path.Combine(era, "items.json"),
+                """[ { "itemId": 1, "name": "Test Item" } ]""");
+
+            File.WriteAllText(
+                Path.Combine(professions, "cooking.json"),
+                """
+                {
+                  "professionId": 185,
+                  "professionName": "Cooking",
+                  "recipes": [
+                    {
+                      "recipeId": "test",
+                      "professionId": 185,
+                      "name": "Test Recipe",
+                      "minSkill": 1,
+                      "orangeUntil": 1,
+                      "yellowUntil": 2,
+                      "greenUntil": 3,
+                      "grayAt": 4,
+                      "reagents": [ { "itemId": 1, "qty": 1 } ]
+                    }
+                  ]
+                }
+                """);
+
+            _ = new JsonDataPackRepository(new DataPackOptions { RootPath = root });
+        }
+        finally
+        {
+            try { Directory.Delete(root, recursive: true); } catch { }
+        }
+    }
+}

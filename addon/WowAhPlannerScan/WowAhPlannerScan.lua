@@ -220,6 +220,34 @@ local function EnsureItemName(itemId)
   return GetItemInfo(itemId)
 end
 
+local function SetBrowseExactMatch(enabled)
+  local want = enabled == true
+
+  local candidates = {
+    BrowseExactMatch,
+    BrowseExactMatchCheckButton,
+    AuctionFrameBrowse_ExactMatch,
+    AuctionFrameBrowseExactMatch,
+  }
+
+  if AuctionFrameBrowse then
+    if AuctionFrameBrowse.ExactMatch then table.insert(candidates, AuctionFrameBrowse.ExactMatch) end
+    if AuctionFrameBrowse.ExactMatchCheckButton then table.insert(candidates, AuctionFrameBrowse.ExactMatchCheckButton) end
+  end
+
+  for _, w in ipairs(candidates) do
+    if w and w.SetChecked then
+      local ok = pcall(w.SetChecked, w, want)
+      if ok then
+        DebugPrint("Set exact-match checkbox=" .. tostring(want))
+        return true
+      end
+    end
+  end
+
+  return false
+end
+
 local function TrySendBrowseQueryViaUi(name)
   -- Some clients/UIs behave better if we drive the built-in search box/button.
   if not name or name == "" then return false end
@@ -231,6 +259,12 @@ local function TrySendBrowseQueryViaUi(name)
     BrowseName:SetText("")
     BrowseName:SetText(name)
     did = true
+  end
+
+  -- Reduce false positives from partial name matches (e.g. "Thick Leather Ammo Pouch").
+  local exactOk = SetBrowseExactMatch(true)
+  if (not exactOk) and WowAhPlannerScanDB and WowAhPlannerScanDB.settings and WowAhPlannerScanDB.settings.verboseDebug then
+    DebugPrint("Exact-match checkbox not found; UI search may return partial name matches.")
   end
 
   if BrowseSearchButton and BrowseSearchButton.Click then
