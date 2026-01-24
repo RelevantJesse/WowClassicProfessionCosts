@@ -105,7 +105,7 @@
                         </td>
                         <td>@step.SkillUpChance</td>
                         <td>@step.ExpectedCrafts.ToString("0.##")</td>
-                        <td>@step.ExpectedCost</td>
+                        <td>@step.ExpectedCost.ToGscString()</td>
                     </tr>
                 }
                 </tbody>
@@ -136,15 +136,15 @@
                             }
                         </td>
                         <td>@line.Quantity.ToString("0.##")</td>
-                        <td>@line.UnitPrice</td>
-                        <td>@line.LineCost</td>
+                        <td>@line.UnitPrice.ToGscString()</td>
+                        <td>@line.LineCost.ToGscString()</td>
                     </tr>
                 }
                 </tbody>
             </table>
 
             <p>
-                Total: <span class="badge">@_result.Plan.TotalCost</span>
+                Total: <span class="badge">@_result.Plan.TotalCost.ToGscString()</span>
             </p>
         </div>
     }

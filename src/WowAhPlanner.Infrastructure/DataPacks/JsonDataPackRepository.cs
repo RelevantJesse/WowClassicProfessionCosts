@@ -232,6 +232,7 @@ public sealed class JsonDataPackRepository : IRecipeRepository, IItemRepository,
         public int? CreatesItemId { get; set; }
         public int? CreatesQuantity { get; set; }
         public bool? LearnedByTrainer { get; set; }
+        public int? CooldownSeconds { get; set; }
         public int MinSkill { get; set; }
         public int OrangeUntil { get; set; }
         public int YellowUntil { get; set; }
@@ -247,6 +248,7 @@ public sealed class JsonDataPackRepository : IRecipeRepository, IItemRepository,
             if (CreatesItemId is int createsId && createsId <= 0) throw new DataPackValidationException($"Invalid createsItemId in {path} (recipeId={RecipeId}).");
             if (CreatesItemId is int && CreatesQuantity is int q && q <= 0) throw new DataPackValidationException($"Invalid createsQuantity in {path} (recipeId={RecipeId}).");
             if (MinSkill < 0) throw new DataPackValidationException($"Invalid minSkill in {path} (recipeId={RecipeId}).");
+            if (CooldownSeconds is int cd && cd < 0) throw new DataPackValidationException($"Invalid cooldownSeconds in {path} (recipeId={RecipeId}).");
             if (OrangeUntil < MinSkill) throw new DataPackValidationException($"Invalid orangeUntil in {path} (recipeId={RecipeId}).");
             if (YellowUntil < OrangeUntil) throw new DataPackValidationException($"Invalid yellowUntil in {path} (recipeId={RecipeId}).");
             if (GreenUntil < YellowUntil) throw new DataPackValidationException($"Invalid greenUntil in {path} (recipeId={RecipeId}).");
@@ -270,6 +272,7 @@ public sealed class JsonDataPackRepository : IRecipeRepository, IItemRepository,
             GrayAt: GrayAt,
             Reagents: (Reagents ?? []).Select(r => r.ToDomain()).ToArray(),
             LearnedByTrainer: LearnedByTrainer,
+            CooldownSeconds: CooldownSeconds,
             Output: CreatesItemId is int itemId && itemId > 0
                 ? new RecipeOutput(itemId, CreatesQuantity is int q && q > 0 ? q : 1)
                 : null);

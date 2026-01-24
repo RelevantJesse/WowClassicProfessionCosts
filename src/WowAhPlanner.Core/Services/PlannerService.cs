@@ -157,6 +157,7 @@ public sealed class PlannerService(
         foreach (var recipe in recipes)
         {
             if (skill < recipe.MinSkill) continue;
+            if (recipe.CooldownSeconds is int cd && cd > 0) continue;
 
             var color = recipe.GetDifficultyAtSkill(skill);
             var p = _defaultChanceModel.GetChance(color);

@@ -164,14 +164,35 @@ local function OpenOptionsUi()
   if Settings and Settings.OpenToCategory then
     local id = WowAhPlannerScanDB and WowAhPlannerScanDB._settingsCategoryId or nil
     if id then
-      local ok, err = pcall(Settings.OpenToCategory, id)
-      if ok then return end
-      DebugPrint("Settings.OpenToCategory(id) failed: " .. tostring(err))
+      local ok1, err1 = pcall(Settings.OpenToCategory, id)
+      if not ok1 then
+        DebugPrint("Settings.OpenToCategory(id) failed: " .. tostring(err1))
+      end
+
+      -- Many clients require a second call (often after the settings frame is shown)
+      -- to actually navigate to the addon category.
+      if C_Timer and C_Timer.After then
+        C_Timer.After(0, function()
+          local ok2, err2 = pcall(Settings.OpenToCategory, id)
+          if not ok2 then
+            DebugPrint("Settings.OpenToCategory(id) retry failed: " .. tostring(err2))
+          end
+        end)
+      else
+        pcall(Settings.OpenToCategory, id)
+      end
+      return
     end
 
     do
-      local ok = pcall(Settings.OpenToCategory, "WowAhPlannerScan")
-      if ok then return end
+      pcall(Settings.OpenToCategory, "AddOns")
+      local ok1 = pcall(Settings.OpenToCategory, "WowAhPlannerScan")
+      if C_Timer and C_Timer.After then
+        C_Timer.After(0, function() pcall(Settings.OpenToCategory, "WowAhPlannerScan") end)
+      else
+        pcall(Settings.OpenToCategory, "WowAhPlannerScan")
+      end
+      if ok1 then return end
     end
   end
 

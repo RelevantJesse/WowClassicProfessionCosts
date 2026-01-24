@@ -57,6 +57,56 @@ public sealed class PlannerServiceTests
     }
 
     [Fact]
+    public async Task Excludes_cooldown_recipes_from_planning()
+    {
+        var recipes = new[]
+        {
+            new Recipe(
+                RecipeId: "cooldown-cheap",
+                ProfessionId: 185,
+                Name: "Cooldown Cheap",
+                MinSkill: 1,
+                OrangeUntil: 100,
+                YellowUntil: 101,
+                GreenUntil: 102,
+                GrayAt: 103,
+                Reagents: [new Reagent(100, 1)],
+                CooldownSeconds: 345600),
+            new Recipe(
+                RecipeId: "normal",
+                ProfessionId: 185,
+                Name: "Normal",
+                MinSkill: 1,
+                OrangeUntil: 100,
+                YellowUntil: 101,
+                GreenUntil: 102,
+                GrayAt: 103,
+                Reagents: [new Reagent(200, 1)]),
+        };
+
+        var recipeRepo = new InMemoryRecipeRepository(recipes);
+        var priceService = new InMemoryPriceService(new Dictionary<int, long>
+        {
+            [100] = 1,
+            [200] = 10,
+        });
+        var vendorRepo = new InMemoryVendorPriceRepository(new Dictionary<int, long>());
+
+        var planner = new PlannerService(recipeRepo, priceService, vendorRepo);
+        var result = await planner.BuildPlanAsync(
+            new PlanRequest(
+                RealmKey: new RealmKey(Region.US, GameVersion.Era, "whitemane"),
+                ProfessionId: 185,
+                CurrentSkill: 1,
+                TargetSkill: 2,
+                PriceMode: PriceMode.Min),
+            CancellationToken.None);
+
+        Assert.NotNull(result.Plan);
+        Assert.Equal("normal", result.Plan!.Steps.Single().RecipeId);
+    }
+
+    [Fact]
     public async Task Shopping_list_aggregates_quantities_across_steps()
     {
         var recipes = new[]
