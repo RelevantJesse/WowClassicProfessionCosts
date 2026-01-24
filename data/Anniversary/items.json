@@ -1,12 +1,2366 @@
 [
-  { "itemId": 2678, "name": "Mild Spices" },
-  { "itemId": 2320, "name": "Coarse Thread" },
-  { "itemId": 2589, "name": "Linen Cloth" },
-  { "itemId": 2835, "name": "Rough Stone" },
-  { "itemId": 2840, "name": "Copper Bar" },
-  { "itemId": 2880, "name": "Weak Flux" },
-  { "itemId": 3173, "name": "Bear Meat" },
-  { "itemId": 6889, "name": "Small Egg" },
-  { "itemId": 769, "name": "Chunk of Boar Meat" },
-  { "itemId": 30817, "name": "Simple Flour" }
+  {
+    "itemId": 118,
+    "name": "Minor Healing Potion"
+  },
+  {
+    "itemId": 159,
+    "name": "Refreshing Spring Water"
+  },
+  {
+    "itemId": 723,
+    "name": "Goretusk Liver"
+  },
+  {
+    "itemId": 729,
+    "name": "Stringy Vulture Meat"
+  },
+  {
+    "itemId": 730,
+    "name": "Murloc Eye"
+  },
+  {
+    "itemId": 731,
+    "name": "Goretusk Snout"
+  },
+  {
+    "itemId": 765,
+    "name": "Silverleaf"
+  },
+  {
+    "itemId": 769,
+    "name": "Chunk of Boar Meat"
+  },
+  {
+    "itemId": 774,
+    "name": "Malachite"
+  },
+  {
+    "itemId": 783,
+    "name": "Light Hide"
+  },
+  {
+    "itemId": 785,
+    "name": "Mageroyal"
+  },
+  {
+    "itemId": 814,
+    "name": "Flask of Oil"
+  },
+  {
+    "itemId": 818,
+    "name": "Tigerseye"
+  },
+  {
+    "itemId": 929,
+    "name": "Healing Potion"
+  },
+  {
+    "itemId": 1015,
+    "name": "Lean Wolf Flank"
+  },
+  {
+    "itemId": 1080,
+    "name": "Tough Condor Meat"
+  },
+  {
+    "itemId": 1081,
+    "name": "Crisp Spider Meat"
+  },
+  {
+    "itemId": 1179,
+    "name": "Ice Cold Milk"
+  },
+  {
+    "itemId": 1206,
+    "name": "Moss Agate"
+  },
+  {
+    "itemId": 1210,
+    "name": "Shadowgem"
+  },
+  {
+    "itemId": 1288,
+    "name": "Large Venom Sac"
+  },
+  {
+    "itemId": 1468,
+    "name": "Murloc Fin"
+  },
+  {
+    "itemId": 1475,
+    "name": "Small Venom Sac"
+  },
+  {
+    "itemId": 1529,
+    "name": "Jade"
+  },
+  {
+    "itemId": 1705,
+    "name": "Lesser Moonstone"
+  },
+  {
+    "itemId": 2251,
+    "name": "Gooey Spider Leg"
+  },
+  {
+    "itemId": 2312,
+    "name": "Fine Leather Gloves"
+  },
+  {
+    "itemId": 2318,
+    "name": "Light Leather"
+  },
+  {
+    "itemId": 2319,
+    "name": "Medium Leather"
+  },
+  {
+    "itemId": 2320,
+    "name": "Coarse Thread"
+  },
+  {
+    "itemId": 2321,
+    "name": "Fine Thread"
+  },
+  {
+    "itemId": 2324,
+    "name": "Bleach"
+  },
+  {
+    "itemId": 2325,
+    "name": "Black Dye"
+  },
+  {
+    "itemId": 2447,
+    "name": "Peacebloom"
+  },
+  {
+    "itemId": 2449,
+    "name": "Earthroot"
+  },
+  {
+    "itemId": 2450,
+    "name": "Briarthorn"
+  },
+  {
+    "itemId": 2452,
+    "name": "Swiftthistle"
+  },
+  {
+    "itemId": 2453,
+    "name": "Bruiseweed"
+  },
+  {
+    "itemId": 2457,
+    "name": "Elixir of Minor Agility"
+  },
+  {
+    "itemId": 2459,
+    "name": "Swiftness Potion"
+  },
+  {
+    "itemId": 2589,
+    "name": "Linen Cloth"
+  },
+  {
+    "itemId": 2592,
+    "name": "Wool Cloth"
+  },
+  {
+    "itemId": 2593,
+    "name": "Flask of Stormwind Tawny"
+  },
+  {
+    "itemId": 2594,
+    "name": "Flagon of Dwarven Honeymead"
+  },
+  {
+    "itemId": 2596,
+    "name": "Skin of Dwarven Stout"
+  },
+  {
+    "itemId": 2604,
+    "name": "Red Dye"
+  },
+  {
+    "itemId": 2605,
+    "name": "Green Dye"
+  },
+  {
+    "itemId": 2665,
+    "name": "Stormwind Seasoning Herbs"
+  },
+  {
+    "itemId": 2672,
+    "name": "Stringy Wolf Meat"
+  },
+  {
+    "itemId": 2673,
+    "name": "Coyote Meat"
+  },
+  {
+    "itemId": 2674,
+    "name": "Crawler Meat"
+  },
+  {
+    "itemId": 2675,
+    "name": "Crawler Claw"
+  },
+  {
+    "itemId": 2677,
+    "name": "Boar Ribs"
+  },
+  {
+    "itemId": 2678,
+    "name": "Mild Spices"
+  },
+  {
+    "itemId": 2692,
+    "name": "Hot Spices"
+  },
+  {
+    "itemId": 2772,
+    "name": "Iron Ore"
+  },
+  {
+    "itemId": 2835,
+    "name": "Rough Stone"
+  },
+  {
+    "itemId": 2836,
+    "name": "Coarse Stone"
+  },
+  {
+    "itemId": 2838,
+    "name": "Heavy Stone"
+  },
+  {
+    "itemId": 2840,
+    "name": "Copper Bar"
+  },
+  {
+    "itemId": 2841,
+    "name": "Bronze Bar"
+  },
+  {
+    "itemId": 2842,
+    "name": "Silver Bar"
+  },
+  {
+    "itemId": 2880,
+    "name": "Weak Flux"
+  },
+  {
+    "itemId": 2886,
+    "name": "Crag Boar Rib"
+  },
+  {
+    "itemId": 2894,
+    "name": "Rhapsody Malt"
+  },
+  {
+    "itemId": 2924,
+    "name": "Crocolisk Meat"
+  },
+  {
+    "itemId": 2934,
+    "name": "Ruined Leather Scraps"
+  },
+  {
+    "itemId": 2996,
+    "name": "Bolt of Linen Cloth"
+  },
+  {
+    "itemId": 2997,
+    "name": "Bolt of Woolen Cloth"
+  },
+  {
+    "itemId": 3164,
+    "name": "Discolored Worg Heart"
+  },
+  {
+    "itemId": 3172,
+    "name": "Boar Intestines"
+  },
+  {
+    "itemId": 3173,
+    "name": "Bear Meat"
+  },
+  {
+    "itemId": 3174,
+    "name": "Spider Ichor"
+  },
+  {
+    "itemId": 3182,
+    "name": "Spider's Silk"
+  },
+  {
+    "itemId": 3355,
+    "name": "Wild Steelbloom"
+  },
+  {
+    "itemId": 3356,
+    "name": "Kingsblood"
+  },
+  {
+    "itemId": 3357,
+    "name": "Liferoot"
+  },
+  {
+    "itemId": 3358,
+    "name": "Khadgar's Whisker"
+  },
+  {
+    "itemId": 3369,
+    "name": "Grave Moss"
+  },
+  {
+    "itemId": 3371,
+    "name": "Empty Vial"
+  },
+  {
+    "itemId": 3372,
+    "name": "Leaded Vial"
+  },
+  {
+    "itemId": 3383,
+    "name": "Elixir of Wisdom"
+  },
+  {
+    "itemId": 3389,
+    "name": "Elixir of Defense"
+  },
+  {
+    "itemId": 3390,
+    "name": "Elixir of Lesser Agility"
+  },
+  {
+    "itemId": 3391,
+    "name": "Elixir of Ogre's Strength"
+  },
+  {
+    "itemId": 3404,
+    "name": "Buzzard Wing"
+  },
+  {
+    "itemId": 3466,
+    "name": "Strong Flux"
+  },
+  {
+    "itemId": 3470,
+    "name": "Rough Grinding Stone"
+  },
+  {
+    "itemId": 3478,
+    "name": "Coarse Grinding Stone"
+  },
+  {
+    "itemId": 3486,
+    "name": "Heavy Grinding Stone"
+  },
+  {
+    "itemId": 3575,
+    "name": "Iron Bar"
+  },
+  {
+    "itemId": 3577,
+    "name": "Gold Bar"
+  },
+  {
+    "itemId": 3667,
+    "name": "Tender Crocolisk Meat"
+  },
+  {
+    "itemId": 3685,
+    "name": "Raptor Egg"
+  },
+  {
+    "itemId": 3712,
+    "name": "Turtle Meat"
+  },
+  {
+    "itemId": 3713,
+    "name": "Soothing Spices"
+  },
+  {
+    "itemId": 3730,
+    "name": "Big Bear Meat"
+  },
+  {
+    "itemId": 3731,
+    "name": "Lion Meat"
+  },
+  {
+    "itemId": 3818,
+    "name": "Fadeleaf"
+  },
+  {
+    "itemId": 3819,
+    "name": "Wintersbite"
+  },
+  {
+    "itemId": 3820,
+    "name": "Stranglekelp"
+  },
+  {
+    "itemId": 3821,
+    "name": "Goldthorn"
+  },
+  {
+    "itemId": 3823,
+    "name": "Lesser Invisibility Potion"
+  },
+  {
+    "itemId": 3824,
+    "name": "Shadow Oil"
+  },
+  {
+    "itemId": 3827,
+    "name": "Mana Potion"
+  },
+  {
+    "itemId": 3829,
+    "name": "Frost Oil"
+  },
+  {
+    "itemId": 3858,
+    "name": "Mithril Ore"
+  },
+  {
+    "itemId": 3859,
+    "name": "Steel Bar"
+  },
+  {
+    "itemId": 3860,
+    "name": "Mithril Bar"
+  },
+  {
+    "itemId": 3864,
+    "name": "Citrine"
+  },
+  {
+    "itemId": 4096,
+    "name": "Coarse Gorilla Hair"
+  },
+  {
+    "itemId": 4231,
+    "name": "Cured Light Hide"
+  },
+  {
+    "itemId": 4232,
+    "name": "Medium Hide"
+  },
+  {
+    "itemId": 4233,
+    "name": "Cured Medium Hide"
+  },
+  {
+    "itemId": 4234,
+    "name": "Heavy Leather"
+  },
+  {
+    "itemId": 4235,
+    "name": "Heavy Hide"
+  },
+  {
+    "itemId": 4236,
+    "name": "Cured Heavy Hide"
+  },
+  {
+    "itemId": 4243,
+    "name": "Fine Leather Tunic"
+  },
+  {
+    "itemId": 4246,
+    "name": "Fine Leather Belt"
+  },
+  {
+    "itemId": 4255,
+    "name": "Green Leather Armor"
+  },
+  {
+    "itemId": 4289,
+    "name": "Salt"
+  },
+  {
+    "itemId": 4291,
+    "name": "Silken Thread"
+  },
+  {
+    "itemId": 4304,
+    "name": "Thick Leather"
+  },
+  {
+    "itemId": 4305,
+    "name": "Bolt of Silk Cloth"
+  },
+  {
+    "itemId": 4306,
+    "name": "Silk Cloth"
+  },
+  {
+    "itemId": 4337,
+    "name": "Thick Spider's Silk"
+  },
+  {
+    "itemId": 4338,
+    "name": "Mageweave Cloth"
+  },
+  {
+    "itemId": 4339,
+    "name": "Bolt of Mageweave"
+  },
+  {
+    "itemId": 4340,
+    "name": "Gray Dye"
+  },
+  {
+    "itemId": 4341,
+    "name": "Yellow Dye"
+  },
+  {
+    "itemId": 4342,
+    "name": "Purple Dye"
+  },
+  {
+    "itemId": 4357,
+    "name": "Rough Blasting Powder"
+  },
+  {
+    "itemId": 4359,
+    "name": "Handful of Copper Bolts"
+  },
+  {
+    "itemId": 4361,
+    "name": "Copper Tube"
+  },
+  {
+    "itemId": 4363,
+    "name": "Copper Modulator"
+  },
+  {
+    "itemId": 4364,
+    "name": "Coarse Blasting Powder"
+  },
+  {
+    "itemId": 4368,
+    "name": "Flying Tiger Goggles"
+  },
+  {
+    "itemId": 4371,
+    "name": "Bronze Tube"
+  },
+  {
+    "itemId": 4375,
+    "name": "Whirring Bronze Gizmo"
+  },
+  {
+    "itemId": 4377,
+    "name": "Heavy Blasting Powder"
+  },
+  {
+    "itemId": 4382,
+    "name": "Bronze Framework"
+  },
+  {
+    "itemId": 4385,
+    "name": "Green Tinted Goggles"
+  },
+  {
+    "itemId": 4387,
+    "name": "Iron Strut"
+  },
+  {
+    "itemId": 4389,
+    "name": "Gyrochronatom"
+  },
+  {
+    "itemId": 4394,
+    "name": "Big Iron Bomb"
+  },
+  {
+    "itemId": 4399,
+    "name": "Wooden Stock"
+  },
+  {
+    "itemId": 4400,
+    "name": "Heavy Stock"
+  },
+  {
+    "itemId": 4402,
+    "name": "Small Flame Sac"
+  },
+  {
+    "itemId": 4404,
+    "name": "Silver Contact"
+  },
+  {
+    "itemId": 4407,
+    "name": "Accurate Scope"
+  },
+  {
+    "itemId": 4461,
+    "name": "Raptor Hide"
+  },
+  {
+    "itemId": 4470,
+    "name": "Simple Wood"
+  },
+  {
+    "itemId": 4536,
+    "name": "Shiny Red Apple"
+  },
+  {
+    "itemId": 4539,
+    "name": "Goldenbark Apple"
+  },
+  {
+    "itemId": 4589,
+    "name": "Long Elegant Feather"
+  },
+  {
+    "itemId": 4603,
+    "name": "Raw Spotted Yellowtail"
+  },
+  {
+    "itemId": 4611,
+    "name": "Blue Pearl"
+  },
+  {
+    "itemId": 4625,
+    "name": "Firebloom"
+  },
+  {
+    "itemId": 4655,
+    "name": "Giant Clam Meat"
+  },
+  {
+    "itemId": 5051,
+    "name": "Dig Rat"
+  },
+  {
+    "itemId": 5082,
+    "name": "Thin Kodo Leather"
+  },
+  {
+    "itemId": 5116,
+    "name": "Long Tail Feather"
+  },
+  {
+    "itemId": 5373,
+    "name": "Lucky Charm"
+  },
+  {
+    "itemId": 5465,
+    "name": "Small Spider Leg"
+  },
+  {
+    "itemId": 5466,
+    "name": "Scorpid Stinger"
+  },
+  {
+    "itemId": 5467,
+    "name": "Kodo Meat"
+  },
+  {
+    "itemId": 5468,
+    "name": "Soft Frenzy Flesh"
+  },
+  {
+    "itemId": 5469,
+    "name": "Strider Meat"
+  },
+  {
+    "itemId": 5470,
+    "name": "Thunder Lizard Tail"
+  },
+  {
+    "itemId": 5471,
+    "name": "Stag Meat"
+  },
+  {
+    "itemId": 5498,
+    "name": "Small Lustrous Pearl"
+  },
+  {
+    "itemId": 5500,
+    "name": "Iridescent Pearl"
+  },
+  {
+    "itemId": 5503,
+    "name": "Clam Meat"
+  },
+  {
+    "itemId": 5504,
+    "name": "Tangy Clam Meat"
+  },
+  {
+    "itemId": 5633,
+    "name": "Great Rage Potion"
+  },
+  {
+    "itemId": 5635,
+    "name": "Sharp Claw"
+  },
+  {
+    "itemId": 5637,
+    "name": "Large Fang"
+  },
+  {
+    "itemId": 5784,
+    "name": "Slimy Murloc Scale"
+  },
+  {
+    "itemId": 5785,
+    "name": "Thick Murloc Scale"
+  },
+  {
+    "itemId": 5966,
+    "name": "Guardian Gloves"
+  },
+  {
+    "itemId": 6037,
+    "name": "Truesilver Bar"
+  },
+  {
+    "itemId": 6048,
+    "name": "Shadow Protection Potion"
+  },
+  {
+    "itemId": 6149,
+    "name": "Greater Mana Potion"
+  },
+  {
+    "itemId": 6217,
+    "name": "Copper Rod"
+  },
+  {
+    "itemId": 6218,
+    "name": "Runed Copper Rod"
+  },
+  {
+    "itemId": 6260,
+    "name": "Blue Dye"
+  },
+  {
+    "itemId": 6261,
+    "name": "Orange Dye"
+  },
+  {
+    "itemId": 6289,
+    "name": "Raw Longjaw Mud Snapper"
+  },
+  {
+    "itemId": 6291,
+    "name": "Raw Brilliant Smallfish"
+  },
+  {
+    "itemId": 6303,
+    "name": "Raw Slitherskin Mackerel"
+  },
+  {
+    "itemId": 6308,
+    "name": "Raw Bristle Whisker Catfish"
+  },
+  {
+    "itemId": 6317,
+    "name": "Raw Loch Frenzy"
+  },
+  {
+    "itemId": 6338,
+    "name": "Silver Rod"
+  },
+  {
+    "itemId": 6339,
+    "name": "Runed Silver Rod"
+  },
+  {
+    "itemId": 6358,
+    "name": "Oily Blackmouth"
+  },
+  {
+    "itemId": 6359,
+    "name": "Firefin Snapper"
+  },
+  {
+    "itemId": 6361,
+    "name": "Raw Rainbow Fin Albacore"
+  },
+  {
+    "itemId": 6362,
+    "name": "Raw Rockscale Cod"
+  },
+  {
+    "itemId": 6370,
+    "name": "Blackmouth Oil"
+  },
+  {
+    "itemId": 6371,
+    "name": "Fire Oil"
+  },
+  {
+    "itemId": 6470,
+    "name": "Deviate Scale"
+  },
+  {
+    "itemId": 6471,
+    "name": "Perfect Deviate Scale"
+  },
+  {
+    "itemId": 6522,
+    "name": "Deviate Fish"
+  },
+  {
+    "itemId": 6530,
+    "name": "Nightcrawlers"
+  },
+  {
+    "itemId": 6889,
+    "name": "Small Egg"
+  },
+  {
+    "itemId": 7067,
+    "name": "Elemental Earth"
+  },
+  {
+    "itemId": 7068,
+    "name": "Elemental Fire"
+  },
+  {
+    "itemId": 7069,
+    "name": "Elemental Air"
+  },
+  {
+    "itemId": 7070,
+    "name": "Elemental Water"
+  },
+  {
+    "itemId": 7071,
+    "name": "Iron Buckle"
+  },
+  {
+    "itemId": 7072,
+    "name": "Naga Scale"
+  },
+  {
+    "itemId": 7075,
+    "name": "Core of Earth"
+  },
+  {
+    "itemId": 7076,
+    "name": "Essence of Earth"
+  },
+  {
+    "itemId": 7077,
+    "name": "Heart of Fire"
+  },
+  {
+    "itemId": 7078,
+    "name": "Essence of Fire"
+  },
+  {
+    "itemId": 7079,
+    "name": "Globe of Water"
+  },
+  {
+    "itemId": 7080,
+    "name": "Essence of Water"
+  },
+  {
+    "itemId": 7081,
+    "name": "Breath of Wind"
+  },
+  {
+    "itemId": 7082,
+    "name": "Essence of Air"
+  },
+  {
+    "itemId": 7191,
+    "name": "Fused Wiring"
+  },
+  {
+    "itemId": 7286,
+    "name": "Black Whelp Scale"
+  },
+  {
+    "itemId": 7287,
+    "name": "Red Whelp Scale"
+  },
+  {
+    "itemId": 7387,
+    "name": "Dusky Belt"
+  },
+  {
+    "itemId": 7392,
+    "name": "Green Whelp Scale"
+  },
+  {
+    "itemId": 7428,
+    "name": "Shadowcat Hide"
+  },
+  {
+    "itemId": 7909,
+    "name": "Aquamarine"
+  },
+  {
+    "itemId": 7910,
+    "name": "Star Ruby"
+  },
+  {
+    "itemId": 7912,
+    "name": "Solid Stone"
+  },
+  {
+    "itemId": 7966,
+    "name": "Solid Grinding Stone"
+  },
+  {
+    "itemId": 7971,
+    "name": "Black Pearl"
+  },
+  {
+    "itemId": 7972,
+    "name": "Ichor of Undeath"
+  },
+  {
+    "itemId": 7974,
+    "name": "Zesty Clam Meat"
+  },
+  {
+    "itemId": 8146,
+    "name": "Wicked Claw"
+  },
+  {
+    "itemId": 8150,
+    "name": "Deeprock Salt"
+  },
+  {
+    "itemId": 8151,
+    "name": "Flask of Mojo"
+  },
+  {
+    "itemId": 8152,
+    "name": "Flask of Big Mojo"
+  },
+  {
+    "itemId": 8153,
+    "name": "Wildvine"
+  },
+  {
+    "itemId": 8154,
+    "name": "Scorpid Scale"
+  },
+  {
+    "itemId": 8165,
+    "name": "Worn Dragonscale"
+  },
+  {
+    "itemId": 8167,
+    "name": "Turtle Scale"
+  },
+  {
+    "itemId": 8168,
+    "name": "Jet Black Feather"
+  },
+  {
+    "itemId": 8169,
+    "name": "Thick Hide"
+  },
+  {
+    "itemId": 8170,
+    "name": "Rugged Leather"
+  },
+  {
+    "itemId": 8171,
+    "name": "Rugged Hide"
+  },
+  {
+    "itemId": 8172,
+    "name": "Cured Thick Hide"
+  },
+  {
+    "itemId": 8343,
+    "name": "Heavy Silken Thread"
+  },
+  {
+    "itemId": 8365,
+    "name": "Raw Mithril Head Trout"
+  },
+  {
+    "itemId": 8368,
+    "name": "Thick Wolfhide"
+  },
+  {
+    "itemId": 8831,
+    "name": "Purple Lotus"
+  },
+  {
+    "itemId": 8836,
+    "name": "Arthas' Tears"
+  },
+  {
+    "itemId": 8838,
+    "name": "Sungrass"
+  },
+  {
+    "itemId": 8839,
+    "name": "Blindweed"
+  },
+  {
+    "itemId": 8845,
+    "name": "Ghost Mushroom"
+  },
+  {
+    "itemId": 8846,
+    "name": "Gromsblood"
+  },
+  {
+    "itemId": 8925,
+    "name": "Crystal Vial"
+  },
+  {
+    "itemId": 8949,
+    "name": "Elixir of Agility"
+  },
+  {
+    "itemId": 8951,
+    "name": "Elixir of Greater Defense"
+  },
+  {
+    "itemId": 9060,
+    "name": "Inlaid Mithril Cylinder"
+  },
+  {
+    "itemId": 9061,
+    "name": "Goblin Rocket Fuel"
+  },
+  {
+    "itemId": 9149,
+    "name": "Philosopher's Stone"
+  },
+  {
+    "itemId": 9210,
+    "name": "Ghost Dye"
+  },
+  {
+    "itemId": 9224,
+    "name": "Elixir of Demonslaying"
+  },
+  {
+    "itemId": 9260,
+    "name": "Volatile Rum"
+  },
+  {
+    "itemId": 9262,
+    "name": "Black Vitriol"
+  },
+  {
+    "itemId": 10026,
+    "name": "Black Mageweave Boots"
+  },
+  {
+    "itemId": 10285,
+    "name": "Shadow Silk"
+  },
+  {
+    "itemId": 10286,
+    "name": "Heart of the Wild"
+  },
+  {
+    "itemId": 10290,
+    "name": "Pink Dye"
+  },
+  {
+    "itemId": 10500,
+    "name": "Fire Goggles"
+  },
+  {
+    "itemId": 10502,
+    "name": "Spellpower Goggles Xtreme"
+  },
+  {
+    "itemId": 10505,
+    "name": "Solid Blasting Powder"
+  },
+  {
+    "itemId": 10507,
+    "name": "Solid Dynamite"
+  },
+  {
+    "itemId": 10543,
+    "name": "Goblin Construction Helmet"
+  },
+  {
+    "itemId": 10546,
+    "name": "Deadly Scope"
+  },
+  {
+    "itemId": 10558,
+    "name": "Gold Power Core"
+  },
+  {
+    "itemId": 10559,
+    "name": "Mithril Tube"
+  },
+  {
+    "itemId": 10560,
+    "name": "Unstable Trigger"
+  },
+  {
+    "itemId": 10561,
+    "name": "Mithril Casing"
+  },
+  {
+    "itemId": 10576,
+    "name": "Mithril Mechanical Dragonling"
+  },
+  {
+    "itemId": 10577,
+    "name": "Goblin Mortar"
+  },
+  {
+    "itemId": 10586,
+    "name": "The Big One"
+  },
+  {
+    "itemId": 10592,
+    "name": "Catseye Elixir"
+  },
+  {
+    "itemId": 10620,
+    "name": "Thorium Ore"
+  },
+  {
+    "itemId": 10647,
+    "name": "Engineer's Ink"
+  },
+  {
+    "itemId": 10648,
+    "name": "Blank Parchment"
+  },
+  {
+    "itemId": 10938,
+    "name": "Lesser Magic Essence"
+  },
+  {
+    "itemId": 10939,
+    "name": "Greater Magic Essence"
+  },
+  {
+    "itemId": 10940,
+    "name": "Strange Dust"
+  },
+  {
+    "itemId": 10978,
+    "name": "Small Glimmering Shard"
+  },
+  {
+    "itemId": 10998,
+    "name": "Lesser Astral Essence"
+  },
+  {
+    "itemId": 11040,
+    "name": "Morrowgrain"
+  },
+  {
+    "itemId": 11082,
+    "name": "Greater Astral Essence"
+  },
+  {
+    "itemId": 11083,
+    "name": "Soul Dust"
+  },
+  {
+    "itemId": 11084,
+    "name": "Large Glimmering Shard"
+  },
+  {
+    "itemId": 11128,
+    "name": "Golden Rod"
+  },
+  {
+    "itemId": 11130,
+    "name": "Runed Golden Rod"
+  },
+  {
+    "itemId": 11134,
+    "name": "Lesser Mystic Essence"
+  },
+  {
+    "itemId": 11135,
+    "name": "Greater Mystic Essence"
+  },
+  {
+    "itemId": 11137,
+    "name": "Vision Dust"
+  },
+  {
+    "itemId": 11138,
+    "name": "Small Glowing Shard"
+  },
+  {
+    "itemId": 11139,
+    "name": "Large Glowing Shard"
+  },
+  {
+    "itemId": 11144,
+    "name": "Truesilver Rod"
+  },
+  {
+    "itemId": 11145,
+    "name": "Runed Truesilver Rod"
+  },
+  {
+    "itemId": 11174,
+    "name": "Lesser Nether Essence"
+  },
+  {
+    "itemId": 11175,
+    "name": "Greater Nether Essence"
+  },
+  {
+    "itemId": 11176,
+    "name": "Dream Dust"
+  },
+  {
+    "itemId": 11177,
+    "name": "Small Radiant Shard"
+  },
+  {
+    "itemId": 11178,
+    "name": "Large Radiant Shard"
+  },
+  {
+    "itemId": 11184,
+    "name": "Blue Power Crystal"
+  },
+  {
+    "itemId": 11185,
+    "name": "Green Power Crystal"
+  },
+  {
+    "itemId": 11186,
+    "name": "Red Power Crystal"
+  },
+  {
+    "itemId": 11188,
+    "name": "Yellow Power Crystal"
+  },
+  {
+    "itemId": 11291,
+    "name": "Star Wood"
+  },
+  {
+    "itemId": 11371,
+    "name": "Dark Iron Bar"
+  },
+  {
+    "itemId": 11382,
+    "name": "Blood of the Mountain"
+  },
+  {
+    "itemId": 11754,
+    "name": "Black Diamond"
+  },
+  {
+    "itemId": 12037,
+    "name": "Mystery Meat"
+  },
+  {
+    "itemId": 12184,
+    "name": "Raptor Flesh"
+  },
+  {
+    "itemId": 12202,
+    "name": "Tiger Meat"
+  },
+  {
+    "itemId": 12203,
+    "name": "Red Wolf Meat"
+  },
+  {
+    "itemId": 12204,
+    "name": "Heavy Kodo Meat"
+  },
+  {
+    "itemId": 12205,
+    "name": "White Spider Meat"
+  },
+  {
+    "itemId": 12206,
+    "name": "Tender Crab Meat"
+  },
+  {
+    "itemId": 12207,
+    "name": "Giant Egg"
+  },
+  {
+    "itemId": 12208,
+    "name": "Tender Wolf Meat"
+  },
+  {
+    "itemId": 12223,
+    "name": "Meaty Bat Wing"
+  },
+  {
+    "itemId": 12359,
+    "name": "Thorium Bar"
+  },
+  {
+    "itemId": 12360,
+    "name": "Arcanite Bar"
+  },
+  {
+    "itemId": 12361,
+    "name": "Blue Sapphire"
+  },
+  {
+    "itemId": 12363,
+    "name": "Arcane Crystal"
+  },
+  {
+    "itemId": 12364,
+    "name": "Huge Emerald"
+  },
+  {
+    "itemId": 12365,
+    "name": "Dense Stone"
+  },
+  {
+    "itemId": 12607,
+    "name": "Brilliant Chromatic Scale"
+  },
+  {
+    "itemId": 12644,
+    "name": "Dense Grinding Stone"
+  },
+  {
+    "itemId": 12655,
+    "name": "Enchanted Thorium Bar"
+  },
+  {
+    "itemId": 12662,
+    "name": "Demonic Rune"
+  },
+  {
+    "itemId": 12753,
+    "name": "Skin of Shadow"
+  },
+  {
+    "itemId": 12799,
+    "name": "Large Opal"
+  },
+  {
+    "itemId": 12800,
+    "name": "Azerothian Diamond"
+  },
+  {
+    "itemId": 12803,
+    "name": "Living Essence"
+  },
+  {
+    "itemId": 12804,
+    "name": "Powerful Mojo"
+  },
+  {
+    "itemId": 12808,
+    "name": "Essence of Undeath"
+  },
+  {
+    "itemId": 12809,
+    "name": "Guardian Stone"
+  },
+  {
+    "itemId": 12810,
+    "name": "Enchanted Leather"
+  },
+  {
+    "itemId": 12811,
+    "name": "Righteous Orb"
+  },
+  {
+    "itemId": 12938,
+    "name": "Blood of Heroes"
+  },
+  {
+    "itemId": 13422,
+    "name": "Stonescale Eel"
+  },
+  {
+    "itemId": 13423,
+    "name": "Stonescale Oil"
+  },
+  {
+    "itemId": 13444,
+    "name": "Major Mana Potion"
+  },
+  {
+    "itemId": 13446,
+    "name": "Major Healing Potion"
+  },
+  {
+    "itemId": 13463,
+    "name": "Dreamfoil"
+  },
+  {
+    "itemId": 13464,
+    "name": "Golden Sansam"
+  },
+  {
+    "itemId": 13465,
+    "name": "Mountain Silversage"
+  },
+  {
+    "itemId": 13466,
+    "name": "Plaguebloom"
+  },
+  {
+    "itemId": 13467,
+    "name": "Icecap"
+  },
+  {
+    "itemId": 13468,
+    "name": "Black Lotus"
+  },
+  {
+    "itemId": 13503,
+    "name": "Alchemist's Stone"
+  },
+  {
+    "itemId": 13510,
+    "name": "Flask of the Titans"
+  },
+  {
+    "itemId": 13512,
+    "name": "Flask of Supreme Power"
+  },
+  {
+    "itemId": 13754,
+    "name": "Raw Glossy Mightfish"
+  },
+  {
+    "itemId": 13755,
+    "name": "Winter Squid"
+  },
+  {
+    "itemId": 13756,
+    "name": "Raw Summer Bass"
+  },
+  {
+    "itemId": 13757,
+    "name": "Lightning Eel"
+  },
+  {
+    "itemId": 13758,
+    "name": "Raw Redgill"
+  },
+  {
+    "itemId": 13759,
+    "name": "Raw Nightfin Snapper"
+  },
+  {
+    "itemId": 13760,
+    "name": "Raw Sunscale Salmon"
+  },
+  {
+    "itemId": 13888,
+    "name": "Darkclaw Lobster"
+  },
+  {
+    "itemId": 13889,
+    "name": "Raw Whitescale Salmon"
+  },
+  {
+    "itemId": 13893,
+    "name": "Large Raw Mightfish"
+  },
+  {
+    "itemId": 13926,
+    "name": "Golden Pearl"
+  },
+  {
+    "itemId": 14044,
+    "name": "Cindercloth Cloak"
+  },
+  {
+    "itemId": 14047,
+    "name": "Runecloth"
+  },
+  {
+    "itemId": 14048,
+    "name": "Bolt of Runecloth"
+  },
+  {
+    "itemId": 14227,
+    "name": "Ironweb Spider Silk"
+  },
+  {
+    "itemId": 14256,
+    "name": "Felcloth"
+  },
+  {
+    "itemId": 14341,
+    "name": "Rune Thread"
+  },
+  {
+    "itemId": 14342,
+    "name": "Mooncloth"
+  },
+  {
+    "itemId": 14343,
+    "name": "Small Brilliant Shard"
+  },
+  {
+    "itemId": 14344,
+    "name": "Large Brilliant Shard"
+  },
+  {
+    "itemId": 15407,
+    "name": "Cured Rugged Hide"
+  },
+  {
+    "itemId": 15408,
+    "name": "Heavy Scorpid Scale"
+  },
+  {
+    "itemId": 15409,
+    "name": "Refined Deeprock Salt"
+  },
+  {
+    "itemId": 15410,
+    "name": "Scale of Onyxia"
+  },
+  {
+    "itemId": 15412,
+    "name": "Green Dragonscale"
+  },
+  {
+    "itemId": 15414,
+    "name": "Red Dragonscale"
+  },
+  {
+    "itemId": 15415,
+    "name": "Blue Dragonscale"
+  },
+  {
+    "itemId": 15416,
+    "name": "Black Dragonscale"
+  },
+  {
+    "itemId": 15417,
+    "name": "Devilsaur Leather"
+  },
+  {
+    "itemId": 15419,
+    "name": "Warbear Leather"
+  },
+  {
+    "itemId": 15420,
+    "name": "Ironfeather"
+  },
+  {
+    "itemId": 15422,
+    "name": "Frostsaber Leather"
+  },
+  {
+    "itemId": 15423,
+    "name": "Chimera Leather"
+  },
+  {
+    "itemId": 15992,
+    "name": "Dense Blasting Powder"
+  },
+  {
+    "itemId": 15994,
+    "name": "Thorium Widget"
+  },
+  {
+    "itemId": 16000,
+    "name": "Thorium Tube"
+  },
+  {
+    "itemId": 16006,
+    "name": "Delicate Arcanite Converter"
+  },
+  {
+    "itemId": 16202,
+    "name": "Lesser Eternal Essence"
+  },
+  {
+    "itemId": 16203,
+    "name": "Greater Eternal Essence"
+  },
+  {
+    "itemId": 16204,
+    "name": "Illusion Dust"
+  },
+  {
+    "itemId": 16206,
+    "name": "Arcanite Rod"
+  },
+  {
+    "itemId": 16207,
+    "name": "Runed Arcanite Rod"
+  },
+  {
+    "itemId": 17010,
+    "name": "Fiery Core"
+  },
+  {
+    "itemId": 17011,
+    "name": "Lava Core"
+  },
+  {
+    "itemId": 17012,
+    "name": "Core Leather"
+  },
+  {
+    "itemId": 17020,
+    "name": "Arcane Powder"
+  },
+  {
+    "itemId": 17034,
+    "name": "Maple Seed"
+  },
+  {
+    "itemId": 17035,
+    "name": "Stranglethorn Seed"
+  },
+  {
+    "itemId": 17056,
+    "name": "Light Feather"
+  },
+  {
+    "itemId": 17194,
+    "name": "Holiday Spices"
+  },
+  {
+    "itemId": 17196,
+    "name": "Holiday Spirits"
+  },
+  {
+    "itemId": 17202,
+    "name": "Snowball"
+  },
+  {
+    "itemId": 17203,
+    "name": "Sulfuron Ingot"
+  },
+  {
+    "itemId": 18240,
+    "name": "Ogre Tannin"
+  },
+  {
+    "itemId": 18255,
+    "name": "Runn Tum Tuber"
+  },
+  {
+    "itemId": 18256,
+    "name": "Imbued Vial"
+  },
+  {
+    "itemId": 18335,
+    "name": "Pristine Black Diamond"
+  },
+  {
+    "itemId": 18512,
+    "name": "Larval Acid"
+  },
+  {
+    "itemId": 18631,
+    "name": "Truesilver Transformer"
+  },
+  {
+    "itemId": 19441,
+    "name": "Huge Venom Sac"
+  },
+  {
+    "itemId": 19726,
+    "name": "Bloodvine"
+  },
+  {
+    "itemId": 19767,
+    "name": "Primal Bat Leather"
+  },
+  {
+    "itemId": 19768,
+    "name": "Primal Tiger Leather"
+  },
+  {
+    "itemId": 19774,
+    "name": "Souldarite"
+  },
+  {
+    "itemId": 19943,
+    "name": "Massive Mojo"
+  },
+  {
+    "itemId": 20381,
+    "name": "Dreamscale"
+  },
+  {
+    "itemId": 20424,
+    "name": "Sandworm Meat"
+  },
+  {
+    "itemId": 20498,
+    "name": "Silithid Chitin"
+  },
+  {
+    "itemId": 20500,
+    "name": "Light Silithid Carapace"
+  },
+  {
+    "itemId": 20501,
+    "name": "Heavy Silithid Carapace"
+  },
+  {
+    "itemId": 20520,
+    "name": "Dark Rune"
+  },
+  {
+    "itemId": 20725,
+    "name": "Nexus Crystal"
+  },
+  {
+    "itemId": 20816,
+    "name": "Delicate Copper Wire"
+  },
+  {
+    "itemId": 20817,
+    "name": "Bronze Setting"
+  },
+  {
+    "itemId": 20963,
+    "name": "Mithril Filigree"
+  },
+  {
+    "itemId": 21024,
+    "name": "Chimaerok Tenderloin"
+  },
+  {
+    "itemId": 21071,
+    "name": "Raw Sagefish"
+  },
+  {
+    "itemId": 21153,
+    "name": "Raw Greater Sagefish"
+  },
+  {
+    "itemId": 21752,
+    "name": "Thorium Setting"
+  },
+  {
+    "itemId": 21840,
+    "name": "Bolt of Netherweave"
+  },
+  {
+    "itemId": 21842,
+    "name": "Bolt of Imbued Netherweave"
+  },
+  {
+    "itemId": 21844,
+    "name": "Bolt of Soulcloth"
+  },
+  {
+    "itemId": 21845,
+    "name": "Primal Mooncloth"
+  },
+  {
+    "itemId": 21877,
+    "name": "Netherweave Cloth"
+  },
+  {
+    "itemId": 21881,
+    "name": "Netherweb Spider Silk"
+  },
+  {
+    "itemId": 21882,
+    "name": "Soul Essence"
+  },
+  {
+    "itemId": 21884,
+    "name": "Primal Fire"
+  },
+  {
+    "itemId": 21885,
+    "name": "Primal Water"
+  },
+  {
+    "itemId": 21886,
+    "name": "Primal Life"
+  },
+  {
+    "itemId": 21887,
+    "name": "Knothide Leather"
+  },
+  {
+    "itemId": 21929,
+    "name": "Flame Spessarite"
+  },
+  {
+    "itemId": 22202,
+    "name": "Small Obsidian Shard"
+  },
+  {
+    "itemId": 22203,
+    "name": "Large Obsidian Shard"
+  },
+  {
+    "itemId": 22445,
+    "name": "Arcane Dust"
+  },
+  {
+    "itemId": 22446,
+    "name": "Greater Planar Essence"
+  },
+  {
+    "itemId": 22447,
+    "name": "Lesser Planar Essence"
+  },
+  {
+    "itemId": 22448,
+    "name": "Small Prismatic Shard"
+  },
+  {
+    "itemId": 22449,
+    "name": "Large Prismatic Shard"
+  },
+  {
+    "itemId": 22450,
+    "name": "Void Crystal"
+  },
+  {
+    "itemId": 22451,
+    "name": "Primal Air"
+  },
+  {
+    "itemId": 22452,
+    "name": "Primal Earth"
+  },
+  {
+    "itemId": 22456,
+    "name": "Primal Shadow"
+  },
+  {
+    "itemId": 22457,
+    "name": "Primal Mana"
+  },
+  {
+    "itemId": 22461,
+    "name": "Runed Fel Iron Rod"
+  },
+  {
+    "itemId": 22462,
+    "name": "Runed Adamantite Rod"
+  },
+  {
+    "itemId": 22572,
+    "name": "Mote of Air"
+  },
+  {
+    "itemId": 22573,
+    "name": "Mote of Earth"
+  },
+  {
+    "itemId": 22574,
+    "name": "Mote of Fire"
+  },
+  {
+    "itemId": 22578,
+    "name": "Mote of Water"
+  },
+  {
+    "itemId": 22644,
+    "name": "Crunchy Spider Leg"
+  },
+  {
+    "itemId": 22682,
+    "name": "Frozen Rune"
+  },
+  {
+    "itemId": 22785,
+    "name": "Felweed"
+  },
+  {
+    "itemId": 22786,
+    "name": "Dreaming Glory"
+  },
+  {
+    "itemId": 22787,
+    "name": "Ragveil"
+  },
+  {
+    "itemId": 22789,
+    "name": "Terocone"
+  },
+  {
+    "itemId": 22790,
+    "name": "Ancient Lichen"
+  },
+  {
+    "itemId": 22791,
+    "name": "Netherbloom"
+  },
+  {
+    "itemId": 22792,
+    "name": "Nightmare Vine"
+  },
+  {
+    "itemId": 22793,
+    "name": "Mana Thistle"
+  },
+  {
+    "itemId": 22794,
+    "name": "Fel Lotus"
+  },
+  {
+    "itemId": 22824,
+    "name": "Elixir of Major Strength"
+  },
+  {
+    "itemId": 22829,
+    "name": "Super Healing Potion"
+  },
+  {
+    "itemId": 22831,
+    "name": "Elixir of Major Agility"
+  },
+  {
+    "itemId": 22832,
+    "name": "Super Mana Potion"
+  },
+  {
+    "itemId": 23077,
+    "name": "Blood Garnet"
+  },
+  {
+    "itemId": 23079,
+    "name": "Deep Peridot"
+  },
+  {
+    "itemId": 23107,
+    "name": "Shadow Draenite"
+  },
+  {
+    "itemId": 23112,
+    "name": "Golden Draenite"
+  },
+  {
+    "itemId": 23117,
+    "name": "Azure Moonstone"
+  },
+  {
+    "itemId": 23427,
+    "name": "Eternium Ore"
+  },
+  {
+    "itemId": 23436,
+    "name": "Living Ruby"
+  },
+  {
+    "itemId": 23437,
+    "name": "Talasite"
+  },
+  {
+    "itemId": 23438,
+    "name": "Star of Elune"
+  },
+  {
+    "itemId": 23439,
+    "name": "Noble Topaz"
+  },
+  {
+    "itemId": 23440,
+    "name": "Dawnstone"
+  },
+  {
+    "itemId": 23441,
+    "name": "Nightseye"
+  },
+  {
+    "itemId": 23445,
+    "name": "Fel Iron Bar"
+  },
+  {
+    "itemId": 23446,
+    "name": "Adamantite Bar"
+  },
+  {
+    "itemId": 23447,
+    "name": "Eternium Bar"
+  },
+  {
+    "itemId": 23448,
+    "name": "Felsteel Bar"
+  },
+  {
+    "itemId": 23449,
+    "name": "Khorium Bar"
+  },
+  {
+    "itemId": 23563,
+    "name": "Nether Chain Shirt"
+  },
+  {
+    "itemId": 23564,
+    "name": "Twisting Nether Chain Shirt"
+  },
+  {
+    "itemId": 23571,
+    "name": "Primal Might"
+  },
+  {
+    "itemId": 23572,
+    "name": "Primal Nether"
+  },
+  {
+    "itemId": 23573,
+    "name": "Hardened Adamantite Bar"
+  },
+  {
+    "itemId": 23676,
+    "name": "Moongraze Stag Tenderloin"
+  },
+  {
+    "itemId": 23781,
+    "name": "Elemental Blasting Powder"
+  },
+  {
+    "itemId": 23782,
+    "name": "Fel Iron Casing"
+  },
+  {
+    "itemId": 23783,
+    "name": "Handful of Fel Iron Bolts"
+  },
+  {
+    "itemId": 23784,
+    "name": "Adamantite Frame"
+  },
+  {
+    "itemId": 23785,
+    "name": "Hardened Adamantite Tube"
+  },
+  {
+    "itemId": 23786,
+    "name": "Khorium Power Core"
+  },
+  {
+    "itemId": 23787,
+    "name": "Felsteel Stabilizer"
+  },
+  {
+    "itemId": 23793,
+    "name": "Heavy Knothide Leather"
+  },
+  {
+    "itemId": 23819,
+    "name": "Elemental Seaforium Charge"
+  },
+  {
+    "itemId": 23826,
+    "name": "The Bigger One"
+  },
+  {
+    "itemId": 24243,
+    "name": "Adamantite Powder"
+  },
+  {
+    "itemId": 24271,
+    "name": "Spellcloth"
+  },
+  {
+    "itemId": 24272,
+    "name": "Shadowcloth"
+  },
+  {
+    "itemId": 24477,
+    "name": "Jaggal Clam Meat"
+  },
+  {
+    "itemId": 24478,
+    "name": "Jaggal Pearl"
+  },
+  {
+    "itemId": 24479,
+    "name": "Shadow Pearl"
+  },
+  {
+    "itemId": 25649,
+    "name": "Knothide Leather Scraps"
+  },
+  {
+    "itemId": 25699,
+    "name": "Crystal Infused Leather"
+  },
+  {
+    "itemId": 25700,
+    "name": "Fel Scales"
+  },
+  {
+    "itemId": 25707,
+    "name": "Fel Hide"
+  },
+  {
+    "itemId": 25708,
+    "name": "Thick Clefthoof Leather"
+  },
+  {
+    "itemId": 25719,
+    "name": "Arakkoa Feather"
+  },
+  {
+    "itemId": 25843,
+    "name": "Fel Iron Rod"
+  },
+  {
+    "itemId": 25844,
+    "name": "Adamantite Rod"
+  },
+  {
+    "itemId": 25845,
+    "name": "Eternium Rod"
+  },
+  {
+    "itemId": 25867,
+    "name": "Earthstorm Diamond"
+  },
+  {
+    "itemId": 25868,
+    "name": "Skyfire Diamond"
+  },
+  {
+    "itemId": 27422,
+    "name": "Barbed Gill Trout"
+  },
+  {
+    "itemId": 27425,
+    "name": "Spotted Feltail"
+  },
+  {
+    "itemId": 27429,
+    "name": "Zangarian Sporefish"
+  },
+  {
+    "itemId": 27435,
+    "name": "Figluster's Mudfish"
+  },
+  {
+    "itemId": 27437,
+    "name": "Icefin Bluefish"
+  },
+  {
+    "itemId": 27438,
+    "name": "Golden Darter"
+  },
+  {
+    "itemId": 27439,
+    "name": "Furious Crawdad"
+  },
+  {
+    "itemId": 27503,
+    "name": "Scroll of Strength V"
+  },
+  {
+    "itemId": 27515,
+    "name": "Huge Spotted Feltail"
+  },
+  {
+    "itemId": 27516,
+    "name": "Enormous Barbed Gill Trout"
+  },
+  {
+    "itemId": 27668,
+    "name": "Lynx Meat"
+  },
+  {
+    "itemId": 27669,
+    "name": "Bat Flesh"
+  },
+  {
+    "itemId": 27671,
+    "name": "Buzzard Meat"
+  },
+  {
+    "itemId": 27674,
+    "name": "Ravager Flesh"
+  },
+  {
+    "itemId": 27676,
+    "name": "Strange Spores"
+  },
+  {
+    "itemId": 27677,
+    "name": "Chunk o' Basilisk"
+  },
+  {
+    "itemId": 27678,
+    "name": "Clefthoof Meat"
+  },
+  {
+    "itemId": 27681,
+    "name": "Warped Flesh"
+  },
+  {
+    "itemId": 27682,
+    "name": "Talbuk Venison"
+  },
+  {
+    "itemId": 27860,
+    "name": "Purified Draenic Water"
+  },
+  {
+    "itemId": 28425,
+    "name": "Fireguard"
+  },
+  {
+    "itemId": 28426,
+    "name": "Blazeguard"
+  },
+  {
+    "itemId": 28428,
+    "name": "Lionheart Blade"
+  },
+  {
+    "itemId": 28429,
+    "name": "Lionheart Champion"
+  },
+  {
+    "itemId": 28431,
+    "name": "The Planar Edge"
+  },
+  {
+    "itemId": 28432,
+    "name": "Black Planar Edge"
+  },
+  {
+    "itemId": 28434,
+    "name": "Lunar Crescent"
+  },
+  {
+    "itemId": 28435,
+    "name": "Mooncleaver"
+  },
+  {
+    "itemId": 28437,
+    "name": "Drakefist Hammer"
+  },
+  {
+    "itemId": 28438,
+    "name": "Dragonmaw"
+  },
+  {
+    "itemId": 28440,
+    "name": "Thunder"
+  },
+  {
+    "itemId": 28441,
+    "name": "Deep Thunder"
+  },
+  {
+    "itemId": 28483,
+    "name": "Breastplate of Kings"
+  },
+  {
+    "itemId": 28484,
+    "name": "Bulwark of Kings"
+  },
+  {
+    "itemId": 29539,
+    "name": "Cobra Scales"
+  },
+  {
+    "itemId": 29547,
+    "name": "Wind Scales"
+  },
+  {
+    "itemId": 29548,
+    "name": "Nether Dragonscales"
+  },
+  {
+    "itemId": 30183,
+    "name": "Nether Vortex"
+  },
+  {
+    "itemId": 30817,
+    "name": "Simple Flour"
+  },
+  {
+    "itemId": 31079,
+    "name": "Mercurial Adamantite"
+  },
+  {
+    "itemId": 31670,
+    "name": "Raptor Ribs"
+  },
+  {
+    "itemId": 31671,
+    "name": "Serpent Flesh"
+  },
+  {
+    "itemId": 32227,
+    "name": "Crimson Spinel"
+  },
+  {
+    "itemId": 32228,
+    "name": "Empyrean Sapphire"
+  },
+  {
+    "itemId": 32229,
+    "name": "Lionseye"
+  },
+  {
+    "itemId": 32230,
+    "name": "Shadowsong Amethyst"
+  },
+  {
+    "itemId": 32231,
+    "name": "Pyrestone"
+  },
+  {
+    "itemId": 32249,
+    "name": "Seaspray Emerald"
+  },
+  {
+    "itemId": 32423,
+    "name": "Icy Blasting Primers"
+  },
+  {
+    "itemId": 32428,
+    "name": "Heart of Darkness"
+  },
+  {
+    "itemId": 33823,
+    "name": "Bloodfin Catfish"
+  },
+  {
+    "itemId": 33824,
+    "name": "Crescent-Tail Skullfish"
+  },
+  {
+    "itemId": 34060,
+    "name": "Flying Machine Control"
+  },
+  {
+    "itemId": 34249,
+    "name": "Hula Girl Doll"
+  },
+  {
+    "itemId": 34412,
+    "name": "Sparkling Apple Cider"
+  },
+  {
+    "itemId": 34664,
+    "name": "Sunmote"
+  },
+  {
+    "itemId": 35128,
+    "name": "Hardened Khorium"
+  },
+  {
+    "itemId": 35562,
+    "name": "Bear Flank"
+  }
 ]

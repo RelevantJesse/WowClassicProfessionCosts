@@ -1,0 +1,4738 @@
+{
+  "professionId": 333,
+  "professionName": "Enchanting",
+  "recipes": [
+    {
+      "recipeId": "enchant-bracer-minor-deflection",
+      "professionId": 333,
+      "name": "Enchant Bracer - Minor Deflection",
+      "minSkill": 0,
+      "orangeUntil": 79,
+      "yellowUntil": 99,
+      "greenUntil": 119,
+      "grayAt": 120,
+      "reagents": [
+        {
+          "itemId": 10938,
+          "qty": 1
+        },
+        {
+          "itemId": 10940,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-minor-health",
+      "professionId": 333,
+      "name": "Enchant Bracer - Minor Health",
+      "minSkill": 0,
+      "orangeUntil": 69,
+      "yellowUntil": 89,
+      "greenUntil": 109,
+      "grayAt": 110,
+      "reagents": [
+        {
+          "itemId": 10940,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "large-prismatic-shard",
+      "professionId": 333,
+      "name": "Large Prismatic Shard",
+      "minSkill": 0,
+      "orangeUntil": 0,
+      "yellowUntil": 0,
+      "greenUntil": 334,
+      "grayAt": 335,
+      "reagents": [
+        {
+          "itemId": 22448,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "nexus-transformation",
+      "professionId": 333,
+      "name": "Nexus Transformation",
+      "minSkill": 0,
+      "orangeUntil": 299,
+      "yellowUntil": 299,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 20725,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "runed-eternium-rod",
+      "professionId": 333,
+      "name": "Runed Eternium Rod",
+      "minSkill": 0,
+      "orangeUntil": 374,
+      "yellowUntil": 384,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 25845,
+          "qty": 1
+        },
+        {
+          "itemId": 22446,
+          "qty": 12
+        },
+        {
+          "itemId": 22450,
+          "qty": 2
+        },
+        {
+          "itemId": 23571,
+          "qty": 4
+        },
+        {
+          "itemId": 22462,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "small-prismatic-shard",
+      "professionId": 333,
+      "name": "Small Prismatic Shard",
+      "minSkill": 0,
+      "orangeUntil": 0,
+      "yellowUntil": 334,
+      "greenUntil": 334,
+      "grayAt": 335,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "void-shatter",
+      "professionId": 333,
+      "name": "Void Shatter",
+      "minSkill": 0,
+      "orangeUntil": 0,
+      "yellowUntil": 0,
+      "greenUntil": 374,
+      "grayAt": 375,
+      "reagents": [
+        {
+          "itemId": 22450,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "runed-copper-rod",
+      "professionId": 333,
+      "name": "Runed Copper Rod",
+      "minSkill": 1,
+      "orangeUntil": 4,
+      "yellowUntil": 6,
+      "greenUntil": 9,
+      "grayAt": 10,
+      "reagents": [
+        {
+          "itemId": 6217,
+          "qty": 1
+        },
+        {
+          "itemId": 10940,
+          "qty": 1
+        },
+        {
+          "itemId": 10938,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "lesser-magic-wand",
+      "professionId": 333,
+      "name": "Lesser Magic Wand",
+      "minSkill": 10,
+      "orangeUntil": 74,
+      "yellowUntil": 94,
+      "greenUntil": 114,
+      "grayAt": 115,
+      "reagents": [
+        {
+          "itemId": 4470,
+          "qty": 1
+        },
+        {
+          "itemId": 10938,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-minor-health",
+      "professionId": 333,
+      "name": "Enchant Chest - Minor Health",
+      "minSkill": 15,
+      "orangeUntil": 69,
+      "yellowUntil": 89,
+      "greenUntil": 109,
+      "grayAt": 110,
+      "reagents": [
+        {
+          "itemId": 10940,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-minor-mana",
+      "professionId": 333,
+      "name": "Enchant Chest - Minor Mana",
+      "minSkill": 20,
+      "orangeUntil": 79,
+      "yellowUntil": 99,
+      "greenUntil": 119,
+      "grayAt": 120,
+      "reagents": [
+        {
+          "itemId": 10938,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-minor-absorption",
+      "professionId": 333,
+      "name": "Enchant Chest - Minor Absorption",
+      "minSkill": 40,
+      "orangeUntil": 89,
+      "yellowUntil": 109,
+      "greenUntil": 129,
+      "grayAt": 130,
+      "reagents": [
+        {
+          "itemId": 10940,
+          "qty": 2
+        },
+        {
+          "itemId": 10938,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-minor-resistance",
+      "professionId": 333,
+      "name": "Enchant Cloak - Minor Resistance",
+      "minSkill": 45,
+      "orangeUntil": 94,
+      "yellowUntil": 114,
+      "greenUntil": 134,
+      "grayAt": 135,
+      "reagents": [
+        {
+          "itemId": 10940,
+          "qty": 1
+        },
+        {
+          "itemId": 10938,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "minor-wizard-oil",
+      "professionId": 333,
+      "name": "Minor Wizard Oil",
+      "minSkill": 45,
+      "orangeUntil": 54,
+      "yellowUntil": 64,
+      "greenUntil": 74,
+      "grayAt": 75,
+      "reagents": [
+        {
+          "itemId": 10940,
+          "qty": 2
+        },
+        {
+          "itemId": 17034,
+          "qty": 1
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-minor-stamina",
+      "professionId": 333,
+      "name": "Enchant Bracer - Minor Stamina",
+      "minSkill": 50,
+      "orangeUntil": 99,
+      "yellowUntil": 119,
+      "greenUntil": 139,
+      "grayAt": 140,
+      "reagents": [
+        {
+          "itemId": 10940,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-minor-spirit",
+      "professionId": 333,
+      "name": "Enchant Bracer - Minor Spirit",
+      "minSkill": 60,
+      "orangeUntil": 104,
+      "yellowUntil": 124,
+      "greenUntil": 144,
+      "grayAt": 145,
+      "reagents": [
+        {
+          "itemId": 10938,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-lesser-health",
+      "professionId": 333,
+      "name": "Enchant Chest - Lesser Health",
+      "minSkill": 60,
+      "orangeUntil": 104,
+      "yellowUntil": 124,
+      "greenUntil": 144,
+      "grayAt": 145,
+      "reagents": [
+        {
+          "itemId": 10940,
+          "qty": 2
+        },
+        {
+          "itemId": 10938,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-minor-protection",
+      "professionId": 333,
+      "name": "Enchant Cloak - Minor Protection",
+      "minSkill": 70,
+      "orangeUntil": 109,
+      "yellowUntil": 129,
+      "greenUntil": 149,
+      "grayAt": 150,
+      "reagents": [
+        {
+          "itemId": 10940,
+          "qty": 3
+        },
+        {
+          "itemId": 10939,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "greater-magic-wand",
+      "professionId": 333,
+      "name": "Greater Magic Wand",
+      "minSkill": 70,
+      "orangeUntil": 109,
+      "yellowUntil": 129,
+      "greenUntil": 149,
+      "grayAt": 150,
+      "reagents": [
+        {
+          "itemId": 4470,
+          "qty": 1
+        },
+        {
+          "itemId": 10939,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-minor-agility",
+      "professionId": 333,
+      "name": "Enchant Bracer - Minor Agility",
+      "minSkill": 80,
+      "orangeUntil": 114,
+      "yellowUntil": 134,
+      "greenUntil": 154,
+      "grayAt": 155,
+      "reagents": [
+        {
+          "itemId": 10940,
+          "qty": 2
+        },
+        {
+          "itemId": 10939,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-minor-strength",
+      "professionId": 333,
+      "name": "Enchant Bracer - Minor Strength",
+      "minSkill": 80,
+      "orangeUntil": 114,
+      "yellowUntil": 134,
+      "greenUntil": 154,
+      "grayAt": 155,
+      "reagents": [
+        {
+          "itemId": 10940,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-lesser-mana",
+      "professionId": 333,
+      "name": "Enchant Chest - Lesser Mana",
+      "minSkill": 80,
+      "orangeUntil": 114,
+      "yellowUntil": 134,
+      "greenUntil": 154,
+      "grayAt": 155,
+      "reagents": [
+        {
+          "itemId": 10939,
+          "qty": 1
+        },
+        {
+          "itemId": 10938,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-minor-beastslayer",
+      "professionId": 333,
+      "name": "Enchant Weapon - Minor Beastslayer",
+      "minSkill": 90,
+      "orangeUntil": 119,
+      "yellowUntil": 139,
+      "greenUntil": 159,
+      "grayAt": 160,
+      "reagents": [
+        {
+          "itemId": 10940,
+          "qty": 4
+        },
+        {
+          "itemId": 10939,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-minor-striking",
+      "professionId": 333,
+      "name": "Enchant Weapon - Minor Striking",
+      "minSkill": 90,
+      "orangeUntil": 119,
+      "yellowUntil": 139,
+      "greenUntil": 159,
+      "grayAt": 160,
+      "reagents": [
+        {
+          "itemId": 10940,
+          "qty": 2
+        },
+        {
+          "itemId": 10939,
+          "qty": 1
+        },
+        {
+          "itemId": 10978,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-2h-weapon-lesser-intellect",
+      "professionId": 333,
+      "name": "Enchant 2H Weapon - Lesser Intellect",
+      "minSkill": 100,
+      "orangeUntil": 129,
+      "yellowUntil": 149,
+      "greenUntil": 169,
+      "grayAt": 170,
+      "reagents": [
+        {
+          "itemId": 10939,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-2h-weapon-minor-impact",
+      "professionId": 333,
+      "name": "Enchant 2H Weapon - Minor Impact",
+      "minSkill": 100,
+      "orangeUntil": 129,
+      "yellowUntil": 149,
+      "greenUntil": 169,
+      "grayAt": 170,
+      "reagents": [
+        {
+          "itemId": 10940,
+          "qty": 4
+        },
+        {
+          "itemId": 10978,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "runed-silver-rod",
+      "professionId": 333,
+      "name": "Runed Silver Rod",
+      "minSkill": 100,
+      "orangeUntil": 129,
+      "yellowUntil": 149,
+      "greenUntil": 169,
+      "grayAt": 170,
+      "reagents": [
+        {
+          "itemId": 6338,
+          "qty": 1
+        },
+        {
+          "itemId": 10940,
+          "qty": 6
+        },
+        {
+          "itemId": 10939,
+          "qty": 3
+        },
+        {
+          "itemId": 6218,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-shield-minor-stamina",
+      "professionId": 333,
+      "name": "Enchant Shield - Minor Stamina",
+      "minSkill": 105,
+      "orangeUntil": 129,
+      "yellowUntil": 149,
+      "greenUntil": 169,
+      "grayAt": 170,
+      "reagents": [
+        {
+          "itemId": 10998,
+          "qty": 1
+        },
+        {
+          "itemId": 10940,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-2h-weapon-lesser-spirit",
+      "professionId": 333,
+      "name": "Enchant 2H Weapon - Lesser Spirit",
+      "minSkill": 110,
+      "orangeUntil": 134,
+      "yellowUntil": 154,
+      "greenUntil": 174,
+      "grayAt": 175,
+      "reagents": [
+        {
+          "itemId": 10998,
+          "qty": 1
+        },
+        {
+          "itemId": 10940,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-minor-agility",
+      "professionId": 333,
+      "name": "Enchant Cloak - Minor Agility",
+      "minSkill": 110,
+      "orangeUntil": 134,
+      "yellowUntil": 154,
+      "greenUntil": 174,
+      "grayAt": 175,
+      "reagents": [
+        {
+          "itemId": 10998,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-lesser-protection",
+      "professionId": 333,
+      "name": "Enchant Cloak - Lesser Protection",
+      "minSkill": 115,
+      "orangeUntil": 139,
+      "yellowUntil": 159,
+      "greenUntil": 179,
+      "grayAt": 180,
+      "reagents": [
+        {
+          "itemId": 10940,
+          "qty": 6
+        },
+        {
+          "itemId": 10978,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-shield-lesser-protection",
+      "professionId": 333,
+      "name": "Enchant Shield - Lesser Protection",
+      "minSkill": 115,
+      "orangeUntil": 139,
+      "yellowUntil": 159,
+      "greenUntil": 179,
+      "grayAt": 180,
+      "reagents": [
+        {
+          "itemId": 10998,
+          "qty": 1
+        },
+        {
+          "itemId": 10940,
+          "qty": 1
+        },
+        {
+          "itemId": 10978,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-lesser-spirit",
+      "professionId": 333,
+      "name": "Enchant Bracer - Lesser Spirit",
+      "minSkill": 120,
+      "orangeUntil": 144,
+      "yellowUntil": 164,
+      "greenUntil": 184,
+      "grayAt": 185,
+      "reagents": [
+        {
+          "itemId": 10998,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-health",
+      "professionId": 333,
+      "name": "Enchant Chest - Health",
+      "minSkill": 120,
+      "orangeUntil": 144,
+      "yellowUntil": 164,
+      "greenUntil": 184,
+      "grayAt": 185,
+      "reagents": [
+        {
+          "itemId": 10940,
+          "qty": 4
+        },
+        {
+          "itemId": 10998,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-boots-minor-agility",
+      "professionId": 333,
+      "name": "Enchant Boots - Minor Agility",
+      "minSkill": 125,
+      "orangeUntil": 149,
+      "yellowUntil": 169,
+      "greenUntil": 189,
+      "grayAt": 190,
+      "reagents": [
+        {
+          "itemId": 10940,
+          "qty": 6
+        },
+        {
+          "itemId": 10998,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-boots-minor-stamina",
+      "professionId": 333,
+      "name": "Enchant Boots - Minor Stamina",
+      "minSkill": 125,
+      "orangeUntil": 149,
+      "yellowUntil": 169,
+      "greenUntil": 189,
+      "grayAt": 190,
+      "reagents": [
+        {
+          "itemId": 10940,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-lesser-fire-resistance",
+      "professionId": 333,
+      "name": "Enchant Cloak - Lesser Fire Resistance",
+      "minSkill": 125,
+      "orangeUntil": 149,
+      "yellowUntil": 169,
+      "greenUntil": 189,
+      "grayAt": 190,
+      "reagents": [
+        {
+          "itemId": 6371,
+          "qty": 1
+        },
+        {
+          "itemId": 10998,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-lesser-stamina",
+      "professionId": 333,
+      "name": "Enchant Bracer - Lesser Stamina",
+      "minSkill": 130,
+      "orangeUntil": 154,
+      "yellowUntil": 174,
+      "greenUntil": 194,
+      "grayAt": 195,
+      "reagents": [
+        {
+          "itemId": 11083,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-shield-lesser-spirit",
+      "professionId": 333,
+      "name": "Enchant Shield - Lesser Spirit",
+      "minSkill": 130,
+      "orangeUntil": 154,
+      "yellowUntil": 174,
+      "greenUntil": 194,
+      "grayAt": 195,
+      "reagents": [
+        {
+          "itemId": 10998,
+          "qty": 2
+        },
+        {
+          "itemId": 10940,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-lesser-shadow-resistance",
+      "professionId": 333,
+      "name": "Enchant Cloak - Lesser Shadow Resistance",
+      "minSkill": 135,
+      "orangeUntil": 159,
+      "yellowUntil": 179,
+      "greenUntil": 199,
+      "grayAt": 200,
+      "reagents": [
+        {
+          "itemId": 11082,
+          "qty": 1
+        },
+        {
+          "itemId": 6048,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-lesser-strength",
+      "professionId": 333,
+      "name": "Enchant Bracer - Lesser Strength",
+      "minSkill": 140,
+      "orangeUntil": 164,
+      "yellowUntil": 184,
+      "greenUntil": 204,
+      "grayAt": 205,
+      "reagents": [
+        {
+          "itemId": 11083,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-lesser-absorption",
+      "professionId": 333,
+      "name": "Enchant Chest - Lesser Absorption",
+      "minSkill": 140,
+      "orangeUntil": 164,
+      "yellowUntil": 184,
+      "greenUntil": 204,
+      "grayAt": 205,
+      "reagents": [
+        {
+          "itemId": 10940,
+          "qty": 2
+        },
+        {
+          "itemId": 11082,
+          "qty": 1
+        },
+        {
+          "itemId": 11084,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-lesser-striking",
+      "professionId": 333,
+      "name": "Enchant Weapon - Lesser Striking",
+      "minSkill": 140,
+      "orangeUntil": 164,
+      "yellowUntil": 184,
+      "greenUntil": 204,
+      "grayAt": 205,
+      "reagents": [
+        {
+          "itemId": 11083,
+          "qty": 2
+        },
+        {
+          "itemId": 11084,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-2h-weapon-lesser-impact",
+      "professionId": 333,
+      "name": "Enchant 2H Weapon - Lesser Impact",
+      "minSkill": 145,
+      "orangeUntil": 169,
+      "yellowUntil": 189,
+      "greenUntil": 209,
+      "grayAt": 210,
+      "reagents": [
+        {
+          "itemId": 11083,
+          "qty": 3
+        },
+        {
+          "itemId": 11084,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-mana",
+      "professionId": 333,
+      "name": "Enchant Chest - Mana",
+      "minSkill": 145,
+      "orangeUntil": 169,
+      "yellowUntil": 189,
+      "greenUntil": 209,
+      "grayAt": 210,
+      "reagents": [
+        {
+          "itemId": 11082,
+          "qty": 1
+        },
+        {
+          "itemId": 10998,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-fishing",
+      "professionId": 333,
+      "name": "Enchant Gloves - Fishing",
+      "minSkill": 145,
+      "orangeUntil": 169,
+      "yellowUntil": 189,
+      "greenUntil": 209,
+      "grayAt": 210,
+      "reagents": [
+        {
+          "itemId": 11083,
+          "qty": 1
+        },
+        {
+          "itemId": 6370,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-herbalism",
+      "professionId": 333,
+      "name": "Enchant Gloves - Herbalism",
+      "minSkill": 145,
+      "orangeUntil": 169,
+      "yellowUntil": 189,
+      "greenUntil": 209,
+      "grayAt": 210,
+      "reagents": [
+        {
+          "itemId": 11083,
+          "qty": 1
+        },
+        {
+          "itemId": 3356,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-mining",
+      "professionId": 333,
+      "name": "Enchant Gloves - Mining",
+      "minSkill": 145,
+      "orangeUntil": 169,
+      "yellowUntil": 189,
+      "greenUntil": 209,
+      "grayAt": 210,
+      "reagents": [
+        {
+          "itemId": 11083,
+          "qty": 1
+        },
+        {
+          "itemId": 2772,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-lesser-intellect",
+      "professionId": 333,
+      "name": "Enchant Bracer - Lesser Intellect",
+      "minSkill": 150,
+      "orangeUntil": 174,
+      "yellowUntil": 194,
+      "greenUntil": 214,
+      "grayAt": 215,
+      "reagents": [
+        {
+          "itemId": 11082,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-minor-stats",
+      "professionId": 333,
+      "name": "Enchant Chest - Minor Stats",
+      "minSkill": 150,
+      "orangeUntil": 174,
+      "yellowUntil": 194,
+      "greenUntil": 214,
+      "grayAt": 215,
+      "reagents": [
+        {
+          "itemId": 11082,
+          "qty": 1
+        },
+        {
+          "itemId": 11083,
+          "qty": 1
+        },
+        {
+          "itemId": 11084,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "minor-mana-oil",
+      "professionId": 333,
+      "name": "Minor Mana Oil",
+      "minSkill": 150,
+      "orangeUntil": 159,
+      "yellowUntil": 169,
+      "greenUntil": 179,
+      "grayAt": 180,
+      "reagents": [
+        {
+          "itemId": 11083,
+          "qty": 3
+        },
+        {
+          "itemId": 17034,
+          "qty": 2
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "runed-golden-rod",
+      "professionId": 333,
+      "name": "Runed Golden Rod",
+      "minSkill": 150,
+      "orangeUntil": 174,
+      "yellowUntil": 194,
+      "greenUntil": 214,
+      "grayAt": 215,
+      "reagents": [
+        {
+          "itemId": 11128,
+          "qty": 1
+        },
+        {
+          "itemId": 5500,
+          "qty": 1
+        },
+        {
+          "itemId": 11082,
+          "qty": 2
+        },
+        {
+          "itemId": 11083,
+          "qty": 2
+        },
+        {
+          "itemId": 6339,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-defense",
+      "professionId": 333,
+      "name": "Enchant Cloak - Defense",
+      "minSkill": 155,
+      "orangeUntil": 174,
+      "yellowUntil": 194,
+      "greenUntil": 214,
+      "grayAt": 215,
+      "reagents": [
+        {
+          "itemId": 11138,
+          "qty": 1
+        },
+        {
+          "itemId": 11083,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-shield-lesser-stamina",
+      "professionId": 333,
+      "name": "Enchant Shield - Lesser Stamina",
+      "minSkill": 155,
+      "orangeUntil": 174,
+      "yellowUntil": 194,
+      "greenUntil": 214,
+      "grayAt": 215,
+      "reagents": [
+        {
+          "itemId": 11134,
+          "qty": 1
+        },
+        {
+          "itemId": 11083,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "lesser-mystic-wand",
+      "professionId": 333,
+      "name": "Lesser Mystic Wand",
+      "minSkill": 155,
+      "orangeUntil": 174,
+      "yellowUntil": 194,
+      "greenUntil": 214,
+      "grayAt": 215,
+      "reagents": [
+        {
+          "itemId": 11291,
+          "qty": 1
+        },
+        {
+          "itemId": 11134,
+          "qty": 1
+        },
+        {
+          "itemId": 11083,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-boots-lesser-agility",
+      "professionId": 333,
+      "name": "Enchant Boots - Lesser Agility",
+      "minSkill": 160,
+      "orangeUntil": 179,
+      "yellowUntil": 199,
+      "greenUntil": 219,
+      "grayAt": 220,
+      "reagents": [
+        {
+          "itemId": 11083,
+          "qty": 1
+        },
+        {
+          "itemId": 11134,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-greater-health",
+      "professionId": 333,
+      "name": "Enchant Chest - Greater Health",
+      "minSkill": 160,
+      "orangeUntil": 179,
+      "yellowUntil": 199,
+      "greenUntil": 219,
+      "grayAt": 220,
+      "reagents": [
+        {
+          "itemId": 11083,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-spirit",
+      "professionId": 333,
+      "name": "Enchant Bracer - Spirit",
+      "minSkill": 165,
+      "orangeUntil": 184,
+      "yellowUntil": 204,
+      "greenUntil": 224,
+      "grayAt": 225,
+      "reagents": [
+        {
+          "itemId": 11134,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-boots-lesser-stamina",
+      "professionId": 333,
+      "name": "Enchant Boots - Lesser Stamina",
+      "minSkill": 170,
+      "orangeUntil": 189,
+      "yellowUntil": 209,
+      "greenUntil": 229,
+      "grayAt": 230,
+      "reagents": [
+        {
+          "itemId": 11083,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-lesser-deflection",
+      "professionId": 333,
+      "name": "Enchant Bracer - Lesser Deflection",
+      "minSkill": 170,
+      "orangeUntil": 189,
+      "yellowUntil": 209,
+      "greenUntil": 229,
+      "grayAt": 230,
+      "reagents": [
+        {
+          "itemId": 11134,
+          "qty": 1
+        },
+        {
+          "itemId": 11083,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-stamina",
+      "professionId": 333,
+      "name": "Enchant Bracer - Stamina",
+      "minSkill": 170,
+      "orangeUntil": 189,
+      "yellowUntil": 209,
+      "greenUntil": 229,
+      "grayAt": 230,
+      "reagents": [
+        {
+          "itemId": 11083,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-fire-resistance",
+      "professionId": 333,
+      "name": "Enchant Cloak - Fire Resistance",
+      "minSkill": 175,
+      "orangeUntil": 194,
+      "yellowUntil": 214,
+      "greenUntil": 234,
+      "grayAt": 235,
+      "reagents": [
+        {
+          "itemId": 11134,
+          "qty": 1
+        },
+        {
+          "itemId": 7068,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-lesser-beastslayer",
+      "professionId": 333,
+      "name": "Enchant Weapon - Lesser Beastslayer",
+      "minSkill": 175,
+      "orangeUntil": 194,
+      "yellowUntil": 214,
+      "greenUntil": 234,
+      "grayAt": 235,
+      "reagents": [
+        {
+          "itemId": 11134,
+          "qty": 1
+        },
+        {
+          "itemId": 5637,
+          "qty": 2
+        },
+        {
+          "itemId": 11138,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-lesser-elemental-slayer",
+      "professionId": 333,
+      "name": "Enchant Weapon - Lesser Elemental Slayer",
+      "minSkill": 175,
+      "orangeUntil": 194,
+      "yellowUntil": 214,
+      "greenUntil": 234,
+      "grayAt": 235,
+      "reagents": [
+        {
+          "itemId": 11134,
+          "qty": 1
+        },
+        {
+          "itemId": 7067,
+          "qty": 1
+        },
+        {
+          "itemId": 11138,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "greater-mystic-wand",
+      "professionId": 333,
+      "name": "Greater Mystic Wand",
+      "minSkill": 175,
+      "orangeUntil": 194,
+      "yellowUntil": 214,
+      "greenUntil": 234,
+      "grayAt": 235,
+      "reagents": [
+        {
+          "itemId": 11291,
+          "qty": 1
+        },
+        {
+          "itemId": 11135,
+          "qty": 1
+        },
+        {
+          "itemId": 11137,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-strength",
+      "professionId": 333,
+      "name": "Enchant Bracer - Strength",
+      "minSkill": 180,
+      "orangeUntil": 199,
+      "yellowUntil": 219,
+      "greenUntil": 239,
+      "grayAt": 240,
+      "reagents": [
+        {
+          "itemId": 11137,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-shield-spirit",
+      "professionId": 333,
+      "name": "Enchant Shield - Spirit",
+      "minSkill": 180,
+      "orangeUntil": 199,
+      "yellowUntil": 219,
+      "greenUntil": 239,
+      "grayAt": 240,
+      "reagents": [
+        {
+          "itemId": 11135,
+          "qty": 1
+        },
+        {
+          "itemId": 11137,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-greater-mana",
+      "professionId": 333,
+      "name": "Enchant Chest - Greater Mana",
+      "minSkill": 185,
+      "orangeUntil": 204,
+      "yellowUntil": 224,
+      "greenUntil": 244,
+      "grayAt": 245,
+      "reagents": [
+        {
+          "itemId": 11135,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-boots-lesser-spirit",
+      "professionId": 333,
+      "name": "Enchant Boots - Lesser Spirit",
+      "minSkill": 190,
+      "orangeUntil": 209,
+      "yellowUntil": 229,
+      "greenUntil": 249,
+      "grayAt": 250,
+      "reagents": [
+        {
+          "itemId": 11135,
+          "qty": 1
+        },
+        {
+          "itemId": 11134,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-winter-s-might",
+      "professionId": 333,
+      "name": "Enchant Weapon - Winter's Might",
+      "minSkill": 190,
+      "orangeUntil": 209,
+      "yellowUntil": 229,
+      "greenUntil": 249,
+      "grayAt": 250,
+      "reagents": [
+        {
+          "itemId": 11135,
+          "qty": 3
+        },
+        {
+          "itemId": 11137,
+          "qty": 3
+        },
+        {
+          "itemId": 11139,
+          "qty": 1
+        },
+        {
+          "itemId": 3819,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-shield-lesser-block",
+      "professionId": 333,
+      "name": "Enchant Shield - Lesser Block",
+      "minSkill": 195,
+      "orangeUntil": 214,
+      "yellowUntil": 234,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 11135,
+          "qty": 2
+        },
+        {
+          "itemId": 11137,
+          "qty": 2
+        },
+        {
+          "itemId": 11139,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-striking",
+      "professionId": 333,
+      "name": "Enchant Weapon - Striking",
+      "minSkill": 195,
+      "orangeUntil": 214,
+      "yellowUntil": 234,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 11135,
+          "qty": 2
+        },
+        {
+          "itemId": 11139,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-2h-weapon-impact",
+      "professionId": 333,
+      "name": "Enchant 2H Weapon - Impact",
+      "minSkill": 200,
+      "orangeUntil": 219,
+      "yellowUntil": 239,
+      "greenUntil": 259,
+      "grayAt": 260,
+      "reagents": [
+        {
+          "itemId": 11137,
+          "qty": 4
+        },
+        {
+          "itemId": 11139,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-lesser-stats",
+      "professionId": 333,
+      "name": "Enchant Chest - Lesser Stats",
+      "minSkill": 200,
+      "orangeUntil": 219,
+      "yellowUntil": 239,
+      "greenUntil": 259,
+      "grayAt": 260,
+      "reagents": [
+        {
+          "itemId": 11135,
+          "qty": 2
+        },
+        {
+          "itemId": 11137,
+          "qty": 2
+        },
+        {
+          "itemId": 11139,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-skinning",
+      "professionId": 333,
+      "name": "Enchant Gloves - Skinning",
+      "minSkill": 200,
+      "orangeUntil": 219,
+      "yellowUntil": 239,
+      "greenUntil": 259,
+      "grayAt": 260,
+      "reagents": [
+        {
+          "itemId": 11137,
+          "qty": 1
+        },
+        {
+          "itemId": 7392,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "lesser-wizard-oil",
+      "professionId": 333,
+      "name": "Lesser Wizard Oil",
+      "minSkill": 200,
+      "orangeUntil": 209,
+      "yellowUntil": 219,
+      "greenUntil": 229,
+      "grayAt": 230,
+      "reagents": [
+        {
+          "itemId": 11137,
+          "qty": 3
+        },
+        {
+          "itemId": 17035,
+          "qty": 2
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "runed-truesilver-rod",
+      "professionId": 333,
+      "name": "Runed Truesilver Rod",
+      "minSkill": 200,
+      "orangeUntil": 219,
+      "yellowUntil": 239,
+      "greenUntil": 259,
+      "grayAt": 260,
+      "reagents": [
+        {
+          "itemId": 11144,
+          "qty": 1
+        },
+        {
+          "itemId": 7971,
+          "qty": 1
+        },
+        {
+          "itemId": 11135,
+          "qty": 2
+        },
+        {
+          "itemId": 11137,
+          "qty": 2
+        },
+        {
+          "itemId": 11130,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-greater-defense",
+      "professionId": 333,
+      "name": "Enchant Cloak - Greater Defense",
+      "minSkill": 205,
+      "orangeUntil": 224,
+      "yellowUntil": 244,
+      "greenUntil": 264,
+      "grayAt": 265,
+      "reagents": [
+        {
+          "itemId": 11137,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-resistance",
+      "professionId": 333,
+      "name": "Enchant Cloak - Resistance",
+      "minSkill": 205,
+      "orangeUntil": 224,
+      "yellowUntil": 244,
+      "greenUntil": 264,
+      "grayAt": 265,
+      "reagents": [
+        {
+          "itemId": 11174,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-intellect",
+      "professionId": 333,
+      "name": "Enchant Bracer - Intellect",
+      "minSkill": 210,
+      "orangeUntil": 229,
+      "yellowUntil": 249,
+      "greenUntil": 269,
+      "grayAt": 270,
+      "reagents": [
+        {
+          "itemId": 11174,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-agility",
+      "professionId": 333,
+      "name": "Enchant Gloves - Agility",
+      "minSkill": 210,
+      "orangeUntil": 229,
+      "yellowUntil": 249,
+      "greenUntil": 269,
+      "grayAt": 270,
+      "reagents": [
+        {
+          "itemId": 11174,
+          "qty": 1
+        },
+        {
+          "itemId": 11137,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-shield-stamina",
+      "professionId": 333,
+      "name": "Enchant Shield - Stamina",
+      "minSkill": 210,
+      "orangeUntil": 229,
+      "yellowUntil": 249,
+      "greenUntil": 269,
+      "grayAt": 270,
+      "reagents": [
+        {
+          "itemId": 11137,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-boots-stamina",
+      "professionId": 333,
+      "name": "Enchant Boots - Stamina",
+      "minSkill": 215,
+      "orangeUntil": 234,
+      "yellowUntil": 254,
+      "greenUntil": 274,
+      "grayAt": 275,
+      "reagents": [
+        {
+          "itemId": 11137,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-advanced-mining",
+      "professionId": 333,
+      "name": "Enchant Gloves - Advanced Mining",
+      "minSkill": 215,
+      "orangeUntil": 234,
+      "yellowUntil": 254,
+      "greenUntil": 274,
+      "grayAt": 275,
+      "reagents": [
+        {
+          "itemId": 11137,
+          "qty": 3
+        },
+        {
+          "itemId": 6037,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-greater-spirit",
+      "professionId": 333,
+      "name": "Enchant Bracer - Greater Spirit",
+      "minSkill": 220,
+      "orangeUntil": 239,
+      "yellowUntil": 259,
+      "greenUntil": 279,
+      "grayAt": 280,
+      "reagents": [
+        {
+          "itemId": 11174,
+          "qty": 3
+        },
+        {
+          "itemId": 11137,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-superior-health",
+      "professionId": 333,
+      "name": "Enchant Chest - Superior Health",
+      "minSkill": 220,
+      "orangeUntil": 239,
+      "yellowUntil": 259,
+      "greenUntil": 279,
+      "grayAt": 280,
+      "reagents": [
+        {
+          "itemId": 11137,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-boots-minor-speed",
+      "professionId": 333,
+      "name": "Enchant Boots - Minor Speed",
+      "minSkill": 225,
+      "orangeUntil": 244,
+      "yellowUntil": 264,
+      "greenUntil": 284,
+      "grayAt": 285,
+      "reagents": [
+        {
+          "itemId": 11177,
+          "qty": 1
+        },
+        {
+          "itemId": 7909,
+          "qty": 1
+        },
+        {
+          "itemId": 11174,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-lesser-agility",
+      "professionId": 333,
+      "name": "Enchant Cloak - Lesser Agility",
+      "minSkill": 225,
+      "orangeUntil": 244,
+      "yellowUntil": 264,
+      "greenUntil": 284,
+      "grayAt": 285,
+      "reagents": [
+        {
+          "itemId": 11174,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-advanced-herbalism",
+      "professionId": 333,
+      "name": "Enchant Gloves - Advanced Herbalism",
+      "minSkill": 225,
+      "orangeUntil": 244,
+      "yellowUntil": 264,
+      "greenUntil": 284,
+      "grayAt": 285,
+      "reagents": [
+        {
+          "itemId": 11137,
+          "qty": 3
+        },
+        {
+          "itemId": 8838,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-strength",
+      "professionId": 333,
+      "name": "Enchant Gloves - Strength",
+      "minSkill": 225,
+      "orangeUntil": 244,
+      "yellowUntil": 264,
+      "greenUntil": 284,
+      "grayAt": 285,
+      "reagents": [
+        {
+          "itemId": 11174,
+          "qty": 2
+        },
+        {
+          "itemId": 11137,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-superior-mana",
+      "professionId": 333,
+      "name": "Enchant Chest - Superior Mana",
+      "minSkill": 230,
+      "orangeUntil": 249,
+      "yellowUntil": 269,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 11175,
+          "qty": 1
+        },
+        {
+          "itemId": 11174,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-shield-greater-spirit",
+      "professionId": 333,
+      "name": "Enchant Shield - Greater Spirit",
+      "minSkill": 230,
+      "orangeUntil": 249,
+      "yellowUntil": 269,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 11175,
+          "qty": 1
+        },
+        {
+          "itemId": 11176,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-demonslaying",
+      "professionId": 333,
+      "name": "Enchant Weapon - Demonslaying",
+      "minSkill": 230,
+      "orangeUntil": 249,
+      "yellowUntil": 269,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 11177,
+          "qty": 1
+        },
+        {
+          "itemId": 11176,
+          "qty": 2
+        },
+        {
+          "itemId": 9224,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-boots-agility",
+      "professionId": 333,
+      "name": "Enchant Boots - Agility",
+      "minSkill": 235,
+      "orangeUntil": 254,
+      "yellowUntil": 274,
+      "greenUntil": 294,
+      "grayAt": 295,
+      "reagents": [
+        {
+          "itemId": 11175,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-deflection",
+      "professionId": 333,
+      "name": "Enchant Bracer - Deflection",
+      "minSkill": 235,
+      "orangeUntil": 254,
+      "yellowUntil": 274,
+      "greenUntil": 294,
+      "grayAt": 295,
+      "reagents": [
+        {
+          "itemId": 11175,
+          "qty": 1
+        },
+        {
+          "itemId": 11176,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-shield-frost-resistance",
+      "professionId": 333,
+      "name": "Enchant Shield - Frost Resistance",
+      "minSkill": 235,
+      "orangeUntil": 254,
+      "yellowUntil": 274,
+      "greenUntil": 294,
+      "grayAt": 295,
+      "reagents": [
+        {
+          "itemId": 11178,
+          "qty": 1
+        },
+        {
+          "itemId": 3829,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-2h-weapon-greater-impact",
+      "professionId": 333,
+      "name": "Enchant 2H Weapon - Greater Impact",
+      "minSkill": 240,
+      "orangeUntil": 259,
+      "yellowUntil": 279,
+      "greenUntil": 299,
+      "grayAt": 300,
+      "reagents": [
+        {
+          "itemId": 11178,
+          "qty": 2
+        },
+        {
+          "itemId": 11176,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-greater-strength",
+      "professionId": 333,
+      "name": "Enchant Bracer - Greater Strength",
+      "minSkill": 240,
+      "orangeUntil": 259,
+      "yellowUntil": 279,
+      "greenUntil": 299,
+      "grayAt": 300,
+      "reagents": [
+        {
+          "itemId": 11176,
+          "qty": 2
+        },
+        {
+          "itemId": 11175,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-greater-stamina",
+      "professionId": 333,
+      "name": "Enchant Bracer - Greater Stamina",
+      "minSkill": 245,
+      "orangeUntil": 264,
+      "yellowUntil": 284,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 11176,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-stats",
+      "professionId": 333,
+      "name": "Enchant Chest - Stats",
+      "minSkill": 245,
+      "orangeUntil": 264,
+      "yellowUntil": 284,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 11178,
+          "qty": 1
+        },
+        {
+          "itemId": 11176,
+          "qty": 3
+        },
+        {
+          "itemId": 11175,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-greater-striking",
+      "professionId": 333,
+      "name": "Enchant Weapon - Greater Striking",
+      "minSkill": 245,
+      "orangeUntil": 264,
+      "yellowUntil": 284,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 11178,
+          "qty": 2
+        },
+        {
+          "itemId": 11175,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-minor-haste",
+      "professionId": 333,
+      "name": "Enchant Gloves - Minor Haste",
+      "minSkill": 250,
+      "orangeUntil": 269,
+      "yellowUntil": 289,
+      "greenUntil": 309,
+      "grayAt": 310,
+      "reagents": [
+        {
+          "itemId": 11178,
+          "qty": 2
+        },
+        {
+          "itemId": 8153,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-riding-skill",
+      "professionId": 333,
+      "name": "Enchant Gloves - Riding Skill",
+      "minSkill": 250,
+      "orangeUntil": 269,
+      "yellowUntil": 289,
+      "greenUntil": 309,
+      "grayAt": 310,
+      "reagents": [
+        {
+          "itemId": 11178,
+          "qty": 2
+        },
+        {
+          "itemId": 11176,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "enchanted-leather",
+      "professionId": 333,
+      "name": "Enchanted Leather",
+      "minSkill": 250,
+      "orangeUntil": 250,
+      "yellowUntil": 254,
+      "greenUntil": 259,
+      "grayAt": 260,
+      "reagents": [
+        {
+          "itemId": 8170,
+          "qty": 1
+        },
+        {
+          "itemId": 16202,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchanted-thorium",
+      "professionId": 333,
+      "name": "Enchanted Thorium",
+      "minSkill": 250,
+      "orangeUntil": 250,
+      "yellowUntil": 254,
+      "greenUntil": 259,
+      "grayAt": 260,
+      "reagents": [
+        {
+          "itemId": 12359,
+          "qty": 1
+        },
+        {
+          "itemId": 11176,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "lesser-mana-oil",
+      "professionId": 333,
+      "name": "Lesser Mana Oil",
+      "minSkill": 250,
+      "orangeUntil": 259,
+      "yellowUntil": 269,
+      "greenUntil": 279,
+      "grayAt": 280,
+      "reagents": [
+        {
+          "itemId": 11176,
+          "qty": 3
+        },
+        {
+          "itemId": 8831,
+          "qty": 2
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-greater-intellect",
+      "professionId": 333,
+      "name": "Enchant Bracer - Greater Intellect",
+      "minSkill": 255,
+      "orangeUntil": 274,
+      "yellowUntil": 294,
+      "greenUntil": 314,
+      "grayAt": 315,
+      "reagents": [
+        {
+          "itemId": 16202,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-boots-greater-stamina",
+      "professionId": 333,
+      "name": "Enchant Boots - Greater Stamina",
+      "minSkill": 260,
+      "orangeUntil": 279,
+      "yellowUntil": 299,
+      "greenUntil": 319,
+      "grayAt": 320,
+      "reagents": [
+        {
+          "itemId": 11176,
+          "qty": 10
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-greater-resistance",
+      "professionId": 333,
+      "name": "Enchant Cloak - Greater Resistance",
+      "minSkill": 265,
+      "orangeUntil": 284,
+      "yellowUntil": 304,
+      "greenUntil": 324,
+      "grayAt": 325,
+      "reagents": [
+        {
+          "itemId": 16202,
+          "qty": 2
+        },
+        {
+          "itemId": 7077,
+          "qty": 1
+        },
+        {
+          "itemId": 7075,
+          "qty": 1
+        },
+        {
+          "itemId": 7079,
+          "qty": 1
+        },
+        {
+          "itemId": 7081,
+          "qty": 1
+        },
+        {
+          "itemId": 7972,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-shield-greater-stamina",
+      "professionId": 333,
+      "name": "Enchant Shield - Greater Stamina",
+      "minSkill": 265,
+      "orangeUntil": 284,
+      "yellowUntil": 304,
+      "greenUntil": 324,
+      "grayAt": 325,
+      "reagents": [
+        {
+          "itemId": 11176,
+          "qty": 10
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-fiery-weapon",
+      "professionId": 333,
+      "name": "Enchant Weapon - Fiery Weapon",
+      "minSkill": 265,
+      "orangeUntil": 284,
+      "yellowUntil": 304,
+      "greenUntil": 324,
+      "grayAt": 325,
+      "reagents": [
+        {
+          "itemId": 11177,
+          "qty": 4
+        },
+        {
+          "itemId": 7078,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "smoking-heart-of-the-mountain",
+      "professionId": 333,
+      "name": "Smoking Heart of the Mountain",
+      "minSkill": 265,
+      "orangeUntil": 284,
+      "yellowUntil": 304,
+      "greenUntil": 324,
+      "grayAt": 325,
+      "reagents": [
+        {
+          "itemId": 11382,
+          "qty": 1
+        },
+        {
+          "itemId": 7078,
+          "qty": 1
+        },
+        {
+          "itemId": 14343,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-superior-spirit",
+      "professionId": 333,
+      "name": "Enchant Bracer - Superior Spirit",
+      "minSkill": 270,
+      "orangeUntil": 289,
+      "yellowUntil": 309,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 16202,
+          "qty": 3
+        },
+        {
+          "itemId": 11176,
+          "qty": 10
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-greater-agility",
+      "professionId": 333,
+      "name": "Enchant Gloves - Greater Agility",
+      "minSkill": 270,
+      "orangeUntil": 289,
+      "yellowUntil": 309,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 16202,
+          "qty": 3
+        },
+        {
+          "itemId": 16204,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-boots-spirit",
+      "professionId": 333,
+      "name": "Enchant Boots - Spirit",
+      "minSkill": 275,
+      "orangeUntil": 294,
+      "yellowUntil": 314,
+      "greenUntil": 334,
+      "grayAt": 335,
+      "reagents": [
+        {
+          "itemId": 16203,
+          "qty": 2
+        },
+        {
+          "itemId": 16202,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-major-health",
+      "professionId": 333,
+      "name": "Enchant Chest - Major Health",
+      "minSkill": 275,
+      "orangeUntil": 294,
+      "yellowUntil": 314,
+      "greenUntil": 334,
+      "grayAt": 335,
+      "reagents": [
+        {
+          "itemId": 16204,
+          "qty": 6
+        },
+        {
+          "itemId": 14343,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "wizard-oil",
+      "professionId": 333,
+      "name": "Wizard Oil",
+      "minSkill": 275,
+      "orangeUntil": 284,
+      "yellowUntil": 294,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 16204,
+          "qty": 3
+        },
+        {
+          "itemId": 4625,
+          "qty": 2
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-shield-superior-spirit",
+      "professionId": 333,
+      "name": "Enchant Shield - Superior Spirit",
+      "minSkill": 280,
+      "orangeUntil": 299,
+      "yellowUntil": 319,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 16203,
+          "qty": 2
+        },
+        {
+          "itemId": 16204,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-superior-defense",
+      "professionId": 333,
+      "name": "Enchant Cloak - Superior Defense",
+      "minSkill": 285,
+      "orangeUntil": 299,
+      "yellowUntil": 316,
+      "greenUntil": 334,
+      "grayAt": 335,
+      "reagents": [
+        {
+          "itemId": 16204,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-icy-chill",
+      "professionId": 333,
+      "name": "Enchant Weapon - Icy Chill",
+      "minSkill": 285,
+      "orangeUntil": 299,
+      "yellowUntil": 316,
+      "greenUntil": 334,
+      "grayAt": 335,
+      "reagents": [
+        {
+          "itemId": 14343,
+          "qty": 4
+        },
+        {
+          "itemId": 7080,
+          "qty": 1
+        },
+        {
+          "itemId": 7082,
+          "qty": 1
+        },
+        {
+          "itemId": 13467,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-2h-weapon-agility",
+      "professionId": 333,
+      "name": "Enchant 2H Weapon - Agility",
+      "minSkill": 290,
+      "orangeUntil": 304,
+      "yellowUntil": 321,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 14344,
+          "qty": 10
+        },
+        {
+          "itemId": 16203,
+          "qty": 6
+        },
+        {
+          "itemId": 16204,
+          "qty": 14
+        },
+        {
+          "itemId": 7082,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-mana-regeneration",
+      "professionId": 333,
+      "name": "Enchant Bracer - Mana Regeneration",
+      "minSkill": 290,
+      "orangeUntil": 304,
+      "yellowUntil": 321,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 16204,
+          "qty": 16
+        },
+        {
+          "itemId": 16203,
+          "qty": 4
+        },
+        {
+          "itemId": 7080,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-major-mana",
+      "professionId": 333,
+      "name": "Enchant Chest - Major Mana",
+      "minSkill": 290,
+      "orangeUntil": 304,
+      "yellowUntil": 321,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 16203,
+          "qty": 3
+        },
+        {
+          "itemId": 14343,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-agility",
+      "professionId": 333,
+      "name": "Enchant Weapon - Agility",
+      "minSkill": 290,
+      "orangeUntil": 304,
+      "yellowUntil": 321,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 14344,
+          "qty": 6
+        },
+        {
+          "itemId": 16203,
+          "qty": 6
+        },
+        {
+          "itemId": 16204,
+          "qty": 4
+        },
+        {
+          "itemId": 7082,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-strength",
+      "professionId": 333,
+      "name": "Enchant Weapon - Strength",
+      "minSkill": 290,
+      "orangeUntil": 304,
+      "yellowUntil": 321,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 14344,
+          "qty": 6
+        },
+        {
+          "itemId": 16203,
+          "qty": 6
+        },
+        {
+          "itemId": 16204,
+          "qty": 4
+        },
+        {
+          "itemId": 7076,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "runed-arcanite-rod",
+      "professionId": 333,
+      "name": "Runed Arcanite Rod",
+      "minSkill": 290,
+      "orangeUntil": 304,
+      "yellowUntil": 321,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 16206,
+          "qty": 1
+        },
+        {
+          "itemId": 13926,
+          "qty": 1
+        },
+        {
+          "itemId": 16204,
+          "qty": 10
+        },
+        {
+          "itemId": 16203,
+          "qty": 4
+        },
+        {
+          "itemId": 11145,
+          "qty": 1
+        },
+        {
+          "itemId": 14344,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-2h-weapon-superior-impact",
+      "professionId": 333,
+      "name": "Enchant 2H Weapon - Superior Impact",
+      "minSkill": 295,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 14344,
+          "qty": 4
+        },
+        {
+          "itemId": 16204,
+          "qty": 10
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-boots-greater-agility",
+      "professionId": 333,
+      "name": "Enchant Boots - Greater Agility",
+      "minSkill": 295,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 16203,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-superior-strength",
+      "professionId": 333,
+      "name": "Enchant Bracer - Superior Strength",
+      "minSkill": 295,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 16204,
+          "qty": 6
+        },
+        {
+          "itemId": 16203,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-greater-strength",
+      "professionId": 333,
+      "name": "Enchant Gloves - Greater Strength",
+      "minSkill": 295,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 16203,
+          "qty": 4
+        },
+        {
+          "itemId": 16204,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-unholy-weapon",
+      "professionId": 333,
+      "name": "Enchant Weapon - Unholy Weapon",
+      "minSkill": 295,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 14344,
+          "qty": 4
+        },
+        {
+          "itemId": 12808,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "brilliant-mana-oil",
+      "professionId": 333,
+      "name": "Brilliant Mana Oil",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 319,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 14344,
+          "qty": 2
+        },
+        {
+          "itemId": 8831,
+          "qty": 3
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "brilliant-wizard-oil",
+      "professionId": 333,
+      "name": "Brilliant Wizard Oil",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 319,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 14344,
+          "qty": 2
+        },
+        {
+          "itemId": 4625,
+          "qty": 3
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-2h-weapon-major-intellect",
+      "professionId": 333,
+      "name": "Enchant 2H Weapon - Major Intellect",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 16203,
+          "qty": 12
+        },
+        {
+          "itemId": 14344,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-2h-weapon-major-spirit",
+      "professionId": 333,
+      "name": "Enchant 2H Weapon - Major Spirit",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 16203,
+          "qty": 12
+        },
+        {
+          "itemId": 14344,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-assault",
+      "professionId": 333,
+      "name": "Enchant Bracer - Assault",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 22445,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-healing-power",
+      "professionId": 333,
+      "name": "Enchant Bracer - Healing Power",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 14344,
+          "qty": 2
+        },
+        {
+          "itemId": 16204,
+          "qty": 20
+        },
+        {
+          "itemId": 16203,
+          "qty": 4
+        },
+        {
+          "itemId": 12803,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-superior-stamina",
+      "professionId": 333,
+      "name": "Enchant Bracer - Superior Stamina",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 16204,
+          "qty": 15
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-greater-stats",
+      "professionId": 333,
+      "name": "Enchant Chest - Greater Stats",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 14344,
+          "qty": 4
+        },
+        {
+          "itemId": 16204,
+          "qty": 15
+        },
+        {
+          "itemId": 16203,
+          "qty": 10
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-restore-mana-prime",
+      "professionId": 333,
+      "name": "Enchant Chest - Restore Mana Prime",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 22447,
+          "qty": 2
+        },
+        {
+          "itemId": 22445,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-dodge",
+      "professionId": 333,
+      "name": "Enchant Cloak - Dodge",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 22448,
+          "qty": 3
+        },
+        {
+          "itemId": 22446,
+          "qty": 3
+        },
+        {
+          "itemId": 22452,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-greater-fire-resistance",
+      "professionId": 333,
+      "name": "Enchant Cloak - Greater Fire Resistance",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 22448,
+          "qty": 3
+        },
+        {
+          "itemId": 22446,
+          "qty": 3
+        },
+        {
+          "itemId": 7078,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-greater-nature-resistance",
+      "professionId": 333,
+      "name": "Enchant Cloak - Greater Nature Resistance",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 22448,
+          "qty": 2
+        },
+        {
+          "itemId": 22446,
+          "qty": 3
+        },
+        {
+          "itemId": 12803,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-stealth",
+      "professionId": 333,
+      "name": "Enchant Cloak - Stealth",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 22448,
+          "qty": 3
+        },
+        {
+          "itemId": 22446,
+          "qty": 3
+        },
+        {
+          "itemId": 22794,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-subtlety",
+      "professionId": 333,
+      "name": "Enchant Cloak - Subtlety",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 22448,
+          "qty": 4
+        },
+        {
+          "itemId": 22446,
+          "qty": 2
+        },
+        {
+          "itemId": 22456,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-fire-power",
+      "professionId": 333,
+      "name": "Enchant Gloves - Fire Power",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 20725,
+          "qty": 2
+        },
+        {
+          "itemId": 14344,
+          "qty": 10
+        },
+        {
+          "itemId": 7078,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-frost-power",
+      "professionId": 333,
+      "name": "Enchant Gloves - Frost Power",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 20725,
+          "qty": 3
+        },
+        {
+          "itemId": 14344,
+          "qty": 10
+        },
+        {
+          "itemId": 7080,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-healing-power",
+      "professionId": 333,
+      "name": "Enchant Gloves - Healing Power",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 20725,
+          "qty": 3
+        },
+        {
+          "itemId": 14344,
+          "qty": 8
+        },
+        {
+          "itemId": 12811,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-shadow-power",
+      "professionId": 333,
+      "name": "Enchant Gloves - Shadow Power",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 20725,
+          "qty": 3
+        },
+        {
+          "itemId": 14344,
+          "qty": 10
+        },
+        {
+          "itemId": 12808,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-superior-agility",
+      "professionId": 333,
+      "name": "Enchant Gloves - Superior Agility",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 22448,
+          "qty": 3
+        },
+        {
+          "itemId": 22446,
+          "qty": 3
+        },
+        {
+          "itemId": 22451,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-threat",
+      "professionId": 333,
+      "name": "Enchant Gloves - Threat",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 22448,
+          "qty": 4
+        },
+        {
+          "itemId": 22446,
+          "qty": 2
+        },
+        {
+          "itemId": 21886,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-crusader",
+      "professionId": 333,
+      "name": "Enchant Weapon - Crusader",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 14344,
+          "qty": 4
+        },
+        {
+          "itemId": 12811,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-healing-power",
+      "professionId": 333,
+      "name": "Enchant Weapon - Healing Power",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 14344,
+          "qty": 4
+        },
+        {
+          "itemId": 16203,
+          "qty": 8
+        },
+        {
+          "itemId": 12803,
+          "qty": 6
+        },
+        {
+          "itemId": 7080,
+          "qty": 6
+        },
+        {
+          "itemId": 12811,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-lifestealing",
+      "professionId": 333,
+      "name": "Enchant Weapon - Lifestealing",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 14344,
+          "qty": 6
+        },
+        {
+          "itemId": 12808,
+          "qty": 6
+        },
+        {
+          "itemId": 12803,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-mighty-intellect",
+      "professionId": 333,
+      "name": "Enchant Weapon - Mighty Intellect",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 14344,
+          "qty": 15
+        },
+        {
+          "itemId": 16203,
+          "qty": 12
+        },
+        {
+          "itemId": 16204,
+          "qty": 20
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-mighty-spirit",
+      "professionId": 333,
+      "name": "Enchant Weapon - Mighty Spirit",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 14344,
+          "qty": 10
+        },
+        {
+          "itemId": 16203,
+          "qty": 8
+        },
+        {
+          "itemId": 16204,
+          "qty": 15
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-spell-power",
+      "professionId": 333,
+      "name": "Enchant Weapon - Spell Power",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 14344,
+          "qty": 4
+        },
+        {
+          "itemId": 16203,
+          "qty": 12
+        },
+        {
+          "itemId": 7078,
+          "qty": 4
+        },
+        {
+          "itemId": 7080,
+          "qty": 4
+        },
+        {
+          "itemId": 7082,
+          "qty": 4
+        },
+        {
+          "itemId": 13926,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-superior-striking",
+      "professionId": 333,
+      "name": "Enchant Weapon - Superior Striking",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 14344,
+          "qty": 2
+        },
+        {
+          "itemId": 16203,
+          "qty": 10
+        }
+      ]
+    },
+    {
+      "recipeId": "runed-fel-iron-rod",
+      "professionId": 333,
+      "name": "Runed Fel Iron Rod",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 324,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 25843,
+          "qty": 1
+        },
+        {
+          "itemId": 16203,
+          "qty": 4
+        },
+        {
+          "itemId": 14344,
+          "qty": 6
+        },
+        {
+          "itemId": 16207,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-boots-vitality",
+      "professionId": 333,
+      "name": "Enchant Boots - Vitality",
+      "minSkill": 305,
+      "orangeUntil": 314,
+      "yellowUntil": 329,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 22445,
+          "qty": 6
+        },
+        {
+          "itemId": 13446,
+          "qty": 4
+        },
+        {
+          "itemId": 13444,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-brawn",
+      "professionId": 333,
+      "name": "Enchant Bracer - Brawn",
+      "minSkill": 305,
+      "orangeUntil": 314,
+      "yellowUntil": 329,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 22445,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-major-intellect",
+      "professionId": 333,
+      "name": "Enchant Bracer - Major Intellect",
+      "minSkill": 305,
+      "orangeUntil": 314,
+      "yellowUntil": 329,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 22447,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-blasting",
+      "professionId": 333,
+      "name": "Enchant Gloves - Blasting",
+      "minSkill": 305,
+      "orangeUntil": 314,
+      "yellowUntil": 329,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 22447,
+          "qty": 1
+        },
+        {
+          "itemId": 22445,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-greater-agility",
+      "professionId": 333,
+      "name": "Enchant Cloak - Greater Agility",
+      "minSkill": 310,
+      "orangeUntil": 319,
+      "yellowUntil": 334,
+      "greenUntil": 349,
+      "grayAt": 350,
+      "reagents": [
+        {
+          "itemId": 22446,
+          "qty": 1
+        },
+        {
+          "itemId": 22445,
+          "qty": 4
+        },
+        {
+          "itemId": 22451,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-major-armor",
+      "professionId": 333,
+      "name": "Enchant Cloak - Major Armor",
+      "minSkill": 310,
+      "orangeUntil": 319,
+      "yellowUntil": 334,
+      "greenUntil": 349,
+      "grayAt": 350,
+      "reagents": [
+        {
+          "itemId": 22445,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-assault",
+      "professionId": 333,
+      "name": "Enchant Gloves - Assault",
+      "minSkill": 310,
+      "orangeUntil": 319,
+      "yellowUntil": 334,
+      "greenUntil": 349,
+      "grayAt": 350,
+      "reagents": [
+        {
+          "itemId": 22445,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-shield-tough-shield",
+      "professionId": 333,
+      "name": "Enchant Shield - Tough Shield",
+      "minSkill": 310,
+      "orangeUntil": 319,
+      "yellowUntil": 334,
+      "greenUntil": 349,
+      "grayAt": 350,
+      "reagents": [
+        {
+          "itemId": 22445,
+          "qty": 6
+        },
+        {
+          "itemId": 22452,
+          "qty": 10
+        }
+      ]
+    },
+    {
+      "recipeId": "superior-mana-oil",
+      "professionId": 333,
+      "name": "Superior Mana Oil",
+      "minSkill": 310,
+      "orangeUntil": 310,
+      "yellowUntil": 319,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 22445,
+          "qty": 3
+        },
+        {
+          "itemId": 22791,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-stats",
+      "professionId": 333,
+      "name": "Enchant Bracer - Stats",
+      "minSkill": 315,
+      "orangeUntil": 324,
+      "yellowUntil": 339,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 22445,
+          "qty": 6
+        },
+        {
+          "itemId": 22447,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-exceptional-health",
+      "professionId": 333,
+      "name": "Enchant Chest - Exceptional Health",
+      "minSkill": 315,
+      "orangeUntil": 324,
+      "yellowUntil": 339,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 22445,
+          "qty": 8
+        },
+        {
+          "itemId": 13446,
+          "qty": 4
+        },
+        {
+          "itemId": 14344,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-boots-fortitude",
+      "professionId": 333,
+      "name": "Enchant Boots - Fortitude",
+      "minSkill": 320,
+      "orangeUntil": 329,
+      "yellowUntil": 344,
+      "greenUntil": 359,
+      "grayAt": 360,
+      "reagents": [
+        {
+          "itemId": 22445,
+          "qty": 12
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-major-defense",
+      "professionId": 333,
+      "name": "Enchant Bracer - Major Defense",
+      "minSkill": 320,
+      "orangeUntil": 329,
+      "yellowUntil": 344,
+      "greenUntil": 359,
+      "grayAt": 360,
+      "reagents": [
+        {
+          "itemId": 22448,
+          "qty": 2
+        },
+        {
+          "itemId": 22445,
+          "qty": 10
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-major-spirit",
+      "professionId": 333,
+      "name": "Enchant Chest - Major Spirit",
+      "minSkill": 320,
+      "orangeUntil": 329,
+      "yellowUntil": 344,
+      "greenUntil": 359,
+      "grayAt": 360,
+      "reagents": [
+        {
+          "itemId": 22446,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-superior-healing",
+      "professionId": 333,
+      "name": "Enchant Bracer - Superior Healing",
+      "minSkill": 325,
+      "orangeUntil": 334,
+      "yellowUntil": 349,
+      "greenUntil": 364,
+      "grayAt": 365,
+      "reagents": [
+        {
+          "itemId": 22446,
+          "qty": 4
+        },
+        {
+          "itemId": 21886,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-exceptional-mana",
+      "professionId": 333,
+      "name": "Enchant Chest - Exceptional Mana",
+      "minSkill": 325,
+      "orangeUntil": 334,
+      "yellowUntil": 349,
+      "greenUntil": 364,
+      "grayAt": 365,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 1
+        },
+        {
+          "itemId": 13444,
+          "qty": 4
+        },
+        {
+          "itemId": 22446,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-spell-penetration",
+      "professionId": 333,
+      "name": "Enchant Cloak - Spell Penetration",
+      "minSkill": 325,
+      "orangeUntil": 334,
+      "yellowUntil": 349,
+      "greenUntil": 364,
+      "grayAt": 365,
+      "reagents": [
+        {
+          "itemId": 22446,
+          "qty": 2
+        },
+        {
+          "itemId": 22445,
+          "qty": 6
+        },
+        {
+          "itemId": 22457,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-shield-intellect",
+      "professionId": 333,
+      "name": "Enchant Shield - Intellect",
+      "minSkill": 325,
+      "orangeUntil": 334,
+      "yellowUntil": 349,
+      "greenUntil": 364,
+      "grayAt": 365,
+      "reagents": [
+        {
+          "itemId": 22446,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-shield-major-stamina",
+      "professionId": 333,
+      "name": "Enchant Shield - Major Stamina",
+      "minSkill": 325,
+      "orangeUntil": 334,
+      "yellowUntil": 349,
+      "greenUntil": 364,
+      "grayAt": 365,
+      "reagents": [
+        {
+          "itemId": 22445,
+          "qty": 15
+        }
+      ]
+    },
+    {
+      "recipeId": "prismatic-sphere",
+      "professionId": 333,
+      "name": "Prismatic Sphere",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 329,
+      "greenUntil": 334,
+      "grayAt": 335,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-major-resistance",
+      "professionId": 333,
+      "name": "Enchant Cloak - Major Resistance",
+      "minSkill": 330,
+      "orangeUntil": 339,
+      "yellowUntil": 354,
+      "greenUntil": 369,
+      "grayAt": 370,
+      "reagents": [
+        {
+          "itemId": 22446,
+          "qty": 4
+        },
+        {
+          "itemId": 21884,
+          "qty": 4
+        },
+        {
+          "itemId": 22451,
+          "qty": 4
+        },
+        {
+          "itemId": 22452,
+          "qty": 4
+        },
+        {
+          "itemId": 21885,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-shield-resilience",
+      "professionId": 333,
+      "name": "Enchant Shield - Resilience",
+      "minSkill": 330,
+      "orangeUntil": 339,
+      "yellowUntil": 354,
+      "greenUntil": 369,
+      "grayAt": 370,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 1
+        },
+        {
+          "itemId": 22447,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-restore-mana-prime",
+      "professionId": 333,
+      "name": "Enchant Bracer - Restore Mana Prime",
+      "minSkill": 335,
+      "orangeUntil": 344,
+      "yellowUntil": 359,
+      "greenUntil": 374,
+      "grayAt": 375,
+      "reagents": [
+        {
+          "itemId": 22446,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-boots-dexterity",
+      "professionId": 333,
+      "name": "Enchant Boots - Dexterity",
+      "minSkill": 340,
+      "orangeUntil": 349,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 22446,
+          "qty": 8
+        },
+        {
+          "itemId": 22445,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-major-strength",
+      "professionId": 333,
+      "name": "Enchant Gloves - Major Strength",
+      "minSkill": 340,
+      "orangeUntil": 349,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 22445,
+          "qty": 12
+        },
+        {
+          "itemId": 22446,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-shield-shield-block",
+      "professionId": 333,
+      "name": "Enchant Shield - Shield Block",
+      "minSkill": 340,
+      "orangeUntil": 349,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 22445,
+          "qty": 12
+        },
+        {
+          "itemId": 22446,
+          "qty": 4
+        },
+        {
+          "itemId": 22452,
+          "qty": 10
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-major-intellect",
+      "professionId": 333,
+      "name": "Enchant Weapon - Major Intellect",
+      "minSkill": 340,
+      "orangeUntil": 349,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 2
+        },
+        {
+          "itemId": 22446,
+          "qty": 10
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-major-striking",
+      "professionId": 333,
+      "name": "Enchant Weapon - Major Striking",
+      "minSkill": 340,
+      "orangeUntil": 349,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 2
+        },
+        {
+          "itemId": 22446,
+          "qty": 6
+        },
+        {
+          "itemId": 22445,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "superior-wizard-oil",
+      "professionId": 333,
+      "name": "Superior Wizard Oil",
+      "minSkill": 340,
+      "orangeUntil": 340,
+      "yellowUntil": 349,
+      "greenUntil": 359,
+      "grayAt": 360,
+      "reagents": [
+        {
+          "itemId": 22445,
+          "qty": 3
+        },
+        {
+          "itemId": 22792,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-exceptional-stats",
+      "professionId": 333,
+      "name": "Enchant Chest - Exceptional Stats",
+      "minSkill": 345,
+      "orangeUntil": 354,
+      "yellowUntil": 369,
+      "greenUntil": 384,
+      "grayAt": 385,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 4
+        },
+        {
+          "itemId": 22445,
+          "qty": 4
+        },
+        {
+          "itemId": 22446,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-major-resilience",
+      "professionId": 333,
+      "name": "Enchant Chest - Major Resilience",
+      "minSkill": 345,
+      "orangeUntil": 354,
+      "yellowUntil": 369,
+      "greenUntil": 384,
+      "grayAt": 385,
+      "reagents": [
+        {
+          "itemId": 22446,
+          "qty": 4
+        },
+        {
+          "itemId": 22445,
+          "qty": 10
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-2h-weapon-savagery",
+      "professionId": 333,
+      "name": "Enchant 2H Weapon - Savagery",
+      "minSkill": 350,
+      "orangeUntil": 359,
+      "yellowUntil": 374,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 4
+        },
+        {
+          "itemId": 22445,
+          "qty": 40
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-fortitude",
+      "professionId": 333,
+      "name": "Enchant Bracer - Fortitude",
+      "minSkill": 350,
+      "orangeUntil": 359,
+      "yellowUntil": 374,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 1
+        },
+        {
+          "itemId": 22446,
+          "qty": 10
+        },
+        {
+          "itemId": 22445,
+          "qty": 20
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-greater-arcane-resistance",
+      "professionId": 333,
+      "name": "Enchant Cloak - Greater Arcane Resistance",
+      "minSkill": 350,
+      "orangeUntil": 359,
+      "yellowUntil": 374,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 4
+        },
+        {
+          "itemId": 22457,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-greater-shadow-resistance",
+      "professionId": 333,
+      "name": "Enchant Cloak - Greater Shadow Resistance",
+      "minSkill": 350,
+      "orangeUntil": 359,
+      "yellowUntil": 374,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 4
+        },
+        {
+          "itemId": 22456,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-major-healing",
+      "professionId": 333,
+      "name": "Enchant Gloves - Major Healing",
+      "minSkill": 350,
+      "orangeUntil": 359,
+      "yellowUntil": 374,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 22446,
+          "qty": 6
+        },
+        {
+          "itemId": 22449,
+          "qty": 6
+        },
+        {
+          "itemId": 21886,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-deathfrost",
+      "professionId": 333,
+      "name": "Enchant Weapon - Deathfrost",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 356,
+      "greenUntil": 364,
+      "grayAt": 365,
+      "reagents": [
+        {
+          "itemId": 22456,
+          "qty": 2
+        },
+        {
+          "itemId": 21885,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-greater-agility",
+      "professionId": 333,
+      "name": "Enchant Weapon - Greater Agility",
+      "minSkill": 350,
+      "orangeUntil": 359,
+      "yellowUntil": 366,
+      "greenUntil": 374,
+      "grayAt": 375,
+      "reagents": [
+        {
+          "itemId": 22445,
+          "qty": 8
+        },
+        {
+          "itemId": 22446,
+          "qty": 4
+        },
+        {
+          "itemId": 22449,
+          "qty": 6
+        },
+        {
+          "itemId": 22451,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-major-healing",
+      "professionId": 333,
+      "name": "Enchant Weapon - Major Healing",
+      "minSkill": 350,
+      "orangeUntil": 359,
+      "yellowUntil": 374,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 8
+        },
+        {
+          "itemId": 21885,
+          "qty": 8
+        },
+        {
+          "itemId": 21886,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-major-spellpower",
+      "professionId": 333,
+      "name": "Enchant Weapon - Major Spellpower",
+      "minSkill": 350,
+      "orangeUntil": 359,
+      "yellowUntil": 374,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 8
+        },
+        {
+          "itemId": 22446,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-potency",
+      "professionId": 333,
+      "name": "Enchant Weapon - Potency",
+      "minSkill": 350,
+      "orangeUntil": 359,
+      "yellowUntil": 374,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 4
+        },
+        {
+          "itemId": 22446,
+          "qty": 5
+        },
+        {
+          "itemId": 22445,
+          "qty": 20
+        }
+      ]
+    },
+    {
+      "recipeId": "runed-adamantite-rod",
+      "professionId": 333,
+      "name": "Runed Adamantite Rod",
+      "minSkill": 350,
+      "orangeUntil": 359,
+      "yellowUntil": 374,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 25844,
+          "qty": 1
+        },
+        {
+          "itemId": 22446,
+          "qty": 8
+        },
+        {
+          "itemId": 22449,
+          "qty": 8
+        },
+        {
+          "itemId": 23571,
+          "qty": 1
+        },
+        {
+          "itemId": 22461,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "void-sphere",
+      "professionId": 333,
+      "name": "Void Sphere",
+      "minSkill": 350,
+      "orangeUntil": 359,
+      "yellowUntil": 374,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 22450,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-2h-weapon-major-agility",
+      "professionId": 333,
+      "name": "Enchant 2H Weapon - Major Agility",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 384,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 8
+        },
+        {
+          "itemId": 22446,
+          "qty": 6
+        },
+        {
+          "itemId": 22445,
+          "qty": 20
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-boots-boar-s-speed",
+      "professionId": 333,
+      "name": "Enchant Boots - Boar's Speed",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 384,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 8
+        },
+        {
+          "itemId": 22452,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-boots-cat-s-swiftness",
+      "professionId": 333,
+      "name": "Enchant Boots - Cat's Swiftness",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 384,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 8
+        },
+        {
+          "itemId": 22451,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-bracer-spellpower",
+      "professionId": 333,
+      "name": "Enchant Bracer - Spellpower",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 384,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 6
+        },
+        {
+          "itemId": 21884,
+          "qty": 6
+        },
+        {
+          "itemId": 21885,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-chest-defense",
+      "professionId": 333,
+      "name": "Enchant Chest - Defense",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 384,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 22446,
+          "qty": 4
+        },
+        {
+          "itemId": 22445,
+          "qty": 8
+        },
+        {
+          "itemId": 23427,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-major-spellpower",
+      "professionId": 333,
+      "name": "Enchant Gloves - Major Spellpower",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 384,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 22446,
+          "qty": 6
+        },
+        {
+          "itemId": 22449,
+          "qty": 6
+        },
+        {
+          "itemId": 22457,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-gloves-spell-strike",
+      "professionId": 333,
+      "name": "Enchant Gloves - Spell Strike",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 384,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 22446,
+          "qty": 8
+        },
+        {
+          "itemId": 22445,
+          "qty": 2
+        },
+        {
+          "itemId": 22449,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-ring-spellpower",
+      "professionId": 333,
+      "name": "Enchant Ring - Spellpower",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 384,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 2
+        },
+        {
+          "itemId": 22446,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-ring-striking",
+      "professionId": 333,
+      "name": "Enchant Ring - Striking",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 384,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 2
+        },
+        {
+          "itemId": 22445,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-shield-resistance",
+      "professionId": 333,
+      "name": "Enchant Shield - Resistance",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 384,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 2
+        },
+        {
+          "itemId": 22573,
+          "qty": 1
+        },
+        {
+          "itemId": 22574,
+          "qty": 1
+        },
+        {
+          "itemId": 22572,
+          "qty": 1
+        },
+        {
+          "itemId": 22578,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-battlemaster",
+      "professionId": 333,
+      "name": "Enchant Weapon - Battlemaster",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 384,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 22450,
+          "qty": 8
+        },
+        {
+          "itemId": 22449,
+          "qty": 8
+        },
+        {
+          "itemId": 21885,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-spellsurge",
+      "professionId": 333,
+      "name": "Enchant Weapon - Spellsurge",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 384,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 12
+        },
+        {
+          "itemId": 22446,
+          "qty": 10
+        },
+        {
+          "itemId": 22445,
+          "qty": 20
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-boots-surefooted",
+      "professionId": 333,
+      "name": "Enchant Boots - Surefooted",
+      "minSkill": 370,
+      "orangeUntil": 379,
+      "yellowUntil": 394,
+      "greenUntil": 409,
+      "grayAt": 410,
+      "reagents": [
+        {
+          "itemId": 22450,
+          "qty": 2
+        },
+        {
+          "itemId": 22449,
+          "qty": 4
+        },
+        {
+          "itemId": 23572,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-ring-healing-power",
+      "professionId": 333,
+      "name": "Enchant Ring - Healing Power",
+      "minSkill": 370,
+      "orangeUntil": 379,
+      "yellowUntil": 394,
+      "greenUntil": 409,
+      "grayAt": 410,
+      "reagents": [
+        {
+          "itemId": 22449,
+          "qty": 2
+        },
+        {
+          "itemId": 22446,
+          "qty": 3
+        },
+        {
+          "itemId": 22445,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-cloak-steelweave",
+      "professionId": 333,
+      "name": "Enchant Cloak - Steelweave",
+      "minSkill": 375,
+      "orangeUntil": 379,
+      "yellowUntil": 394,
+      "greenUntil": 409,
+      "grayAt": 410,
+      "reagents": [
+        {
+          "itemId": 22446,
+          "qty": 8
+        },
+        {
+          "itemId": 22452,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-ring-stats",
+      "professionId": 333,
+      "name": "Enchant Ring - Stats",
+      "minSkill": 375,
+      "orangeUntil": 384,
+      "yellowUntil": 399,
+      "greenUntil": 414,
+      "grayAt": 415,
+      "reagents": [
+        {
+          "itemId": 22450,
+          "qty": 2
+        },
+        {
+          "itemId": 22449,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-executioner",
+      "professionId": 333,
+      "name": "Enchant Weapon - Executioner",
+      "minSkill": 375,
+      "orangeUntil": 384,
+      "yellowUntil": 399,
+      "greenUntil": 414,
+      "grayAt": 415,
+      "reagents": [
+        {
+          "itemId": 22450,
+          "qty": 6
+        },
+        {
+          "itemId": 22449,
+          "qty": 10
+        },
+        {
+          "itemId": 22446,
+          "qty": 6
+        },
+        {
+          "itemId": 22445,
+          "qty": 30
+        },
+        {
+          "itemId": 22824,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-mongoose",
+      "professionId": 333,
+      "name": "Enchant Weapon - Mongoose",
+      "minSkill": 375,
+      "orangeUntil": 384,
+      "yellowUntil": 399,
+      "greenUntil": 414,
+      "grayAt": 415,
+      "reagents": [
+        {
+          "itemId": 22450,
+          "qty": 6
+        },
+        {
+          "itemId": 22449,
+          "qty": 10
+        },
+        {
+          "itemId": 22446,
+          "qty": 8
+        },
+        {
+          "itemId": 22445,
+          "qty": 40
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-soulfrost",
+      "professionId": 333,
+      "name": "Enchant Weapon - Soulfrost",
+      "minSkill": 375,
+      "orangeUntil": 384,
+      "yellowUntil": 399,
+      "greenUntil": 414,
+      "grayAt": 415,
+      "reagents": [
+        {
+          "itemId": 22450,
+          "qty": 12
+        },
+        {
+          "itemId": 22449,
+          "qty": 10
+        },
+        {
+          "itemId": 22446,
+          "qty": 8
+        },
+        {
+          "itemId": 21885,
+          "qty": 6
+        },
+        {
+          "itemId": 22456,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "enchant-weapon-sunfire",
+      "professionId": 333,
+      "name": "Enchant Weapon - Sunfire",
+      "minSkill": 375,
+      "orangeUntil": 384,
+      "yellowUntil": 399,
+      "greenUntil": 414,
+      "grayAt": 415,
+      "reagents": [
+        {
+          "itemId": 22450,
+          "qty": 12
+        },
+        {
+          "itemId": 22449,
+          "qty": 10
+        },
+        {
+          "itemId": 22446,
+          "qty": 8
+        },
+        {
+          "itemId": 21884,
+          "qty": 6
+        },
+        {
+          "itemId": 23571,
+          "qty": 1
+        }
+      ]
+    }
+  ]
+}

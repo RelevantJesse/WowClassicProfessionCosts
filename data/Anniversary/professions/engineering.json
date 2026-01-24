@@ -3,30 +3,5499 @@
   "professionName": "Engineering",
   "recipes": [
     {
+      "recipeId": "crafted-light-shot",
+      "professionId": 202,
+      "name": "Crafted Light Shot",
+      "minSkill": 0,
+      "orangeUntil": 29,
+      "yellowUntil": 44,
+      "greenUntil": 59,
+      "grayAt": 60,
+      "reagents": [
+        {
+          "itemId": 4357,
+          "qty": 1
+        },
+        {
+          "itemId": 2840,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "dimensional-ripper-area-52",
+      "professionId": 202,
+      "name": "Dimensional Ripper - Area 52",
+      "minSkill": 0,
+      "orangeUntil": 349,
+      "yellowUntil": 359,
+      "greenUntil": 369,
+      "grayAt": 370,
+      "reagents": [
+        {
+          "itemId": 23784,
+          "qty": 1
+        },
+        {
+          "itemId": 21884,
+          "qty": 2
+        },
+        {
+          "itemId": 23826,
+          "qty": 2
+        },
+        {
+          "itemId": 23783,
+          "qty": 4
+        },
+        {
+          "itemId": 23786,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "dimensional-ripper-everlook",
+      "professionId": 202,
+      "name": "Dimensional Ripper - Everlook",
+      "minSkill": 0,
+      "orangeUntil": 284,
+      "yellowUntil": 294,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 10
+        },
+        {
+          "itemId": 18631,
+          "qty": 1
+        },
+        {
+          "itemId": 7077,
+          "qty": 4
+        },
+        {
+          "itemId": 7910,
+          "qty": 2
+        },
+        {
+          "itemId": 10586,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "goblin-mortar",
+      "professionId": 202,
+      "name": "Goblin Mortar",
+      "minSkill": 0,
+      "orangeUntil": 224,
+      "yellowUntil": 234,
+      "greenUntil": 244,
+      "grayAt": 245,
+      "reagents": [
+        {
+          "itemId": 10559,
+          "qty": 2
+        },
+        {
+          "itemId": 3860,
+          "qty": 4
+        },
+        {
+          "itemId": 10505,
+          "qty": 5
+        },
+        {
+          "itemId": 10558,
+          "qty": 1
+        },
+        {
+          "itemId": 7068,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "the-mortar-reloaded",
+      "professionId": 202,
+      "name": "The Mortar: Reloaded",
+      "minSkill": 0,
+      "orangeUntil": 0,
+      "yellowUntil": 0,
+      "greenUntil": 204,
+      "grayAt": 205,
+      "reagents": [
+        {
+          "itemId": 10577,
+          "qty": 1
+        },
+        {
+          "itemId": 3860,
+          "qty": 1
+        },
+        {
+          "itemId": 10505,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "ultrasafe-transporter-gadgetzan",
+      "professionId": 202,
+      "name": "Ultrasafe Transporter - Gadgetzan",
+      "minSkill": 0,
+      "orangeUntil": 284,
+      "yellowUntil": 294,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 12
+        },
+        {
+          "itemId": 18631,
+          "qty": 2
+        },
+        {
+          "itemId": 7075,
+          "qty": 4
+        },
+        {
+          "itemId": 7079,
+          "qty": 2
+        },
+        {
+          "itemId": 7909,
+          "qty": 4
+        },
+        {
+          "itemId": 9060,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "ultrasafe-transporter-toshley-s-station",
+      "professionId": 202,
+      "name": "Ultrasafe Transporter - Toshley's Station",
+      "minSkill": 0,
+      "orangeUntil": 349,
+      "yellowUntil": 359,
+      "greenUntil": 369,
+      "grayAt": 370,
+      "reagents": [
+        {
+          "itemId": 23784,
+          "qty": 1
+        },
+        {
+          "itemId": 22451,
+          "qty": 2
+        },
+        {
+          "itemId": 23787,
+          "qty": 2
+        },
+        {
+          "itemId": 23783,
+          "qty": 4
+        },
+        {
+          "itemId": 23786,
+          "qty": 1
+        }
+      ]
+    },
+    {
       "recipeId": "rough-blasting-powder",
       "professionId": 202,
       "name": "Rough Blasting Powder",
       "minSkill": 1,
-      "orangeUntil": 30,
-      "yellowUntil": 50,
-      "greenUntil": 70,
+      "orangeUntil": 19,
+      "yellowUntil": 29,
+      "greenUntil": 39,
+      "grayAt": 40,
+      "reagents": [
+        {
+          "itemId": 2835,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "rough-dynamite",
+      "professionId": 202,
+      "name": "Rough Dynamite",
+      "minSkill": 1,
+      "orangeUntil": 29,
+      "yellowUntil": 44,
+      "greenUntil": 59,
+      "grayAt": 60,
+      "reagents": [
+        {
+          "itemId": 4357,
+          "qty": 2
+        },
+        {
+          "itemId": 2589,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "handful-of-copper-bolts",
+      "professionId": 202,
+      "name": "Handful of Copper Bolts",
+      "minSkill": 30,
+      "orangeUntil": 44,
+      "yellowUntil": 51,
+      "greenUntil": 59,
+      "grayAt": 60,
+      "reagents": [
+        {
+          "itemId": 2840,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "rough-copper-bomb",
+      "professionId": 202,
+      "name": "Rough Copper Bomb",
+      "minSkill": 30,
+      "orangeUntil": 59,
+      "yellowUntil": 74,
+      "greenUntil": 89,
       "grayAt": 90,
       "reagents": [
-        { "itemId": 2835, "qty": 1 }
+        {
+          "itemId": 2840,
+          "qty": 1
+        },
+        {
+          "itemId": 4359,
+          "qty": 1
+        },
+        {
+          "itemId": 4357,
+          "qty": 2
+        },
+        {
+          "itemId": 2589,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "arclight-spanner",
+      "professionId": 202,
+      "name": "Arclight Spanner",
+      "minSkill": 50,
+      "orangeUntil": 69,
+      "yellowUntil": 79,
+      "greenUntil": 89,
+      "grayAt": 90,
+      "reagents": [
+        {
+          "itemId": 2840,
+          "qty": 6
+        }
       ]
     },
     {
       "recipeId": "copper-tube",
       "professionId": 202,
       "name": "Copper Tube",
-      "minSkill": 20,
-      "orangeUntil": 60,
-      "yellowUntil": 80,
-      "greenUntil": 100,
+      "minSkill": 50,
+      "orangeUntil": 79,
+      "yellowUntil": 94,
+      "greenUntil": 109,
+      "grayAt": 110,
+      "reagents": [
+        {
+          "itemId": 2840,
+          "qty": 2
+        },
+        {
+          "itemId": 2880,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "rough-boomstick",
+      "professionId": 202,
+      "name": "Rough Boomstick",
+      "minSkill": 50,
+      "orangeUntil": 79,
+      "yellowUntil": 94,
+      "greenUntil": 109,
+      "grayAt": 110,
+      "reagents": [
+        {
+          "itemId": 4361,
+          "qty": 1
+        },
+        {
+          "itemId": 4359,
+          "qty": 1
+        },
+        {
+          "itemId": 4399,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "crude-scope",
+      "professionId": 202,
+      "name": "Crude Scope",
+      "minSkill": 60,
+      "orangeUntil": 89,
+      "yellowUntil": 104,
+      "greenUntil": 119,
       "grayAt": 120,
       "reagents": [
-        { "itemId": 2840, "qty": 2 },
-        { "itemId": 2880, "qty": 1 }
+        {
+          "itemId": 4361,
+          "qty": 1
+        },
+        {
+          "itemId": 774,
+          "qty": 1
+        },
+        {
+          "itemId": 4359,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "copper-modulator",
+      "professionId": 202,
+      "name": "Copper Modulator",
+      "minSkill": 65,
+      "orangeUntil": 94,
+      "yellowUntil": 109,
+      "greenUntil": 124,
+      "grayAt": 125,
+      "reagents": [
+        {
+          "itemId": 4359,
+          "qty": 2
+        },
+        {
+          "itemId": 2840,
+          "qty": 1
+        },
+        {
+          "itemId": 2589,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "coarse-blasting-powder",
+      "professionId": 202,
+      "name": "Coarse Blasting Powder",
+      "minSkill": 75,
+      "orangeUntil": 84,
+      "yellowUntil": 89,
+      "greenUntil": 94,
+      "grayAt": 95,
+      "reagents": [
+        {
+          "itemId": 2836,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "coarse-dynamite",
+      "professionId": 202,
+      "name": "Coarse Dynamite",
+      "minSkill": 75,
+      "orangeUntil": 89,
+      "yellowUntil": 96,
+      "greenUntil": 104,
+      "grayAt": 105,
+      "reagents": [
+        {
+          "itemId": 4364,
+          "qty": 3
+        },
+        {
+          "itemId": 2589,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "crafted-heavy-shot",
+      "professionId": 202,
+      "name": "Crafted Heavy Shot",
+      "minSkill": 75,
+      "orangeUntil": 84,
+      "yellowUntil": 89,
+      "greenUntil": 94,
+      "grayAt": 95,
+      "reagents": [
+        {
+          "itemId": 4364,
+          "qty": 1
+        },
+        {
+          "itemId": 2840,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mechanical-squirrel",
+      "professionId": 202,
+      "name": "Mechanical Squirrel",
+      "minSkill": 75,
+      "orangeUntil": 104,
+      "yellowUntil": 119,
+      "greenUntil": 134,
+      "grayAt": 135,
+      "reagents": [
+        {
+          "itemId": 4363,
+          "qty": 1
+        },
+        {
+          "itemId": 4359,
+          "qty": 1
+        },
+        {
+          "itemId": 2840,
+          "qty": 1
+        },
+        {
+          "itemId": 774,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "target-dummy",
+      "professionId": 202,
+      "name": "Target Dummy",
+      "minSkill": 85,
+      "orangeUntil": 114,
+      "yellowUntil": 129,
+      "greenUntil": 144,
+      "grayAt": 145,
+      "reagents": [
+        {
+          "itemId": 4363,
+          "qty": 1
+        },
+        {
+          "itemId": 4359,
+          "qty": 2
+        },
+        {
+          "itemId": 2841,
+          "qty": 1
+        },
+        {
+          "itemId": 2592,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "silver-contact",
+      "professionId": 202,
+      "name": "Silver Contact",
+      "minSkill": 90,
+      "orangeUntil": 109,
+      "yellowUntil": 124,
+      "greenUntil": 139,
+      "grayAt": 140,
+      "reagents": [
+        {
+          "itemId": 2842,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "ez-thro-dynamite",
+      "professionId": 202,
+      "name": "EZ-Thro Dynamite",
+      "minSkill": 100,
+      "orangeUntil": 114,
+      "yellowUntil": 121,
+      "greenUntil": 129,
+      "grayAt": 130,
+      "reagents": [
+        {
+          "itemId": 4364,
+          "qty": 4
+        },
+        {
+          "itemId": 2592,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "flying-tiger-goggles",
+      "professionId": 202,
+      "name": "Flying Tiger Goggles",
+      "minSkill": 100,
+      "orangeUntil": 129,
+      "yellowUntil": 144,
+      "greenUntil": 159,
+      "grayAt": 160,
+      "reagents": [
+        {
+          "itemId": 2318,
+          "qty": 6
+        },
+        {
+          "itemId": 818,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "practice-lock",
+      "professionId": 202,
+      "name": "Practice Lock",
+      "minSkill": 100,
+      "orangeUntil": 114,
+      "yellowUntil": 121,
+      "greenUntil": 129,
+      "grayAt": 130,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 1
+        },
+        {
+          "itemId": 4359,
+          "qty": 2
+        },
+        {
+          "itemId": 2880,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "small-seaforium-charge",
+      "professionId": 202,
+      "name": "Small Seaforium Charge",
+      "minSkill": 100,
+      "orangeUntil": 129,
+      "yellowUntil": 144,
+      "greenUntil": 159,
+      "grayAt": 160,
+      "reagents": [
+        {
+          "itemId": 4364,
+          "qty": 2
+        },
+        {
+          "itemId": 4363,
+          "qty": 1
+        },
+        {
+          "itemId": 2318,
+          "qty": 1
+        },
+        {
+          "itemId": 159,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "bronze-tube",
+      "professionId": 202,
+      "name": "Bronze Tube",
+      "minSkill": 105,
+      "orangeUntil": 105,
+      "yellowUntil": 129,
+      "greenUntil": 154,
+      "grayAt": 155,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 2
+        },
+        {
+          "itemId": 2880,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "deadly-blunderbuss",
+      "professionId": 202,
+      "name": "Deadly Blunderbuss",
+      "minSkill": 105,
+      "orangeUntil": 129,
+      "yellowUntil": 141,
+      "greenUntil": 154,
+      "grayAt": 155,
+      "reagents": [
+        {
+          "itemId": 4361,
+          "qty": 2
+        },
+        {
+          "itemId": 4359,
+          "qty": 4
+        },
+        {
+          "itemId": 4399,
+          "qty": 1
+        },
+        {
+          "itemId": 2319,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "large-copper-bomb",
+      "professionId": 202,
+      "name": "Large Copper Bomb",
+      "minSkill": 105,
+      "orangeUntil": 105,
+      "yellowUntil": 129,
+      "greenUntil": 154,
+      "grayAt": 155,
+      "reagents": [
+        {
+          "itemId": 2840,
+          "qty": 3
+        },
+        {
+          "itemId": 4364,
+          "qty": 4
+        },
+        {
+          "itemId": 4404,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "standard-scope",
+      "professionId": 202,
+      "name": "Standard Scope",
+      "minSkill": 110,
+      "orangeUntil": 134,
+      "yellowUntil": 146,
+      "greenUntil": 159,
+      "grayAt": 160,
+      "reagents": [
+        {
+          "itemId": 4371,
+          "qty": 1
+        },
+        {
+          "itemId": 1206,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "lovingly-crafted-boomstick",
+      "professionId": 202,
+      "name": "Lovingly Crafted Boomstick",
+      "minSkill": 120,
+      "orangeUntil": 144,
+      "yellowUntil": 156,
+      "greenUntil": 169,
+      "grayAt": 170,
+      "reagents": [
+        {
+          "itemId": 4371,
+          "qty": 2
+        },
+        {
+          "itemId": 4359,
+          "qty": 2
+        },
+        {
+          "itemId": 4400,
+          "qty": 1
+        },
+        {
+          "itemId": 1206,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "shadow-goggles",
+      "professionId": 202,
+      "name": "Shadow Goggles",
+      "minSkill": 120,
+      "orangeUntil": 144,
+      "yellowUntil": 156,
+      "greenUntil": 169,
+      "grayAt": 170,
+      "reagents": [
+        {
+          "itemId": 2319,
+          "qty": 4
+        },
+        {
+          "itemId": 1210,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "small-bronze-bomb",
+      "professionId": 202,
+      "name": "Small Bronze Bomb",
+      "minSkill": 120,
+      "orangeUntil": 120,
+      "yellowUntil": 144,
+      "greenUntil": 169,
+      "grayAt": 170,
+      "reagents": [
+        {
+          "itemId": 4364,
+          "qty": 4
+        },
+        {
+          "itemId": 2841,
+          "qty": 2
+        },
+        {
+          "itemId": 4404,
+          "qty": 1
+        },
+        {
+          "itemId": 2592,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "crafted-solid-shot",
+      "professionId": 202,
+      "name": "Crafted Solid Shot",
+      "minSkill": 125,
+      "orangeUntil": 125,
+      "yellowUntil": 134,
+      "greenUntil": 144,
+      "grayAt": 145,
+      "reagents": [
+        {
+          "itemId": 4377,
+          "qty": 1
+        },
+        {
+          "itemId": 2841,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "flame-deflector",
+      "professionId": 202,
+      "name": "Flame Deflector",
+      "minSkill": 125,
+      "orangeUntil": 125,
+      "yellowUntil": 149,
+      "greenUntil": 174,
+      "grayAt": 175,
+      "reagents": [
+        {
+          "itemId": 4375,
+          "qty": 1
+        },
+        {
+          "itemId": 4402,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "gnomish-universal-remote",
+      "professionId": 202,
+      "name": "Gnomish Universal Remote",
+      "minSkill": 125,
+      "orangeUntil": 149,
+      "yellowUntil": 161,
+      "greenUntil": 174,
+      "grayAt": 175,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 6
+        },
+        {
+          "itemId": 4375,
+          "qty": 1
+        },
+        {
+          "itemId": 814,
+          "qty": 2
+        },
+        {
+          "itemId": 818,
+          "qty": 1
+        },
+        {
+          "itemId": 774,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "heavy-blasting-powder",
+      "professionId": 202,
+      "name": "Heavy Blasting Powder",
+      "minSkill": 125,
+      "orangeUntil": 125,
+      "yellowUntil": 134,
+      "greenUntil": 144,
+      "grayAt": 145,
+      "reagents": [
+        {
+          "itemId": 2838,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "heavy-dynamite",
+      "professionId": 202,
+      "name": "Heavy Dynamite",
+      "minSkill": 125,
+      "orangeUntil": 125,
+      "yellowUntil": 134,
+      "greenUntil": 144,
+      "grayAt": 145,
+      "reagents": [
+        {
+          "itemId": 4377,
+          "qty": 2
+        },
+        {
+          "itemId": 2592,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "small-blue-rocket",
+      "professionId": 202,
+      "name": "Small Blue Rocket",
+      "minSkill": 125,
+      "orangeUntil": 125,
+      "yellowUntil": 136,
+      "greenUntil": 149,
+      "grayAt": 150,
+      "reagents": [
+        {
+          "itemId": 4364,
+          "qty": 1
+        },
+        {
+          "itemId": 2319,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "small-green-rocket",
+      "professionId": 202,
+      "name": "Small Green Rocket",
+      "minSkill": 125,
+      "orangeUntil": 125,
+      "yellowUntil": 136,
+      "greenUntil": 149,
+      "grayAt": 150,
+      "reagents": [
+        {
+          "itemId": 4364,
+          "qty": 1
+        },
+        {
+          "itemId": 2319,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "small-red-rocket",
+      "professionId": 202,
+      "name": "Small Red Rocket",
+      "minSkill": 125,
+      "orangeUntil": 125,
+      "yellowUntil": 136,
+      "greenUntil": 149,
+      "grayAt": 150,
+      "reagents": [
+        {
+          "itemId": 4364,
+          "qty": 1
+        },
+        {
+          "itemId": 2319,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "whirring-bronze-gizmo",
+      "professionId": 202,
+      "name": "Whirring Bronze Gizmo",
+      "minSkill": 125,
+      "orangeUntil": 125,
+      "yellowUntil": 149,
+      "greenUntil": 174,
+      "grayAt": 175,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 2
+        },
+        {
+          "itemId": 2592,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "silver-plated-shotgun",
+      "professionId": 202,
+      "name": "Silver-plated Shotgun",
+      "minSkill": 130,
+      "orangeUntil": 154,
+      "yellowUntil": 166,
+      "greenUntil": 179,
+      "grayAt": 180,
+      "reagents": [
+        {
+          "itemId": 4371,
+          "qty": 2
+        },
+        {
+          "itemId": 4375,
+          "qty": 2
+        },
+        {
+          "itemId": 4400,
+          "qty": 1
+        },
+        {
+          "itemId": 2842,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "ornate-spyglass",
+      "professionId": 202,
+      "name": "Ornate Spyglass",
+      "minSkill": 135,
+      "orangeUntil": 159,
+      "yellowUntil": 171,
+      "greenUntil": 184,
+      "grayAt": 185,
+      "reagents": [
+        {
+          "itemId": 4371,
+          "qty": 2
+        },
+        {
+          "itemId": 4375,
+          "qty": 2
+        },
+        {
+          "itemId": 4363,
+          "qty": 1
+        },
+        {
+          "itemId": 1206,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "big-bronze-bomb",
+      "professionId": 202,
+      "name": "Big Bronze Bomb",
+      "minSkill": 140,
+      "orangeUntil": 140,
+      "yellowUntil": 164,
+      "greenUntil": 189,
+      "grayAt": 190,
+      "reagents": [
+        {
+          "itemId": 4377,
+          "qty": 2
+        },
+        {
+          "itemId": 2841,
+          "qty": 3
+        },
+        {
+          "itemId": 4404,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "minor-recombobulator",
+      "professionId": 202,
+      "name": "Minor Recombobulator",
+      "minSkill": 140,
+      "orangeUntil": 164,
+      "yellowUntil": 176,
+      "greenUntil": 189,
+      "grayAt": 190,
+      "reagents": [
+        {
+          "itemId": 4371,
+          "qty": 1
+        },
+        {
+          "itemId": 4375,
+          "qty": 2
+        },
+        {
+          "itemId": 2319,
+          "qty": 2
+        },
+        {
+          "itemId": 1206,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "bronze-framework",
+      "professionId": 202,
+      "name": "Bronze Framework",
+      "minSkill": 145,
+      "orangeUntil": 145,
+      "yellowUntil": 169,
+      "greenUntil": 194,
+      "grayAt": 195,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 2
+        },
+        {
+          "itemId": 2319,
+          "qty": 1
+        },
+        {
+          "itemId": 2592,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "moonsight-rifle",
+      "professionId": 202,
+      "name": "Moonsight Rifle",
+      "minSkill": 145,
+      "orangeUntil": 169,
+      "yellowUntil": 181,
+      "greenUntil": 194,
+      "grayAt": 195,
+      "reagents": [
+        {
+          "itemId": 4371,
+          "qty": 3
+        },
+        {
+          "itemId": 4375,
+          "qty": 3
+        },
+        {
+          "itemId": 4400,
+          "qty": 1
+        },
+        {
+          "itemId": 1705,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "aquadynamic-fish-attractor",
+      "professionId": 202,
+      "name": "Aquadynamic Fish Attractor",
+      "minSkill": 150,
+      "orangeUntil": 150,
+      "yellowUntil": 159,
+      "greenUntil": 169,
+      "grayAt": 170,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 2
+        },
+        {
+          "itemId": 6530,
+          "qty": 1
+        },
+        {
+          "itemId": 4364,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "blue-firework",
+      "professionId": 202,
+      "name": "Blue Firework",
+      "minSkill": 150,
+      "orangeUntil": 150,
+      "yellowUntil": 161,
+      "greenUntil": 174,
+      "grayAt": 175,
+      "reagents": [
+        {
+          "itemId": 4377,
+          "qty": 1
+        },
+        {
+          "itemId": 4234,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "explosive-sheep",
+      "professionId": 202,
+      "name": "Explosive Sheep",
+      "minSkill": 150,
+      "orangeUntil": 174,
+      "yellowUntil": 186,
+      "greenUntil": 199,
+      "grayAt": 200,
+      "reagents": [
+        {
+          "itemId": 4382,
+          "qty": 1
+        },
+        {
+          "itemId": 4375,
+          "qty": 1
+        },
+        {
+          "itemId": 4377,
+          "qty": 2
+        },
+        {
+          "itemId": 2592,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "gold-power-core",
+      "professionId": 202,
+      "name": "Gold Power Core",
+      "minSkill": 150,
+      "orangeUntil": 150,
+      "yellowUntil": 169,
+      "greenUntil": 189,
+      "grayAt": 190,
+      "reagents": [
+        {
+          "itemId": 3577,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "green-firework",
+      "professionId": 202,
+      "name": "Green Firework",
+      "minSkill": 150,
+      "orangeUntil": 150,
+      "yellowUntil": 161,
+      "greenUntil": 174,
+      "grayAt": 175,
+      "reagents": [
+        {
+          "itemId": 4377,
+          "qty": 1
+        },
+        {
+          "itemId": 4234,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "green-tinted-goggles",
+      "professionId": 202,
+      "name": "Green Tinted Goggles",
+      "minSkill": 150,
+      "orangeUntil": 174,
+      "yellowUntil": 186,
+      "greenUntil": 199,
+      "grayAt": 200,
+      "reagents": [
+        {
+          "itemId": 2319,
+          "qty": 4
+        },
+        {
+          "itemId": 1206,
+          "qty": 2
+        },
+        {
+          "itemId": 4368,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "red-firework",
+      "professionId": 202,
+      "name": "Red Firework",
+      "minSkill": 150,
+      "orangeUntil": 150,
+      "yellowUntil": 161,
+      "greenUntil": 174,
+      "grayAt": 175,
+      "reagents": [
+        {
+          "itemId": 4377,
+          "qty": 1
+        },
+        {
+          "itemId": 4234,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "ice-deflector",
+      "professionId": 202,
+      "name": "Ice Deflector",
+      "minSkill": 155,
+      "orangeUntil": 174,
+      "yellowUntil": 184,
+      "greenUntil": 194,
+      "grayAt": 195,
+      "reagents": [
+        {
+          "itemId": 4375,
+          "qty": 1
+        },
+        {
+          "itemId": 3829,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "discombobulator-ray",
+      "professionId": 202,
+      "name": "Discombobulator Ray",
+      "minSkill": 160,
+      "orangeUntil": 179,
+      "yellowUntil": 189,
+      "greenUntil": 199,
+      "grayAt": 200,
+      "reagents": [
+        {
+          "itemId": 4375,
+          "qty": 3
+        },
+        {
+          "itemId": 4306,
+          "qty": 2
+        },
+        {
+          "itemId": 1529,
+          "qty": 1
+        },
+        {
+          "itemId": 4371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "iron-strut",
+      "professionId": 202,
+      "name": "Iron Strut",
+      "minSkill": 160,
+      "orangeUntil": 160,
+      "yellowUntil": 169,
+      "greenUntil": 179,
+      "grayAt": 180,
+      "reagents": [
+        {
+          "itemId": 3575,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "goblin-jumper-cables",
+      "professionId": 202,
+      "name": "Goblin Jumper Cables",
+      "minSkill": 165,
+      "orangeUntil": 165,
+      "yellowUntil": 179,
+      "greenUntil": 199,
+      "grayAt": 200,
+      "reagents": [
+        {
+          "itemId": 3575,
+          "qty": 6
+        },
+        {
+          "itemId": 4375,
+          "qty": 2
+        },
+        {
+          "itemId": 814,
+          "qty": 2
+        },
+        {
+          "itemId": 4306,
+          "qty": 2
+        },
+        {
+          "itemId": 1210,
+          "qty": 2
+        },
+        {
+          "itemId": 7191,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "portable-bronze-mortar",
+      "professionId": 202,
+      "name": "Portable Bronze Mortar",
+      "minSkill": 165,
+      "orangeUntil": 184,
+      "yellowUntil": 194,
+      "greenUntil": 204,
+      "grayAt": 205,
+      "reagents": [
+        {
+          "itemId": 4371,
+          "qty": 4
+        },
+        {
+          "itemId": 4387,
+          "qty": 1
+        },
+        {
+          "itemId": 4377,
+          "qty": 4
+        },
+        {
+          "itemId": 2319,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "gyrochronatom",
+      "professionId": 202,
+      "name": "Gyrochronatom",
+      "minSkill": 170,
+      "orangeUntil": 170,
+      "yellowUntil": 189,
+      "greenUntil": 209,
+      "grayAt": 210,
+      "reagents": [
+        {
+          "itemId": 3575,
+          "qty": 1
+        },
+        {
+          "itemId": 10558,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "bright-eye-goggles",
+      "professionId": 202,
+      "name": "Bright-Eye Goggles",
+      "minSkill": 175,
+      "orangeUntil": 194,
+      "yellowUntil": 204,
+      "greenUntil": 214,
+      "grayAt": 215,
+      "reagents": [
+        {
+          "itemId": 4234,
+          "qty": 6
+        },
+        {
+          "itemId": 3864,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "compact-harvest-reaper-kit",
+      "professionId": 202,
+      "name": "Compact Harvest Reaper Kit",
+      "minSkill": 175,
+      "orangeUntil": 175,
+      "yellowUntil": 194,
+      "greenUntil": 214,
+      "grayAt": 215,
+      "reagents": [
+        {
+          "itemId": 4387,
+          "qty": 2
+        },
+        {
+          "itemId": 4382,
+          "qty": 1
+        },
+        {
+          "itemId": 4389,
+          "qty": 2
+        },
+        {
+          "itemId": 4234,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "gyromatic-micro-adjustor",
+      "professionId": 202,
+      "name": "Gyromatic Micro-Adjustor",
+      "minSkill": 175,
+      "orangeUntil": 175,
+      "yellowUntil": 194,
+      "greenUntil": 214,
+      "grayAt": 215,
+      "reagents": [
+        {
+          "itemId": 3859,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "iron-grenade",
+      "professionId": 202,
+      "name": "Iron Grenade",
+      "minSkill": 175,
+      "orangeUntil": 175,
+      "yellowUntil": 194,
+      "greenUntil": 214,
+      "grayAt": 215,
+      "reagents": [
+        {
+          "itemId": 3575,
+          "qty": 1
+        },
+        {
+          "itemId": 4377,
+          "qty": 1
+        },
+        {
+          "itemId": 4306,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "large-blue-rocket",
+      "professionId": 202,
+      "name": "Large Blue Rocket",
+      "minSkill": 175,
+      "orangeUntil": 175,
+      "yellowUntil": 186,
+      "greenUntil": 199,
+      "grayAt": 200,
+      "reagents": [
+        {
+          "itemId": 4377,
+          "qty": 1
+        },
+        {
+          "itemId": 4234,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "large-green-rocket",
+      "professionId": 202,
+      "name": "Large Green Rocket",
+      "minSkill": 175,
+      "orangeUntil": 175,
+      "yellowUntil": 186,
+      "greenUntil": 199,
+      "grayAt": 200,
+      "reagents": [
+        {
+          "itemId": 4377,
+          "qty": 1
+        },
+        {
+          "itemId": 4234,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "large-red-rocket",
+      "professionId": 202,
+      "name": "Large Red Rocket",
+      "minSkill": 175,
+      "orangeUntil": 175,
+      "yellowUntil": 186,
+      "greenUntil": 199,
+      "grayAt": 200,
+      "reagents": [
+        {
+          "itemId": 4377,
+          "qty": 1
+        },
+        {
+          "itemId": 4234,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "solid-blasting-powder",
+      "professionId": 202,
+      "name": "Solid Blasting Powder",
+      "minSkill": 175,
+      "orangeUntil": 175,
+      "yellowUntil": 184,
+      "greenUntil": 194,
+      "grayAt": 195,
+      "reagents": [
+        {
+          "itemId": 7912,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "solid-dynamite",
+      "professionId": 202,
+      "name": "Solid Dynamite",
+      "minSkill": 175,
+      "orangeUntil": 175,
+      "yellowUntil": 184,
+      "greenUntil": 194,
+      "grayAt": 195,
+      "reagents": [
+        {
+          "itemId": 10505,
+          "qty": 1
+        },
+        {
+          "itemId": 4306,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "accurate-scope",
+      "professionId": 202,
+      "name": "Accurate Scope",
+      "minSkill": 180,
+      "orangeUntil": 199,
+      "yellowUntil": 209,
+      "greenUntil": 219,
+      "grayAt": 220,
+      "reagents": [
+        {
+          "itemId": 4371,
+          "qty": 1
+        },
+        {
+          "itemId": 1529,
+          "qty": 1
+        },
+        {
+          "itemId": 3864,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "advanced-target-dummy",
+      "professionId": 202,
+      "name": "Advanced Target Dummy",
+      "minSkill": 185,
+      "orangeUntil": 185,
+      "yellowUntil": 204,
+      "greenUntil": 224,
+      "grayAt": 225,
+      "reagents": [
+        {
+          "itemId": 4387,
+          "qty": 1
+        },
+        {
+          "itemId": 4382,
+          "qty": 1
+        },
+        {
+          "itemId": 4389,
+          "qty": 1
+        },
+        {
+          "itemId": 4234,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "craftsman-s-monocle",
+      "professionId": 202,
+      "name": "Craftsman's Monocle",
+      "minSkill": 185,
+      "orangeUntil": 204,
+      "yellowUntil": 214,
+      "greenUntil": 224,
+      "grayAt": 225,
+      "reagents": [
+        {
+          "itemId": 4234,
+          "qty": 6
+        },
+        {
+          "itemId": 3864,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "flash-bomb",
+      "professionId": 202,
+      "name": "Flash Bomb",
+      "minSkill": 185,
+      "orangeUntil": 185,
+      "yellowUntil": 204,
+      "greenUntil": 224,
+      "grayAt": 225,
+      "reagents": [
+        {
+          "itemId": 4611,
+          "qty": 1
+        },
+        {
+          "itemId": 4377,
+          "qty": 1
+        },
+        {
+          "itemId": 4306,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "big-iron-bomb",
+      "professionId": 202,
+      "name": "Big Iron Bomb",
+      "minSkill": 190,
+      "orangeUntil": 190,
+      "yellowUntil": 209,
+      "greenUntil": 229,
+      "grayAt": 230,
+      "reagents": [
+        {
+          "itemId": 3575,
+          "qty": 3
+        },
+        {
+          "itemId": 4377,
+          "qty": 3
+        },
+        {
+          "itemId": 4404,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "snowmaster-9000",
+      "professionId": 202,
+      "name": "Snowmaster 9000",
+      "minSkill": 190,
+      "orangeUntil": 190,
+      "yellowUntil": 209,
+      "greenUntil": 229,
+      "grayAt": 230,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 8
+        },
+        {
+          "itemId": 4389,
+          "qty": 4
+        },
+        {
+          "itemId": 17202,
+          "qty": 4
+        },
+        {
+          "itemId": 3829,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "goblin-land-mine",
+      "professionId": 202,
+      "name": "Goblin Land Mine",
+      "minSkill": 195,
+      "orangeUntil": 214,
+      "yellowUntil": 224,
+      "greenUntil": 234,
+      "grayAt": 235,
+      "reagents": [
+        {
+          "itemId": 4377,
+          "qty": 3
+        },
+        {
+          "itemId": 3575,
+          "qty": 2
+        },
+        {
+          "itemId": 4389,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mithril-tube",
+      "professionId": 202,
+      "name": "Mithril Tube",
+      "minSkill": 195,
+      "orangeUntil": 195,
+      "yellowUntil": 214,
+      "greenUntil": 234,
+      "grayAt": 235,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "ez-thro-dynamite-ii",
+      "professionId": 202,
+      "name": "EZ-Thro Dynamite II",
+      "minSkill": 200,
+      "orangeUntil": 200,
+      "yellowUntil": 209,
+      "greenUntil": 219,
+      "grayAt": 220,
+      "reagents": [
+        {
+          "itemId": 10505,
+          "qty": 1
+        },
+        {
+          "itemId": 4338,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "gnomish-cloaking-device",
+      "professionId": 202,
+      "name": "Gnomish Cloaking Device",
+      "minSkill": 200,
+      "orangeUntil": 219,
+      "yellowUntil": 229,
+      "greenUntil": 239,
+      "grayAt": 240,
+      "reagents": [
+        {
+          "itemId": 4389,
+          "qty": 4
+        },
+        {
+          "itemId": 1529,
+          "qty": 2
+        },
+        {
+          "itemId": 1705,
+          "qty": 2
+        },
+        {
+          "itemId": 3864,
+          "qty": 2
+        },
+        {
+          "itemId": 7191,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "large-seaforium-charge",
+      "professionId": 202,
+      "name": "Large Seaforium Charge",
+      "minSkill": 200,
+      "orangeUntil": 200,
+      "yellowUntil": 219,
+      "greenUntil": 239,
+      "grayAt": 240,
+      "reagents": [
+        {
+          "itemId": 10505,
+          "qty": 2
+        },
+        {
+          "itemId": 4234,
+          "qty": 2
+        },
+        {
+          "itemId": 159,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mechanical-dragonling",
+      "professionId": 202,
+      "name": "Mechanical Dragonling",
+      "minSkill": 200,
+      "orangeUntil": 219,
+      "yellowUntil": 229,
+      "greenUntil": 239,
+      "grayAt": 240,
+      "reagents": [
+        {
+          "itemId": 4382,
+          "qty": 1
+        },
+        {
+          "itemId": 4387,
+          "qty": 4
+        },
+        {
+          "itemId": 4389,
+          "qty": 4
+        },
+        {
+          "itemId": 3864,
+          "qty": 2
+        },
+        {
+          "itemId": 7191,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mechanical-repair-kit",
+      "professionId": 202,
+      "name": "Mechanical Repair Kit",
+      "minSkill": 200,
+      "orangeUntil": 200,
+      "yellowUntil": 219,
+      "greenUntil": 239,
+      "grayAt": 240,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 1
+        },
+        {
+          "itemId": 4338,
+          "qty": 1
+        },
+        {
+          "itemId": 10505,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "unstable-trigger",
+      "professionId": 202,
+      "name": "Unstable Trigger",
+      "minSkill": 200,
+      "orangeUntil": 200,
+      "yellowUntil": 219,
+      "greenUntil": 239,
+      "grayAt": 240,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 1
+        },
+        {
+          "itemId": 4338,
+          "qty": 1
+        },
+        {
+          "itemId": 10505,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "fire-goggles",
+      "professionId": 202,
+      "name": "Fire Goggles",
+      "minSkill": 205,
+      "orangeUntil": 224,
+      "yellowUntil": 234,
+      "greenUntil": 244,
+      "grayAt": 245,
+      "reagents": [
+        {
+          "itemId": 4385,
+          "qty": 1
+        },
+        {
+          "itemId": 3864,
+          "qty": 2
+        },
+        {
+          "itemId": 7068,
+          "qty": 2
+        },
+        {
+          "itemId": 4234,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "gnomish-shrink-ray",
+      "professionId": 202,
+      "name": "Gnomish Shrink Ray",
+      "minSkill": 205,
+      "orangeUntil": 224,
+      "yellowUntil": 234,
+      "greenUntil": 244,
+      "grayAt": 245,
+      "reagents": [
+        {
+          "itemId": 10559,
+          "qty": 1
+        },
+        {
+          "itemId": 10560,
+          "qty": 1
+        },
+        {
+          "itemId": 3860,
+          "qty": 4
+        },
+        {
+          "itemId": 8151,
+          "qty": 4
+        },
+        {
+          "itemId": 1529,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "goblin-construction-helmet",
+      "professionId": 202,
+      "name": "Goblin Construction Helmet",
+      "minSkill": 205,
+      "orangeUntil": 224,
+      "yellowUntil": 234,
+      "greenUntil": 244,
+      "grayAt": 245,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 8
+        },
+        {
+          "itemId": 3864,
+          "qty": 1
+        },
+        {
+          "itemId": 7068,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "goblin-mining-helmet",
+      "professionId": 202,
+      "name": "Goblin Mining Helmet",
+      "minSkill": 205,
+      "orangeUntil": 224,
+      "yellowUntil": 234,
+      "greenUntil": 244,
+      "grayAt": 245,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 8
+        },
+        {
+          "itemId": 3864,
+          "qty": 1
+        },
+        {
+          "itemId": 7067,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "goblin-rocket-fuel-recipe",
+      "professionId": 202,
+      "name": "Goblin Rocket Fuel Recipe",
+      "minSkill": 205,
+      "orangeUntil": 205,
+      "yellowUntil": 205,
+      "greenUntil": 205,
+      "grayAt": 206,
+      "reagents": [
+        {
+          "itemId": 10648,
+          "qty": 1
+        },
+        {
+          "itemId": 10647,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "goblin-sapper-charge",
+      "professionId": 202,
+      "name": "Goblin Sapper Charge",
+      "minSkill": 205,
+      "orangeUntil": 205,
+      "yellowUntil": 224,
+      "greenUntil": 244,
+      "grayAt": 245,
+      "reagents": [
+        {
+          "itemId": 4338,
+          "qty": 1
+        },
+        {
+          "itemId": 10505,
+          "qty": 3
+        },
+        {
+          "itemId": 10560,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "inlaid-mithril-cylinder-plans",
+      "professionId": 202,
+      "name": "Inlaid Mithril Cylinder Plans",
+      "minSkill": 205,
+      "orangeUntil": 205,
+      "yellowUntil": 205,
+      "greenUntil": 205,
+      "grayAt": 206,
+      "reagents": [
+        {
+          "itemId": 10648,
+          "qty": 1
+        },
+        {
+          "itemId": 10647,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "lil-smoky",
+      "professionId": 202,
+      "name": "Lil' Smoky",
+      "minSkill": 205,
+      "orangeUntil": 205,
+      "yellowUntil": 205,
+      "greenUntil": 205,
+      "grayAt": 206,
+      "reagents": [
+        {
+          "itemId": 7075,
+          "qty": 1
+        },
+        {
+          "itemId": 4389,
+          "qty": 2
+        },
+        {
+          "itemId": 7191,
+          "qty": 1
+        },
+        {
+          "itemId": 3860,
+          "qty": 2
+        },
+        {
+          "itemId": 6037,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mithril-blunderbuss",
+      "professionId": 202,
+      "name": "Mithril Blunderbuss",
+      "minSkill": 205,
+      "orangeUntil": 224,
+      "yellowUntil": 234,
+      "greenUntil": 244,
+      "grayAt": 245,
+      "reagents": [
+        {
+          "itemId": 10559,
+          "qty": 1
+        },
+        {
+          "itemId": 10560,
+          "qty": 1
+        },
+        {
+          "itemId": 4400,
+          "qty": 1
+        },
+        {
+          "itemId": 3860,
+          "qty": 4
+        },
+        {
+          "itemId": 7068,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "pet-bombling",
+      "professionId": 202,
+      "name": "Pet Bombling",
+      "minSkill": 205,
+      "orangeUntil": 205,
+      "yellowUntil": 205,
+      "greenUntil": 205,
+      "grayAt": 206,
+      "reagents": [
+        {
+          "itemId": 4394,
+          "qty": 1
+        },
+        {
+          "itemId": 7077,
+          "qty": 1
+        },
+        {
+          "itemId": 7191,
+          "qty": 1
+        },
+        {
+          "itemId": 3860,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "deadly-scope",
+      "professionId": 202,
+      "name": "Deadly Scope",
+      "minSkill": 210,
+      "orangeUntil": 229,
+      "yellowUntil": 239,
+      "greenUntil": 249,
+      "grayAt": 250,
+      "reagents": [
+        {
+          "itemId": 10559,
+          "qty": 1
+        },
+        {
+          "itemId": 7909,
+          "qty": 2
+        },
+        {
+          "itemId": 4304,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "gnomish-goggles",
+      "professionId": 202,
+      "name": "Gnomish Goggles",
+      "minSkill": 210,
+      "orangeUntil": 229,
+      "yellowUntil": 239,
+      "greenUntil": 249,
+      "grayAt": 250,
+      "reagents": [
+        {
+          "itemId": 10500,
+          "qty": 1
+        },
+        {
+          "itemId": 10559,
+          "qty": 1
+        },
+        {
+          "itemId": 10558,
+          "qty": 2
+        },
+        {
+          "itemId": 8151,
+          "qty": 2
+        },
+        {
+          "itemId": 4234,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "gnomish-net-o-matic-projector",
+      "professionId": 202,
+      "name": "Gnomish Net-o-Matic Projector",
+      "minSkill": 210,
+      "orangeUntil": 229,
+      "yellowUntil": 239,
+      "greenUntil": 249,
+      "grayAt": 250,
+      "reagents": [
+        {
+          "itemId": 10559,
+          "qty": 1
+        },
+        {
+          "itemId": 10285,
+          "qty": 2
+        },
+        {
+          "itemId": 4337,
+          "qty": 4
+        },
+        {
+          "itemId": 10505,
+          "qty": 2
+        },
+        {
+          "itemId": 3860,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "hi-impact-mithril-slugs",
+      "professionId": 202,
+      "name": "Hi-Impact Mithril Slugs",
+      "minSkill": 210,
+      "orangeUntil": 210,
+      "yellowUntil": 229,
+      "greenUntil": 249,
+      "grayAt": 250,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 1
+        },
+        {
+          "itemId": 10505,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "gnomish-harm-prevention-belt",
+      "professionId": 202,
+      "name": "Gnomish Harm Prevention Belt",
+      "minSkill": 215,
+      "orangeUntil": 234,
+      "yellowUntil": 244,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 7387,
+          "qty": 1
+        },
+        {
+          "itemId": 3860,
+          "qty": 4
+        },
+        {
+          "itemId": 6037,
+          "qty": 2
+        },
+        {
+          "itemId": 10560,
+          "qty": 1
+        },
+        {
+          "itemId": 7909,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "mithril-casing",
+      "professionId": 202,
+      "name": "Mithril Casing",
+      "minSkill": 215,
+      "orangeUntil": 215,
+      "yellowUntil": 234,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "mithril-frag-bomb",
+      "professionId": 202,
+      "name": "Mithril Frag Bomb",
+      "minSkill": 215,
+      "orangeUntil": 215,
+      "yellowUntil": 234,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 10561,
+          "qty": 1
+        },
+        {
+          "itemId": 10560,
+          "qty": 1
+        },
+        {
+          "itemId": 10505,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "catseye-ultra-goggles",
+      "professionId": 202,
+      "name": "Catseye Ultra Goggles",
+      "minSkill": 220,
+      "orangeUntil": 239,
+      "yellowUntil": 249,
+      "greenUntil": 259,
+      "grayAt": 260,
+      "reagents": [
+        {
+          "itemId": 4304,
+          "qty": 4
+        },
+        {
+          "itemId": 7909,
+          "qty": 2
+        },
+        {
+          "itemId": 10592,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mithril-heavy-bore-rifle",
+      "professionId": 202,
+      "name": "Mithril Heavy-bore Rifle",
+      "minSkill": 220,
+      "orangeUntil": 239,
+      "yellowUntil": 249,
+      "greenUntil": 259,
+      "grayAt": 260,
+      "reagents": [
+        {
+          "itemId": 10559,
+          "qty": 2
+        },
+        {
+          "itemId": 10560,
+          "qty": 1
+        },
+        {
+          "itemId": 4400,
+          "qty": 1
+        },
+        {
+          "itemId": 3860,
+          "qty": 6
+        },
+        {
+          "itemId": 3864,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "blue-rocket-cluster",
+      "professionId": 202,
+      "name": "Blue Rocket Cluster",
+      "minSkill": 225,
+      "orangeUntil": 225,
+      "yellowUntil": 236,
+      "greenUntil": 249,
+      "grayAt": 250,
+      "reagents": [
+        {
+          "itemId": 10505,
+          "qty": 1
+        },
+        {
+          "itemId": 4304,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "firework-launcher",
+      "professionId": 202,
+      "name": "Firework Launcher",
+      "minSkill": 225,
+      "orangeUntil": 244,
+      "yellowUntil": 254,
+      "greenUntil": 264,
+      "grayAt": 265,
+      "reagents": [
+        {
+          "itemId": 9060,
+          "qty": 1
+        },
+        {
+          "itemId": 9061,
+          "qty": 1
+        },
+        {
+          "itemId": 10560,
+          "qty": 1
+        },
+        {
+          "itemId": 10561,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "gnomish-rocket-boots",
+      "professionId": 202,
+      "name": "Gnomish Rocket Boots",
+      "minSkill": 225,
+      "orangeUntil": 244,
+      "yellowUntil": 254,
+      "greenUntil": 264,
+      "grayAt": 265,
+      "reagents": [
+        {
+          "itemId": 10026,
+          "qty": 1
+        },
+        {
+          "itemId": 10559,
+          "qty": 2
+        },
+        {
+          "itemId": 4234,
+          "qty": 4
+        },
+        {
+          "itemId": 10505,
+          "qty": 8
+        },
+        {
+          "itemId": 4389,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "goblin-rocket-boots",
+      "professionId": 202,
+      "name": "Goblin Rocket Boots",
+      "minSkill": 225,
+      "orangeUntil": 244,
+      "yellowUntil": 254,
+      "greenUntil": 264,
+      "grayAt": 265,
+      "reagents": [
+        {
+          "itemId": 10026,
+          "qty": 1
+        },
+        {
+          "itemId": 10559,
+          "qty": 2
+        },
+        {
+          "itemId": 4234,
+          "qty": 4
+        },
+        {
+          "itemId": 9061,
+          "qty": 2
+        },
+        {
+          "itemId": 10560,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "green-rocket-cluster",
+      "professionId": 202,
+      "name": "Green Rocket Cluster",
+      "minSkill": 225,
+      "orangeUntil": 225,
+      "yellowUntil": 236,
+      "greenUntil": 249,
+      "grayAt": 250,
+      "reagents": [
+        {
+          "itemId": 10505,
+          "qty": 1
+        },
+        {
+          "itemId": 4304,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "parachute-cloak",
+      "professionId": 202,
+      "name": "Parachute Cloak",
+      "minSkill": 225,
+      "orangeUntil": 244,
+      "yellowUntil": 254,
+      "greenUntil": 264,
+      "grayAt": 265,
+      "reagents": [
+        {
+          "itemId": 4339,
+          "qty": 4
+        },
+        {
+          "itemId": 10285,
+          "qty": 2
+        },
+        {
+          "itemId": 10560,
+          "qty": 1
+        },
+        {
+          "itemId": 10505,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "red-rocket-cluster",
+      "professionId": 202,
+      "name": "Red Rocket Cluster",
+      "minSkill": 225,
+      "orangeUntil": 225,
+      "yellowUntil": 236,
+      "greenUntil": 249,
+      "grayAt": 250,
+      "reagents": [
+        {
+          "itemId": 10505,
+          "qty": 1
+        },
+        {
+          "itemId": 4304,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "spellpower-goggles-xtreme",
+      "professionId": 202,
+      "name": "Spellpower Goggles Xtreme",
+      "minSkill": 225,
+      "orangeUntil": 244,
+      "yellowUntil": 254,
+      "greenUntil": 264,
+      "grayAt": 265,
+      "reagents": [
+        {
+          "itemId": 4304,
+          "qty": 4
+        },
+        {
+          "itemId": 7910,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "deepdive-helmet",
+      "professionId": 202,
+      "name": "Deepdive Helmet",
+      "minSkill": 230,
+      "orangeUntil": 249,
+      "yellowUntil": 259,
+      "greenUntil": 269,
+      "grayAt": 270,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 8
+        },
+        {
+          "itemId": 10561,
+          "qty": 1
+        },
+        {
+          "itemId": 6037,
+          "qty": 1
+        },
+        {
+          "itemId": 818,
+          "qty": 4
+        },
+        {
+          "itemId": 774,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "gnomish-battle-chicken",
+      "professionId": 202,
+      "name": "Gnomish Battle Chicken",
+      "minSkill": 230,
+      "orangeUntil": 249,
+      "yellowUntil": 259,
+      "greenUntil": 269,
+      "grayAt": 270,
+      "reagents": [
+        {
+          "itemId": 10561,
+          "qty": 1
+        },
+        {
+          "itemId": 6037,
+          "qty": 6
+        },
+        {
+          "itemId": 3860,
+          "qty": 6
+        },
+        {
+          "itemId": 9060,
+          "qty": 2
+        },
+        {
+          "itemId": 10558,
+          "qty": 1
+        },
+        {
+          "itemId": 1529,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "goblin-bomb-dispenser",
+      "professionId": 202,
+      "name": "Goblin Bomb Dispenser",
+      "minSkill": 230,
+      "orangeUntil": 230,
+      "yellowUntil": 249,
+      "greenUntil": 269,
+      "grayAt": 270,
+      "reagents": [
+        {
+          "itemId": 10561,
+          "qty": 2
+        },
+        {
+          "itemId": 10505,
+          "qty": 4
+        },
+        {
+          "itemId": 6037,
+          "qty": 6
+        },
+        {
+          "itemId": 10560,
+          "qty": 1
+        },
+        {
+          "itemId": 4407,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "rose-colored-goggles",
+      "professionId": 202,
+      "name": "Rose Colored Goggles",
+      "minSkill": 230,
+      "orangeUntil": 249,
+      "yellowUntil": 259,
+      "greenUntil": 269,
+      "grayAt": 270,
+      "reagents": [
+        {
+          "itemId": 4304,
+          "qty": 6
+        },
+        {
+          "itemId": 7910,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "gnomish-mind-control-cap",
+      "professionId": 202,
+      "name": "Gnomish Mind Control Cap",
+      "minSkill": 235,
+      "orangeUntil": 254,
+      "yellowUntil": 264,
+      "greenUntil": 274,
+      "grayAt": 275,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 10
+        },
+        {
+          "itemId": 6037,
+          "qty": 4
+        },
+        {
+          "itemId": 10558,
+          "qty": 1
+        },
+        {
+          "itemId": 7910,
+          "qty": 2
+        },
+        {
+          "itemId": 4338,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "hi-explosive-bomb",
+      "professionId": 202,
+      "name": "Hi-Explosive Bomb",
+      "minSkill": 235,
+      "orangeUntil": 235,
+      "yellowUntil": 254,
+      "greenUntil": 274,
+      "grayAt": 275,
+      "reagents": [
+        {
+          "itemId": 10561,
+          "qty": 2
+        },
+        {
+          "itemId": 10560,
+          "qty": 1
+        },
+        {
+          "itemId": 10505,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "the-big-one",
+      "professionId": 202,
+      "name": "The Big One",
+      "minSkill": 235,
+      "orangeUntil": 235,
+      "yellowUntil": 254,
+      "greenUntil": 274,
+      "grayAt": 275,
+      "reagents": [
+        {
+          "itemId": 10561,
+          "qty": 1
+        },
+        {
+          "itemId": 9061,
+          "qty": 1
+        },
+        {
+          "itemId": 10507,
+          "qty": 6
+        },
+        {
+          "itemId": 10560,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "gnomish-death-ray",
+      "professionId": 202,
+      "name": "Gnomish Death Ray",
+      "minSkill": 240,
+      "orangeUntil": 259,
+      "yellowUntil": 269,
+      "greenUntil": 279,
+      "grayAt": 280,
+      "reagents": [
+        {
+          "itemId": 10559,
+          "qty": 2
+        },
+        {
+          "itemId": 10560,
+          "qty": 1
+        },
+        {
+          "itemId": 12808,
+          "qty": 1
+        },
+        {
+          "itemId": 7972,
+          "qty": 4
+        },
+        {
+          "itemId": 9060,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "goblin-dragon-gun",
+      "professionId": 202,
+      "name": "Goblin Dragon Gun",
+      "minSkill": 240,
+      "orangeUntil": 259,
+      "yellowUntil": 269,
+      "greenUntil": 279,
+      "grayAt": 280,
+      "reagents": [
+        {
+          "itemId": 10559,
+          "qty": 2
+        },
+        {
+          "itemId": 9061,
+          "qty": 4
+        },
+        {
+          "itemId": 3860,
+          "qty": 6
+        },
+        {
+          "itemId": 6037,
+          "qty": 6
+        },
+        {
+          "itemId": 10560,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "sniper-scope",
+      "professionId": 202,
+      "name": "Sniper Scope",
+      "minSkill": 240,
+      "orangeUntil": 259,
+      "yellowUntil": 269,
+      "greenUntil": 279,
+      "grayAt": 280,
+      "reagents": [
+        {
+          "itemId": 10559,
+          "qty": 1
+        },
+        {
+          "itemId": 7910,
+          "qty": 1
+        },
+        {
+          "itemId": 6037,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "goblin-rocket-helmet",
+      "professionId": 202,
+      "name": "Goblin Rocket Helmet",
+      "minSkill": 245,
+      "orangeUntil": 264,
+      "yellowUntil": 274,
+      "greenUntil": 284,
+      "grayAt": 285,
+      "reagents": [
+        {
+          "itemId": 10543,
+          "qty": 1
+        },
+        {
+          "itemId": 9061,
+          "qty": 4
+        },
+        {
+          "itemId": 3860,
+          "qty": 4
+        },
+        {
+          "itemId": 10560,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "green-lens",
+      "professionId": 202,
+      "name": "Green Lens",
+      "minSkill": 245,
+      "orangeUntil": 264,
+      "yellowUntil": 274,
+      "greenUntil": 284,
+      "grayAt": 285,
+      "reagents": [
+        {
+          "itemId": 4304,
+          "qty": 8
+        },
+        {
+          "itemId": 1529,
+          "qty": 3
+        },
+        {
+          "itemId": 7909,
+          "qty": 3
+        },
+        {
+          "itemId": 10286,
+          "qty": 2
+        },
+        {
+          "itemId": 8153,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "mithril-gyro-shot",
+      "professionId": 202,
+      "name": "Mithril Gyro-Shot",
+      "minSkill": 245,
+      "orangeUntil": 245,
+      "yellowUntil": 264,
+      "greenUntil": 284,
+      "grayAt": 285,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 2
+        },
+        {
+          "itemId": 10505,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "dense-blasting-powder",
+      "professionId": 202,
+      "name": "Dense Blasting Powder",
+      "minSkill": 250,
+      "orangeUntil": 250,
+      "yellowUntil": 254,
+      "greenUntil": 259,
+      "grayAt": 260,
+      "reagents": [
+        {
+          "itemId": 12365,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "dense-dynamite",
+      "professionId": 202,
+      "name": "Dense Dynamite",
+      "minSkill": 250,
+      "orangeUntil": 250,
+      "yellowUntil": 259,
+      "greenUntil": 269,
+      "grayAt": 270,
+      "reagents": [
+        {
+          "itemId": 15992,
+          "qty": 2
+        },
+        {
+          "itemId": 14047,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "mithril-mechanical-dragonling",
+      "professionId": 202,
+      "name": "Mithril Mechanical Dragonling",
+      "minSkill": 250,
+      "orangeUntil": 269,
+      "yellowUntil": 279,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 14
+        },
+        {
+          "itemId": 7077,
+          "qty": 4
+        },
+        {
+          "itemId": 6037,
+          "qty": 4
+        },
+        {
+          "itemId": 9060,
+          "qty": 2
+        },
+        {
+          "itemId": 9061,
+          "qty": 2
+        },
+        {
+          "itemId": 7910,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "salt-shaker",
+      "professionId": 202,
+      "name": "Salt Shaker",
+      "minSkill": 250,
+      "orangeUntil": 269,
+      "yellowUntil": 279,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 10561,
+          "qty": 1
+        },
+        {
+          "itemId": 12359,
+          "qty": 6
+        },
+        {
+          "itemId": 10558,
+          "qty": 1
+        },
+        {
+          "itemId": 10560,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "snake-burst-firework",
+      "professionId": 202,
+      "name": "Snake Burst Firework",
+      "minSkill": 250,
+      "orangeUntil": 250,
+      "yellowUntil": 259,
+      "greenUntil": 269,
+      "grayAt": 270,
+      "reagents": [
+        {
+          "itemId": 15992,
+          "qty": 2
+        },
+        {
+          "itemId": 14047,
+          "qty": 2
+        },
+        {
+          "itemId": 8150,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "tranquil-mechanical-yeti",
+      "professionId": 202,
+      "name": "Tranquil Mechanical Yeti",
+      "minSkill": 250,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 15407,
+          "qty": 1
+        },
+        {
+          "itemId": 15994,
+          "qty": 4
+        },
+        {
+          "itemId": 7079,
+          "qty": 2
+        },
+        {
+          "itemId": 18631,
+          "qty": 2
+        },
+        {
+          "itemId": 10558,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "gyrofreeze-ice-reflector",
+      "professionId": 202,
+      "name": "Gyrofreeze Ice Reflector",
+      "minSkill": 260,
+      "orangeUntil": 279,
+      "yellowUntil": 289,
+      "greenUntil": 299,
+      "grayAt": 300,
+      "reagents": [
+        {
+          "itemId": 15994,
+          "qty": 6
+        },
+        {
+          "itemId": 18631,
+          "qty": 2
+        },
+        {
+          "itemId": 12361,
+          "qty": 2
+        },
+        {
+          "itemId": 7078,
+          "qty": 4
+        },
+        {
+          "itemId": 3829,
+          "qty": 2
+        },
+        {
+          "itemId": 13467,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "thorium-grenade",
+      "professionId": 202,
+      "name": "Thorium Grenade",
+      "minSkill": 260,
+      "orangeUntil": 279,
+      "yellowUntil": 289,
+      "greenUntil": 299,
+      "grayAt": 300,
+      "reagents": [
+        {
+          "itemId": 15994,
+          "qty": 1
+        },
+        {
+          "itemId": 12359,
+          "qty": 3
+        },
+        {
+          "itemId": 15992,
+          "qty": 3
+        },
+        {
+          "itemId": 14047,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "thorium-rifle",
+      "professionId": 202,
+      "name": "Thorium Rifle",
+      "minSkill": 260,
+      "orangeUntil": 279,
+      "yellowUntil": 289,
+      "greenUntil": 299,
+      "grayAt": 300,
+      "reagents": [
+        {
+          "itemId": 10559,
+          "qty": 2
+        },
+        {
+          "itemId": 10561,
+          "qty": 2
+        },
+        {
+          "itemId": 15994,
+          "qty": 2
+        },
+        {
+          "itemId": 12359,
+          "qty": 4
+        },
+        {
+          "itemId": 10546,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "thorium-widget",
+      "professionId": 202,
+      "name": "Thorium Widget",
+      "minSkill": 260,
+      "orangeUntil": 279,
+      "yellowUntil": 289,
+      "greenUntil": 299,
+      "grayAt": 300,
+      "reagents": [
+        {
+          "itemId": 12359,
+          "qty": 3
+        },
+        {
+          "itemId": 14047,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "truesilver-transformer",
+      "professionId": 202,
+      "name": "Truesilver Transformer",
+      "minSkill": 260,
+      "orangeUntil": 269,
+      "yellowUntil": 274,
+      "greenUntil": 279,
+      "grayAt": 280,
+      "reagents": [
+        {
+          "itemId": 6037,
+          "qty": 2
+        },
+        {
+          "itemId": 7067,
+          "qty": 2
+        },
+        {
+          "itemId": 7069,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "world-enlarger",
+      "professionId": 202,
+      "name": "World Enlarger",
+      "minSkill": 260,
+      "orangeUntil": 260,
+      "yellowUntil": 264,
+      "greenUntil": 269,
+      "grayAt": 270,
+      "reagents": [
+        {
+          "itemId": 10561,
+          "qty": 1
+        },
+        {
+          "itemId": 15994,
+          "qty": 2
+        },
+        {
+          "itemId": 10558,
+          "qty": 1
+        },
+        {
+          "itemId": 10560,
+          "qty": 1
+        },
+        {
+          "itemId": 3864,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "alarm-o-bot",
+      "professionId": 202,
+      "name": "Alarm-O-Bot",
+      "minSkill": 265,
+      "orangeUntil": 274,
+      "yellowUntil": 279,
+      "greenUntil": 284,
+      "grayAt": 285,
+      "reagents": [
+        {
+          "itemId": 12359,
+          "qty": 4
+        },
+        {
+          "itemId": 15994,
+          "qty": 2
+        },
+        {
+          "itemId": 8170,
+          "qty": 4
+        },
+        {
+          "itemId": 7910,
+          "qty": 1
+        },
+        {
+          "itemId": 7191,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "goblin-jumper-cables-xl",
+      "professionId": 202,
+      "name": "Goblin Jumper Cables XL",
+      "minSkill": 265,
+      "orangeUntil": 284,
+      "yellowUntil": 294,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 15994,
+          "qty": 2
+        },
+        {
+          "itemId": 18631,
+          "qty": 2
+        },
+        {
+          "itemId": 7191,
+          "qty": 2
+        },
+        {
+          "itemId": 14227,
+          "qty": 2
+        },
+        {
+          "itemId": 7910,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "lifelike-mechanical-toad",
+      "professionId": 202,
+      "name": "Lifelike Mechanical Toad",
+      "minSkill": 265,
+      "orangeUntil": 284,
+      "yellowUntil": 294,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 12803,
+          "qty": 1
+        },
+        {
+          "itemId": 15994,
+          "qty": 4
+        },
+        {
+          "itemId": 10558,
+          "qty": 1
+        },
+        {
+          "itemId": 8170,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "spellpower-goggles-xtreme-plus",
+      "professionId": 202,
+      "name": "Spellpower Goggles Xtreme Plus",
+      "minSkill": 270,
+      "orangeUntil": 289,
+      "yellowUntil": 299,
+      "greenUntil": 309,
+      "grayAt": 310,
+      "reagents": [
+        {
+          "itemId": 10502,
+          "qty": 1
+        },
+        {
+          "itemId": 7910,
+          "qty": 4
+        },
+        {
+          "itemId": 12810,
+          "qty": 2
+        },
+        {
+          "itemId": 14047,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "dark-iron-rifle",
+      "professionId": 202,
+      "name": "Dark Iron Rifle",
+      "minSkill": 275,
+      "orangeUntil": 294,
+      "yellowUntil": 304,
+      "greenUntil": 314,
+      "grayAt": 315,
+      "reagents": [
+        {
+          "itemId": 16000,
+          "qty": 2
+        },
+        {
+          "itemId": 11371,
+          "qty": 6
+        },
+        {
+          "itemId": 10546,
+          "qty": 2
+        },
+        {
+          "itemId": 12361,
+          "qty": 2
+        },
+        {
+          "itemId": 12799,
+          "qty": 2
+        },
+        {
+          "itemId": 8170,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "firework-cluster-launcher",
+      "professionId": 202,
+      "name": "Firework Cluster Launcher",
+      "minSkill": 275,
+      "orangeUntil": 294,
+      "yellowUntil": 304,
+      "greenUntil": 314,
+      "grayAt": 315,
+      "reagents": [
+        {
+          "itemId": 9060,
+          "qty": 4
+        },
+        {
+          "itemId": 9061,
+          "qty": 4
+        },
+        {
+          "itemId": 18631,
+          "qty": 2
+        },
+        {
+          "itemId": 10561,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "fused-wiring",
+      "professionId": 202,
+      "name": "Fused Wiring",
+      "minSkill": 275,
+      "orangeUntil": 275,
+      "yellowUntil": 279,
+      "greenUntil": 284,
+      "grayAt": 285,
+      "reagents": [
+        {
+          "itemId": 20816,
+          "qty": 3
+        },
+        {
+          "itemId": 7078,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "large-blue-rocket-cluster",
+      "professionId": 202,
+      "name": "Large Blue Rocket Cluster",
+      "minSkill": 275,
+      "orangeUntil": 275,
+      "yellowUntil": 279,
+      "greenUntil": 284,
+      "grayAt": 285,
+      "reagents": [
+        {
+          "itemId": 15992,
+          "qty": 1
+        },
+        {
+          "itemId": 8170,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "large-green-rocket-cluster",
+      "professionId": 202,
+      "name": "Large Green Rocket Cluster",
+      "minSkill": 275,
+      "orangeUntil": 275,
+      "yellowUntil": 279,
+      "greenUntil": 284,
+      "grayAt": 285,
+      "reagents": [
+        {
+          "itemId": 15992,
+          "qty": 1
+        },
+        {
+          "itemId": 8170,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "large-red-rocket-cluster",
+      "professionId": 202,
+      "name": "Large Red Rocket Cluster",
+      "minSkill": 275,
+      "orangeUntil": 275,
+      "yellowUntil": 279,
+      "greenUntil": 284,
+      "grayAt": 285,
+      "reagents": [
+        {
+          "itemId": 15992,
+          "qty": 1
+        },
+        {
+          "itemId": 8170,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "major-recombobulator",
+      "professionId": 202,
+      "name": "Major Recombobulator",
+      "minSkill": 275,
+      "orangeUntil": 284,
+      "yellowUntil": 289,
+      "greenUntil": 294,
+      "grayAt": 295,
+      "reagents": [
+        {
+          "itemId": 16000,
+          "qty": 2
+        },
+        {
+          "itemId": 18631,
+          "qty": 1
+        },
+        {
+          "itemId": 14047,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "masterwork-target-dummy",
+      "professionId": 202,
+      "name": "Masterwork Target Dummy",
+      "minSkill": 275,
+      "orangeUntil": 294,
+      "yellowUntil": 304,
+      "greenUntil": 314,
+      "grayAt": 315,
+      "reagents": [
+        {
+          "itemId": 10561,
+          "qty": 1
+        },
+        {
+          "itemId": 16000,
+          "qty": 1
+        },
+        {
+          "itemId": 15994,
+          "qty": 2
+        },
+        {
+          "itemId": 6037,
+          "qty": 1
+        },
+        {
+          "itemId": 8170,
+          "qty": 2
+        },
+        {
+          "itemId": 14047,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "powerful-seaforium-charge",
+      "professionId": 202,
+      "name": "Powerful Seaforium Charge",
+      "minSkill": 275,
+      "orangeUntil": 275,
+      "yellowUntil": 284,
+      "greenUntil": 294,
+      "grayAt": 295,
+      "reagents": [
+        {
+          "itemId": 15994,
+          "qty": 2
+        },
+        {
+          "itemId": 15992,
+          "qty": 3
+        },
+        {
+          "itemId": 8170,
+          "qty": 2
+        },
+        {
+          "itemId": 159,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "steam-tonk-controller",
+      "professionId": 202,
+      "name": "Steam Tonk Controller",
+      "minSkill": 275,
+      "orangeUntil": 275,
+      "yellowUntil": 279,
+      "greenUntil": 284,
+      "grayAt": 285,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 3
+        },
+        {
+          "itemId": 10558,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "thorium-tube",
+      "professionId": 202,
+      "name": "Thorium Tube",
+      "minSkill": 275,
+      "orangeUntil": 294,
+      "yellowUntil": 304,
+      "greenUntil": 314,
+      "grayAt": 315,
+      "reagents": [
+        {
+          "itemId": 12359,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "dark-iron-bomb",
+      "professionId": 202,
+      "name": "Dark Iron Bomb",
+      "minSkill": 285,
+      "orangeUntil": 304,
+      "yellowUntil": 314,
+      "greenUntil": 324,
+      "grayAt": 325,
+      "reagents": [
+        {
+          "itemId": 15994,
+          "qty": 2
+        },
+        {
+          "itemId": 11371,
+          "qty": 1
+        },
+        {
+          "itemId": 15992,
+          "qty": 3
+        },
+        {
+          "itemId": 14047,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "delicate-arcanite-converter",
+      "professionId": 202,
+      "name": "Delicate Arcanite Converter",
+      "minSkill": 285,
+      "orangeUntil": 304,
+      "yellowUntil": 314,
+      "greenUntil": 324,
+      "grayAt": 325,
+      "reagents": [
+        {
+          "itemId": 12360,
+          "qty": 1
+        },
+        {
+          "itemId": 14227,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "thorium-shells",
+      "professionId": 202,
+      "name": "Thorium Shells",
+      "minSkill": 285,
+      "orangeUntil": 294,
+      "yellowUntil": 299,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 12359,
+          "qty": 2
+        },
+        {
+          "itemId": 15992,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "hyper-radiant-flame-reflector",
+      "professionId": 202,
+      "name": "Hyper-Radiant Flame Reflector",
+      "minSkill": 290,
+      "orangeUntil": 309,
+      "yellowUntil": 319,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 11371,
+          "qty": 4
+        },
+        {
+          "itemId": 18631,
+          "qty": 3
+        },
+        {
+          "itemId": 7080,
+          "qty": 6
+        },
+        {
+          "itemId": 7910,
+          "qty": 4
+        },
+        {
+          "itemId": 12800,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "master-engineer-s-goggles",
+      "professionId": 202,
+      "name": "Master Engineer's Goggles",
+      "minSkill": 290,
+      "orangeUntil": 309,
+      "yellowUntil": 319,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 10500,
+          "qty": 1
+        },
+        {
+          "itemId": 12364,
+          "qty": 2
+        },
+        {
+          "itemId": 12810,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "voice-amplification-modulator",
+      "professionId": 202,
+      "name": "Voice Amplification Modulator",
+      "minSkill": 290,
+      "orangeUntil": 309,
+      "yellowUntil": 319,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 16006,
+          "qty": 2
+        },
+        {
+          "itemId": 10558,
+          "qty": 1
+        },
+        {
+          "itemId": 15994,
+          "qty": 1
+        },
+        {
+          "itemId": 12799,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "arcane-bomb",
+      "professionId": 202,
+      "name": "Arcane Bomb",
+      "minSkill": 300,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 16006,
+          "qty": 1
+        },
+        {
+          "itemId": 12359,
+          "qty": 3
+        },
+        {
+          "itemId": 14047,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "arcanite-dragonling",
+      "professionId": 202,
+      "name": "Arcanite Dragonling",
+      "minSkill": 300,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 10576,
+          "qty": 1
+        },
+        {
+          "itemId": 16006,
+          "qty": 8
+        },
+        {
+          "itemId": 12655,
+          "qty": 10
+        },
+        {
+          "itemId": 15994,
+          "qty": 6
+        },
+        {
+          "itemId": 10558,
+          "qty": 4
+        },
+        {
+          "itemId": 12810,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "biznicks-247x128-accurascope",
+      "professionId": 202,
+      "name": "Biznicks 247x128 Accurascope",
+      "minSkill": 300,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 17011,
+          "qty": 2
+        },
+        {
+          "itemId": 7076,
+          "qty": 2
+        },
+        {
+          "itemId": 16006,
+          "qty": 4
+        },
+        {
+          "itemId": 11371,
+          "qty": 6
+        },
+        {
+          "itemId": 16000,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "bloodvine-goggles",
+      "professionId": 202,
+      "name": "Bloodvine Goggles",
+      "minSkill": 300,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 19726,
+          "qty": 4
+        },
+        {
+          "itemId": 19774,
+          "qty": 5
+        },
+        {
+          "itemId": 16006,
+          "qty": 2
+        },
+        {
+          "itemId": 12804,
+          "qty": 8
+        },
+        {
+          "itemId": 12810,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "bloodvine-lens",
+      "professionId": 202,
+      "name": "Bloodvine Lens",
+      "minSkill": 300,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 19726,
+          "qty": 5
+        },
+        {
+          "itemId": 19774,
+          "qty": 5
+        },
+        {
+          "itemId": 16006,
+          "qty": 1
+        },
+        {
+          "itemId": 12804,
+          "qty": 8
+        },
+        {
+          "itemId": 12810,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "core-marksman-rifle",
+      "professionId": 202,
+      "name": "Core Marksman Rifle",
+      "minSkill": 300,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 17010,
+          "qty": 4
+        },
+        {
+          "itemId": 17011,
+          "qty": 2
+        },
+        {
+          "itemId": 12360,
+          "qty": 6
+        },
+        {
+          "itemId": 16006,
+          "qty": 2
+        },
+        {
+          "itemId": 16000,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "elemental-blasting-powder",
+      "professionId": 202,
+      "name": "Elemental Blasting Powder",
+      "minSkill": 300,
+      "orangeUntil": 300,
+      "yellowUntil": 309,
+      "greenUntil": 319,
+      "grayAt": 320,
+      "reagents": [
+        {
+          "itemId": 22574,
+          "qty": 1
+        },
+        {
+          "itemId": 22573,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "fel-iron-bomb",
+      "professionId": 202,
+      "name": "Fel Iron Bomb",
+      "minSkill": 300,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 23782,
+          "qty": 1
+        },
+        {
+          "itemId": 23783,
+          "qty": 2
+        },
+        {
+          "itemId": 23781,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "fel-iron-casing",
+      "professionId": 202,
+      "name": "Fel Iron Casing",
+      "minSkill": 300,
+      "orangeUntil": 300,
+      "yellowUntil": 309,
+      "greenUntil": 319,
+      "grayAt": 320,
+      "reagents": [
+        {
+          "itemId": 23445,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "field-repair-bot-74a",
+      "professionId": 202,
+      "name": "Field Repair Bot 74A",
+      "minSkill": 300,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 12359,
+          "qty": 16
+        },
+        {
+          "itemId": 7191,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "flawless-arcanite-rifle",
+      "professionId": 202,
+      "name": "Flawless Arcanite Rifle",
+      "minSkill": 300,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 12360,
+          "qty": 10
+        },
+        {
+          "itemId": 16000,
+          "qty": 2
+        },
+        {
+          "itemId": 7078,
+          "qty": 2
+        },
+        {
+          "itemId": 7076,
+          "qty": 2
+        },
+        {
+          "itemId": 12800,
+          "qty": 2
+        },
+        {
+          "itemId": 12810,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "force-reactive-disk",
+      "professionId": 202,
+      "name": "Force Reactive Disk",
+      "minSkill": 300,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 12360,
+          "qty": 6
+        },
+        {
+          "itemId": 16006,
+          "qty": 2
+        },
+        {
+          "itemId": 7082,
+          "qty": 8
+        },
+        {
+          "itemId": 12803,
+          "qty": 12
+        },
+        {
+          "itemId": 7076,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "handful-of-fel-iron-bolts",
+      "professionId": 202,
+      "name": "Handful of Fel Iron Bolts",
+      "minSkill": 300,
+      "orangeUntil": 300,
+      "yellowUntil": 304,
+      "greenUntil": 309,
+      "grayAt": 310,
+      "reagents": [
+        {
+          "itemId": 23445,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "ultra-flash-shadow-reflector",
+      "professionId": 202,
+      "name": "Ultra-Flash Shadow Reflector",
+      "minSkill": 300,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 11371,
+          "qty": 8
+        },
+        {
+          "itemId": 18631,
+          "qty": 4
+        },
+        {
+          "itemId": 12803,
+          "qty": 6
+        },
+        {
+          "itemId": 12808,
+          "qty": 4
+        },
+        {
+          "itemId": 12800,
+          "qty": 2
+        },
+        {
+          "itemId": 12799,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "zapthrottle-mote-extractor",
+      "professionId": 202,
+      "name": "Zapthrottle Mote Extractor",
+      "minSkill": 305,
+      "orangeUntil": 305,
+      "yellowUntil": 314,
+      "greenUntil": 324,
+      "grayAt": 325,
+      "reagents": [
+        {
+          "itemId": 23782,
+          "qty": 2
+        },
+        {
+          "itemId": 23783,
+          "qty": 2
+        },
+        {
+          "itemId": 21886,
+          "qty": 4
+        },
+        {
+          "itemId": 16006,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "fel-iron-shells",
+      "professionId": 202,
+      "name": "Fel Iron Shells",
+      "minSkill": 310,
+      "orangeUntil": 310,
+      "yellowUntil": 319,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 23445,
+          "qty": 2
+        },
+        {
+          "itemId": 23781,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "fel-iron-musket",
+      "professionId": 202,
+      "name": "Fel Iron Musket",
+      "minSkill": 320,
+      "orangeUntil": 329,
+      "yellowUntil": 339,
+      "greenUntil": 349,
+      "grayAt": 350,
+      "reagents": [
+        {
+          "itemId": 4400,
+          "qty": 1
+        },
+        {
+          "itemId": 23782,
+          "qty": 3
+        },
+        {
+          "itemId": 23783,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "adamantite-frame",
+      "professionId": 202,
+      "name": "Adamantite Frame",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 329,
+      "greenUntil": 334,
+      "grayAt": 335,
+      "reagents": [
+        {
+          "itemId": 23446,
+          "qty": 4
+        },
+        {
+          "itemId": 22452,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "adamantite-grenade",
+      "professionId": 202,
+      "name": "Adamantite Grenade",
+      "minSkill": 325,
+      "orangeUntil": 334,
+      "yellowUntil": 344,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23446,
+          "qty": 4
+        },
+        {
+          "itemId": 23783,
+          "qty": 2
+        },
+        {
+          "itemId": 23781,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "crashin-thrashin-robot",
+      "professionId": 202,
+      "name": "Crashin' Thrashin' Robot",
+      "minSkill": 325,
+      "orangeUntil": 334,
+      "yellowUntil": 344,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23784,
+          "qty": 1
+        },
+        {
+          "itemId": 23782,
+          "qty": 2
+        },
+        {
+          "itemId": 10558,
+          "qty": 1
+        },
+        {
+          "itemId": 23783,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "fel-iron-toolbox",
+      "professionId": 202,
+      "name": "Fel Iron Toolbox",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 334,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 23782,
+          "qty": 1
+        },
+        {
+          "itemId": 23445,
+          "qty": 5
+        },
+        {
+          "itemId": 23783,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "gnomish-flame-turret",
+      "professionId": 202,
+      "name": "Gnomish Flame Turret",
+      "minSkill": 325,
+      "orangeUntil": 334,
+      "yellowUntil": 344,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23784,
+          "qty": 1
+        },
+        {
+          "itemId": 23783,
+          "qty": 2
+        },
+        {
+          "itemId": 23781,
+          "qty": 3
+        },
+        {
+          "itemId": 23782,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "the-bigger-one",
+      "professionId": 202,
+      "name": "The Bigger One",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 334,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 23782,
+          "qty": 3
+        },
+        {
+          "itemId": 23781,
+          "qty": 6
+        },
+        {
+          "itemId": 17020,
+          "qty": 3
+        },
+        {
+          "itemId": 23783,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "healing-potion-injector",
+      "professionId": 202,
+      "name": "Healing Potion Injector",
+      "minSkill": 330,
+      "orangeUntil": 330,
+      "yellowUntil": 339,
+      "greenUntil": 349,
+      "grayAt": 350,
+      "reagents": [
+        {
+          "itemId": 23782,
+          "qty": 1
+        },
+        {
+          "itemId": 23783,
+          "qty": 1
+        },
+        {
+          "itemId": 21887,
+          "qty": 2
+        },
+        {
+          "itemId": 22829,
+          "qty": 20
+        }
+      ]
+    },
+    {
+      "recipeId": "adamantite-arrow-maker",
+      "professionId": 202,
+      "name": "Adamantite Arrow Maker",
+      "minSkill": 335,
+      "orangeUntil": 335,
+      "yellowUntil": 344,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23446,
+          "qty": 1
+        },
+        {
+          "itemId": 4470,
+          "qty": 4
+        },
+        {
+          "itemId": 23783,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "adamantite-scope",
+      "professionId": 202,
+      "name": "Adamantite Scope",
+      "minSkill": 335,
+      "orangeUntil": 344,
+      "yellowUntil": 354,
+      "greenUntil": 364,
+      "grayAt": 365,
+      "reagents": [
+        {
+          "itemId": 23446,
+          "qty": 8
+        },
+        {
+          "itemId": 23112,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "adamantite-shell-machine",
+      "professionId": 202,
+      "name": "Adamantite Shell Machine",
+      "minSkill": 335,
+      "orangeUntil": 335,
+      "yellowUntil": 344,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23446,
+          "qty": 1
+        },
+        {
+          "itemId": 23781,
+          "qty": 2
+        },
+        {
+          "itemId": 4470,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "frost-grenades",
+      "professionId": 202,
+      "name": "Frost Grenades",
+      "minSkill": 335,
+      "orangeUntil": 344,
+      "yellowUntil": 354,
+      "greenUntil": 364,
+      "grayAt": 365,
+      "reagents": [
+        {
+          "itemId": 32423,
+          "qty": 1
+        },
+        {
+          "itemId": 23782,
+          "qty": 1
+        },
+        {
+          "itemId": 23783,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "green-smoke-flare",
+      "professionId": 202,
+      "name": "Green Smoke Flare",
+      "minSkill": 335,
+      "orangeUntil": 335,
+      "yellowUntil": 344,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23781,
+          "qty": 1
+        },
+        {
+          "itemId": 21877,
+          "qty": 1
+        },
+        {
+          "itemId": 2605,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "icy-blasting-primers",
+      "professionId": 202,
+      "name": "Icy Blasting Primers",
+      "minSkill": 335,
+      "orangeUntil": 335,
+      "yellowUntil": 339,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 21885,
+          "qty": 1
+        },
+        {
+          "itemId": 23781,
+          "qty": 2
+        },
+        {
+          "itemId": 21877,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "purple-smoke-flare",
+      "professionId": 202,
+      "name": "Purple Smoke Flare",
+      "minSkill": 335,
+      "orangeUntil": 335,
+      "yellowUntil": 344,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23781,
+          "qty": 1
+        },
+        {
+          "itemId": 21877,
+          "qty": 1
+        },
+        {
+          "itemId": 4342,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "white-smoke-flare",
+      "professionId": 202,
+      "name": "White Smoke Flare",
+      "minSkill": 335,
+      "orangeUntil": 335,
+      "yellowUntil": 344,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23781,
+          "qty": 1
+        },
+        {
+          "itemId": 21877,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "cogspinner-goggles",
+      "professionId": 202,
+      "name": "Cogspinner Goggles",
+      "minSkill": 340,
+      "orangeUntil": 349,
+      "yellowUntil": 359,
+      "greenUntil": 369,
+      "grayAt": 370,
+      "reagents": [
+        {
+          "itemId": 23793,
+          "qty": 4
+        },
+        {
+          "itemId": 23077,
+          "qty": 2
+        },
+        {
+          "itemId": 22445,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "felsteel-stabilizer",
+      "professionId": 202,
+      "name": "Felsteel Stabilizer",
+      "minSkill": 340,
+      "orangeUntil": 349,
+      "yellowUntil": 359,
+      "greenUntil": 369,
+      "grayAt": 370,
+      "reagents": [
+        {
+          "itemId": 23448,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "gnomish-poultryizer",
+      "professionId": 202,
+      "name": "Gnomish Poultryizer",
+      "minSkill": 340,
+      "orangeUntil": 359,
+      "yellowUntil": 369,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23785,
+          "qty": 2
+        },
+        {
+          "itemId": 23786,
+          "qty": 2
+        },
+        {
+          "itemId": 22445,
+          "qty": 10
+        },
+        {
+          "itemId": 22449,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "hardened-adamantite-tube",
+      "professionId": 202,
+      "name": "Hardened Adamantite Tube",
+      "minSkill": 340,
+      "orangeUntil": 349,
+      "yellowUntil": 359,
+      "greenUntil": 369,
+      "grayAt": 370,
+      "reagents": [
+        {
+          "itemId": 23573,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "khorium-power-core",
+      "professionId": 202,
+      "name": "Khorium Power Core",
+      "minSkill": 340,
+      "orangeUntil": 349,
+      "yellowUntil": 359,
+      "greenUntil": 369,
+      "grayAt": 370,
+      "reagents": [
+        {
+          "itemId": 23449,
+          "qty": 3
+        },
+        {
+          "itemId": 21884,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "power-amplification-goggles",
+      "professionId": 202,
+      "name": "Power Amplification Goggles",
+      "minSkill": 340,
+      "orangeUntil": 349,
+      "yellowUntil": 359,
+      "greenUntil": 369,
+      "grayAt": 370,
+      "reagents": [
+        {
+          "itemId": 23793,
+          "qty": 4
+        },
+        {
+          "itemId": 21929,
+          "qty": 2
+        },
+        {
+          "itemId": 22445,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "super-sapper-charge",
+      "professionId": 202,
+      "name": "Super Sapper Charge",
+      "minSkill": 340,
+      "orangeUntil": 340,
+      "yellowUntil": 349,
+      "greenUntil": 359,
+      "grayAt": 360,
+      "reagents": [
+        {
+          "itemId": 21877,
+          "qty": 4
+        },
+        {
+          "itemId": 23781,
+          "qty": 4
+        },
+        {
+          "itemId": 22457,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mana-potion-injector",
+      "professionId": 202,
+      "name": "Mana Potion Injector",
+      "minSkill": 345,
+      "orangeUntil": 345,
+      "yellowUntil": 354,
+      "greenUntil": 364,
+      "grayAt": 365,
+      "reagents": [
+        {
+          "itemId": 23782,
+          "qty": 1
+        },
+        {
+          "itemId": 23783,
+          "qty": 1
+        },
+        {
+          "itemId": 21887,
+          "qty": 2
+        },
+        {
+          "itemId": 22832,
+          "qty": 20
+        }
+      ]
+    },
+    {
+      "recipeId": "adamantite-rifle",
+      "professionId": 202,
+      "name": "Adamantite Rifle",
+      "minSkill": 350,
+      "orangeUntil": 359,
+      "yellowUntil": 369,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23782,
+          "qty": 3
+        },
+        {
+          "itemId": 23784,
+          "qty": 2
+        },
+        {
+          "itemId": 23783,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "elemental-seaforium-charge",
+      "professionId": 202,
+      "name": "Elemental Seaforium Charge",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 354,
+      "greenUntil": 359,
+      "grayAt": 360,
+      "reagents": [
+        {
+          "itemId": 23781,
+          "qty": 2
+        },
+        {
+          "itemId": 23782,
+          "qty": 1
+        },
+        {
+          "itemId": 23783,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "flying-machine",
+      "professionId": 202,
+      "name": "Flying Machine",
+      "minSkill": 350,
+      "orangeUntil": 374,
+      "yellowUntil": 379,
+      "greenUntil": 384,
+      "grayAt": 385,
+      "reagents": [
+        {
+          "itemId": 23784,
+          "qty": 2
+        },
+        {
+          "itemId": 23445,
+          "qty": 30
+        },
+        {
+          "itemId": 23783,
+          "qty": 8
+        },
+        {
+          "itemId": 11291,
+          "qty": 8
+        },
+        {
+          "itemId": 23446,
+          "qty": 5
+        },
+        {
+          "itemId": 23819,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "goblin-rocket-launcher",
+      "professionId": 202,
+      "name": "Goblin Rocket Launcher",
+      "minSkill": 350,
+      "orangeUntil": 359,
+      "yellowUntil": 369,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23785,
+          "qty": 2
+        },
+        {
+          "itemId": 23786,
+          "qty": 1
+        },
+        {
+          "itemId": 23787,
+          "qty": 2
+        },
+        {
+          "itemId": 21884,
+          "qty": 6
+        },
+        {
+          "itemId": 22452,
+          "qty": 6
+        },
+        {
+          "itemId": 16006,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "khorium-toolbox",
+      "professionId": 202,
+      "name": "Khorium Toolbox",
+      "minSkill": 350,
+      "orangeUntil": 359,
+      "yellowUntil": 369,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23782,
+          "qty": 1
+        },
+        {
+          "itemId": 23449,
+          "qty": 5
+        },
+        {
+          "itemId": 23783,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "nigh-invulnerability-belt",
+      "professionId": 202,
+      "name": "Nigh-Invulnerability Belt",
+      "minSkill": 350,
+      "orangeUntil": 359,
+      "yellowUntil": 369,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23793,
+          "qty": 8
+        },
+        {
+          "itemId": 23786,
+          "qty": 4
+        },
+        {
+          "itemId": 21886,
+          "qty": 10
+        },
+        {
+          "itemId": 22456,
+          "qty": 10
+        },
+        {
+          "itemId": 16006,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "ultra-spectropic-detection-goggles",
+      "professionId": 202,
+      "name": "Ultra-Spectropic Detection Goggles",
+      "minSkill": 350,
+      "orangeUntil": 359,
+      "yellowUntil": 369,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23793,
+          "qty": 4
+        },
+        {
+          "itemId": 23449,
+          "qty": 2
+        },
+        {
+          "itemId": 23079,
+          "qty": 2
+        },
+        {
+          "itemId": 22448,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "rocket-boots-xtreme",
+      "professionId": 202,
+      "name": "Rocket Boots Xtreme",
+      "minSkill": 355,
+      "orangeUntil": 364,
+      "yellowUntil": 374,
+      "greenUntil": 384,
+      "grayAt": 385,
+      "reagents": [
+        {
+          "itemId": 23793,
+          "qty": 8
+        },
+        {
+          "itemId": 23786,
+          "qty": 2
+        },
+        {
+          "itemId": 23785,
+          "qty": 2
+        },
+        {
+          "itemId": 23787,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "rocket-boots-xtreme-lite",
+      "professionId": 202,
+      "name": "Rocket Boots Xtreme Lite",
+      "minSkill": 355,
+      "orangeUntil": 364,
+      "yellowUntil": 374,
+      "greenUntil": 384,
+      "grayAt": 385,
+      "reagents": [
+        {
+          "itemId": 21840,
+          "qty": 8
+        },
+        {
+          "itemId": 23786,
+          "qty": 2
+        },
+        {
+          "itemId": 23785,
+          "qty": 2
+        },
+        {
+          "itemId": 23787,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "felsteel-boomstick",
+      "professionId": 202,
+      "name": "Felsteel Boomstick",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 379,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 23785,
+          "qty": 1
+        },
+        {
+          "itemId": 23787,
+          "qty": 4
+        },
+        {
+          "itemId": 23783,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "field-repair-bot-110g",
+      "professionId": 202,
+      "name": "Field Repair Bot 110G",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 379,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 23446,
+          "qty": 8
+        },
+        {
+          "itemId": 23783,
+          "qty": 8
+        },
+        {
+          "itemId": 23786,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "hyper-vision-goggles",
+      "professionId": 202,
+      "name": "Hyper-Vision Goggles",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 379,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 23793,
+          "qty": 4
+        },
+        {
+          "itemId": 23449,
+          "qty": 2
+        },
+        {
+          "itemId": 23441,
+          "qty": 2
+        },
+        {
+          "itemId": 22449,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "khorium-scope",
+      "professionId": 202,
+      "name": "Khorium Scope",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 379,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 23785,
+          "qty": 1
+        },
+        {
+          "itemId": 23449,
+          "qty": 4
+        },
+        {
+          "itemId": 23440,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "foreman-s-enchanted-helmet",
+      "professionId": 202,
+      "name": "Foreman's Enchanted Helmet",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 24272,
+          "qty": 4
+        },
+        {
+          "itemId": 22457,
+          "qty": 12
+        },
+        {
+          "itemId": 22451,
+          "qty": 12
+        }
+      ]
+    },
+    {
+      "recipeId": "foreman-s-reinforced-helmet",
+      "professionId": 202,
+      "name": "Foreman's Reinforced Helmet",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 23573,
+          "qty": 8
+        },
+        {
+          "itemId": 22452,
+          "qty": 12
+        },
+        {
+          "itemId": 21884,
+          "qty": 12
+        }
+      ]
+    },
+    {
+      "recipeId": "gnomish-battle-goggles",
+      "professionId": 202,
+      "name": "Gnomish Battle Goggles",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 23793,
+          "qty": 8
+        },
+        {
+          "itemId": 22456,
+          "qty": 12
+        },
+        {
+          "itemId": 22452,
+          "qty": 12
+        },
+        {
+          "itemId": 21884,
+          "qty": 12
+        },
+        {
+          "itemId": 23436,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "gnomish-power-goggles",
+      "professionId": 202,
+      "name": "Gnomish Power Goggles",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 24271,
+          "qty": 4
+        },
+        {
+          "itemId": 21884,
+          "qty": 8
+        },
+        {
+          "itemId": 22451,
+          "qty": 8
+        },
+        {
+          "itemId": 22452,
+          "qty": 8
+        },
+        {
+          "itemId": 21885,
+          "qty": 8
+        },
+        {
+          "itemId": 23437,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "gyro-balanced-khorium-destroyer",
+      "professionId": 202,
+      "name": "Gyro-balanced Khorium Destroyer",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 391,
+      "greenUntil": 409,
+      "grayAt": 410,
+      "reagents": [
+        {
+          "itemId": 23785,
+          "qty": 1
+        },
+        {
+          "itemId": 23449,
+          "qty": 20
+        },
+        {
+          "itemId": 23787,
+          "qty": 4
+        },
+        {
+          "itemId": 21884,
+          "qty": 12
+        },
+        {
+          "itemId": 22451,
+          "qty": 12
+        },
+        {
+          "itemId": 23572,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "ornate-khorium-rifle",
+      "professionId": 202,
+      "name": "Ornate Khorium Rifle",
+      "minSkill": 375,
+      "orangeUntil": 384,
+      "yellowUntil": 394,
+      "greenUntil": 404,
+      "grayAt": 405,
+      "reagents": [
+        {
+          "itemId": 23785,
+          "qty": 2
+        },
+        {
+          "itemId": 23449,
+          "qty": 12
+        },
+        {
+          "itemId": 23783,
+          "qty": 4
+        },
+        {
+          "itemId": 23439,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "stabilized-eternium-scope",
+      "professionId": 202,
+      "name": "Stabilized Eternium Scope",
+      "minSkill": 375,
+      "orangeUntil": 384,
+      "yellowUntil": 394,
+      "greenUntil": 404,
+      "grayAt": 405,
+      "reagents": [
+        {
+          "itemId": 23785,
+          "qty": 2
+        },
+        {
+          "itemId": 23787,
+          "qty": 6
+        },
+        {
+          "itemId": 23438,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "turbo-charged-flying-machine",
+      "professionId": 202,
+      "name": "Turbo-Charged Flying Machine",
+      "minSkill": 375,
+      "orangeUntil": 384,
+      "yellowUntil": 389,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 34060,
+          "qty": 1
+        },
+        {
+          "itemId": 23786,
+          "qty": 8
+        },
+        {
+          "itemId": 23787,
+          "qty": 8
+        },
+        {
+          "itemId": 34249,
+          "qty": 1
+        }
       ]
     }
   ]

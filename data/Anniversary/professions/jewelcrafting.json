@@ -1,0 +1,5070 @@
+{
+  "professionId": 755,
+  "professionName": "Jewelcrafting",
+  "recipes": [
+    {
+      "recipeId": "braided-copper-ring",
+      "professionId": 755,
+      "name": "Braided Copper Ring",
+      "minSkill": 0,
+      "orangeUntil": 29,
+      "yellowUntil": 44,
+      "greenUntil": 59,
+      "grayAt": 60,
+      "reagents": [
+        {
+          "itemId": 20816,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "delicate-copper-wire",
+      "professionId": 755,
+      "name": "Delicate Copper Wire",
+      "minSkill": 0,
+      "orangeUntil": 19,
+      "yellowUntil": 34,
+      "greenUntil": 49,
+      "grayAt": 50,
+      "reagents": [
+        {
+          "itemId": 2840,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "rough-stone-statue",
+      "professionId": 755,
+      "name": "Rough Stone Statue",
+      "minSkill": 0,
+      "orangeUntil": 29,
+      "yellowUntil": 39,
+      "greenUntil": 49,
+      "grayAt": 50,
+      "reagents": [
+        {
+          "itemId": 2835,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "woven-copper-ring",
+      "professionId": 755,
+      "name": "Woven Copper Ring",
+      "minSkill": 0,
+      "orangeUntil": 29,
+      "yellowUntil": 44,
+      "greenUntil": 59,
+      "grayAt": 60,
+      "reagents": [
+        {
+          "itemId": 20816,
+          "qty": 2
+        },
+        {
+          "itemId": 2840,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "heavy-copper-ring",
+      "professionId": 755,
+      "name": "Heavy Copper Ring",
+      "minSkill": 5,
+      "orangeUntil": 34,
+      "yellowUntil": 49,
+      "greenUntil": 64,
+      "grayAt": 65,
+      "reagents": [
+        {
+          "itemId": 2840,
+          "qty": 4
+        },
+        {
+          "itemId": 20816,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "malachite-pendant",
+      "professionId": 755,
+      "name": "Malachite Pendant",
+      "minSkill": 20,
+      "orangeUntil": 49,
+      "yellowUntil": 64,
+      "greenUntil": 79,
+      "grayAt": 80,
+      "reagents": [
+        {
+          "itemId": 774,
+          "qty": 1
+        },
+        {
+          "itemId": 20816,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "tigerseye-band",
+      "professionId": 755,
+      "name": "Tigerseye Band",
+      "minSkill": 20,
+      "orangeUntil": 49,
+      "yellowUntil": 64,
+      "greenUntil": 79,
+      "grayAt": 80,
+      "reagents": [
+        {
+          "itemId": 818,
+          "qty": 1
+        },
+        {
+          "itemId": 20816,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "inlaid-malachite-ring",
+      "professionId": 755,
+      "name": "Inlaid Malachite Ring",
+      "minSkill": 30,
+      "orangeUntil": 59,
+      "yellowUntil": 74,
+      "greenUntil": 89,
+      "grayAt": 90,
+      "reagents": [
+        {
+          "itemId": 774,
+          "qty": 2
+        },
+        {
+          "itemId": 2840,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "ornate-tigerseye-necklace",
+      "professionId": 755,
+      "name": "Ornate Tigerseye Necklace",
+      "minSkill": 30,
+      "orangeUntil": 59,
+      "yellowUntil": 74,
+      "greenUntil": 89,
+      "grayAt": 90,
+      "reagents": [
+        {
+          "itemId": 818,
+          "qty": 2
+        },
+        {
+          "itemId": 2840,
+          "qty": 2
+        },
+        {
+          "itemId": 20816,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "bronze-setting",
+      "professionId": 755,
+      "name": "Bronze Setting",
+      "minSkill": 50,
+      "orangeUntil": 69,
+      "yellowUntil": 79,
+      "greenUntil": 89,
+      "grayAt": 90,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "coarse-stone-statue",
+      "professionId": 755,
+      "name": "Coarse Stone Statue",
+      "minSkill": 50,
+      "orangeUntil": 69,
+      "yellowUntil": 79,
+      "greenUntil": 89,
+      "grayAt": 90,
+      "reagents": [
+        {
+          "itemId": 2836,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "elegant-silver-ring",
+      "professionId": 755,
+      "name": "Elegant Silver Ring",
+      "minSkill": 50,
+      "orangeUntil": 79,
+      "yellowUntil": 94,
+      "greenUntil": 109,
+      "grayAt": 110,
+      "reagents": [
+        {
+          "itemId": 2842,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "solid-bronze-ring",
+      "professionId": 755,
+      "name": "Solid Bronze Ring",
+      "minSkill": 50,
+      "orangeUntil": 79,
+      "yellowUntil": 94,
+      "greenUntil": 109,
+      "grayAt": 110,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "thick-bronze-necklace",
+      "professionId": 755,
+      "name": "Thick Bronze Necklace",
+      "minSkill": 50,
+      "orangeUntil": 79,
+      "yellowUntil": 94,
+      "greenUntil": 109,
+      "grayAt": 110,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 2
+        },
+        {
+          "itemId": 1210,
+          "qty": 1
+        },
+        {
+          "itemId": 20816,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "simple-pearl-ring",
+      "professionId": 755,
+      "name": "Simple Pearl Ring",
+      "minSkill": 60,
+      "orangeUntil": 89,
+      "yellowUntil": 104,
+      "greenUntil": 119,
+      "grayAt": 120,
+      "reagents": [
+        {
+          "itemId": 5498,
+          "qty": 1
+        },
+        {
+          "itemId": 20817,
+          "qty": 1
+        },
+        {
+          "itemId": 2840,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "bronze-band-of-force",
+      "professionId": 755,
+      "name": "Bronze Band of Force",
+      "minSkill": 65,
+      "orangeUntil": 94,
+      "yellowUntil": 109,
+      "greenUntil": 124,
+      "grayAt": 125,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 2
+        },
+        {
+          "itemId": 20817,
+          "qty": 1
+        },
+        {
+          "itemId": 774,
+          "qty": 3
+        },
+        {
+          "itemId": 818,
+          "qty": 3
+        },
+        {
+          "itemId": 1210,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "gloom-band",
+      "professionId": 755,
+      "name": "Gloom Band",
+      "minSkill": 70,
+      "orangeUntil": 99,
+      "yellowUntil": 114,
+      "greenUntil": 129,
+      "grayAt": 130,
+      "reagents": [
+        {
+          "itemId": 1210,
+          "qty": 2
+        },
+        {
+          "itemId": 20817,
+          "qty": 1
+        },
+        {
+          "itemId": 20816,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "brilliant-necklace",
+      "professionId": 755,
+      "name": "Brilliant Necklace",
+      "minSkill": 75,
+      "orangeUntil": 104,
+      "yellowUntil": 119,
+      "greenUntil": 134,
+      "grayAt": 135,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 4
+        },
+        {
+          "itemId": 20817,
+          "qty": 1
+        },
+        {
+          "itemId": 1206,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "bronze-torc",
+      "professionId": 755,
+      "name": "Bronze Torc",
+      "minSkill": 80,
+      "orangeUntil": 109,
+      "yellowUntil": 124,
+      "greenUntil": 139,
+      "grayAt": 140,
+      "reagents": [
+        {
+          "itemId": 2841,
+          "qty": 6
+        },
+        {
+          "itemId": 20817,
+          "qty": 1
+        },
+        {
+          "itemId": 1705,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "ring-of-silver-might",
+      "professionId": 755,
+      "name": "Ring of Silver Might",
+      "minSkill": 80,
+      "orangeUntil": 109,
+      "yellowUntil": 124,
+      "greenUntil": 139,
+      "grayAt": 140,
+      "reagents": [
+        {
+          "itemId": 2842,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "heavy-silver-ring",
+      "professionId": 755,
+      "name": "Heavy Silver Ring",
+      "minSkill": 90,
+      "orangeUntil": 119,
+      "yellowUntil": 134,
+      "greenUntil": 149,
+      "grayAt": 150,
+      "reagents": [
+        {
+          "itemId": 2842,
+          "qty": 2
+        },
+        {
+          "itemId": 20817,
+          "qty": 1
+        },
+        {
+          "itemId": 1206,
+          "qty": 1
+        },
+        {
+          "itemId": 1705,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "ring-of-twilight-shadows",
+      "professionId": 755,
+      "name": "Ring of Twilight Shadows",
+      "minSkill": 100,
+      "orangeUntil": 129,
+      "yellowUntil": 144,
+      "greenUntil": 159,
+      "grayAt": 160,
+      "reagents": [
+        {
+          "itemId": 1210,
+          "qty": 2
+        },
+        {
+          "itemId": 2841,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "heavy-jade-ring",
+      "professionId": 755,
+      "name": "Heavy Jade Ring",
+      "minSkill": 105,
+      "orangeUntil": 134,
+      "yellowUntil": 149,
+      "greenUntil": 164,
+      "grayAt": 165,
+      "reagents": [
+        {
+          "itemId": 1529,
+          "qty": 1
+        },
+        {
+          "itemId": 20817,
+          "qty": 1
+        },
+        {
+          "itemId": 3575,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "amulet-of-the-moon",
+      "professionId": 755,
+      "name": "Amulet of the Moon",
+      "minSkill": 110,
+      "orangeUntil": 139,
+      "yellowUntil": 154,
+      "greenUntil": 169,
+      "grayAt": 170,
+      "reagents": [
+        {
+          "itemId": 1705,
+          "qty": 2
+        },
+        {
+          "itemId": 20817,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "barbaric-iron-collar",
+      "professionId": 755,
+      "name": "Barbaric Iron Collar",
+      "minSkill": 110,
+      "orangeUntil": 139,
+      "yellowUntil": 154,
+      "greenUntil": 169,
+      "grayAt": 170,
+      "reagents": [
+        {
+          "itemId": 3575,
+          "qty": 8
+        },
+        {
+          "itemId": 5637,
+          "qty": 2
+        },
+        {
+          "itemId": 20817,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "heavy-stone-statue",
+      "professionId": 755,
+      "name": "Heavy Stone Statue",
+      "minSkill": 110,
+      "orangeUntil": 119,
+      "yellowUntil": 129,
+      "greenUntil": 139,
+      "grayAt": 140,
+      "reagents": [
+        {
+          "itemId": 2838,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "moonsoul-crown",
+      "professionId": 755,
+      "name": "Moonsoul Crown",
+      "minSkill": 120,
+      "orangeUntil": 149,
+      "yellowUntil": 164,
+      "greenUntil": 179,
+      "grayAt": 180,
+      "reagents": [
+        {
+          "itemId": 1705,
+          "qty": 3
+        },
+        {
+          "itemId": 5498,
+          "qty": 3
+        },
+        {
+          "itemId": 11083,
+          "qty": 4
+        },
+        {
+          "itemId": 2842,
+          "qty": 4
+        },
+        {
+          "itemId": 3827,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "pendant-of-the-agate-shield",
+      "professionId": 755,
+      "name": "Pendant of the Agate Shield",
+      "minSkill": 120,
+      "orangeUntil": 149,
+      "yellowUntil": 164,
+      "greenUntil": 179,
+      "grayAt": 180,
+      "reagents": [
+        {
+          "itemId": 1206,
+          "qty": 1
+        },
+        {
+          "itemId": 20817,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "heavy-iron-knuckles",
+      "professionId": 755,
+      "name": "Heavy Iron Knuckles",
+      "minSkill": 125,
+      "orangeUntil": 154,
+      "yellowUntil": 169,
+      "greenUntil": 184,
+      "grayAt": 185,
+      "reagents": [
+        {
+          "itemId": 3575,
+          "qty": 8
+        },
+        {
+          "itemId": 3391,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "wicked-moonstone-ring",
+      "professionId": 755,
+      "name": "Wicked Moonstone Ring",
+      "minSkill": 125,
+      "orangeUntil": 154,
+      "yellowUntil": 169,
+      "greenUntil": 184,
+      "grayAt": 185,
+      "reagents": [
+        {
+          "itemId": 1705,
+          "qty": 1
+        },
+        {
+          "itemId": 3824,
+          "qty": 1
+        },
+        {
+          "itemId": 3575,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "golden-dragon-ring",
+      "professionId": 755,
+      "name": "Golden Dragon Ring",
+      "minSkill": 135,
+      "orangeUntil": 164,
+      "yellowUntil": 179,
+      "greenUntil": 194,
+      "grayAt": 195,
+      "reagents": [
+        {
+          "itemId": 1529,
+          "qty": 1
+        },
+        {
+          "itemId": 3577,
+          "qty": 2
+        },
+        {
+          "itemId": 20816,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "blazing-citrine-ring",
+      "professionId": 755,
+      "name": "Blazing Citrine Ring",
+      "minSkill": 150,
+      "orangeUntil": 179,
+      "yellowUntil": 194,
+      "greenUntil": 209,
+      "grayAt": 210,
+      "reagents": [
+        {
+          "itemId": 3864,
+          "qty": 1
+        },
+        {
+          "itemId": 20963,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "heavy-golden-necklace-of-battle",
+      "professionId": 755,
+      "name": "Heavy Golden Necklace of Battle",
+      "minSkill": 150,
+      "orangeUntil": 179,
+      "yellowUntil": 194,
+      "greenUntil": 209,
+      "grayAt": 210,
+      "reagents": [
+        {
+          "itemId": 3577,
+          "qty": 1
+        },
+        {
+          "itemId": 1206,
+          "qty": 2
+        },
+        {
+          "itemId": 3391,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mithril-filigree",
+      "professionId": 755,
+      "name": "Mithril Filigree",
+      "minSkill": 150,
+      "orangeUntil": 169,
+      "yellowUntil": 179,
+      "greenUntil": 189,
+      "grayAt": 190,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "jade-pendant-of-blasting",
+      "professionId": 755,
+      "name": "Jade Pendant of Blasting",
+      "minSkill": 160,
+      "orangeUntil": 189,
+      "yellowUntil": 204,
+      "greenUntil": 219,
+      "grayAt": 220,
+      "reagents": [
+        {
+          "itemId": 1529,
+          "qty": 1
+        },
+        {
+          "itemId": 20963,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "engraved-truesilver-ring",
+      "professionId": 755,
+      "name": "Engraved Truesilver Ring",
+      "minSkill": 170,
+      "orangeUntil": 199,
+      "yellowUntil": 214,
+      "greenUntil": 229,
+      "grayAt": 230,
+      "reagents": [
+        {
+          "itemId": 6037,
+          "qty": 1
+        },
+        {
+          "itemId": 20963,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "the-jade-eye",
+      "professionId": 755,
+      "name": "The Jade Eye",
+      "minSkill": 170,
+      "orangeUntil": 199,
+      "yellowUntil": 214,
+      "greenUntil": 229,
+      "grayAt": 230,
+      "reagents": [
+        {
+          "itemId": 1529,
+          "qty": 1
+        },
+        {
+          "itemId": 7067,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "solid-stone-statue",
+      "professionId": 755,
+      "name": "Solid Stone Statue",
+      "minSkill": 175,
+      "orangeUntil": 175,
+      "yellowUntil": 184,
+      "greenUntil": 194,
+      "grayAt": 195,
+      "reagents": [
+        {
+          "itemId": 7912,
+          "qty": 10
+        }
+      ]
+    },
+    {
+      "recipeId": "citrine-ring-of-rapid-healing",
+      "professionId": 755,
+      "name": "Citrine Ring of Rapid Healing",
+      "minSkill": 180,
+      "orangeUntil": 209,
+      "yellowUntil": 224,
+      "greenUntil": 239,
+      "grayAt": 240,
+      "reagents": [
+        {
+          "itemId": 3864,
+          "qty": 1
+        },
+        {
+          "itemId": 7070,
+          "qty": 2
+        },
+        {
+          "itemId": 3860,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "golden-ring-of-power",
+      "professionId": 755,
+      "name": "Golden Ring of Power",
+      "minSkill": 180,
+      "orangeUntil": 189,
+      "yellowUntil": 199,
+      "greenUntil": 209,
+      "grayAt": 210,
+      "reagents": [
+        {
+          "itemId": 3577,
+          "qty": 4
+        },
+        {
+          "itemId": 1705,
+          "qty": 1
+        },
+        {
+          "itemId": 1529,
+          "qty": 1
+        },
+        {
+          "itemId": 3864,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "citrine-pendant-of-golden-healing",
+      "professionId": 755,
+      "name": "Citrine Pendant of Golden Healing",
+      "minSkill": 190,
+      "orangeUntil": 219,
+      "yellowUntil": 234,
+      "greenUntil": 249,
+      "grayAt": 250,
+      "reagents": [
+        {
+          "itemId": 3864,
+          "qty": 1
+        },
+        {
+          "itemId": 7070,
+          "qty": 2
+        },
+        {
+          "itemId": 3577,
+          "qty": 2
+        },
+        {
+          "itemId": 20817,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-golden-hare",
+      "professionId": 755,
+      "name": "Figurine - Golden Hare",
+      "minSkill": 200,
+      "orangeUntil": 224,
+      "yellowUntil": 239,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 3577,
+          "qty": 6
+        },
+        {
+          "itemId": 3864,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-jade-owl",
+      "professionId": 755,
+      "name": "Figurine - Jade Owl",
+      "minSkill": 200,
+      "orangeUntil": 224,
+      "yellowUntil": 239,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 1529,
+          "qty": 4
+        },
+        {
+          "itemId": 6037,
+          "qty": 2
+        },
+        {
+          "itemId": 11137,
+          "qty": 4
+        },
+        {
+          "itemId": 20963,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "truesilver-commander-s-ring",
+      "professionId": 755,
+      "name": "Truesilver Commander's Ring",
+      "minSkill": 200,
+      "orangeUntil": 209,
+      "yellowUntil": 219,
+      "greenUntil": 229,
+      "grayAt": 230,
+      "reagents": [
+        {
+          "itemId": 6037,
+          "qty": 3
+        },
+        {
+          "itemId": 7910,
+          "qty": 2
+        },
+        {
+          "itemId": 3864,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "aquamarine-signet",
+      "professionId": 755,
+      "name": "Aquamarine Signet",
+      "minSkill": 210,
+      "orangeUntil": 234,
+      "yellowUntil": 249,
+      "greenUntil": 264,
+      "grayAt": 265,
+      "reagents": [
+        {
+          "itemId": 7909,
+          "qty": 3
+        },
+        {
+          "itemId": 8151,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-black-pearl-panther",
+      "professionId": 755,
+      "name": "Figurine - Black Pearl Panther",
+      "minSkill": 215,
+      "orangeUntil": 239,
+      "yellowUntil": 254,
+      "greenUntil": 269,
+      "grayAt": 270,
+      "reagents": [
+        {
+          "itemId": 7971,
+          "qty": 4
+        },
+        {
+          "itemId": 8151,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "aquamarine-pendant-of-the-warrior",
+      "professionId": 755,
+      "name": "Aquamarine Pendant of the Warrior",
+      "minSkill": 220,
+      "orangeUntil": 244,
+      "yellowUntil": 259,
+      "greenUntil": 274,
+      "grayAt": 275,
+      "reagents": [
+        {
+          "itemId": 7909,
+          "qty": 1
+        },
+        {
+          "itemId": 20963,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "dense-stone-statue",
+      "professionId": 755,
+      "name": "Dense Stone Statue",
+      "minSkill": 225,
+      "orangeUntil": 225,
+      "yellowUntil": 234,
+      "greenUntil": 244,
+      "grayAt": 245,
+      "reagents": [
+        {
+          "itemId": 12365,
+          "qty": 10
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-truesilver-crab",
+      "professionId": 755,
+      "name": "Figurine - Truesilver Crab",
+      "minSkill": 225,
+      "orangeUntil": 249,
+      "yellowUntil": 264,
+      "greenUntil": 279,
+      "grayAt": 280,
+      "reagents": [
+        {
+          "itemId": 7909,
+          "qty": 2
+        },
+        {
+          "itemId": 6037,
+          "qty": 4
+        },
+        {
+          "itemId": 7075,
+          "qty": 2
+        },
+        {
+          "itemId": 7079,
+          "qty": 2
+        },
+        {
+          "itemId": 8151,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "ruby-crown-of-restoration",
+      "professionId": 755,
+      "name": "Ruby Crown of Restoration",
+      "minSkill": 225,
+      "orangeUntil": 249,
+      "yellowUntil": 264,
+      "greenUntil": 279,
+      "grayAt": 280,
+      "reagents": [
+        {
+          "itemId": 7910,
+          "qty": 2
+        },
+        {
+          "itemId": 7971,
+          "qty": 2
+        },
+        {
+          "itemId": 6037,
+          "qty": 4
+        },
+        {
+          "itemId": 21752,
+          "qty": 4
+        },
+        {
+          "itemId": 6149,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "thorium-setting",
+      "professionId": 755,
+      "name": "Thorium Setting",
+      "minSkill": 225,
+      "orangeUntil": 234,
+      "yellowUntil": 244,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 12359,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "red-ring-of-destruction",
+      "professionId": 755,
+      "name": "Red Ring of Destruction",
+      "minSkill": 230,
+      "orangeUntil": 254,
+      "yellowUntil": 269,
+      "greenUntil": 284,
+      "grayAt": 285,
+      "reagents": [
+        {
+          "itemId": 7910,
+          "qty": 1
+        },
+        {
+          "itemId": 21752,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-truesilver-boar",
+      "professionId": 755,
+      "name": "Figurine - Truesilver Boar",
+      "minSkill": 235,
+      "orangeUntil": 259,
+      "yellowUntil": 274,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 7910,
+          "qty": 2
+        },
+        {
+          "itemId": 6037,
+          "qty": 4
+        },
+        {
+          "itemId": 7077,
+          "qty": 2
+        },
+        {
+          "itemId": 7081,
+          "qty": 2
+        },
+        {
+          "itemId": 8151,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "ruby-pendant-of-fire",
+      "professionId": 755,
+      "name": "Ruby Pendant of Fire",
+      "minSkill": 235,
+      "orangeUntil": 259,
+      "yellowUntil": 274,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 7910,
+          "qty": 1
+        },
+        {
+          "itemId": 21752,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "truesilver-healing-ring",
+      "professionId": 755,
+      "name": "Truesilver Healing Ring",
+      "minSkill": 240,
+      "orangeUntil": 264,
+      "yellowUntil": 279,
+      "greenUntil": 294,
+      "grayAt": 295,
+      "reagents": [
+        {
+          "itemId": 6037,
+          "qty": 2
+        },
+        {
+          "itemId": 10286,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "the-aquamarine-ward",
+      "professionId": 755,
+      "name": "The Aquamarine Ward",
+      "minSkill": 245,
+      "orangeUntil": 269,
+      "yellowUntil": 284,
+      "greenUntil": 299,
+      "grayAt": 300,
+      "reagents": [
+        {
+          "itemId": 7909,
+          "qty": 1
+        },
+        {
+          "itemId": 21752,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "gem-studded-band",
+      "professionId": 755,
+      "name": "Gem Studded Band",
+      "minSkill": 250,
+      "orangeUntil": 274,
+      "yellowUntil": 289,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 7909,
+          "qty": 2
+        },
+        {
+          "itemId": 3864,
+          "qty": 2
+        },
+        {
+          "itemId": 21752,
+          "qty": 4
+        },
+        {
+          "itemId": 6037,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "opal-necklace-of-impact",
+      "professionId": 755,
+      "name": "Opal Necklace of Impact",
+      "minSkill": 250,
+      "orangeUntil": 274,
+      "yellowUntil": 289,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 12799,
+          "qty": 2
+        },
+        {
+          "itemId": 21752,
+          "qty": 2
+        },
+        {
+          "itemId": 6037,
+          "qty": 4
+        },
+        {
+          "itemId": 11178,
+          "qty": 2
+        },
+        {
+          "itemId": 20963,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-ruby-serpent",
+      "professionId": 755,
+      "name": "Figurine - Ruby Serpent",
+      "minSkill": 260,
+      "orangeUntil": 279,
+      "yellowUntil": 289,
+      "greenUntil": 299,
+      "grayAt": 300,
+      "reagents": [
+        {
+          "itemId": 7910,
+          "qty": 2
+        },
+        {
+          "itemId": 7078,
+          "qty": 2
+        },
+        {
+          "itemId": 8152,
+          "qty": 4
+        },
+        {
+          "itemId": 6037,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "simple-opal-ring",
+      "professionId": 755,
+      "name": "Simple Opal Ring",
+      "minSkill": 260,
+      "orangeUntil": 279,
+      "yellowUntil": 289,
+      "greenUntil": 299,
+      "grayAt": 300,
+      "reagents": [
+        {
+          "itemId": 12799,
+          "qty": 1
+        },
+        {
+          "itemId": 21752,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "diamond-focus-ring",
+      "professionId": 755,
+      "name": "Diamond Focus Ring",
+      "minSkill": 265,
+      "orangeUntil": 284,
+      "yellowUntil": 294,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 12800,
+          "qty": 1
+        },
+        {
+          "itemId": 21752,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "emerald-crown-of-destruction",
+      "professionId": 755,
+      "name": "Emerald Crown of Destruction",
+      "minSkill": 275,
+      "orangeUntil": 284,
+      "yellowUntil": 294,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 12364,
+          "qty": 2
+        },
+        {
+          "itemId": 12799,
+          "qty": 2
+        },
+        {
+          "itemId": 12361,
+          "qty": 2
+        },
+        {
+          "itemId": 12360,
+          "qty": 2
+        },
+        {
+          "itemId": 12359,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "sapphire-signet",
+      "professionId": 755,
+      "name": "Sapphire Signet",
+      "minSkill": 275,
+      "orangeUntil": 284,
+      "yellowUntil": 294,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 12361,
+          "qty": 4
+        },
+        {
+          "itemId": 6037,
+          "qty": 2
+        },
+        {
+          "itemId": 21752,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "glowing-thorium-band",
+      "professionId": 755,
+      "name": "Glowing Thorium Band",
+      "minSkill": 280,
+      "orangeUntil": 289,
+      "yellowUntil": 299,
+      "greenUntil": 309,
+      "grayAt": 310,
+      "reagents": [
+        {
+          "itemId": 12800,
+          "qty": 2
+        },
+        {
+          "itemId": 21752,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "onslaught-ring",
+      "professionId": 755,
+      "name": "Onslaught Ring",
+      "minSkill": 280,
+      "orangeUntil": 289,
+      "yellowUntil": 299,
+      "greenUntil": 309,
+      "grayAt": 310,
+      "reagents": [
+        {
+          "itemId": 21752,
+          "qty": 1
+        },
+        {
+          "itemId": 12804,
+          "qty": 1
+        },
+        {
+          "itemId": 7076,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "sapphire-pendant-of-winter-night",
+      "professionId": 755,
+      "name": "Sapphire Pendant of Winter Night",
+      "minSkill": 280,
+      "orangeUntil": 289,
+      "yellowUntil": 299,
+      "greenUntil": 309,
+      "grayAt": 310,
+      "reagents": [
+        {
+          "itemId": 12361,
+          "qty": 1
+        },
+        {
+          "itemId": 12808,
+          "qty": 1
+        },
+        {
+          "itemId": 21752,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-emerald-owl",
+      "professionId": 755,
+      "name": "Figurine - Emerald Owl",
+      "minSkill": 285,
+      "orangeUntil": 294,
+      "yellowUntil": 304,
+      "greenUntil": 314,
+      "grayAt": 315,
+      "reagents": [
+        {
+          "itemId": 12364,
+          "qty": 2
+        },
+        {
+          "itemId": 12360,
+          "qty": 2
+        },
+        {
+          "itemId": 12359,
+          "qty": 2
+        },
+        {
+          "itemId": 12804,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "ring-of-bitter-shadows",
+      "professionId": 755,
+      "name": "Ring of Bitter Shadows",
+      "minSkill": 285,
+      "orangeUntil": 294,
+      "yellowUntil": 304,
+      "greenUntil": 314,
+      "grayAt": 315,
+      "reagents": [
+        {
+          "itemId": 12363,
+          "qty": 1
+        },
+        {
+          "itemId": 12808,
+          "qty": 2
+        },
+        {
+          "itemId": 12662,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "emerald-lion-ring",
+      "professionId": 755,
+      "name": "Emerald Lion Ring",
+      "minSkill": 290,
+      "orangeUntil": 299,
+      "yellowUntil": 309,
+      "greenUntil": 319,
+      "grayAt": 320,
+      "reagents": [
+        {
+          "itemId": 12364,
+          "qty": 2
+        },
+        {
+          "itemId": 21752,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "living-emerald-pendant",
+      "professionId": 755,
+      "name": "Living Emerald Pendant",
+      "minSkill": 290,
+      "orangeUntil": 299,
+      "yellowUntil": 309,
+      "greenUntil": 319,
+      "grayAt": 320,
+      "reagents": [
+        {
+          "itemId": 12364,
+          "qty": 2
+        },
+        {
+          "itemId": 12803,
+          "qty": 4
+        },
+        {
+          "itemId": 12804,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "brilliant-golden-draenite",
+      "professionId": 755,
+      "name": "Brilliant Golden Draenite",
+      "minSkill": 300,
+      "orangeUntil": 300,
+      "yellowUntil": 319,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 23112,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-black-diamond-crab",
+      "professionId": 755,
+      "name": "Figurine - Black Diamond Crab",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 319,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 18335,
+          "qty": 4
+        },
+        {
+          "itemId": 11754,
+          "qty": 4
+        },
+        {
+          "itemId": 12800,
+          "qty": 2
+        },
+        {
+          "itemId": 12360,
+          "qty": 2
+        },
+        {
+          "itemId": 12359,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-dark-iron-scorpid",
+      "professionId": 755,
+      "name": "Figurine - Dark Iron Scorpid",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 319,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 11371,
+          "qty": 4
+        },
+        {
+          "itemId": 12360,
+          "qty": 2
+        },
+        {
+          "itemId": 7910,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "glowing-shadow-draenite",
+      "professionId": 755,
+      "name": "Glowing Shadow Draenite",
+      "minSkill": 300,
+      "orangeUntil": 300,
+      "yellowUntil": 319,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 23107,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "inscribed-flame-spessarite",
+      "professionId": 755,
+      "name": "Inscribed Flame Spessarite",
+      "minSkill": 300,
+      "orangeUntil": 300,
+      "yellowUntil": 319,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 21929,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "radiant-deep-peridot",
+      "professionId": 755,
+      "name": "Radiant Deep Peridot",
+      "minSkill": 300,
+      "orangeUntil": 300,
+      "yellowUntil": 319,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 23079,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "solid-azure-moonstone",
+      "professionId": 755,
+      "name": "Solid Azure Moonstone",
+      "minSkill": 300,
+      "orangeUntil": 300,
+      "yellowUntil": 319,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 23117,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "teardrop-blood-garnet",
+      "professionId": 755,
+      "name": "Teardrop Blood Garnet",
+      "minSkill": 300,
+      "orangeUntil": 300,
+      "yellowUntil": 319,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 23077,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "bold-blood-garnet",
+      "professionId": 755,
+      "name": "Bold Blood Garnet",
+      "minSkill": 305,
+      "orangeUntil": 305,
+      "yellowUntil": 324,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 23077,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "bright-blood-garnet",
+      "professionId": 755,
+      "name": "Bright Blood Garnet",
+      "minSkill": 305,
+      "orangeUntil": 305,
+      "yellowUntil": 324,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 23077,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "gleaming-golden-draenite",
+      "professionId": 755,
+      "name": "Gleaming Golden Draenite",
+      "minSkill": 305,
+      "orangeUntil": 305,
+      "yellowUntil": 324,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 23112,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "jagged-deep-peridot",
+      "professionId": 755,
+      "name": "Jagged Deep Peridot",
+      "minSkill": 305,
+      "orangeUntil": 305,
+      "yellowUntil": 324,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 23079,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "luminous-flame-spessarite",
+      "professionId": 755,
+      "name": "Luminous Flame Spessarite",
+      "minSkill": 305,
+      "orangeUntil": 305,
+      "yellowUntil": 324,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 21929,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "necklace-of-the-diamond-tower",
+      "professionId": 755,
+      "name": "Necklace of the Diamond Tower",
+      "minSkill": 305,
+      "orangeUntil": 314,
+      "yellowUntil": 324,
+      "greenUntil": 334,
+      "grayAt": 335,
+      "reagents": [
+        {
+          "itemId": 12800,
+          "qty": 2
+        },
+        {
+          "itemId": 21752,
+          "qty": 2
+        },
+        {
+          "itemId": 12360,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "royal-shadow-draenite",
+      "professionId": 755,
+      "name": "Royal Shadow Draenite",
+      "minSkill": 305,
+      "orangeUntil": 305,
+      "yellowUntil": 324,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 23107,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "sparkling-azure-moonstone",
+      "professionId": 755,
+      "name": "Sparkling Azure Moonstone",
+      "minSkill": 305,
+      "orangeUntil": 305,
+      "yellowUntil": 324,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 23117,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "band-of-natural-fire",
+      "professionId": 755,
+      "name": "Band of Natural Fire",
+      "minSkill": 310,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 21929,
+          "qty": 1
+        },
+        {
+          "itemId": 7078,
+          "qty": 4
+        },
+        {
+          "itemId": 12803,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "fel-iron-blood-ring",
+      "professionId": 755,
+      "name": "Fel Iron Blood Ring",
+      "minSkill": 310,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 23445,
+          "qty": 1
+        },
+        {
+          "itemId": 23077,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "golden-draenite-ring",
+      "professionId": 755,
+      "name": "Golden Draenite Ring",
+      "minSkill": 310,
+      "orangeUntil": 319,
+      "yellowUntil": 334,
+      "greenUntil": 349,
+      "grayAt": 350,
+      "reagents": [
+        {
+          "itemId": 23445,
+          "qty": 1
+        },
+        {
+          "itemId": 23112,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "arcanite-sword-pendant",
+      "professionId": 755,
+      "name": "Arcanite Sword Pendant",
+      "minSkill": 315,
+      "orangeUntil": 324,
+      "yellowUntil": 334,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 12360,
+          "qty": 4
+        },
+        {
+          "itemId": 7076,
+          "qty": 4
+        },
+        {
+          "itemId": 7082,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "enduring-deep-peridot",
+      "professionId": 755,
+      "name": "Enduring Deep Peridot",
+      "minSkill": 315,
+      "orangeUntil": 315,
+      "yellowUntil": 334,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23079,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "glinting-flame-spessarite",
+      "professionId": 755,
+      "name": "Glinting Flame Spessarite",
+      "minSkill": 315,
+      "orangeUntil": 315,
+      "yellowUntil": 334,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 21929,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "runed-blood-garnet",
+      "professionId": 755,
+      "name": "Runed Blood Garnet",
+      "minSkill": 315,
+      "orangeUntil": 315,
+      "yellowUntil": 334,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23077,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "shifting-shadow-draenite",
+      "professionId": 755,
+      "name": "Shifting Shadow Draenite",
+      "minSkill": 315,
+      "orangeUntil": 315,
+      "yellowUntil": 334,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23107,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "stormy-azure-moonstone",
+      "professionId": 755,
+      "name": "Stormy Azure Moonstone",
+      "minSkill": 315,
+      "orangeUntil": 315,
+      "yellowUntil": 334,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23117,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "thick-golden-draenite",
+      "professionId": 755,
+      "name": "Thick Golden Draenite",
+      "minSkill": 315,
+      "orangeUntil": 315,
+      "yellowUntil": 334,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23112,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "azure-moonstone-ring",
+      "professionId": 755,
+      "name": "Azure Moonstone Ring",
+      "minSkill": 320,
+      "orangeUntil": 329,
+      "yellowUntil": 339,
+      "greenUntil": 349,
+      "grayAt": 350,
+      "reagents": [
+        {
+          "itemId": 23445,
+          "qty": 1
+        },
+        {
+          "itemId": 23117,
+          "qty": 2
+        },
+        {
+          "itemId": 23079,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "balanced-shadow-draenite",
+      "professionId": 755,
+      "name": "Balanced Shadow Draenite",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 339,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23107,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "blood-crown",
+      "professionId": 755,
+      "name": "Blood Crown",
+      "minSkill": 325,
+      "orangeUntil": 334,
+      "yellowUntil": 344,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 12359,
+          "qty": 8
+        },
+        {
+          "itemId": 11382,
+          "qty": 2
+        },
+        {
+          "itemId": 7910,
+          "qty": 4
+        },
+        {
+          "itemId": 12938,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "brilliant-pearl-band",
+      "professionId": 755,
+      "name": "Brilliant Pearl Band",
+      "minSkill": 325,
+      "orangeUntil": 334,
+      "yellowUntil": 344,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 24478,
+          "qty": 8
+        },
+        {
+          "itemId": 23447,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "dazzling-deep-peridot",
+      "professionId": 755,
+      "name": "Dazzling Deep Peridot",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 339,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23079,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "delicate-blood-garnet",
+      "professionId": 755,
+      "name": "Delicate Blood Garnet",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 339,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23077,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "great-golden-draenite",
+      "professionId": 755,
+      "name": "Great Golden Draenite",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 339,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23112,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "infused-shadow-draenite",
+      "professionId": 755,
+      "name": "Infused Shadow Draenite",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 339,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23107,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "lustrous-azure-moonstone",
+      "professionId": 755,
+      "name": "Lustrous Azure Moonstone",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 339,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23117,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mercurial-adamantite",
+      "professionId": 755,
+      "name": "Mercurial Adamantite",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 334,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 24243,
+          "qty": 4
+        },
+        {
+          "itemId": 22452,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "potent-flame-spessarite",
+      "professionId": 755,
+      "name": "Potent Flame Spessarite",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 339,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 21929,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "purified-jaggal-pearl",
+      "professionId": 755,
+      "name": "Purified Jaggal Pearl",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 331,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 24478,
+          "qty": 1
+        },
+        {
+          "itemId": 27860,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "rigid-golden-draenite",
+      "professionId": 755,
+      "name": "Rigid Golden Draenite",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 339,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23112,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "smooth-golden-draenite",
+      "professionId": 755,
+      "name": "Smooth Golden Draenite",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 339,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23112,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "sovereign-shadow-draenite",
+      "professionId": 755,
+      "name": "Sovereign Shadow Draenite",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 339,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 23107,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "veiled-flame-spessarite",
+      "professionId": 755,
+      "name": "Veiled Flame Spessarite",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 339,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 21929,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "wicked-flame-spessarite",
+      "professionId": 755,
+      "name": "Wicked Flame Spessarite",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 339,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 21929,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "the-black-pearl",
+      "professionId": 755,
+      "name": "The Black Pearl",
+      "minSkill": 330,
+      "orangeUntil": 339,
+      "yellowUntil": 349,
+      "greenUntil": 359,
+      "grayAt": 360,
+      "reagents": [
+        {
+          "itemId": 24479,
+          "qty": 1
+        },
+        {
+          "itemId": 31079,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "heavy-adamantite-ring",
+      "professionId": 755,
+      "name": "Heavy Adamantite Ring",
+      "minSkill": 335,
+      "orangeUntil": 344,
+      "yellowUntil": 354,
+      "greenUntil": 364,
+      "grayAt": 365,
+      "reagents": [
+        {
+          "itemId": 23446,
+          "qty": 1
+        },
+        {
+          "itemId": 31079,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "thick-adamantite-necklace",
+      "professionId": 755,
+      "name": "Thick Adamantite Necklace",
+      "minSkill": 335,
+      "orangeUntil": 344,
+      "yellowUntil": 354,
+      "greenUntil": 364,
+      "grayAt": 365,
+      "reagents": [
+        {
+          "itemId": 23446,
+          "qty": 2
+        },
+        {
+          "itemId": 31079,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "necklace-of-the-deep",
+      "professionId": 755,
+      "name": "Necklace of the Deep",
+      "minSkill": 340,
+      "orangeUntil": 340,
+      "yellowUntil": 354,
+      "greenUntil": 369,
+      "grayAt": 370,
+      "reagents": [
+        {
+          "itemId": 22578,
+          "qty": 3
+        },
+        {
+          "itemId": 24478,
+          "qty": 10
+        },
+        {
+          "itemId": 24479,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "heavy-felsteel-ring",
+      "professionId": 755,
+      "name": "Heavy Felsteel Ring",
+      "minSkill": 345,
+      "orangeUntil": 354,
+      "yellowUntil": 364,
+      "greenUntil": 374,
+      "grayAt": 375,
+      "reagents": [
+        {
+          "itemId": 23448,
+          "qty": 2
+        },
+        {
+          "itemId": 31079,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "balanced-nightseye",
+      "professionId": 755,
+      "name": "Balanced Nightseye",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23441,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "bold-living-ruby",
+      "professionId": 755,
+      "name": "Bold Living Ruby",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23436,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "bright-living-ruby",
+      "professionId": 755,
+      "name": "Bright Living Ruby",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23436,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "brilliant-dawnstone",
+      "professionId": 755,
+      "name": "Brilliant Dawnstone",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23440,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "brilliant-glass",
+      "professionId": 755,
+      "name": "Brilliant Glass",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23117,
+          "qty": 3
+        },
+        {
+          "itemId": 23077,
+          "qty": 3
+        },
+        {
+          "itemId": 23079,
+          "qty": 3
+        },
+        {
+          "itemId": 21929,
+          "qty": 3
+        },
+        {
+          "itemId": 23112,
+          "qty": 3
+        },
+        {
+          "itemId": 23107,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "dazzling-talasite",
+      "professionId": 755,
+      "name": "Dazzling Talasite",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23437,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "delicate-living-ruby",
+      "professionId": 755,
+      "name": "Delicate Living Ruby",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23436,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enduring-talasite",
+      "professionId": 755,
+      "name": "Enduring Talasite",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23437,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "flashing-living-ruby",
+      "professionId": 755,
+      "name": "Flashing Living Ruby",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23436,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "forceful-talasite",
+      "professionId": 755,
+      "name": "Forceful Talasite",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23437,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "gleaming-dawnstone",
+      "professionId": 755,
+      "name": "Gleaming Dawnstone",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23440,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "glinting-noble-topaz",
+      "professionId": 755,
+      "name": "Glinting Noble Topaz",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23439,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "glowing-nightseye",
+      "professionId": 755,
+      "name": "Glowing Nightseye",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23441,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "great-dawnstone",
+      "professionId": 755,
+      "name": "Great Dawnstone",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23440,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "infused-nightseye",
+      "professionId": 755,
+      "name": "Infused Nightseye",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23441,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "inscribed-noble-topaz",
+      "professionId": 755,
+      "name": "Inscribed Noble Topaz",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23439,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "jagged-talasite",
+      "professionId": 755,
+      "name": "Jagged Talasite",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23437,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "khorium-band-of-shadows",
+      "professionId": 755,
+      "name": "Khorium Band of Shadows",
+      "minSkill": 350,
+      "orangeUntil": 359,
+      "yellowUntil": 369,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23449,
+          "qty": 2
+        },
+        {
+          "itemId": 31079,
+          "qty": 3
+        },
+        {
+          "itemId": 22456,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "luminous-noble-topaz",
+      "professionId": 755,
+      "name": "Luminous Noble Topaz",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23439,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "lustrous-star-of-elune",
+      "professionId": 755,
+      "name": "Lustrous Star of Elune",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23438,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mystic-dawnstone",
+      "professionId": 755,
+      "name": "Mystic Dawnstone",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23440,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "potent-noble-topaz",
+      "professionId": 755,
+      "name": "Potent Noble Topaz",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23439,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "purified-shadow-pearl",
+      "professionId": 755,
+      "name": "Purified Shadow Pearl",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 24479,
+          "qty": 1
+        },
+        {
+          "itemId": 27860,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "quick-dawnstone",
+      "professionId": 755,
+      "name": "Quick Dawnstone",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23440,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "radiant-talasite",
+      "professionId": 755,
+      "name": "Radiant Talasite",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23437,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "reckless-noble-topaz",
+      "professionId": 755,
+      "name": "Reckless Noble Topaz",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23439,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "regal-nightseye",
+      "professionId": 755,
+      "name": "Regal Nightseye",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23441,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "rigid-dawnstone",
+      "professionId": 755,
+      "name": "Rigid Dawnstone",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23440,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "royal-nightseye",
+      "professionId": 755,
+      "name": "Royal Nightseye",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23441,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "runed-living-ruby",
+      "professionId": 755,
+      "name": "Runed Living Ruby",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23436,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "shifting-nightseye",
+      "professionId": 755,
+      "name": "Shifting Nightseye",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23441,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "smooth-dawnstone",
+      "professionId": 755,
+      "name": "Smooth Dawnstone",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23440,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "solid-star-of-elune",
+      "professionId": 755,
+      "name": "Solid Star of Elune",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23438,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "sovereign-nightseye",
+      "professionId": 755,
+      "name": "Sovereign Nightseye",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23441,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "sparkling-star-of-elune",
+      "professionId": 755,
+      "name": "Sparkling Star of Elune",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23438,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "steady-talasite",
+      "professionId": 755,
+      "name": "Steady Talasite",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23437,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "stormy-star-of-elune",
+      "professionId": 755,
+      "name": "Stormy Star of Elune",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23438,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "subtle-living-ruby",
+      "professionId": 755,
+      "name": "Subtle Living Ruby",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23436,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "teardrop-living-ruby",
+      "professionId": 755,
+      "name": "Teardrop Living Ruby",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23436,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "thick-dawnstone",
+      "professionId": 755,
+      "name": "Thick Dawnstone",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23440,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "veiled-noble-topaz",
+      "professionId": 755,
+      "name": "Veiled Noble Topaz",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23439,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "wicked-noble-topaz",
+      "professionId": 755,
+      "name": "Wicked Noble Topaz",
+      "minSkill": 350,
+      "orangeUntil": 350,
+      "yellowUntil": 364,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23439,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "delicate-eternium-ring",
+      "professionId": 755,
+      "name": "Delicate Eternium Ring",
+      "minSkill": 355,
+      "orangeUntil": 364,
+      "yellowUntil": 374,
+      "greenUntil": 384,
+      "grayAt": 385,
+      "reagents": [
+        {
+          "itemId": 23447,
+          "qty": 1
+        },
+        {
+          "itemId": 31079,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "khorium-band-of-frost",
+      "professionId": 755,
+      "name": "Khorium Band of Frost",
+      "minSkill": 355,
+      "orangeUntil": 364,
+      "yellowUntil": 374,
+      "greenUntil": 384,
+      "grayAt": 385,
+      "reagents": [
+        {
+          "itemId": 23449,
+          "qty": 2
+        },
+        {
+          "itemId": 31079,
+          "qty": 4
+        },
+        {
+          "itemId": 21885,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "khorium-inferno-band",
+      "professionId": 755,
+      "name": "Khorium Inferno Band",
+      "minSkill": 355,
+      "orangeUntil": 364,
+      "yellowUntil": 374,
+      "greenUntil": 384,
+      "grayAt": 385,
+      "reagents": [
+        {
+          "itemId": 23449,
+          "qty": 2
+        },
+        {
+          "itemId": 31079,
+          "qty": 4
+        },
+        {
+          "itemId": 21884,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "living-ruby-pendant",
+      "professionId": 755,
+      "name": "Living Ruby Pendant",
+      "minSkill": 355,
+      "orangeUntil": 364,
+      "yellowUntil": 374,
+      "greenUntil": 384,
+      "grayAt": 385,
+      "reagents": [
+        {
+          "itemId": 23449,
+          "qty": 4
+        },
+        {
+          "itemId": 31079,
+          "qty": 1
+        },
+        {
+          "itemId": 23436,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "thick-felsteel-necklace",
+      "professionId": 755,
+      "name": "Thick Felsteel Necklace",
+      "minSkill": 355,
+      "orangeUntil": 364,
+      "yellowUntil": 374,
+      "greenUntil": 384,
+      "grayAt": 385,
+      "reagents": [
+        {
+          "itemId": 23448,
+          "qty": 2
+        },
+        {
+          "itemId": 31079,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "blood-of-amber",
+      "professionId": 755,
+      "name": "Blood of Amber",
+      "minSkill": 360,
+      "orangeUntil": 364,
+      "yellowUntil": 369,
+      "greenUntil": 374,
+      "grayAt": 375,
+      "reagents": [
+        {
+          "itemId": 23440,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "braided-eternium-chain",
+      "professionId": 755,
+      "name": "Braided Eternium Chain",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 379,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 23447,
+          "qty": 2
+        },
+        {
+          "itemId": 31079,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "crimson-sun",
+      "professionId": 755,
+      "name": "Crimson Sun",
+      "minSkill": 360,
+      "orangeUntil": 364,
+      "yellowUntil": 369,
+      "greenUntil": 374,
+      "grayAt": 375,
+      "reagents": [
+        {
+          "itemId": 23436,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "don-julio-s-heart",
+      "professionId": 755,
+      "name": "Don Julio's Heart",
+      "minSkill": 360,
+      "orangeUntil": 364,
+      "yellowUntil": 369,
+      "greenUntil": 374,
+      "grayAt": 375,
+      "reagents": [
+        {
+          "itemId": 23436,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "eye-of-the-night",
+      "professionId": 755,
+      "name": "Eye of the Night",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 379,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 23573,
+          "qty": 2
+        },
+        {
+          "itemId": 31079,
+          "qty": 2
+        },
+        {
+          "itemId": 23441,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "facet-of-eternity",
+      "professionId": 755,
+      "name": "Facet of Eternity",
+      "minSkill": 360,
+      "orangeUntil": 364,
+      "yellowUntil": 369,
+      "greenUntil": 374,
+      "grayAt": 375,
+      "reagents": [
+        {
+          "itemId": 23440,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "falling-star",
+      "professionId": 755,
+      "name": "Falling Star",
+      "minSkill": 360,
+      "orangeUntil": 364,
+      "yellowUntil": 369,
+      "greenUntil": 374,
+      "grayAt": 375,
+      "reagents": [
+        {
+          "itemId": 23438,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "kailee-s-rose",
+      "professionId": 755,
+      "name": "Kailee's Rose",
+      "minSkill": 360,
+      "orangeUntil": 364,
+      "yellowUntil": 369,
+      "greenUntil": 374,
+      "grayAt": 375,
+      "reagents": [
+        {
+          "itemId": 23436,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "khorium-band-of-leaves",
+      "professionId": 755,
+      "name": "Khorium Band of Leaves",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 379,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 23449,
+          "qty": 2
+        },
+        {
+          "itemId": 31079,
+          "qty": 4
+        },
+        {
+          "itemId": 21886,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "pendant-of-frozen-flame",
+      "professionId": 755,
+      "name": "Pendant of Frozen Flame",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 379,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 23448,
+          "qty": 2
+        },
+        {
+          "itemId": 21885,
+          "qty": 6
+        },
+        {
+          "itemId": 21884,
+          "qty": 4
+        },
+        {
+          "itemId": 31079,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "pendant-of-shadow-s-end",
+      "professionId": 755,
+      "name": "Pendant of Shadow's End",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 379,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 23448,
+          "qty": 2
+        },
+        {
+          "itemId": 21886,
+          "qty": 6
+        },
+        {
+          "itemId": 22456,
+          "qty": 4
+        },
+        {
+          "itemId": 31079,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "pendant-of-thawing",
+      "professionId": 755,
+      "name": "Pendant of Thawing",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 379,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 23448,
+          "qty": 2
+        },
+        {
+          "itemId": 21884,
+          "qty": 6
+        },
+        {
+          "itemId": 21885,
+          "qty": 4
+        },
+        {
+          "itemId": 31079,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "pendant-of-withering",
+      "professionId": 755,
+      "name": "Pendant of Withering",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 379,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 23448,
+          "qty": 2
+        },
+        {
+          "itemId": 22456,
+          "qty": 6
+        },
+        {
+          "itemId": 21886,
+          "qty": 4
+        },
+        {
+          "itemId": 31079,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "pendant-of-the-null-rune",
+      "professionId": 755,
+      "name": "Pendant of the Null Rune",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 379,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 23448,
+          "qty": 2
+        },
+        {
+          "itemId": 22457,
+          "qty": 8
+        },
+        {
+          "itemId": 31079,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "ring-of-arcane-shielding",
+      "professionId": 755,
+      "name": "Ring of Arcane Shielding",
+      "minSkill": 360,
+      "orangeUntil": 369,
+      "yellowUntil": 379,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 23447,
+          "qty": 2
+        },
+        {
+          "itemId": 22457,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "stone-of-blades",
+      "professionId": 755,
+      "name": "Stone of Blades",
+      "minSkill": 360,
+      "orangeUntil": 364,
+      "yellowUntil": 369,
+      "greenUntil": 374,
+      "grayAt": 375,
+      "reagents": [
+        {
+          "itemId": 23440,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "amulet-of-flowing-life",
+      "professionId": 755,
+      "name": "Amulet of Flowing Life",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 391,
+      "greenUntil": 409,
+      "grayAt": 410,
+      "reagents": [
+        {
+          "itemId": 31079,
+          "qty": 6
+        },
+        {
+          "itemId": 32249,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "arcane-khorium-band",
+      "professionId": 755,
+      "name": "Arcane Khorium Band",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 23449,
+          "qty": 2
+        },
+        {
+          "itemId": 31079,
+          "qty": 4
+        },
+        {
+          "itemId": 22457,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "blazing-eternium-band",
+      "professionId": 755,
+      "name": "Blazing Eternium Band",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 23447,
+          "qty": 2
+        },
+        {
+          "itemId": 31079,
+          "qty": 4
+        },
+        {
+          "itemId": 21884,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "bracing-earthstorm-diamond",
+      "professionId": 755,
+      "name": "Bracing Earthstorm Diamond",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 25867,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "brutal-earthstorm-diamond",
+      "professionId": 755,
+      "name": "Brutal Earthstorm Diamond",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 25867,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "chain-of-the-twilight-owl",
+      "professionId": 755,
+      "name": "Chain of the Twilight Owl",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 23449,
+          "qty": 2
+        },
+        {
+          "itemId": 31079,
+          "qty": 4
+        },
+        {
+          "itemId": 23117,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "chaotic-skyfire-diamond",
+      "professionId": 755,
+      "name": "Chaotic Skyfire Diamond",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 25868,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "crown-of-the-sea-witch",
+      "professionId": 755,
+      "name": "Crown of the Sea Witch",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 23449,
+          "qty": 12
+        },
+        {
+          "itemId": 31079,
+          "qty": 4
+        },
+        {
+          "itemId": 24478,
+          "qty": 20
+        },
+        {
+          "itemId": 24479,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "destructive-skyfire-diamond",
+      "professionId": 755,
+      "name": "Destructive Skyfire Diamond",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 25868,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "embrace-of-the-dawn",
+      "professionId": 755,
+      "name": "Embrace of the Dawn",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 23447,
+          "qty": 2
+        },
+        {
+          "itemId": 31079,
+          "qty": 4
+        },
+        {
+          "itemId": 23112,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "enigmatic-skyfire-diamond",
+      "professionId": 755,
+      "name": "Enigmatic Skyfire Diamond",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 25868,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "hard-khorium-band",
+      "professionId": 755,
+      "name": "Hard Khorium Band",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 391,
+      "greenUntil": 409,
+      "grayAt": 410,
+      "reagents": [
+        {
+          "itemId": 35128,
+          "qty": 4
+        },
+        {
+          "itemId": 22451,
+          "qty": 20
+        },
+        {
+          "itemId": 31079,
+          "qty": 12
+        },
+        {
+          "itemId": 34664,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "hard-khorium-choker",
+      "professionId": 755,
+      "name": "Hard Khorium Choker",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 391,
+      "greenUntil": 409,
+      "grayAt": 410,
+      "reagents": [
+        {
+          "itemId": 35128,
+          "qty": 6
+        },
+        {
+          "itemId": 23572,
+          "qty": 9
+        }
+      ]
+    },
+    {
+      "recipeId": "insightful-earthstorm-diamond",
+      "professionId": 755,
+      "name": "Insightful Earthstorm Diamond",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 25867,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "loop-of-forged-power",
+      "professionId": 755,
+      "name": "Loop of Forged Power",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 391,
+      "greenUntil": 409,
+      "grayAt": 410,
+      "reagents": [
+        {
+          "itemId": 35128,
+          "qty": 4
+        },
+        {
+          "itemId": 23571,
+          "qty": 4
+        },
+        {
+          "itemId": 31079,
+          "qty": 12
+        },
+        {
+          "itemId": 34664,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "mystical-skyfire-diamond",
+      "professionId": 755,
+      "name": "Mystical Skyfire Diamond",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 25868,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "pendant-of-sunfire",
+      "professionId": 755,
+      "name": "Pendant of Sunfire",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 391,
+      "greenUntil": 409,
+      "grayAt": 410,
+      "reagents": [
+        {
+          "itemId": 31079,
+          "qty": 12
+        },
+        {
+          "itemId": 32227,
+          "qty": 3
+        },
+        {
+          "itemId": 32228,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "powerful-earthstorm-diamond",
+      "professionId": 755,
+      "name": "Powerful Earthstorm Diamond",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 25867,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "relentless-earthstorm-diamond",
+      "professionId": 755,
+      "name": "Relentless Earthstorm Diamond",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 25867,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "ring-of-flowing-life",
+      "professionId": 755,
+      "name": "Ring of Flowing Life",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 391,
+      "greenUntil": 409,
+      "grayAt": 410,
+      "reagents": [
+        {
+          "itemId": 35128,
+          "qty": 4
+        },
+        {
+          "itemId": 21886,
+          "qty": 20
+        },
+        {
+          "itemId": 31079,
+          "qty": 12
+        },
+        {
+          "itemId": 34664,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "swift-skyfire-diamond",
+      "professionId": 755,
+      "name": "Swift Skyfire Diamond",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 25868,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "tenacious-earthstorm-diamond",
+      "professionId": 755,
+      "name": "Tenacious Earthstorm Diamond",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 25867,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "thundering-skyfire-diamond",
+      "professionId": 755,
+      "name": "Thundering Skyfire Diamond",
+      "minSkill": 365,
+      "orangeUntil": 374,
+      "yellowUntil": 384,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 25868,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "circlet-of-arcane-might",
+      "professionId": 755,
+      "name": "Circlet of Arcane Might",
+      "minSkill": 370,
+      "orangeUntil": 379,
+      "yellowUntil": 389,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 23448,
+          "qty": 20
+        },
+        {
+          "itemId": 22457,
+          "qty": 20
+        },
+        {
+          "itemId": 23438,
+          "qty": 2
+        },
+        {
+          "itemId": 31079,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "coronet-of-the-verdant-flame",
+      "professionId": 755,
+      "name": "Coronet of the Verdant Flame",
+      "minSkill": 370,
+      "orangeUntil": 379,
+      "yellowUntil": 389,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 23449,
+          "qty": 20
+        },
+        {
+          "itemId": 21886,
+          "qty": 20
+        },
+        {
+          "itemId": 23437,
+          "qty": 2
+        },
+        {
+          "itemId": 31079,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "ember-skyfire-diamond",
+      "professionId": 755,
+      "name": "Ember Skyfire Diamond",
+      "minSkill": 370,
+      "orangeUntil": 379,
+      "yellowUntil": 389,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 25868,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "eternal-earthstorm-diamond",
+      "professionId": 755,
+      "name": "Eternal Earthstorm Diamond",
+      "minSkill": 370,
+      "orangeUntil": 379,
+      "yellowUntil": 389,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 25867,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-dawnstone-crab",
+      "professionId": 755,
+      "name": "Figurine - Dawnstone Crab",
+      "minSkill": 370,
+      "orangeUntil": 379,
+      "yellowUntil": 389,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 23449,
+          "qty": 4
+        },
+        {
+          "itemId": 23440,
+          "qty": 2
+        },
+        {
+          "itemId": 23112,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-felsteel-boar",
+      "professionId": 755,
+      "name": "Figurine - Felsteel Boar",
+      "minSkill": 370,
+      "orangeUntil": 379,
+      "yellowUntil": 389,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 23448,
+          "qty": 8
+        },
+        {
+          "itemId": 23077,
+          "qty": 2
+        },
+        {
+          "itemId": 22452,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-living-ruby-serpent",
+      "professionId": 755,
+      "name": "Figurine - Living Ruby Serpent",
+      "minSkill": 370,
+      "orangeUntil": 379,
+      "yellowUntil": 389,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 23448,
+          "qty": 2
+        },
+        {
+          "itemId": 23436,
+          "qty": 2
+        },
+        {
+          "itemId": 21884,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-nightseye-panther",
+      "professionId": 755,
+      "name": "Figurine - Nightseye Panther",
+      "minSkill": 370,
+      "orangeUntil": 379,
+      "yellowUntil": 389,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 23573,
+          "qty": 6
+        },
+        {
+          "itemId": 23441,
+          "qty": 2
+        },
+        {
+          "itemId": 22456,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-talasite-owl",
+      "professionId": 755,
+      "name": "Figurine - Talasite Owl",
+      "minSkill": 370,
+      "orangeUntil": 379,
+      "yellowUntil": 389,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 23447,
+          "qty": 2
+        },
+        {
+          "itemId": 23437,
+          "qty": 2
+        },
+        {
+          "itemId": 22457,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "balanced-shadowsong-amethyst",
+      "professionId": 755,
+      "name": "Balanced Shadowsong Amethyst",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32230,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "bold-crimson-spinel",
+      "professionId": 755,
+      "name": "Bold Crimson Spinel",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32227,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "bright-crimson-spinel",
+      "professionId": 755,
+      "name": "Bright Crimson Spinel",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32227,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "brilliant-lionseye",
+      "professionId": 755,
+      "name": "Brilliant Lionseye",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32229,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "dazzling-seaspray-emerald",
+      "professionId": 755,
+      "name": "Dazzling Seaspray Emerald",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32249,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "delicate-crimson-spinel",
+      "professionId": 755,
+      "name": "Delicate Crimson Spinel",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32227,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "enduring-seaspray-emerald",
+      "professionId": 755,
+      "name": "Enduring Seaspray Emerald",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32249,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-crimson-serpent",
+      "professionId": 755,
+      "name": "Figurine - Crimson Serpent",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 23447,
+          "qty": 8
+        },
+        {
+          "itemId": 32227,
+          "qty": 2
+        },
+        {
+          "itemId": 21884,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-empyrean-tortoise",
+      "professionId": 755,
+      "name": "Figurine - Empyrean Tortoise",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 23449,
+          "qty": 8
+        },
+        {
+          "itemId": 32228,
+          "qty": 2
+        },
+        {
+          "itemId": 23440,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-khorium-boar",
+      "professionId": 755,
+      "name": "Figurine - Khorium Boar",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 23449,
+          "qty": 8
+        },
+        {
+          "itemId": 32231,
+          "qty": 2
+        },
+        {
+          "itemId": 22452,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-seaspray-albatross",
+      "professionId": 755,
+      "name": "Figurine - Seaspray Albatross",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 23447,
+          "qty": 8
+        },
+        {
+          "itemId": 32249,
+          "qty": 2
+        },
+        {
+          "itemId": 22457,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "figurine-shadowsong-panther",
+      "professionId": 755,
+      "name": "Figurine - Shadowsong Panther",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 23573,
+          "qty": 4
+        },
+        {
+          "itemId": 32230,
+          "qty": 2
+        },
+        {
+          "itemId": 22456,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "recipeId": "flashing-crimson-spinel",
+      "professionId": 755,
+      "name": "Flashing Crimson Spinel",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32227,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "forceful-seaspray-emerald",
+      "professionId": 755,
+      "name": "Forceful Seaspray Emerald",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32249,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "gleaming-lionseye",
+      "professionId": 755,
+      "name": "Gleaming Lionseye",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32229,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "glinting-pyrestone",
+      "professionId": 755,
+      "name": "Glinting Pyrestone",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32231,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "glowing-shadowsong-amethyst",
+      "professionId": 755,
+      "name": "Glowing Shadowsong Amethyst",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32230,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "great-lionseye",
+      "professionId": 755,
+      "name": "Great Lionseye",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32229,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "infused-shadowsong-amethyst",
+      "professionId": 755,
+      "name": "Infused Shadowsong Amethyst",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32230,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "inscribed-pyrestone",
+      "professionId": 755,
+      "name": "Inscribed Pyrestone",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32231,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "jagged-seaspray-emerald",
+      "professionId": 755,
+      "name": "Jagged Seaspray Emerald",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32249,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "luminous-pyrestone",
+      "professionId": 755,
+      "name": "Luminous Pyrestone",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32231,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "lustrous-empyrean-sapphire",
+      "professionId": 755,
+      "name": "Lustrous Empyrean Sapphire",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32228,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mystic-lionseye",
+      "professionId": 755,
+      "name": "Mystic Lionseye",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32229,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "potent-pyrestone",
+      "professionId": 755,
+      "name": "Potent Pyrestone",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32231,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "purified-shadowsong-amethyst",
+      "professionId": 755,
+      "name": "Purified Shadowsong Amethyst",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32230,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "quick-lionseye",
+      "professionId": 755,
+      "name": "Quick Lionseye",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32229,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "radiant-seaspray-emerald",
+      "professionId": 755,
+      "name": "Radiant Seaspray Emerald",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32249,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "reckless-pyrestone",
+      "professionId": 755,
+      "name": "Reckless Pyrestone",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32231,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "rigid-lionseye",
+      "professionId": 755,
+      "name": "Rigid Lionseye",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32229,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "royal-shadowsong-amethyst",
+      "professionId": 755,
+      "name": "Royal Shadowsong Amethyst",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32230,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "runed-crimson-spinel",
+      "professionId": 755,
+      "name": "Runed Crimson Spinel",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32227,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "shifting-shadowsong-amethyst",
+      "professionId": 755,
+      "name": "Shifting Shadowsong Amethyst",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32230,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "smooth-lionseye",
+      "professionId": 755,
+      "name": "Smooth Lionseye",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32229,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "solid-empyrean-sapphire",
+      "professionId": 755,
+      "name": "Solid Empyrean Sapphire",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32228,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "sovereign-shadowsong-amethyst",
+      "professionId": 755,
+      "name": "Sovereign Shadowsong Amethyst",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32230,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "sparkling-empyrean-sapphire",
+      "professionId": 755,
+      "name": "Sparkling Empyrean Sapphire",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32228,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "steady-seaspray-emerald",
+      "professionId": 755,
+      "name": "Steady Seaspray Emerald",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32249,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "stormy-empyrean-sapphire",
+      "professionId": 755,
+      "name": "Stormy Empyrean Sapphire",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32228,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "subtle-crimson-spinel",
+      "professionId": 755,
+      "name": "Subtle Crimson Spinel",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32227,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "teardrop-crimson-spinel",
+      "professionId": 755,
+      "name": "Teardrop Crimson Spinel",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32227,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "the-frozen-eye",
+      "professionId": 755,
+      "name": "The Frozen Eye",
+      "minSkill": 375,
+      "orangeUntil": 384,
+      "yellowUntil": 394,
+      "greenUntil": 404,
+      "grayAt": 405,
+      "reagents": [
+        {
+          "itemId": 31079,
+          "qty": 4
+        },
+        {
+          "itemId": 23449,
+          "qty": 2
+        },
+        {
+          "itemId": 21885,
+          "qty": 6
+        },
+        {
+          "itemId": 21884,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "the-natural-ward",
+      "professionId": 755,
+      "name": "The Natural Ward",
+      "minSkill": 375,
+      "orangeUntil": 384,
+      "yellowUntil": 394,
+      "greenUntil": 404,
+      "grayAt": 405,
+      "reagents": [
+        {
+          "itemId": 31079,
+          "qty": 4
+        },
+        {
+          "itemId": 23448,
+          "qty": 2
+        },
+        {
+          "itemId": 21886,
+          "qty": 6
+        },
+        {
+          "itemId": 22456,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "recipeId": "thick-lionseye",
+      "professionId": 755,
+      "name": "Thick Lionseye",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32229,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "veiled-pyrestone",
+      "professionId": 755,
+      "name": "Veiled Pyrestone",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32231,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "wicked-pyrestone",
+      "professionId": 755,
+      "name": "Wicked Pyrestone",
+      "minSkill": 375,
+      "orangeUntil": 375,
+      "yellowUntil": 386,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 32231,
+          "qty": 1
+        }
+      ]
+    }
+  ]
+}

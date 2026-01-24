@@ -1,0 +1,4242 @@
+{
+  "professionId": 171,
+  "professionName": "Alchemy",
+  "recipes": [
+    {
+      "recipeId": "cauldron-of-major-arcane-protection",
+      "professionId": 171,
+      "name": "Cauldron of Major Arcane Protection",
+      "minSkill": 0,
+      "orangeUntil": 359,
+      "yellowUntil": 369,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 22457,
+          "qty": 2
+        },
+        {
+          "itemId": 22793,
+          "qty": 7
+        },
+        {
+          "itemId": 23782,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "cauldron-of-major-fire-protection",
+      "professionId": 171,
+      "name": "Cauldron of Major Fire Protection",
+      "minSkill": 0,
+      "orangeUntil": 359,
+      "yellowUntil": 369,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 21884,
+          "qty": 2
+        },
+        {
+          "itemId": 22793,
+          "qty": 7
+        },
+        {
+          "itemId": 23782,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "cauldron-of-major-frost-protection",
+      "professionId": 171,
+      "name": "Cauldron of Major Frost Protection",
+      "minSkill": 0,
+      "orangeUntil": 359,
+      "yellowUntil": 369,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 21885,
+          "qty": 2
+        },
+        {
+          "itemId": 22793,
+          "qty": 7
+        },
+        {
+          "itemId": 23782,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "cauldron-of-major-nature-protection",
+      "professionId": 171,
+      "name": "Cauldron of Major Nature Protection",
+      "minSkill": 0,
+      "orangeUntil": 359,
+      "yellowUntil": 369,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 21886,
+          "qty": 2
+        },
+        {
+          "itemId": 22793,
+          "qty": 7
+        },
+        {
+          "itemId": 23782,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "cauldron-of-major-shadow-protection",
+      "professionId": 171,
+      "name": "Cauldron of Major Shadow Protection",
+      "minSkill": 0,
+      "orangeUntil": 359,
+      "yellowUntil": 369,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 22456,
+          "qty": 2
+        },
+        {
+          "itemId": 22793,
+          "qty": 7
+        },
+        {
+          "itemId": 23782,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "flask-of-blinding-light",
+      "professionId": 171,
+      "name": "Flask of Blinding Light",
+      "minSkill": 0,
+      "orangeUntil": 389,
+      "yellowUntil": 396,
+      "greenUntil": 404,
+      "grayAt": 405,
+      "reagents": [
+        {
+          "itemId": 22794,
+          "qty": 1
+        },
+        {
+          "itemId": 22793,
+          "qty": 3
+        },
+        {
+          "itemId": 22791,
+          "qty": 7
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "flask-of-fortification",
+      "professionId": 171,
+      "name": "Flask of Fortification",
+      "minSkill": 0,
+      "orangeUntil": 389,
+      "yellowUntil": 396,
+      "greenUntil": 404,
+      "grayAt": 405,
+      "reagents": [
+        {
+          "itemId": 22794,
+          "qty": 1
+        },
+        {
+          "itemId": 22793,
+          "qty": 3
+        },
+        {
+          "itemId": 22790,
+          "qty": 7
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "flask-of-mighty-restoration",
+      "professionId": 171,
+      "name": "Flask of Mighty Restoration",
+      "minSkill": 0,
+      "orangeUntil": 389,
+      "yellowUntil": 396,
+      "greenUntil": 404,
+      "grayAt": 405,
+      "reagents": [
+        {
+          "itemId": 22794,
+          "qty": 1
+        },
+        {
+          "itemId": 22793,
+          "qty": 3
+        },
+        {
+          "itemId": 22786,
+          "qty": 7
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "flask-of-pure-death",
+      "professionId": 171,
+      "name": "Flask of Pure Death",
+      "minSkill": 0,
+      "orangeUntil": 389,
+      "yellowUntil": 396,
+      "greenUntil": 404,
+      "grayAt": 405,
+      "reagents": [
+        {
+          "itemId": 22794,
+          "qty": 1
+        },
+        {
+          "itemId": 22793,
+          "qty": 3
+        },
+        {
+          "itemId": 22792,
+          "qty": 7
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "flask-of-relentless-assault",
+      "professionId": 171,
+      "name": "Flask of Relentless Assault",
+      "minSkill": 0,
+      "orangeUntil": 389,
+      "yellowUntil": 396,
+      "greenUntil": 404,
+      "grayAt": 405,
+      "reagents": [
+        {
+          "itemId": 22794,
+          "qty": 1
+        },
+        {
+          "itemId": 22793,
+          "qty": 3
+        },
+        {
+          "itemId": 22789,
+          "qty": 7
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "gurubashi-mojo-madness",
+      "professionId": 171,
+      "name": "Gurubashi Mojo Madness",
+      "minSkill": 0,
+      "orangeUntil": 314,
+      "yellowUntil": 321,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 12938,
+          "qty": 1
+        },
+        {
+          "itemId": 19943,
+          "qty": 1
+        },
+        {
+          "itemId": 12804,
+          "qty": 6
+        },
+        {
+          "itemId": 13468,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "super-rejuvenation-potion",
+      "professionId": 171,
+      "name": "Super Rejuvenation Potion",
+      "minSkill": 0,
+      "orangeUntil": 389,
+      "yellowUntil": 396,
+      "greenUntil": 404,
+      "grayAt": 405,
+      "reagents": [
+        {
+          "itemId": 22793,
+          "qty": 2
+        },
+        {
+          "itemId": 22786,
+          "qty": 1
+        },
+        {
+          "itemId": 22791,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-primal-earth-to-life",
+      "professionId": 171,
+      "name": "Transmute: Primal Earth to Life",
+      "minSkill": 0,
+      "orangeUntil": 384,
+      "yellowUntil": 391,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 22452,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-primal-fire-to-mana",
+      "professionId": 171,
+      "name": "Transmute: Primal Fire to Mana",
+      "minSkill": 0,
+      "orangeUntil": 384,
+      "yellowUntil": 391,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 21884,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-primal-life-to-earth",
+      "professionId": 171,
+      "name": "Transmute: Primal Life to Earth",
+      "minSkill": 0,
+      "orangeUntil": 384,
+      "yellowUntil": 391,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 21886,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-primal-mana-to-fire",
+      "professionId": 171,
+      "name": "Transmute: Primal Mana to Fire",
+      "minSkill": 0,
+      "orangeUntil": 384,
+      "yellowUntil": 391,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 22457,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-primal-shadow-to-water",
+      "professionId": 171,
+      "name": "Transmute: Primal Shadow to Water",
+      "minSkill": 0,
+      "orangeUntil": 384,
+      "yellowUntil": 391,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 22456,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-primal-water-to-shadow",
+      "professionId": 171,
+      "name": "Transmute: Primal Water to Shadow",
+      "minSkill": 0,
+      "orangeUntil": 384,
+      "yellowUntil": 391,
+      "greenUntil": 399,
+      "grayAt": 400,
+      "reagents": [
+        {
+          "itemId": 21885,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-lion-s-strength",
+      "professionId": 171,
+      "name": "Elixir of Lion's Strength",
+      "minSkill": 1,
+      "orangeUntil": 54,
+      "yellowUntil": 74,
+      "greenUntil": 94,
+      "grayAt": 95,
+      "reagents": [
+        {
+          "itemId": 2449,
+          "qty": 1
+        },
+        {
+          "itemId": 765,
+          "qty": 1
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-minor-defense",
+      "professionId": 171,
+      "name": "Elixir of Minor Defense",
+      "minSkill": 1,
+      "orangeUntil": 54,
+      "yellowUntil": 74,
+      "greenUntil": 94,
+      "grayAt": 95,
+      "reagents": [
+        {
+          "itemId": 765,
+          "qty": 2
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "minor-healing-potion",
+      "professionId": 171,
+      "name": "Minor Healing Potion",
+      "minSkill": 1,
+      "orangeUntil": 54,
+      "yellowUntil": 74,
+      "greenUntil": 94,
+      "grayAt": 95,
+      "reagents": [
+        {
+          "itemId": 2447,
+          "qty": 1
+        },
+        {
+          "itemId": 765,
+          "qty": 1
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "weak-troll-s-blood-potion",
+      "professionId": 171,
+      "name": "Weak Troll's Blood Potion",
+      "minSkill": 15,
+      "orangeUntil": 59,
+      "yellowUntil": 79,
+      "greenUntil": 99,
+      "grayAt": 100,
+      "reagents": [
+        {
+          "itemId": 2447,
+          "qty": 1
+        },
+        {
+          "itemId": 2449,
+          "qty": 2
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "minor-mana-potion",
+      "professionId": 171,
+      "name": "Minor Mana Potion",
+      "minSkill": 25,
+      "orangeUntil": 64,
+      "yellowUntil": 84,
+      "greenUntil": 104,
+      "grayAt": 105,
+      "reagents": [
+        {
+          "itemId": 785,
+          "qty": 1
+        },
+        {
+          "itemId": 765,
+          "qty": 1
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "minor-rejuvenation-potion",
+      "professionId": 171,
+      "name": "Minor Rejuvenation Potion",
+      "minSkill": 40,
+      "orangeUntil": 69,
+      "yellowUntil": 89,
+      "greenUntil": 109,
+      "grayAt": 110,
+      "reagents": [
+        {
+          "itemId": 785,
+          "qty": 2
+        },
+        {
+          "itemId": 2447,
+          "qty": 1
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "discolored-healing-potion",
+      "professionId": 171,
+      "name": "Discolored Healing Potion",
+      "minSkill": 50,
+      "orangeUntil": 79,
+      "yellowUntil": 99,
+      "greenUntil": 119,
+      "grayAt": 120,
+      "reagents": [
+        {
+          "itemId": 3164,
+          "qty": 1
+        },
+        {
+          "itemId": 2447,
+          "qty": 1
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-minor-agility",
+      "professionId": 171,
+      "name": "Elixir of Minor Agility",
+      "minSkill": 50,
+      "orangeUntil": 79,
+      "yellowUntil": 99,
+      "greenUntil": 119,
+      "grayAt": 120,
+      "reagents": [
+        {
+          "itemId": 2452,
+          "qty": 1
+        },
+        {
+          "itemId": 765,
+          "qty": 1
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-minor-fortitude",
+      "professionId": 171,
+      "name": "Elixir of Minor Fortitude",
+      "minSkill": 50,
+      "orangeUntil": 79,
+      "yellowUntil": 99,
+      "greenUntil": 119,
+      "grayAt": 120,
+      "reagents": [
+        {
+          "itemId": 2449,
+          "qty": 2
+        },
+        {
+          "itemId": 2447,
+          "qty": 1
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "lesser-healing-potion",
+      "professionId": 171,
+      "name": "Lesser Healing Potion",
+      "minSkill": 55,
+      "orangeUntil": 84,
+      "yellowUntil": 104,
+      "greenUntil": 124,
+      "grayAt": 125,
+      "reagents": [
+        {
+          "itemId": 118,
+          "qty": 1
+        },
+        {
+          "itemId": 2450,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "rage-potion",
+      "professionId": 171,
+      "name": "Rage Potion",
+      "minSkill": 60,
+      "orangeUntil": 89,
+      "yellowUntil": 109,
+      "greenUntil": 129,
+      "grayAt": 130,
+      "reagents": [
+        {
+          "itemId": 5635,
+          "qty": 2
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "swiftness-potion",
+      "professionId": 171,
+      "name": "Swiftness Potion",
+      "minSkill": 60,
+      "orangeUntil": 89,
+      "yellowUntil": 109,
+      "greenUntil": 129,
+      "grayAt": 130,
+      "reagents": [
+        {
+          "itemId": 2452,
+          "qty": 1
+        },
+        {
+          "itemId": 2450,
+          "qty": 1
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "blackmouth-oil",
+      "professionId": 171,
+      "name": "Blackmouth Oil",
+      "minSkill": 80,
+      "orangeUntil": 80,
+      "yellowUntil": 89,
+      "greenUntil": 99,
+      "grayAt": 100,
+      "reagents": [
+        {
+          "itemId": 6358,
+          "qty": 2
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-giant-growth",
+      "professionId": 171,
+      "name": "Elixir of Giant Growth",
+      "minSkill": 90,
+      "orangeUntil": 119,
+      "yellowUntil": 139,
+      "greenUntil": 159,
+      "grayAt": 160,
+      "reagents": [
+        {
+          "itemId": 6522,
+          "qty": 1
+        },
+        {
+          "itemId": 2449,
+          "qty": 1
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-water-breathing",
+      "professionId": 171,
+      "name": "Elixir of Water Breathing",
+      "minSkill": 90,
+      "orangeUntil": 119,
+      "yellowUntil": 139,
+      "greenUntil": 159,
+      "grayAt": 160,
+      "reagents": [
+        {
+          "itemId": 3820,
+          "qty": 1
+        },
+        {
+          "itemId": 6370,
+          "qty": 2
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-wisdom",
+      "professionId": 171,
+      "name": "Elixir of Wisdom",
+      "minSkill": 90,
+      "orangeUntil": 119,
+      "yellowUntil": 139,
+      "greenUntil": 159,
+      "grayAt": 160,
+      "reagents": [
+        {
+          "itemId": 785,
+          "qty": 1
+        },
+        {
+          "itemId": 2450,
+          "qty": 2
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "holy-protection-potion",
+      "professionId": 171,
+      "name": "Holy Protection Potion",
+      "minSkill": 100,
+      "orangeUntil": 129,
+      "yellowUntil": 149,
+      "greenUntil": 169,
+      "grayAt": 170,
+      "reagents": [
+        {
+          "itemId": 2453,
+          "qty": 1
+        },
+        {
+          "itemId": 2452,
+          "qty": 1
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "swim-speed-potion",
+      "professionId": 171,
+      "name": "Swim Speed Potion",
+      "minSkill": 100,
+      "orangeUntil": 129,
+      "yellowUntil": 149,
+      "greenUntil": 169,
+      "grayAt": 170,
+      "reagents": [
+        {
+          "itemId": 2452,
+          "qty": 1
+        },
+        {
+          "itemId": 6370,
+          "qty": 1
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "healing-potion",
+      "professionId": 171,
+      "name": "Healing Potion",
+      "minSkill": 110,
+      "orangeUntil": 134,
+      "yellowUntil": 154,
+      "greenUntil": 174,
+      "grayAt": 175,
+      "reagents": [
+        {
+          "itemId": 2453,
+          "qty": 1
+        },
+        {
+          "itemId": 2450,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "minor-magic-resistance-potion",
+      "professionId": 171,
+      "name": "Minor Magic Resistance Potion",
+      "minSkill": 110,
+      "orangeUntil": 134,
+      "yellowUntil": 154,
+      "greenUntil": 174,
+      "grayAt": 175,
+      "reagents": [
+        {
+          "itemId": 785,
+          "qty": 3
+        },
+        {
+          "itemId": 3355,
+          "qty": 1
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "lesser-mana-potion",
+      "professionId": 171,
+      "name": "Lesser Mana Potion",
+      "minSkill": 120,
+      "orangeUntil": 144,
+      "yellowUntil": 164,
+      "greenUntil": 184,
+      "grayAt": 185,
+      "reagents": [
+        {
+          "itemId": 785,
+          "qty": 1
+        },
+        {
+          "itemId": 3820,
+          "qty": 1
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "potion-of-curing",
+      "professionId": 171,
+      "name": "Potion of Curing",
+      "minSkill": 120,
+      "orangeUntil": 144,
+      "yellowUntil": 164,
+      "greenUntil": 184,
+      "grayAt": 185,
+      "reagents": [
+        {
+          "itemId": 1288,
+          "qty": 1
+        },
+        {
+          "itemId": 2453,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "strong-troll-s-blood-potion",
+      "professionId": 171,
+      "name": "Strong Troll's Blood Potion",
+      "minSkill": 125,
+      "orangeUntil": 149,
+      "yellowUntil": 169,
+      "greenUntil": 189,
+      "grayAt": 190,
+      "reagents": [
+        {
+          "itemId": 2453,
+          "qty": 2
+        },
+        {
+          "itemId": 2450,
+          "qty": 2
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-defense",
+      "professionId": 171,
+      "name": "Elixir of Defense",
+      "minSkill": 130,
+      "orangeUntil": 154,
+      "yellowUntil": 174,
+      "greenUntil": 194,
+      "grayAt": 195,
+      "reagents": [
+        {
+          "itemId": 3355,
+          "qty": 1
+        },
+        {
+          "itemId": 3820,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "fire-oil",
+      "professionId": 171,
+      "name": "Fire Oil",
+      "minSkill": 130,
+      "orangeUntil": 149,
+      "yellowUntil": 159,
+      "greenUntil": 169,
+      "grayAt": 170,
+      "reagents": [
+        {
+          "itemId": 6359,
+          "qty": 2
+        },
+        {
+          "itemId": 3371,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "shadow-protection-potion",
+      "professionId": 171,
+      "name": "Shadow Protection Potion",
+      "minSkill": 135,
+      "orangeUntil": 159,
+      "yellowUntil": 179,
+      "greenUntil": 199,
+      "grayAt": 200,
+      "reagents": [
+        {
+          "itemId": 3369,
+          "qty": 1
+        },
+        {
+          "itemId": 3356,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-firepower",
+      "professionId": 171,
+      "name": "Elixir of Firepower",
+      "minSkill": 140,
+      "orangeUntil": 164,
+      "yellowUntil": 184,
+      "greenUntil": 204,
+      "grayAt": 205,
+      "reagents": [
+        {
+          "itemId": 6371,
+          "qty": 2
+        },
+        {
+          "itemId": 3356,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-lesser-agility",
+      "professionId": 171,
+      "name": "Elixir of Lesser Agility",
+      "minSkill": 140,
+      "orangeUntil": 164,
+      "yellowUntil": 184,
+      "greenUntil": 204,
+      "grayAt": 205,
+      "reagents": [
+        {
+          "itemId": 3355,
+          "qty": 1
+        },
+        {
+          "itemId": 2452,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-ogre-s-strength",
+      "professionId": 171,
+      "name": "Elixir of Ogre's Strength",
+      "minSkill": 150,
+      "orangeUntil": 174,
+      "yellowUntil": 194,
+      "greenUntil": 214,
+      "grayAt": 215,
+      "reagents": [
+        {
+          "itemId": 2449,
+          "qty": 1
+        },
+        {
+          "itemId": 3356,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "free-action-potion",
+      "professionId": 171,
+      "name": "Free Action Potion",
+      "minSkill": 150,
+      "orangeUntil": 174,
+      "yellowUntil": 194,
+      "greenUntil": 214,
+      "grayAt": 215,
+      "reagents": [
+        {
+          "itemId": 6370,
+          "qty": 2
+        },
+        {
+          "itemId": 3820,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "greater-healing-potion",
+      "professionId": 171,
+      "name": "Greater Healing Potion",
+      "minSkill": 155,
+      "orangeUntil": 174,
+      "yellowUntil": 194,
+      "greenUntil": 214,
+      "grayAt": 215,
+      "reagents": [
+        {
+          "itemId": 3357,
+          "qty": 1
+        },
+        {
+          "itemId": 3356,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mana-potion",
+      "professionId": 171,
+      "name": "Mana Potion",
+      "minSkill": 160,
+      "orangeUntil": 179,
+      "yellowUntil": 199,
+      "greenUntil": 219,
+      "grayAt": 220,
+      "reagents": [
+        {
+          "itemId": 3820,
+          "qty": 1
+        },
+        {
+          "itemId": 3356,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "fire-protection-potion",
+      "professionId": 171,
+      "name": "Fire Protection Potion",
+      "minSkill": 165,
+      "orangeUntil": 209,
+      "yellowUntil": 229,
+      "greenUntil": 249,
+      "grayAt": 250,
+      "reagents": [
+        {
+          "itemId": 4402,
+          "qty": 1
+        },
+        {
+          "itemId": 6371,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "lesser-invisibility-potion",
+      "professionId": 171,
+      "name": "Lesser Invisibility Potion",
+      "minSkill": 165,
+      "orangeUntil": 184,
+      "yellowUntil": 204,
+      "greenUntil": 224,
+      "grayAt": 225,
+      "reagents": [
+        {
+          "itemId": 3818,
+          "qty": 1
+        },
+        {
+          "itemId": 3355,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "shadow-oil",
+      "professionId": 171,
+      "name": "Shadow Oil",
+      "minSkill": 165,
+      "orangeUntil": 189,
+      "yellowUntil": 209,
+      "greenUntil": 229,
+      "grayAt": 230,
+      "reagents": [
+        {
+          "itemId": 3818,
+          "qty": 4
+        },
+        {
+          "itemId": 3369,
+          "qty": 4
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-fortitude",
+      "professionId": 171,
+      "name": "Elixir of Fortitude",
+      "minSkill": 175,
+      "orangeUntil": 194,
+      "yellowUntil": 214,
+      "greenUntil": 234,
+      "grayAt": 235,
+      "reagents": [
+        {
+          "itemId": 3355,
+          "qty": 1
+        },
+        {
+          "itemId": 3821,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "great-rage-potion",
+      "professionId": 171,
+      "name": "Great Rage Potion",
+      "minSkill": 175,
+      "orangeUntil": 194,
+      "yellowUntil": 214,
+      "greenUntil": 234,
+      "grayAt": 235,
+      "reagents": [
+        {
+          "itemId": 5637,
+          "qty": 1
+        },
+        {
+          "itemId": 3356,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mighty-troll-s-blood-potion",
+      "professionId": 171,
+      "name": "Mighty Troll's Blood Potion",
+      "minSkill": 180,
+      "orangeUntil": 199,
+      "yellowUntil": 219,
+      "greenUntil": 239,
+      "grayAt": 240,
+      "reagents": [
+        {
+          "itemId": 3357,
+          "qty": 1
+        },
+        {
+          "itemId": 2453,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-agility",
+      "professionId": 171,
+      "name": "Elixir of Agility",
+      "minSkill": 185,
+      "orangeUntil": 204,
+      "yellowUntil": 224,
+      "greenUntil": 244,
+      "grayAt": 245,
+      "reagents": [
+        {
+          "itemId": 3820,
+          "qty": 1
+        },
+        {
+          "itemId": 3821,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-frost-power",
+      "professionId": 171,
+      "name": "Elixir of Frost Power",
+      "minSkill": 190,
+      "orangeUntil": 209,
+      "yellowUntil": 229,
+      "greenUntil": 249,
+      "grayAt": 250,
+      "reagents": [
+        {
+          "itemId": 3819,
+          "qty": 2
+        },
+        {
+          "itemId": 3358,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "frost-protection-potion",
+      "professionId": 171,
+      "name": "Frost Protection Potion",
+      "minSkill": 190,
+      "orangeUntil": 204,
+      "yellowUntil": 224,
+      "greenUntil": 244,
+      "grayAt": 245,
+      "reagents": [
+        {
+          "itemId": 3819,
+          "qty": 1
+        },
+        {
+          "itemId": 3821,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "nature-protection-potion",
+      "professionId": 171,
+      "name": "Nature Protection Potion",
+      "minSkill": 190,
+      "orangeUntil": 209,
+      "yellowUntil": 229,
+      "greenUntil": 249,
+      "grayAt": 250,
+      "reagents": [
+        {
+          "itemId": 3357,
+          "qty": 1
+        },
+        {
+          "itemId": 3820,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-detect-lesser-invisibility",
+      "professionId": 171,
+      "name": "Elixir of Detect Lesser Invisibility",
+      "minSkill": 195,
+      "orangeUntil": 214,
+      "yellowUntil": 234,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 3358,
+          "qty": 1
+        },
+        {
+          "itemId": 3818,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-greater-defense",
+      "professionId": 171,
+      "name": "Elixir of Greater Defense",
+      "minSkill": 195,
+      "orangeUntil": 214,
+      "yellowUntil": 234,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 3355,
+          "qty": 1
+        },
+        {
+          "itemId": 3821,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "catseye-elixir",
+      "professionId": 171,
+      "name": "Catseye Elixir",
+      "minSkill": 200,
+      "orangeUntil": 219,
+      "yellowUntil": 239,
+      "greenUntil": 259,
+      "grayAt": 260,
+      "reagents": [
+        {
+          "itemId": 3821,
+          "qty": 1
+        },
+        {
+          "itemId": 3818,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "frost-oil",
+      "professionId": 171,
+      "name": "Frost Oil",
+      "minSkill": 200,
+      "orangeUntil": 219,
+      "yellowUntil": 239,
+      "greenUntil": 259,
+      "grayAt": 260,
+      "reagents": [
+        {
+          "itemId": 3358,
+          "qty": 4
+        },
+        {
+          "itemId": 3819,
+          "qty": 2
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "greater-mana-potion",
+      "professionId": 171,
+      "name": "Greater Mana Potion",
+      "minSkill": 205,
+      "orangeUntil": 219,
+      "yellowUntil": 239,
+      "greenUntil": 259,
+      "grayAt": 260,
+      "reagents": [
+        {
+          "itemId": 3358,
+          "qty": 1
+        },
+        {
+          "itemId": 3821,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "oil-of-immolation",
+      "professionId": 171,
+      "name": "Oil of Immolation",
+      "minSkill": 205,
+      "orangeUntil": 219,
+      "yellowUntil": 239,
+      "greenUntil": 259,
+      "grayAt": 260,
+      "reagents": [
+        {
+          "itemId": 4625,
+          "qty": 1
+        },
+        {
+          "itemId": 3821,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "goblin-rocket-fuel",
+      "professionId": 171,
+      "name": "Goblin Rocket Fuel",
+      "minSkill": 210,
+      "orangeUntil": 224,
+      "yellowUntil": 244,
+      "greenUntil": 264,
+      "grayAt": 265,
+      "reagents": [
+        {
+          "itemId": 4625,
+          "qty": 1
+        },
+        {
+          "itemId": 9260,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "magic-resistance-potion",
+      "professionId": 171,
+      "name": "Magic Resistance Potion",
+      "minSkill": 210,
+      "orangeUntil": 224,
+      "yellowUntil": 244,
+      "greenUntil": 264,
+      "grayAt": 265,
+      "reagents": [
+        {
+          "itemId": 3358,
+          "qty": 1
+        },
+        {
+          "itemId": 8831,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-greater-water-breathing",
+      "professionId": 171,
+      "name": "Elixir of Greater Water Breathing",
+      "minSkill": 215,
+      "orangeUntil": 229,
+      "yellowUntil": 249,
+      "greenUntil": 269,
+      "grayAt": 270,
+      "reagents": [
+        {
+          "itemId": 7972,
+          "qty": 1
+        },
+        {
+          "itemId": 8831,
+          "qty": 2
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "lesser-stoneshield-potion",
+      "professionId": 171,
+      "name": "Lesser Stoneshield Potion",
+      "minSkill": 215,
+      "orangeUntil": 229,
+      "yellowUntil": 249,
+      "greenUntil": 269,
+      "grayAt": 270,
+      "reagents": [
+        {
+          "itemId": 3858,
+          "qty": 1
+        },
+        {
+          "itemId": 3821,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "restorative-potion",
+      "professionId": 171,
+      "name": "Restorative Potion",
+      "minSkill": 215,
+      "orangeUntil": 224,
+      "yellowUntil": 244,
+      "greenUntil": 264,
+      "grayAt": 265,
+      "reagents": [
+        {
+          "itemId": 7067,
+          "qty": 1
+        },
+        {
+          "itemId": 3821,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "superior-healing-potion",
+      "professionId": 171,
+      "name": "Superior Healing Potion",
+      "minSkill": 215,
+      "orangeUntil": 229,
+      "yellowUntil": 249,
+      "greenUntil": 269,
+      "grayAt": 270,
+      "reagents": [
+        {
+          "itemId": 8838,
+          "qty": 1
+        },
+        {
+          "itemId": 3358,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "philosopher-s-stone",
+      "professionId": 171,
+      "name": "Philosopher's Stone",
+      "minSkill": 225,
+      "orangeUntil": 239,
+      "yellowUntil": 259,
+      "greenUntil": 279,
+      "grayAt": 280,
+      "reagents": [
+        {
+          "itemId": 3575,
+          "qty": 4
+        },
+        {
+          "itemId": 9262,
+          "qty": 1
+        },
+        {
+          "itemId": 8831,
+          "qty": 4
+        },
+        {
+          "itemId": 4625,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-iron-to-gold",
+      "professionId": 171,
+      "name": "Transmute: Iron to Gold",
+      "minSkill": 225,
+      "orangeUntil": 239,
+      "yellowUntil": 259,
+      "greenUntil": 279,
+      "grayAt": 280,
+      "reagents": [
+        {
+          "itemId": 3575,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-mithril-to-truesilver",
+      "professionId": 171,
+      "name": "Transmute: Mithril to Truesilver",
+      "minSkill": 225,
+      "orangeUntil": 239,
+      "yellowUntil": 259,
+      "greenUntil": 279,
+      "grayAt": 280,
+      "reagents": [
+        {
+          "itemId": 3860,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "wildvine-potion",
+      "professionId": 171,
+      "name": "Wildvine Potion",
+      "minSkill": 225,
+      "orangeUntil": 239,
+      "yellowUntil": 259,
+      "greenUntil": 279,
+      "grayAt": 280,
+      "reagents": [
+        {
+          "itemId": 8153,
+          "qty": 1
+        },
+        {
+          "itemId": 8831,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "dreamless-sleep-potion",
+      "professionId": 171,
+      "name": "Dreamless Sleep Potion",
+      "minSkill": 230,
+      "orangeUntil": 244,
+      "yellowUntil": 264,
+      "greenUntil": 284,
+      "grayAt": 285,
+      "reagents": [
+        {
+          "itemId": 8831,
+          "qty": 3
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-detect-undead",
+      "professionId": 171,
+      "name": "Elixir of Detect Undead",
+      "minSkill": 230,
+      "orangeUntil": 244,
+      "yellowUntil": 264,
+      "greenUntil": 284,
+      "grayAt": 285,
+      "reagents": [
+        {
+          "itemId": 8836,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "arcane-elixir",
+      "professionId": 171,
+      "name": "Arcane Elixir",
+      "minSkill": 235,
+      "orangeUntil": 249,
+      "yellowUntil": 269,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 8839,
+          "qty": 1
+        },
+        {
+          "itemId": 3821,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-greater-intellect",
+      "professionId": 171,
+      "name": "Elixir of Greater Intellect",
+      "minSkill": 235,
+      "orangeUntil": 249,
+      "yellowUntil": 269,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 8839,
+          "qty": 1
+        },
+        {
+          "itemId": 3358,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "invisibility-potion",
+      "professionId": 171,
+      "name": "Invisibility Potion",
+      "minSkill": 235,
+      "orangeUntil": 249,
+      "yellowUntil": 269,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 8845,
+          "qty": 1
+        },
+        {
+          "itemId": 8838,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-dream-vision",
+      "professionId": 171,
+      "name": "Elixir of Dream Vision",
+      "minSkill": 240,
+      "orangeUntil": 254,
+      "yellowUntil": 274,
+      "greenUntil": 294,
+      "grayAt": 295,
+      "reagents": [
+        {
+          "itemId": 8831,
+          "qty": 3
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-greater-agility",
+      "professionId": 171,
+      "name": "Elixir of Greater Agility",
+      "minSkill": 240,
+      "orangeUntil": 254,
+      "yellowUntil": 274,
+      "greenUntil": 294,
+      "grayAt": 295,
+      "reagents": [
+        {
+          "itemId": 8838,
+          "qty": 1
+        },
+        {
+          "itemId": 3821,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "gift-of-arthas",
+      "professionId": 171,
+      "name": "Gift of Arthas",
+      "minSkill": 240,
+      "orangeUntil": 254,
+      "yellowUntil": 274,
+      "greenUntil": 294,
+      "grayAt": 295,
+      "reagents": [
+        {
+          "itemId": 8836,
+          "qty": 1
+        },
+        {
+          "itemId": 8839,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-giants",
+      "professionId": 171,
+      "name": "Elixir of Giants",
+      "minSkill": 245,
+      "orangeUntil": 259,
+      "yellowUntil": 279,
+      "greenUntil": 299,
+      "grayAt": 300,
+      "reagents": [
+        {
+          "itemId": 8838,
+          "qty": 1
+        },
+        {
+          "itemId": 8846,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "ghost-dye",
+      "professionId": 171,
+      "name": "Ghost Dye",
+      "minSkill": 245,
+      "orangeUntil": 259,
+      "yellowUntil": 279,
+      "greenUntil": 299,
+      "grayAt": 300,
+      "reagents": [
+        {
+          "itemId": 8845,
+          "qty": 2
+        },
+        {
+          "itemId": 4342,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-demonslaying",
+      "professionId": 171,
+      "name": "Elixir of Demonslaying",
+      "minSkill": 250,
+      "orangeUntil": 264,
+      "yellowUntil": 284,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 8846,
+          "qty": 1
+        },
+        {
+          "itemId": 8845,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-detect-demon",
+      "professionId": 171,
+      "name": "Elixir of Detect Demon",
+      "minSkill": 250,
+      "orangeUntil": 264,
+      "yellowUntil": 284,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 8846,
+          "qty": 2
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-greater-firepower",
+      "professionId": 171,
+      "name": "Elixir of Greater Firepower",
+      "minSkill": 250,
+      "orangeUntil": 264,
+      "yellowUntil": 284,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 6371,
+          "qty": 3
+        },
+        {
+          "itemId": 4625,
+          "qty": 3
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-shadow-power",
+      "professionId": 171,
+      "name": "Elixir of Shadow Power",
+      "minSkill": 250,
+      "orangeUntil": 264,
+      "yellowUntil": 284,
+      "greenUntil": 304,
+      "grayAt": 305,
+      "reagents": [
+        {
+          "itemId": 8845,
+          "qty": 3
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "limited-invulnerability-potion",
+      "professionId": 171,
+      "name": "Limited Invulnerability Potion",
+      "minSkill": 250,
+      "orangeUntil": 274,
+      "yellowUntil": 294,
+      "greenUntil": 314,
+      "grayAt": 315,
+      "reagents": [
+        {
+          "itemId": 8839,
+          "qty": 2
+        },
+        {
+          "itemId": 8845,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "stonescale-oil",
+      "professionId": 171,
+      "name": "Stonescale Oil",
+      "minSkill": 250,
+      "orangeUntil": 250,
+      "yellowUntil": 254,
+      "greenUntil": 259,
+      "grayAt": 260,
+      "reagents": [
+        {
+          "itemId": 13422,
+          "qty": 1
+        },
+        {
+          "itemId": 3372,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mighty-rage-potion",
+      "professionId": 171,
+      "name": "Mighty Rage Potion",
+      "minSkill": 255,
+      "orangeUntil": 269,
+      "yellowUntil": 289,
+      "greenUntil": 309,
+      "grayAt": 310,
+      "reagents": [
+        {
+          "itemId": 8846,
+          "qty": 3
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "superior-mana-potion",
+      "professionId": 171,
+      "name": "Superior Mana Potion",
+      "minSkill": 260,
+      "orangeUntil": 274,
+      "yellowUntil": 294,
+      "greenUntil": 314,
+      "grayAt": 315,
+      "reagents": [
+        {
+          "itemId": 8838,
+          "qty": 2
+        },
+        {
+          "itemId": 8839,
+          "qty": 2
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-superior-defense",
+      "professionId": 171,
+      "name": "Elixir of Superior Defense",
+      "minSkill": 265,
+      "orangeUntil": 279,
+      "yellowUntil": 299,
+      "greenUntil": 319,
+      "grayAt": 320,
+      "reagents": [
+        {
+          "itemId": 13423,
+          "qty": 2
+        },
+        {
+          "itemId": 8838,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-the-sages",
+      "professionId": 171,
+      "name": "Elixir of the Sages",
+      "minSkill": 270,
+      "orangeUntil": 284,
+      "yellowUntil": 304,
+      "greenUntil": 324,
+      "grayAt": 325,
+      "reagents": [
+        {
+          "itemId": 13463,
+          "qty": 1
+        },
+        {
+          "itemId": 13466,
+          "qty": 2
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-brute-force",
+      "professionId": 171,
+      "name": "Elixir of Brute Force",
+      "minSkill": 275,
+      "orangeUntil": 289,
+      "yellowUntil": 309,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 8846,
+          "qty": 2
+        },
+        {
+          "itemId": 13466,
+          "qty": 2
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "greater-dreamless-sleep-potion",
+      "professionId": 171,
+      "name": "Greater Dreamless Sleep Potion",
+      "minSkill": 275,
+      "orangeUntil": 289,
+      "yellowUntil": 309,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 13463,
+          "qty": 2
+        },
+        {
+          "itemId": 13464,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mageblood-potion",
+      "professionId": 171,
+      "name": "Mageblood Potion",
+      "minSkill": 275,
+      "orangeUntil": 289,
+      "yellowUntil": 309,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 13463,
+          "qty": 1
+        },
+        {
+          "itemId": 13466,
+          "qty": 2
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "major-healing-potion",
+      "professionId": 171,
+      "name": "Major Healing Potion",
+      "minSkill": 275,
+      "orangeUntil": 289,
+      "yellowUntil": 309,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 13464,
+          "qty": 2
+        },
+        {
+          "itemId": 13465,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-air-to-fire",
+      "professionId": 171,
+      "name": "Transmute: Air to Fire",
+      "minSkill": 275,
+      "orangeUntil": 275,
+      "yellowUntil": 281,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 7082,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-arcanite",
+      "professionId": 171,
+      "name": "Transmute: Arcanite",
+      "minSkill": 275,
+      "orangeUntil": 275,
+      "yellowUntil": 281,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 12359,
+          "qty": 1
+        },
+        {
+          "itemId": 12363,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-earth-to-life",
+      "professionId": 171,
+      "name": "Transmute: Earth to Life",
+      "minSkill": 275,
+      "orangeUntil": 275,
+      "yellowUntil": 281,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 7076,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-earth-to-water",
+      "professionId": 171,
+      "name": "Transmute: Earth to Water",
+      "minSkill": 275,
+      "orangeUntil": 275,
+      "yellowUntil": 281,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 7076,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-fire-to-earth",
+      "professionId": 171,
+      "name": "Transmute: Fire to Earth",
+      "minSkill": 275,
+      "orangeUntil": 275,
+      "yellowUntil": 281,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 7078,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-life-to-earth",
+      "professionId": 171,
+      "name": "Transmute: Life to Earth",
+      "minSkill": 275,
+      "orangeUntil": 275,
+      "yellowUntil": 281,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 12803,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-undeath-to-water",
+      "professionId": 171,
+      "name": "Transmute: Undeath to Water",
+      "minSkill": 275,
+      "orangeUntil": 275,
+      "yellowUntil": 281,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 12808,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-water-to-air",
+      "professionId": 171,
+      "name": "Transmute: Water to Air",
+      "minSkill": 275,
+      "orangeUntil": 275,
+      "yellowUntil": 281,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 7080,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-water-to-undeath",
+      "professionId": 171,
+      "name": "Transmute: Water to Undeath",
+      "minSkill": 275,
+      "orangeUntil": 275,
+      "yellowUntil": 281,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 7080,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-the-mongoose",
+      "professionId": 171,
+      "name": "Elixir of the Mongoose",
+      "minSkill": 280,
+      "orangeUntil": 294,
+      "yellowUntil": 314,
+      "greenUntil": 334,
+      "grayAt": 335,
+      "reagents": [
+        {
+          "itemId": 13465,
+          "qty": 2
+        },
+        {
+          "itemId": 13466,
+          "qty": 2
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "greater-stoneshield-potion",
+      "professionId": 171,
+      "name": "Greater Stoneshield Potion",
+      "minSkill": 280,
+      "orangeUntil": 294,
+      "yellowUntil": 314,
+      "greenUntil": 334,
+      "grayAt": 335,
+      "reagents": [
+        {
+          "itemId": 13423,
+          "qty": 2
+        },
+        {
+          "itemId": 10620,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "greater-arcane-elixir",
+      "professionId": 171,
+      "name": "Greater Arcane Elixir",
+      "minSkill": 285,
+      "orangeUntil": 299,
+      "yellowUntil": 319,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 13463,
+          "qty": 3
+        },
+        {
+          "itemId": 13465,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "living-action-potion",
+      "professionId": 171,
+      "name": "Living Action Potion",
+      "minSkill": 285,
+      "orangeUntil": 299,
+      "yellowUntil": 319,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 13467,
+          "qty": 2
+        },
+        {
+          "itemId": 13465,
+          "qty": 2
+        },
+        {
+          "itemId": 10286,
+          "qty": 2
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "purification-potion",
+      "professionId": 171,
+      "name": "Purification Potion",
+      "minSkill": 285,
+      "orangeUntil": 299,
+      "yellowUntil": 319,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 13467,
+          "qty": 2
+        },
+        {
+          "itemId": 13466,
+          "qty": 2
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "greater-arcane-protection-potion",
+      "professionId": 171,
+      "name": "Greater Arcane Protection Potion",
+      "minSkill": 290,
+      "orangeUntil": 304,
+      "yellowUntil": 324,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 11176,
+          "qty": 1
+        },
+        {
+          "itemId": 13463,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "greater-fire-protection-potion",
+      "professionId": 171,
+      "name": "Greater Fire Protection Potion",
+      "minSkill": 290,
+      "orangeUntil": 304,
+      "yellowUntil": 324,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 7068,
+          "qty": 1
+        },
+        {
+          "itemId": 13463,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "greater-frost-protection-potion",
+      "professionId": 171,
+      "name": "Greater Frost Protection Potion",
+      "minSkill": 290,
+      "orangeUntil": 304,
+      "yellowUntil": 324,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 7070,
+          "qty": 1
+        },
+        {
+          "itemId": 13463,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "greater-nature-protection-potion",
+      "professionId": 171,
+      "name": "Greater Nature Protection Potion",
+      "minSkill": 290,
+      "orangeUntil": 304,
+      "yellowUntil": 324,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 7067,
+          "qty": 1
+        },
+        {
+          "itemId": 13463,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "greater-shadow-protection-potion",
+      "professionId": 171,
+      "name": "Greater Shadow Protection Potion",
+      "minSkill": 290,
+      "orangeUntil": 304,
+      "yellowUntil": 324,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 3824,
+          "qty": 1
+        },
+        {
+          "itemId": 13463,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "major-troll-s-blood-potion",
+      "professionId": 171,
+      "name": "Major Troll's Blood Potion",
+      "minSkill": 290,
+      "orangeUntil": 304,
+      "yellowUntil": 324,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 8846,
+          "qty": 1
+        },
+        {
+          "itemId": 13466,
+          "qty": 2
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "major-mana-potion",
+      "professionId": 171,
+      "name": "Major Mana Potion",
+      "minSkill": 295,
+      "orangeUntil": 309,
+      "yellowUntil": 329,
+      "greenUntil": 349,
+      "grayAt": 350,
+      "reagents": [
+        {
+          "itemId": 13463,
+          "qty": 3
+        },
+        {
+          "itemId": 13467,
+          "qty": 2
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "adept-s-elixir",
+      "professionId": 171,
+      "name": "Adept's Elixir",
+      "minSkill": 300,
+      "orangeUntil": 314,
+      "yellowUntil": 321,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 13463,
+          "qty": 1
+        },
+        {
+          "itemId": 22785,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "alchemist-s-stone",
+      "professionId": 171,
+      "name": "Alchemist's Stone",
+      "minSkill": 300,
+      "orangeUntil": 364,
+      "yellowUntil": 371,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 9149,
+          "qty": 1
+        },
+        {
+          "itemId": 25867,
+          "qty": 1
+        },
+        {
+          "itemId": 25868,
+          "qty": 1
+        },
+        {
+          "itemId": 22794,
+          "qty": 2
+        },
+        {
+          "itemId": 23571,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "flask-of-chromatic-resistance",
+      "professionId": 171,
+      "name": "Flask of Chromatic Resistance",
+      "minSkill": 300,
+      "orangeUntil": 314,
+      "yellowUntil": 321,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 13467,
+          "qty": 7
+        },
+        {
+          "itemId": 13465,
+          "qty": 3
+        },
+        {
+          "itemId": 13468,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "flask-of-distilled-wisdom",
+      "professionId": 171,
+      "name": "Flask of Distilled Wisdom",
+      "minSkill": 300,
+      "orangeUntil": 314,
+      "yellowUntil": 321,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 13463,
+          "qty": 7
+        },
+        {
+          "itemId": 13467,
+          "qty": 3
+        },
+        {
+          "itemId": 13468,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "flask-of-petrification",
+      "professionId": 171,
+      "name": "Flask of Petrification",
+      "minSkill": 300,
+      "orangeUntil": 314,
+      "yellowUntil": 321,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 13423,
+          "qty": 7
+        },
+        {
+          "itemId": 13465,
+          "qty": 3
+        },
+        {
+          "itemId": 13468,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "flask-of-supreme-power",
+      "professionId": 171,
+      "name": "Flask of Supreme Power",
+      "minSkill": 300,
+      "orangeUntil": 314,
+      "yellowUntil": 321,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 13463,
+          "qty": 7
+        },
+        {
+          "itemId": 13465,
+          "qty": 3
+        },
+        {
+          "itemId": 13468,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "flask-of-the-titans",
+      "professionId": 171,
+      "name": "Flask of the Titans",
+      "minSkill": 300,
+      "orangeUntil": 314,
+      "yellowUntil": 321,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 8846,
+          "qty": 7
+        },
+        {
+          "itemId": 13423,
+          "qty": 3
+        },
+        {
+          "itemId": 13468,
+          "qty": 1
+        },
+        {
+          "itemId": 8925,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "major-rejuvenation-potion",
+      "professionId": 171,
+      "name": "Major Rejuvenation Potion",
+      "minSkill": 300,
+      "orangeUntil": 309,
+      "yellowUntil": 319,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 10286,
+          "qty": 1
+        },
+        {
+          "itemId": 13464,
+          "qty": 4
+        },
+        {
+          "itemId": 13463,
+          "qty": 4
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "onslaught-elixir",
+      "professionId": 171,
+      "name": "Onslaught Elixir",
+      "minSkill": 300,
+      "orangeUntil": 314,
+      "yellowUntil": 321,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 13465,
+          "qty": 1
+        },
+        {
+          "itemId": 22785,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-elemental-fire",
+      "professionId": 171,
+      "name": "Transmute: Elemental Fire",
+      "minSkill": 300,
+      "orangeUntil": 300,
+      "yellowUntil": 304,
+      "greenUntil": 309,
+      "grayAt": 310,
+      "reagents": [
+        {
+          "itemId": 7077,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "volatile-healing-potion",
+      "professionId": 171,
+      "name": "Volatile Healing Potion",
+      "minSkill": 300,
+      "orangeUntil": 314,
+      "yellowUntil": 321,
+      "greenUntil": 329,
+      "grayAt": 330,
+      "reagents": [
+        {
+          "itemId": 13464,
+          "qty": 1
+        },
+        {
+          "itemId": 22785,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-camouflage",
+      "professionId": 171,
+      "name": "Elixir of Camouflage",
+      "minSkill": 305,
+      "orangeUntil": 319,
+      "yellowUntil": 326,
+      "greenUntil": 334,
+      "grayAt": 335,
+      "reagents": [
+        {
+          "itemId": 22787,
+          "qty": 1
+        },
+        {
+          "itemId": 22785,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-major-strength",
+      "professionId": 171,
+      "name": "Elixir of Major Strength",
+      "minSkill": 305,
+      "orangeUntil": 319,
+      "yellowUntil": 326,
+      "greenUntil": 334,
+      "grayAt": 335,
+      "reagents": [
+        {
+          "itemId": 13465,
+          "qty": 1
+        },
+        {
+          "itemId": 22785,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-healing-power",
+      "professionId": 171,
+      "name": "Elixir of Healing Power",
+      "minSkill": 310,
+      "orangeUntil": 324,
+      "yellowUntil": 331,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 13464,
+          "qty": 1
+        },
+        {
+          "itemId": 22786,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-major-fortitude",
+      "professionId": 171,
+      "name": "Elixir of Major Fortitude",
+      "minSkill": 310,
+      "orangeUntil": 324,
+      "yellowUntil": 331,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 22787,
+          "qty": 2
+        },
+        {
+          "itemId": 22785,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "unstable-mana-potion",
+      "professionId": 171,
+      "name": "Unstable Mana Potion",
+      "minSkill": 310,
+      "orangeUntil": 324,
+      "yellowUntil": 331,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 22787,
+          "qty": 2
+        },
+        {
+          "itemId": 22785,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-mastery",
+      "professionId": 171,
+      "name": "Elixir of Mastery",
+      "minSkill": 315,
+      "orangeUntil": 329,
+      "yellowUntil": 336,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 22789,
+          "qty": 3
+        },
+        {
+          "itemId": 22785,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "sneaking-potion",
+      "professionId": 171,
+      "name": "Sneaking Potion",
+      "minSkill": 315,
+      "orangeUntil": 329,
+      "yellowUntil": 336,
+      "greenUntil": 344,
+      "grayAt": 345,
+      "reagents": [
+        {
+          "itemId": 22787,
+          "qty": 2
+        },
+        {
+          "itemId": 22785,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "earthen-elixir",
+      "professionId": 171,
+      "name": "Earthen Elixir",
+      "minSkill": 320,
+      "orangeUntil": 334,
+      "yellowUntil": 341,
+      "greenUntil": 349,
+      "grayAt": 350,
+      "reagents": [
+        {
+          "itemId": 22786,
+          "qty": 1
+        },
+        {
+          "itemId": 22787,
+          "qty": 2
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-draenic-wisdom",
+      "professionId": 171,
+      "name": "Elixir of Draenic Wisdom",
+      "minSkill": 320,
+      "orangeUntil": 334,
+      "yellowUntil": 341,
+      "greenUntil": 349,
+      "grayAt": 350,
+      "reagents": [
+        {
+          "itemId": 22785,
+          "qty": 1
+        },
+        {
+          "itemId": 22789,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-major-frost-power",
+      "professionId": 171,
+      "name": "Elixir of Major Frost Power",
+      "minSkill": 320,
+      "orangeUntil": 334,
+      "yellowUntil": 341,
+      "greenUntil": 349,
+      "grayAt": 350,
+      "reagents": [
+        {
+          "itemId": 22578,
+          "qty": 2
+        },
+        {
+          "itemId": 22790,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "insane-strength-potion",
+      "professionId": 171,
+      "name": "Insane Strength Potion",
+      "minSkill": 320,
+      "orangeUntil": 334,
+      "yellowUntil": 341,
+      "greenUntil": 349,
+      "grayAt": 350,
+      "reagents": [
+        {
+          "itemId": 22789,
+          "qty": 3
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-the-searching-eye",
+      "professionId": 171,
+      "name": "Elixir of the Searching Eye",
+      "minSkill": 325,
+      "orangeUntil": 339,
+      "yellowUntil": 346,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 22787,
+          "qty": 2
+        },
+        {
+          "itemId": 22789,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mad-alchemist-s-potion",
+      "professionId": 171,
+      "name": "Mad Alchemist's Potion",
+      "minSkill": 325,
+      "orangeUntil": 334,
+      "yellowUntil": 341,
+      "greenUntil": 349,
+      "grayAt": 350,
+      "reagents": [
+        {
+          "itemId": 8925,
+          "qty": 1
+        },
+        {
+          "itemId": 22787,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "mercurial-stone",
+      "professionId": 171,
+      "name": "Mercurial Stone",
+      "minSkill": 325,
+      "orangeUntil": 339,
+      "yellowUntil": 346,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 22452,
+          "qty": 1
+        },
+        {
+          "itemId": 21886,
+          "qty": 1
+        },
+        {
+          "itemId": 22457,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "super-healing-potion",
+      "professionId": 171,
+      "name": "Super Healing Potion",
+      "minSkill": 325,
+      "orangeUntil": 339,
+      "yellowUntil": 346,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 22791,
+          "qty": 2
+        },
+        {
+          "itemId": 22785,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-ironskin",
+      "professionId": 171,
+      "name": "Elixir of Ironskin",
+      "minSkill": 330,
+      "orangeUntil": 344,
+      "yellowUntil": 351,
+      "greenUntil": 359,
+      "grayAt": 360,
+      "reagents": [
+        {
+          "itemId": 22790,
+          "qty": 1
+        },
+        {
+          "itemId": 22787,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-major-agility",
+      "professionId": 171,
+      "name": "Elixir of Major Agility",
+      "minSkill": 330,
+      "orangeUntil": 344,
+      "yellowUntil": 351,
+      "greenUntil": 359,
+      "grayAt": 360,
+      "reagents": [
+        {
+          "itemId": 22789,
+          "qty": 1
+        },
+        {
+          "itemId": 22785,
+          "qty": 2
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "fel-strength-elixir",
+      "professionId": 171,
+      "name": "Fel Strength Elixir",
+      "minSkill": 335,
+      "orangeUntil": 349,
+      "yellowUntil": 356,
+      "greenUntil": 364,
+      "grayAt": 365,
+      "reagents": [
+        {
+          "itemId": 22789,
+          "qty": 1
+        },
+        {
+          "itemId": 22792,
+          "qty": 2
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "shrouding-potion",
+      "professionId": 171,
+      "name": "Shrouding Potion",
+      "minSkill": 335,
+      "orangeUntil": 349,
+      "yellowUntil": 356,
+      "greenUntil": 364,
+      "grayAt": 365,
+      "reagents": [
+        {
+          "itemId": 22787,
+          "qty": 3
+        },
+        {
+          "itemId": 22791,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "super-mana-potion",
+      "professionId": 171,
+      "name": "Super Mana Potion",
+      "minSkill": 340,
+      "orangeUntil": 354,
+      "yellowUntil": 361,
+      "greenUntil": 369,
+      "grayAt": 370,
+      "reagents": [
+        {
+          "itemId": 22786,
+          "qty": 2
+        },
+        {
+          "itemId": 22785,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-major-defense",
+      "professionId": 171,
+      "name": "Elixir of Major Defense",
+      "minSkill": 345,
+      "orangeUntil": 359,
+      "yellowUntil": 366,
+      "greenUntil": 374,
+      "grayAt": 375,
+      "reagents": [
+        {
+          "itemId": 22790,
+          "qty": 3
+        },
+        {
+          "itemId": 22789,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-major-firepower",
+      "professionId": 171,
+      "name": "Elixir of Major Firepower",
+      "minSkill": 345,
+      "orangeUntil": 359,
+      "yellowUntil": 366,
+      "greenUntil": 374,
+      "grayAt": 375,
+      "reagents": [
+        {
+          "itemId": 22574,
+          "qty": 2
+        },
+        {
+          "itemId": 22790,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "fel-regeneration-potion",
+      "professionId": 171,
+      "name": "Fel Regeneration Potion",
+      "minSkill": 345,
+      "orangeUntil": 359,
+      "yellowUntil": 366,
+      "greenUntil": 374,
+      "grayAt": 375,
+      "reagents": [
+        {
+          "itemId": 22785,
+          "qty": 2
+        },
+        {
+          "itemId": 22792,
+          "qty": 3
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "destruction-potion",
+      "professionId": 171,
+      "name": "Destruction Potion",
+      "minSkill": 350,
+      "orangeUntil": 364,
+      "yellowUntil": 371,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 22792,
+          "qty": 2
+        },
+        {
+          "itemId": 22791,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-major-shadow-power",
+      "professionId": 171,
+      "name": "Elixir of Major Shadow Power",
+      "minSkill": 350,
+      "orangeUntil": 364,
+      "yellowUntil": 371,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 22790,
+          "qty": 1
+        },
+        {
+          "itemId": 22792,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "haste-potion",
+      "professionId": 171,
+      "name": "Haste Potion",
+      "minSkill": 350,
+      "orangeUntil": 364,
+      "yellowUntil": 371,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 22789,
+          "qty": 2
+        },
+        {
+          "itemId": 22791,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "heroic-potion",
+      "professionId": 171,
+      "name": "Heroic Potion",
+      "minSkill": 350,
+      "orangeUntil": 364,
+      "yellowUntil": 371,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 22789,
+          "qty": 2
+        },
+        {
+          "itemId": 22790,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "major-dreamless-sleep-potion",
+      "professionId": 171,
+      "name": "Major Dreamless Sleep Potion",
+      "minSkill": 350,
+      "orangeUntil": 364,
+      "yellowUntil": 371,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 22786,
+          "qty": 1
+        },
+        {
+          "itemId": 22792,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-earthstorm-diamond",
+      "professionId": 171,
+      "name": "Transmute: Earthstorm Diamond",
+      "minSkill": 350,
+      "orangeUntil": 364,
+      "yellowUntil": 371,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23079,
+          "qty": 3
+        },
+        {
+          "itemId": 23107,
+          "qty": 3
+        },
+        {
+          "itemId": 23112,
+          "qty": 3
+        },
+        {
+          "itemId": 22452,
+          "qty": 2
+        },
+        {
+          "itemId": 21885,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-primal-air-to-fire",
+      "professionId": 171,
+      "name": "Transmute: Primal Air to Fire",
+      "minSkill": 350,
+      "orangeUntil": 364,
+      "yellowUntil": 371,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 22451,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-primal-earth-to-water",
+      "professionId": 171,
+      "name": "Transmute: Primal Earth to Water",
+      "minSkill": 350,
+      "orangeUntil": 364,
+      "yellowUntil": 371,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 22452,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-primal-fire-to-earth",
+      "professionId": 171,
+      "name": "Transmute: Primal Fire to Earth",
+      "minSkill": 350,
+      "orangeUntil": 364,
+      "yellowUntil": 371,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 21884,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-primal-might",
+      "professionId": 171,
+      "name": "Transmute: Primal Might",
+      "minSkill": 350,
+      "orangeUntil": 364,
+      "yellowUntil": 371,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 22452,
+          "qty": 1
+        },
+        {
+          "itemId": 21885,
+          "qty": 1
+        },
+        {
+          "itemId": 22451,
+          "qty": 1
+        },
+        {
+          "itemId": 21884,
+          "qty": 1
+        },
+        {
+          "itemId": 22457,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-primal-water-to-air",
+      "professionId": 171,
+      "name": "Transmute: Primal Water to Air",
+      "minSkill": 350,
+      "orangeUntil": 364,
+      "yellowUntil": 371,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 21885,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "transmute-skyfire-diamond",
+      "professionId": 171,
+      "name": "Transmute: Skyfire Diamond",
+      "minSkill": 350,
+      "orangeUntil": 364,
+      "yellowUntil": 371,
+      "greenUntil": 379,
+      "grayAt": 380,
+      "reagents": [
+        {
+          "itemId": 23077,
+          "qty": 3
+        },
+        {
+          "itemId": 21929,
+          "qty": 3
+        },
+        {
+          "itemId": 23117,
+          "qty": 3
+        },
+        {
+          "itemId": 21884,
+          "qty": 2
+        },
+        {
+          "itemId": 22451,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-major-mageblood",
+      "professionId": 171,
+      "name": "Elixir of Major Mageblood",
+      "minSkill": 355,
+      "orangeUntil": 369,
+      "yellowUntil": 376,
+      "greenUntil": 384,
+      "grayAt": 385,
+      "reagents": [
+        {
+          "itemId": 22790,
+          "qty": 1
+        },
+        {
+          "itemId": 22791,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "fel-mana-potion",
+      "professionId": 171,
+      "name": "Fel Mana Potion",
+      "minSkill": 360,
+      "orangeUntil": 374,
+      "yellowUntil": 381,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 22793,
+          "qty": 1
+        },
+        {
+          "itemId": 22792,
+          "qty": 2
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "major-arcane-protection-potion",
+      "professionId": 171,
+      "name": "Major Arcane Protection Potion",
+      "minSkill": 360,
+      "orangeUntil": 374,
+      "yellowUntil": 381,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 22457,
+          "qty": 1
+        },
+        {
+          "itemId": 22793,
+          "qty": 3
+        },
+        {
+          "itemId": 18256,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "major-fire-protection-potion",
+      "professionId": 171,
+      "name": "Major Fire Protection Potion",
+      "minSkill": 360,
+      "orangeUntil": 374,
+      "yellowUntil": 381,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 21884,
+          "qty": 1
+        },
+        {
+          "itemId": 22793,
+          "qty": 3
+        },
+        {
+          "itemId": 18256,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "major-frost-protection-potion",
+      "professionId": 171,
+      "name": "Major Frost Protection Potion",
+      "minSkill": 360,
+      "orangeUntil": 374,
+      "yellowUntil": 381,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 21885,
+          "qty": 1
+        },
+        {
+          "itemId": 22793,
+          "qty": 3
+        },
+        {
+          "itemId": 18256,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "major-holy-protection-potion",
+      "professionId": 171,
+      "name": "Major Holy Protection Potion",
+      "minSkill": 360,
+      "orangeUntil": 374,
+      "yellowUntil": 381,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 21886,
+          "qty": 1
+        },
+        {
+          "itemId": 22793,
+          "qty": 3
+        },
+        {
+          "itemId": 18256,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "major-nature-protection-potion",
+      "professionId": 171,
+      "name": "Major Nature Protection Potion",
+      "minSkill": 360,
+      "orangeUntil": 374,
+      "yellowUntil": 381,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 21886,
+          "qty": 1
+        },
+        {
+          "itemId": 22793,
+          "qty": 3
+        },
+        {
+          "itemId": 18256,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "major-shadow-protection-potion",
+      "professionId": 171,
+      "name": "Major Shadow Protection Potion",
+      "minSkill": 360,
+      "orangeUntil": 374,
+      "yellowUntil": 381,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 22456,
+          "qty": 1
+        },
+        {
+          "itemId": 22793,
+          "qty": 3
+        },
+        {
+          "itemId": 18256,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "elixir-of-empowerment",
+      "professionId": 171,
+      "name": "Elixir of Empowerment",
+      "minSkill": 365,
+      "orangeUntil": 379,
+      "yellowUntil": 386,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 22791,
+          "qty": 1
+        },
+        {
+          "itemId": 22793,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "ironshield-potion",
+      "professionId": 171,
+      "name": "Ironshield Potion",
+      "minSkill": 365,
+      "orangeUntil": 379,
+      "yellowUntil": 386,
+      "greenUntil": 394,
+      "grayAt": 395,
+      "reagents": [
+        {
+          "itemId": 22790,
+          "qty": 2
+        },
+        {
+          "itemId": 22573,
+          "qty": 3
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "assassin-s-alchemist-stone",
+      "professionId": 171,
+      "name": "Assassin's Alchemist Stone",
+      "minSkill": 375,
+      "orangeUntil": 389,
+      "yellowUntil": 396,
+      "greenUntil": 404,
+      "grayAt": 405,
+      "reagents": [
+        {
+          "itemId": 13503,
+          "qty": 1
+        },
+        {
+          "itemId": 22456,
+          "qty": 6
+        },
+        {
+          "itemId": 30183,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "flask-of-chromatic-wonder",
+      "professionId": 171,
+      "name": "Flask of Chromatic Wonder",
+      "minSkill": 375,
+      "orangeUntil": 389,
+      "yellowUntil": 396,
+      "greenUntil": 404,
+      "grayAt": 405,
+      "reagents": [
+        {
+          "itemId": 22786,
+          "qty": 7
+        },
+        {
+          "itemId": 22791,
+          "qty": 3
+        },
+        {
+          "itemId": 22794,
+          "qty": 1
+        },
+        {
+          "itemId": 18256,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "guardian-s-alchemist-stone",
+      "professionId": 171,
+      "name": "Guardian's Alchemist Stone",
+      "minSkill": 375,
+      "orangeUntil": 389,
+      "yellowUntil": 396,
+      "greenUntil": 404,
+      "grayAt": 405,
+      "reagents": [
+        {
+          "itemId": 13503,
+          "qty": 1
+        },
+        {
+          "itemId": 22451,
+          "qty": 6
+        },
+        {
+          "itemId": 30183,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "redeemer-s-alchemist-stone",
+      "professionId": 171,
+      "name": "Redeemer's Alchemist Stone",
+      "minSkill": 375,
+      "orangeUntil": 389,
+      "yellowUntil": 396,
+      "greenUntil": 404,
+      "grayAt": 405,
+      "reagents": [
+        {
+          "itemId": 13503,
+          "qty": 1
+        },
+        {
+          "itemId": 21886,
+          "qty": 6
+        },
+        {
+          "itemId": 30183,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "sorcerer-s-alchemist-stone",
+      "professionId": 171,
+      "name": "Sorcerer's Alchemist Stone",
+      "minSkill": 375,
+      "orangeUntil": 389,
+      "yellowUntil": 396,
+      "greenUntil": 404,
+      "grayAt": 405,
+      "reagents": [
+        {
+          "itemId": 13503,
+          "qty": 1
+        },
+        {
+          "itemId": 21884,
+          "qty": 6
+        },
+        {
+          "itemId": 30183,
+          "qty": 2
+        }
+      ]
+    }
+  ]
+}

@@ -2,34 +2,17 @@ import argparse
 import csv
 import json
 import re
-import time
-import urllib.error
 import urllib.request
-from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, Iterable, List, Tuple
+from typing import Dict, List, Tuple
 
 
 WAGO_BUILD = "2.5.4.44833"
-WAGO_SKILL_LINE_ABILITY_CSV = f"https://wago.tools/db2/SkillLineAbility/csv?build={WAGO_BUILD}"
+WAGO_ITEM_SEARCH_NAME_CSV = f"https://wago.tools/db2/ItemSearchName/csv?build={WAGO_BUILD}"
 
-WOWHEAD_SPELL_URL = "https://www.wowhead.com/tbc/spell="
-
-PROFESSION_ID_TAILORING = 197
-PROFESSION_NAME_TAILORING = "Tailoring"
-
-
-@dataclass(frozen=True)
-class Recipe:
-    recipe_id: str
-    profession_id: int
-    name: str
-    min_skill: int
-    orange_until: int
-    yellow_until: int
-    green_until: int
-    gray_at: int
-    reagents: List[Dict[str, int]]
+DEFAULT_PROFESSION_ID = 197
+DEFAULT_PROFESSION_NAME = "Tailoring"
+DEFAULT_WOWHEAD_SKILL_URL = "https://www.wowhead.com/tbc/skill=197/tailoring"
 
 
 def _slugify(value: str) -> str:
@@ -37,211 +20,240 @@ def _slugify(value: str) -> str:
     return slug or "recipe"
 
 
-def _http_get_text(url: str, *, user_agent: str, timeout_seconds: int = 30) -> str:
+def _http_get_text(url: str, *, user_agent: str, timeout_seconds: int = 45) -> str:
     req = urllib.request.Request(url)
     req.add_header("User-Agent", user_agent)
     req.add_header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
     req.add_header("Accept-Language", "en-US,en;q=0.9")
     req.add_header("Cache-Control", "no-cache")
     with urllib.request.urlopen(req, timeout=timeout_seconds) as resp:
-        data = resp.read()
-    return data.decode("utf-8", errors="replace")
+        return resp.read().decode("utf-8", errors="replace")
 
 
-def _load_wago_tailoring_spell_ids(cache_dir: Path, *, user_agent: str) -> List[int]:
-    cache_path = cache_dir / f"SkillLineAbility.{WAGO_BUILD}.csv"
+def _find_matching_bracket(text: str, start_index: int, open_char: str, close_char: str) -> int:
+    if text[start_index] != open_char:
+        raise ValueError(f"Expected '{open_char}' at index {start_index}")
+
+    depth = 0
+    in_string = False
+    escape = False
+
+    for idx in range(start_index, len(text)):
+        ch = text[idx]
+
+        if in_string:
+            if escape:
+                escape = False
+                continue
+            if ch == "\\":
+                escape = True
+                continue
+            if ch == '"':
+                in_string = False
+            continue
+
+        if ch == '"':
+            in_string = True
+            continue
+
+        if ch == open_char:
+            depth += 1
+            continue
+        if ch == close_char:
+            depth -= 1
+            if depth == 0:
+                return idx
+
+    raise ValueError(f"No matching '{close_char}' found for '{open_char}' at {start_index}")
+
+
+def _extract_wowhead_spell_listview_data(html: str) -> List[dict]:
+    marker = "template: 'spell'"
+    pos = 0
+    candidates: List[List[dict]] = []
+
+    while True:
+        idx = html.find(marker, pos)
+        if idx < 0:
+            break
+
+        data_idx = html.find("data:", idx)
+        if data_idx < 0:
+            pos = idx + len(marker)
+            continue
+
+        array_start = html.find("[", data_idx)
+        if array_start < 0:
+            pos = idx + len(marker)
+            continue
+
+        array_end = _find_matching_bracket(html, array_start, "[", "]")
+        raw = html[array_start : array_end + 1]
+        try:
+            data = json.loads(raw)
+        except json.JSONDecodeError:
+            pos = array_end + 1
+            continue
+
+        if isinstance(data, list) and any(isinstance(x, dict) and "reagents" in x for x in data):
+            candidates.append(data)
+
+        pos = array_end + 1
+
+    if not candidates:
+        raise ValueError("Unable to find a spell listview with reagents[] in the Tailoring skill page.")
+
+    candidates.sort(key=len, reverse=True)
+    return candidates[0]
+
+
+def _extract_wowhead_item_names(html: str) -> Dict[int, str]:
+    key = "WH.Gatherer.addData(3, 5, "
+    pos = 0
+    best: dict | None = None
+    while True:
+        idx = html.find(key, pos)
+        if idx < 0:
+            break
+
+        obj_start = html.find("{", idx)
+        if obj_start < 0:
+            pos = idx + len(key)
+            continue
+
+        obj_end = _find_matching_bracket(html, obj_start, "{", "}")
+        raw = html[obj_start : obj_end + 1]
+        try:
+            data = json.loads(raw)
+        except json.JSONDecodeError:
+            pos = obj_end + 1
+            continue
+
+        if isinstance(data, dict) and (best is None or len(data) > len(best)):
+            best = data
+
+        pos = obj_end + 1
+
+    if best is None:
+        raise ValueError("Unable to find parseable WH.Gatherer.addData(3, 5, ...) in page.")
+    data = best
+
+    names: Dict[int, str] = {}
+    for item_id_str, item_obj in data.items():
+        try:
+            item_id = int(item_id_str)
+        except ValueError:
+            continue
+        if isinstance(item_obj, dict) and "name_enus" in item_obj and isinstance(item_obj["name_enus"], str):
+            names[item_id] = item_obj["name_enus"]
+
+    return names
+
+
+def _load_wago_item_names(cache_dir: Path, *, user_agent: str) -> Dict[int, str]:
+    cache_path = cache_dir / f"ItemSearchName.{WAGO_BUILD}.csv"
     if not cache_path.exists():
         cache_path.parent.mkdir(parents=True, exist_ok=True)
-        cache_path.write_text(_http_get_text(WAGO_SKILL_LINE_ABILITY_CSV, user_agent=user_agent), encoding="utf-8")
+        cache_path.write_text(_http_get_text(WAGO_ITEM_SEARCH_NAME_CSV, user_agent=user_agent), encoding="utf-8")
 
+    names: Dict[int, str] = {}
     with cache_path.open("r", newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
-        spell_ids: List[int] = []
         for row in reader:
-            if int(row["SkillLine"]) != PROFESSION_ID_TAILORING:
+            try:
+                item_id = int(row.get("ID") or row.get("Id") or row.get("id") or "0")
+            except ValueError:
                 continue
-            spell_ids.append(int(row["Spell"]))
-
-    return sorted(set(spell_ids))
-
-
-_RE_WOWHEAD_SPELL_NAME = re.compile(
-    r'WH\.Gatherer\.addData\(6,\s*5,\s*\{"(?P<id>\d+)":\{"name_enus":"(?P<name>[^"]+)"',
-    re.IGNORECASE,
-)
-
-_RE_WOWHEAD_DIFFICULTY = re.compile(
-    r"Difficulty:\s*\[color=r1\](?P<r1>\d+)\[\\?/color\].*?"
-    r"\[color=r2\](?P<r2>\d+)\[\\?/color\].*?"
-    r"\[color=r3\](?P<r3>\d+)\[\\?/color\].*?"
-    r"\[color=r4\](?P<r4>\d+)\[\\?/color\]",
-    re.IGNORECASE | re.DOTALL,
-)
-
-_RE_WOWHEAD_REAGENT_ROW = re.compile(
-    r'data-icon-list-quantity="(?P<qty>\d+)".*?item=(?P<item_id>\d+)/',
-    re.IGNORECASE,
-)
-
-_RE_WOWHEAD_ITEM_NAMES = re.compile(r'"(?P<id>\d+)":\{"name_enus":"(?P<name>[^"]+)"', re.IGNORECASE)
+            display = row.get("Display_lang") or row.get("Display") or row.get("Name_lang") or row.get("Name") or ""
+            if item_id > 0 and display:
+                names[item_id] = display
+    return names
 
 
-def _parse_wowhead_spell_page(spell_id: int, html: str) -> Tuple[str, Tuple[int, int, int, int], List[Tuple[int, int]], Dict[int, str]]:
-    if "Requires Tailoring" not in html:
-        raise ValueError("Not a tailoring requirement page")
-
-    m = _RE_WOWHEAD_SPELL_NAME.search(html)
-    if not m or int(m.group("id")) != spell_id:
-        raise ValueError("Unable to find spell name in page")
-    spell_name = m.group("name")
-
-    dm = _RE_WOWHEAD_DIFFICULTY.search(html)
-    if not dm:
-        raise ValueError("Unable to find difficulty in page")
-    r1, r2, r3, r4 = (int(dm.group("r1")), int(dm.group("r2")), int(dm.group("r3")), int(dm.group("r4")))
-
-    reagents_section_start = html.find('id="icon-list-heading-reagents"')
-    if reagents_section_start < 0:
-        raise ValueError("Unable to find reagents section in page")
-    reagents_section_end = html.find("</table>", reagents_section_start)
-    if reagents_section_end < 0:
-        raise ValueError("Unable to find end of reagents table in page")
-    reagents_section = html[reagents_section_start:reagents_section_end]
-
-    reagents: List[Tuple[int, int]] = []
-    for rm in _RE_WOWHEAD_REAGENT_ROW.finditer(reagents_section):
-        item_id = int(rm.group("item_id"))
-        qty = int(rm.group("qty"))
-        reagents.append((item_id, qty))
-
-    if not reagents:
-        raise ValueError("No reagents parsed")
-
-    item_names: Dict[int, str] = {}
-    for im in _RE_WOWHEAD_ITEM_NAMES.finditer(html):
-        item_names[int(im.group("id"))] = im.group("name")
-
-    return spell_name, (r1, r2, r3, r4), reagents, item_names
-
-
-def _difficulty_to_thresholds(r1: int, r2: int, r3: int, r4: int) -> Tuple[int, int, int, int, int]:
-    if r1 <= 0 or r2 <= 0 or r3 <= 0 or r4 <= 0:
-        raise ValueError("Invalid difficulty values")
-    if not (r1 <= r2 <= r3 <= r4):
-        raise ValueError("Difficulty values not monotonic")
-
-    min_skill = r1
-    orange_until = max(min_skill, r2 - 1)
-    yellow_until = max(orange_until, r3 - 1)
-    green_until = max(yellow_until, r4 - 1)
-    gray_at = max(green_until + 1, r4)
-
+def _colors_to_thresholds(colors: List[int]) -> Tuple[int, int, int, int, int]:
+    if len(colors) != 4:
+        raise ValueError(f"Expected 4 colors values, got {len(colors)}")
+    o, y, g, gr = (int(colors[0]), int(colors[1]), int(colors[2]), int(colors[3]))
+    if o < 0 or y < 0 or g < 0 or gr < 0:
+        raise ValueError("Invalid negative skill threshold")
+    min_skill = o
+    orange_until = max(min_skill, y - 1)
+    yellow_until = max(orange_until, g - 1)
+    green_until = max(yellow_until, gr - 1)
+    gray_at = max(green_until + 1, gr)
     return min_skill, orange_until, yellow_until, green_until, gray_at
 
 
-def build_tailoring_pack(
-    spell_ids: Iterable[int],
-    *,
-    cache_dir: Path,
-    user_agent: str,
-    sleep_seconds: float,
+def build_tailoring_pack_from_skill_page(
+    html: str, *, profession_id: int, profession_name: str, item_names: Dict[int, str]
 ) -> Tuple[Dict[str, object], Dict[int, str]]:
-    spell_ids = list(spell_ids)
-    recipes: List[Recipe] = []
-    reagent_item_names: Dict[int, str] = {}
+    data = _extract_wowhead_spell_listview_data(html)
 
     used_recipe_ids: Dict[str, int] = {}
+    recipes: List[dict] = []
+    reagent_item_names: Dict[int, str] = {}
 
-    for idx, spell_id in enumerate(spell_ids, start=1):
-        cache_path = cache_dir / "wowhead" / f"spell_{spell_id}.html"
-        html: str
-
-        if cache_path.exists():
-            html = cache_path.read_text(encoding="utf-8", errors="replace")
-        else:
-            url = f"{WOWHEAD_SPELL_URL}{spell_id}"
-            attempts = 0
-            while True:
-                attempts += 1
-                try:
-                    html = _http_get_text(url, user_agent=user_agent)
-                    break
-                except urllib.error.HTTPError as ex:
-                    if ex.code in (403, 429):
-                        if attempts >= 12:
-                            raise
-                        retry_after = ex.headers.get("Retry-After")
-                        sleep_for = float(retry_after) if retry_after else (15.0 * attempts)
-                        print(f"HTTP {ex.code} for spell={spell_id}; sleeping {sleep_for:.1f}s then retrying...")
-                        time.sleep(sleep_for)
-                        continue
-
-                    if attempts >= 6:
-                        raise
-                    retry_after = ex.headers.get("Retry-After")
-                    time.sleep(float(retry_after) if retry_after else 2.0 * attempts)
-                except Exception:
-                    if attempts >= 6:
-                        raise
-                    time.sleep(2.0 * attempts)
-
-            cache_path.parent.mkdir(parents=True, exist_ok=True)
-            cache_path.write_text(html, encoding="utf-8")
-            time.sleep(sleep_seconds)
-
-        try:
-            name, (r1, r2, r3, r4), reagents, item_names = _parse_wowhead_spell_page(spell_id, html)
-        except ValueError:
+    for entry in data:
+        if not isinstance(entry, dict):
+            continue
+        if entry.get("skill") != [profession_id]:
+            continue
+        if "reagents" not in entry:
             continue
 
-        min_skill, orange_until, yellow_until, green_until, gray_at = _difficulty_to_thresholds(r1, r2, r3, r4)
+        spell_id = int(entry["id"])
+        name = str(entry["name"])
+        colors = entry.get("colors")
+        if not isinstance(colors, list) or len(colors) != 4:
+            learned_at = int(entry.get("learnedat") or 0)
+            if learned_at <= 0:
+                continue
+            colors = [learned_at, learned_at, learned_at, learned_at]
 
-        slug = _slugify(name)
-        if slug in used_recipe_ids:
-            slug = f"{slug}-{spell_id}"
-        used_recipe_ids[slug] = spell_id
+        min_skill, orange_until, yellow_until, green_until, gray_at = _colors_to_thresholds(colors)
 
-        reagent_list = [{"itemId": item_id, "qty": qty} for item_id, qty in reagents]
+        recipe_id = _slugify(name)
+        if recipe_id in used_recipe_ids:
+            recipe_id = f"{recipe_id}-{spell_id}"
+        used_recipe_ids[recipe_id] = spell_id
+
+        reagents_raw = entry.get("reagents") or []
+        reagents: List[dict] = []
+        for reagent in reagents_raw:
+            if not isinstance(reagent, list) or len(reagent) < 2:
+                continue
+            item_id = int(reagent[0])
+            qty = int(reagent[1])
+            if item_id <= 0 or qty <= 0:
+                continue
+            reagents.append({"itemId": item_id, "qty": qty})
+            if item_id in item_names:
+                reagent_item_names[item_id] = item_names[item_id]
+
+        if not reagents:
+            continue
 
         recipes.append(
-            Recipe(
-                recipe_id=slug,
-                profession_id=PROFESSION_ID_TAILORING,
-                name=name,
-                min_skill=min_skill,
-                orange_until=orange_until,
-                yellow_until=yellow_until,
-                green_until=green_until,
-                gray_at=gray_at,
-                reagents=reagent_list,
-            )
+            {
+                "recipeId": recipe_id,
+                "professionId": profession_id,
+                "name": name,
+                "minSkill": min_skill,
+                "orangeUntil": orange_until,
+                "yellowUntil": yellow_until,
+                "greenUntil": green_until,
+                "grayAt": gray_at,
+                "reagents": reagents,
+            }
         )
 
-        for item_id, _qty in reagents:
-            item_name = item_names.get(item_id)
-            if item_name:
-                reagent_item_names[item_id] = item_name
-
-        if idx % 50 == 0:
-            print(f"Fetched/parsed {idx}/{len(spell_ids)} pages...")
+    if not recipes:
+        raise ValueError("Parsed 0 recipes from listview.")
 
     pack = {
-        "professionId": PROFESSION_ID_TAILORING,
-        "professionName": PROFESSION_NAME_TAILORING,
-        "recipes": [
-            {
-                "recipeId": r.recipe_id,
-                "professionId": r.profession_id,
-                "name": r.name,
-                "minSkill": r.min_skill,
-                "orangeUntil": r.orange_until,
-                "yellowUntil": r.yellow_until,
-                "greenUntil": r.green_until,
-                "grayAt": r.gray_at,
-                "reagents": r.reagents,
-            }
-            for r in sorted(recipes, key=lambda x: (x.min_skill, x.name))
-        ],
+        "professionId": profession_id,
+        "professionName": profession_name,
+        "recipes": sorted(recipes, key=lambda r: (r["minSkill"], r["name"])),
     }
 
     return pack, reagent_item_names
@@ -260,7 +272,9 @@ def _write_items_json(path: Path, items: Dict[int, str]) -> None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Export TBC Classic tailoring recipes into Anniversary datapack JSON.")
+    parser = argparse.ArgumentParser(description="Export TBC Classic profession recipes into Anniversary datapack JSON.")
+    parser.add_argument("--profession-id", type=int, default=DEFAULT_PROFESSION_ID)
+    parser.add_argument("--profession-name", default=DEFAULT_PROFESSION_NAME)
     parser.add_argument("--out-profession-json", type=Path, default=Path("data/Anniversary/professions/tailoring.json"))
     parser.add_argument("--out-items-json", type=Path, default=Path("data/Anniversary/items.json"))
     parser.add_argument("--cache-dir", type=Path, default=Path(".wago-cache"))
@@ -268,17 +282,28 @@ def main() -> int:
         "--user-agent",
         default="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     )
-    parser.add_argument("--sleep-seconds", type=float, default=1.0)
+    parser.add_argument("--wowhead-skill-url", default=DEFAULT_WOWHEAD_SKILL_URL)
     args = parser.parse_args()
 
-    spell_ids = _load_wago_tailoring_spell_ids(args.cache_dir, user_agent=args.user_agent)
-    print(f"Tailoring spell ids (from wago.tools): {len(spell_ids)}")
+    if args.profession_id <= 0:
+        raise SystemExit("--profession-id must be > 0")
+    if not args.profession_name.strip():
+        raise SystemExit("--profession-name must be non-empty")
 
-    pack, reagent_item_names = build_tailoring_pack(
-        spell_ids,
-        cache_dir=args.cache_dir,
-        user_agent=args.user_agent,
-        sleep_seconds=args.sleep_seconds,
+    html_cache_path = args.cache_dir / f"wowhead_tbc_skill_{args.profession_id}.html"
+    if html_cache_path.exists():
+        html = html_cache_path.read_text(encoding="utf-8", errors="replace")
+    else:
+        html = _http_get_text(args.wowhead_skill_url, user_agent=args.user_agent)
+        html_cache_path.parent.mkdir(parents=True, exist_ok=True)
+        html_cache_path.write_text(html, encoding="utf-8")
+
+    item_names = _extract_wowhead_item_names(html)
+    pack, reagent_item_names = build_tailoring_pack_from_skill_page(
+        html,
+        profession_id=args.profession_id,
+        profession_name=args.profession_name,
+        item_names=item_names,
     )
 
     if not pack["recipes"]:
@@ -301,11 +326,30 @@ def main() -> int:
             items[item_id] = name
 
     if missing:
-        raise SystemExit(f"Missing {missing} reagent item names (wowhead pages didn't include them).")
+        wago_names = _load_wago_item_names(args.cache_dir, user_agent=args.user_agent)
+        for recipe in pack["recipes"]:
+            for reagent in recipe["reagents"]:
+                item_id = int(reagent["itemId"])
+                if item_id in items:
+                    continue
+                name = wago_names.get(item_id)
+                if not name:
+                    continue
+                items[item_id] = name
+
+        still_missing = []
+        for recipe in pack["recipes"]:
+            for reagent in recipe["reagents"]:
+                item_id = int(reagent["itemId"])
+                if item_id not in items:
+                    still_missing.append(item_id)
+        if still_missing:
+            still_missing = sorted(set(still_missing))
+            raise SystemExit(f"Missing {len(still_missing)} reagent item names (e.g. {still_missing[:20]}).")
 
     _write_items_json(args.out_items_json, items)
 
-    print(f"Wrote {args.out_profession_json} ({len(pack['recipes'])} recipes)")
+    print(f"Wrote {args.out_profession_json} ({args.profession_name}, {len(pack['recipes'])} recipes)")
     print(f"Wrote {args.out_items_json} ({len(items)} items)")
     return 0
 

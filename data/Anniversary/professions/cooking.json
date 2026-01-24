@@ -3,17 +3,2227 @@
   "professionName": "Cooking",
   "recipes": [
     {
+      "recipeId": "charred-wolf-meat",
+      "professionId": 185,
+      "name": "Charred Wolf Meat",
+      "minSkill": 0,
+      "orangeUntil": 44,
+      "yellowUntil": 64,
+      "greenUntil": 84,
+      "grayAt": 85,
+      "reagents": [
+        {
+          "itemId": 2672,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "fisherman-s-feast",
+      "professionId": 185,
+      "name": "Fisherman's Feast",
+      "minSkill": 0,
+      "orangeUntil": 374,
+      "yellowUntil": 379,
+      "greenUntil": 384,
+      "grayAt": 385,
+      "reagents": [
+        {
+          "itemId": 27515,
+          "qty": 1
+        },
+        {
+          "itemId": 4539,
+          "qty": 5
+        },
+        {
+          "itemId": 3713,
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "recipeId": "hot-buttered-trout",
+      "professionId": 185,
+      "name": "Hot Buttered Trout",
+      "minSkill": 0,
+      "orangeUntil": 374,
+      "yellowUntil": 379,
+      "greenUntil": 384,
+      "grayAt": 385,
+      "reagents": [
+        {
+          "itemId": 27516,
+          "qty": 1
+        },
+        {
+          "itemId": 3713,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "roasted-boar-meat",
+      "professionId": 185,
+      "name": "Roasted Boar Meat",
+      "minSkill": 0,
+      "orangeUntil": 44,
+      "yellowUntil": 64,
+      "greenUntil": 84,
+      "grayAt": 85,
+      "reagents": [
+        {
+          "itemId": 769,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "stewed-trout",
+      "professionId": 185,
+      "name": "Stewed Trout",
+      "minSkill": 0,
+      "orangeUntil": 334,
+      "yellowUntil": 344,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 27422,
+          "qty": 1
+        },
+        {
+          "itemId": 2593,
+          "qty": 1
+        },
+        {
+          "itemId": 3713,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "brilliant-smallfish",
+      "professionId": 185,
+      "name": "Brilliant Smallfish",
+      "minSkill": 1,
+      "orangeUntil": 44,
+      "yellowUntil": 64,
+      "greenUntil": 84,
+      "grayAt": 85,
+      "reagents": [
+        {
+          "itemId": 6291,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "crispy-bat-wing",
+      "professionId": 185,
+      "name": "Crispy Bat Wing",
+      "minSkill": 1,
+      "orangeUntil": 44,
+      "yellowUntil": 64,
+      "greenUntil": 84,
+      "grayAt": 85,
+      "reagents": [
+        {
+          "itemId": 12223,
+          "qty": 1
+        },
+        {
+          "itemId": 2678,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "delicious-chocolate-cake",
+      "professionId": 185,
+      "name": "Delicious Chocolate Cake",
+      "minSkill": 1,
+      "orangeUntil": 49,
+      "yellowUntil": 61,
+      "greenUntil": 74,
+      "grayAt": 75,
+      "reagents": [
+        {
+          "itemId": 30817,
+          "qty": 8
+        },
+        {
+          "itemId": 1179,
+          "qty": 4
+        },
+        {
+          "itemId": 2678,
+          "qty": 4
+        },
+        {
+          "itemId": 6889,
+          "qty": 8
+        },
+        {
+          "itemId": 2593,
+          "qty": 1
+        },
+        {
+          "itemId": 785,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "recipeId": "gingerbread-cookie",
+      "professionId": 185,
+      "name": "Gingerbread Cookie",
+      "minSkill": 1,
+      "orangeUntil": 44,
+      "yellowUntil": 64,
+      "greenUntil": 84,
+      "grayAt": 85,
+      "reagents": [
+        {
+          "itemId": 6889,
+          "qty": 1
+        },
+        {
+          "itemId": 17194,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "herb-baked-egg",
+      "professionId": 185,
+      "name": "Herb Baked Egg",
+      "minSkill": 1,
+      "orangeUntil": 44,
+      "yellowUntil": 64,
+      "greenUntil": 84,
+      "grayAt": 85,
+      "reagents": [
+        {
+          "itemId": 6889,
+          "qty": 1
+        },
+        {
+          "itemId": 2678,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "lynx-steak",
+      "professionId": 185,
+      "name": "Lynx Steak",
+      "minSkill": 1,
+      "orangeUntil": 44,
+      "yellowUntil": 64,
+      "greenUntil": 84,
+      "grayAt": 85,
+      "reagents": [
+        {
+          "itemId": 27668,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "roasted-moongraze-tenderloin",
+      "professionId": 185,
+      "name": "Roasted Moongraze Tenderloin",
+      "minSkill": 1,
+      "orangeUntil": 44,
+      "yellowUntil": 64,
+      "greenUntil": 84,
+      "grayAt": 85,
+      "reagents": [
+        {
+          "itemId": 23676,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "slitherskin-mackerel",
+      "professionId": 185,
+      "name": "Slitherskin Mackerel",
+      "minSkill": 1,
+      "orangeUntil": 44,
+      "yellowUntil": 64,
+      "greenUntil": 84,
+      "grayAt": 85,
+      "reagents": [
+        {
+          "itemId": 6303,
+          "qty": 1
+        }
+      ]
+    },
+    {
       "recipeId": "spice-bread",
       "professionId": 185,
       "name": "Spice Bread",
       "minSkill": 1,
-      "orangeUntil": 25,
-      "yellowUntil": 35,
-      "greenUntil": 45,
-      "grayAt": 55,
+      "orangeUntil": 29,
+      "yellowUntil": 34,
+      "greenUntil": 39,
+      "grayAt": 40,
       "reagents": [
-        { "itemId": 30817, "qty": 1 },
-        { "itemId": 2678, "qty": 1 }
+        {
+          "itemId": 30817,
+          "qty": 1
+        },
+        {
+          "itemId": 2678,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "kaldorei-spider-kabob",
+      "professionId": 185,
+      "name": "Kaldorei Spider Kabob",
+      "minSkill": 10,
+      "orangeUntil": 49,
+      "yellowUntil": 69,
+      "greenUntil": 89,
+      "grayAt": 90,
+      "reagents": [
+        {
+          "itemId": 5465,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "spiced-wolf-meat",
+      "professionId": 185,
+      "name": "Spiced Wolf Meat",
+      "minSkill": 10,
+      "orangeUntil": 49,
+      "yellowUntil": 69,
+      "greenUntil": 89,
+      "grayAt": 90,
+      "reagents": [
+        {
+          "itemId": 2672,
+          "qty": 1
+        },
+        {
+          "itemId": 2678,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "scorpid-surprise",
+      "professionId": 185,
+      "name": "Scorpid Surprise",
+      "minSkill": 20,
+      "orangeUntil": 59,
+      "yellowUntil": 79,
+      "greenUntil": 99,
+      "grayAt": 100,
+      "reagents": [
+        {
+          "itemId": 5466,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "beer-basted-boar-ribs",
+      "professionId": 185,
+      "name": "Beer Basted Boar Ribs",
+      "minSkill": 25,
+      "orangeUntil": 59,
+      "yellowUntil": 79,
+      "greenUntil": 99,
+      "grayAt": 100,
+      "reagents": [
+        {
+          "itemId": 2886,
+          "qty": 1
+        },
+        {
+          "itemId": 2894,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "egg-nog",
+      "professionId": 185,
+      "name": "Egg Nog",
+      "minSkill": 35,
+      "orangeUntil": 74,
+      "yellowUntil": 94,
+      "greenUntil": 114,
+      "grayAt": 115,
+      "reagents": [
+        {
+          "itemId": 6889,
+          "qty": 1
+        },
+        {
+          "itemId": 1179,
+          "qty": 1
+        },
+        {
+          "itemId": 17196,
+          "qty": 1
+        },
+        {
+          "itemId": 17194,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "roasted-kodo-meat",
+      "professionId": 185,
+      "name": "Roasted Kodo Meat",
+      "minSkill": 35,
+      "orangeUntil": 74,
+      "yellowUntil": 94,
+      "greenUntil": 114,
+      "grayAt": 115,
+      "reagents": [
+        {
+          "itemId": 5467,
+          "qty": 1
+        },
+        {
+          "itemId": 2678,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "smoked-bear-meat",
+      "professionId": 185,
+      "name": "Smoked Bear Meat",
+      "minSkill": 40,
+      "orangeUntil": 79,
+      "yellowUntil": 99,
+      "greenUntil": 119,
+      "grayAt": 120,
+      "reagents": [
+        {
+          "itemId": 3173,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "bat-bites",
+      "professionId": 185,
+      "name": "Bat Bites",
+      "minSkill": 50,
+      "orangeUntil": 89,
+      "yellowUntil": 109,
+      "greenUntil": 129,
+      "grayAt": 130,
+      "reagents": [
+        {
+          "itemId": 27669,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "boiled-clams",
+      "professionId": 185,
+      "name": "Boiled Clams",
+      "minSkill": 50,
+      "orangeUntil": 89,
+      "yellowUntil": 109,
+      "greenUntil": 129,
+      "grayAt": 130,
+      "reagents": [
+        {
+          "itemId": 5503,
+          "qty": 1
+        },
+        {
+          "itemId": 159,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "coyote-steak",
+      "professionId": 185,
+      "name": "Coyote Steak",
+      "minSkill": 50,
+      "orangeUntil": 89,
+      "yellowUntil": 109,
+      "greenUntil": 129,
+      "grayAt": 130,
+      "reagents": [
+        {
+          "itemId": 2673,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "fillet-of-frenzy",
+      "professionId": 185,
+      "name": "Fillet of Frenzy",
+      "minSkill": 50,
+      "orangeUntil": 89,
+      "yellowUntil": 109,
+      "greenUntil": 129,
+      "grayAt": 130,
+      "reagents": [
+        {
+          "itemId": 5468,
+          "qty": 1
+        },
+        {
+          "itemId": 2678,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "goretusk-liver-pie",
+      "professionId": 185,
+      "name": "Goretusk Liver Pie",
+      "minSkill": 50,
+      "orangeUntil": 89,
+      "yellowUntil": 109,
+      "greenUntil": 129,
+      "grayAt": 130,
+      "reagents": [
+        {
+          "itemId": 723,
+          "qty": 1
+        },
+        {
+          "itemId": 2678,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "loch-frenzy-delight",
+      "professionId": 185,
+      "name": "Loch Frenzy Delight",
+      "minSkill": 50,
+      "orangeUntil": 89,
+      "yellowUntil": 109,
+      "greenUntil": 129,
+      "grayAt": 130,
+      "reagents": [
+        {
+          "itemId": 6317,
+          "qty": 1
+        },
+        {
+          "itemId": 2678,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "longjaw-mud-snapper",
+      "professionId": 185,
+      "name": "Longjaw Mud Snapper",
+      "minSkill": 50,
+      "orangeUntil": 89,
+      "yellowUntil": 109,
+      "greenUntil": 129,
+      "grayAt": 130,
+      "reagents": [
+        {
+          "itemId": 6289,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "rainbow-fin-albacore",
+      "professionId": 185,
+      "name": "Rainbow Fin Albacore",
+      "minSkill": 50,
+      "orangeUntil": 89,
+      "yellowUntil": 109,
+      "greenUntil": 129,
+      "grayAt": 130,
+      "reagents": [
+        {
+          "itemId": 6361,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "strider-stew",
+      "professionId": 185,
+      "name": "Strider Stew",
+      "minSkill": 50,
+      "orangeUntil": 89,
+      "yellowUntil": 109,
+      "greenUntil": 129,
+      "grayAt": 130,
+      "reagents": [
+        {
+          "itemId": 5469,
+          "qty": 1
+        },
+        {
+          "itemId": 4536,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "blood-sausage",
+      "professionId": 185,
+      "name": "Blood Sausage",
+      "minSkill": 60,
+      "orangeUntil": 99,
+      "yellowUntil": 119,
+      "greenUntil": 139,
+      "grayAt": 140,
+      "reagents": [
+        {
+          "itemId": 3173,
+          "qty": 1
+        },
+        {
+          "itemId": 3172,
+          "qty": 1
+        },
+        {
+          "itemId": 3174,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "crunchy-spider-surprise",
+      "professionId": 185,
+      "name": "Crunchy Spider Surprise",
+      "minSkill": 60,
+      "orangeUntil": 99,
+      "yellowUntil": 119,
+      "greenUntil": 139,
+      "grayAt": 140,
+      "reagents": [
+        {
+          "itemId": 22644,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "thistle-tea",
+      "professionId": 185,
+      "name": "Thistle Tea",
+      "minSkill": 60,
+      "orangeUntil": 99,
+      "yellowUntil": 119,
+      "greenUntil": 139,
+      "grayAt": 140,
+      "reagents": [
+        {
+          "itemId": 2452,
+          "qty": 1
+        },
+        {
+          "itemId": 159,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "crab-cake",
+      "professionId": 185,
+      "name": "Crab Cake",
+      "minSkill": 75,
+      "orangeUntil": 114,
+      "yellowUntil": 134,
+      "greenUntil": 154,
+      "grayAt": 155,
+      "reagents": [
+        {
+          "itemId": 2674,
+          "qty": 1
+        },
+        {
+          "itemId": 2678,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "westfall-stew",
+      "professionId": 185,
+      "name": "Westfall Stew",
+      "minSkill": 75,
+      "orangeUntil": 114,
+      "yellowUntil": 134,
+      "greenUntil": 154,
+      "grayAt": 155,
+      "reagents": [
+        {
+          "itemId": 729,
+          "qty": 1
+        },
+        {
+          "itemId": 730,
+          "qty": 1
+        },
+        {
+          "itemId": 731,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "crocolisk-steak",
+      "professionId": 185,
+      "name": "Crocolisk Steak",
+      "minSkill": 80,
+      "orangeUntil": 119,
+      "yellowUntil": 139,
+      "greenUntil": 159,
+      "grayAt": 160,
+      "reagents": [
+        {
+          "itemId": 2924,
+          "qty": 1
+        },
+        {
+          "itemId": 2678,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "dry-pork-ribs",
+      "professionId": 185,
+      "name": "Dry Pork Ribs",
+      "minSkill": 80,
+      "orangeUntil": 119,
+      "yellowUntil": 139,
+      "greenUntil": 159,
+      "grayAt": 160,
+      "reagents": [
+        {
+          "itemId": 2677,
+          "qty": 1
+        },
+        {
+          "itemId": 2678,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "smoked-sagefish",
+      "professionId": 185,
+      "name": "Smoked Sagefish",
+      "minSkill": 80,
+      "orangeUntil": 119,
+      "yellowUntil": 139,
+      "greenUntil": 159,
+      "grayAt": 160,
+      "reagents": [
+        {
+          "itemId": 21071,
+          "qty": 1
+        },
+        {
+          "itemId": 2678,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "cooked-crab-claw",
+      "professionId": 185,
+      "name": "Cooked Crab Claw",
+      "minSkill": 85,
+      "orangeUntil": 124,
+      "yellowUntil": 144,
+      "greenUntil": 164,
+      "grayAt": 165,
+      "reagents": [
+        {
+          "itemId": 2675,
+          "qty": 1
+        },
+        {
+          "itemId": 2678,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "savory-deviate-delight",
+      "professionId": 185,
+      "name": "Savory Deviate Delight",
+      "minSkill": 85,
+      "orangeUntil": 124,
+      "yellowUntil": 144,
+      "greenUntil": 164,
+      "grayAt": 165,
+      "reagents": [
+        {
+          "itemId": 6522,
+          "qty": 1
+        },
+        {
+          "itemId": 2678,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "clam-chowder",
+      "professionId": 185,
+      "name": "Clam Chowder",
+      "minSkill": 90,
+      "orangeUntil": 129,
+      "yellowUntil": 149,
+      "greenUntil": 169,
+      "grayAt": 170,
+      "reagents": [
+        {
+          "itemId": 5503,
+          "qty": 1
+        },
+        {
+          "itemId": 1179,
+          "qty": 1
+        },
+        {
+          "itemId": 2678,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "dig-rat-stew",
+      "professionId": 185,
+      "name": "Dig Rat Stew",
+      "minSkill": 90,
+      "orangeUntil": 129,
+      "yellowUntil": 149,
+      "greenUntil": 169,
+      "grayAt": 170,
+      "reagents": [
+        {
+          "itemId": 5051,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "murloc-fin-soup",
+      "professionId": 185,
+      "name": "Murloc Fin Soup",
+      "minSkill": 90,
+      "orangeUntil": 129,
+      "yellowUntil": 149,
+      "greenUntil": 169,
+      "grayAt": 170,
+      "reagents": [
+        {
+          "itemId": 1468,
+          "qty": 2
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "bristle-whisker-catfish",
+      "professionId": 185,
+      "name": "Bristle Whisker Catfish",
+      "minSkill": 100,
+      "orangeUntil": 139,
+      "yellowUntil": 159,
+      "greenUntil": 179,
+      "grayAt": 180,
+      "reagents": [
+        {
+          "itemId": 6308,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "captain-rumsey-s-lager",
+      "professionId": 185,
+      "name": "Captain Rumsey's Lager",
+      "minSkill": 100,
+      "orangeUntil": 100,
+      "yellowUntil": 104,
+      "greenUntil": 109,
+      "grayAt": 110,
+      "reagents": [
+        {
+          "itemId": 2596,
+          "qty": 1
+        },
+        {
+          "itemId": 2594,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "crispy-lizard-tail",
+      "professionId": 185,
+      "name": "Crispy Lizard Tail",
+      "minSkill": 100,
+      "orangeUntil": 139,
+      "yellowUntil": 159,
+      "greenUntil": 179,
+      "grayAt": 180,
+      "reagents": [
+        {
+          "itemId": 5470,
+          "qty": 1
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "redridge-goulash",
+      "professionId": 185,
+      "name": "Redridge Goulash",
+      "minSkill": 100,
+      "orangeUntil": 134,
+      "yellowUntil": 154,
+      "greenUntil": 174,
+      "grayAt": 175,
+      "reagents": [
+        {
+          "itemId": 1081,
+          "qty": 1
+        },
+        {
+          "itemId": 1080,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "seasoned-wolf-kabob",
+      "professionId": 185,
+      "name": "Seasoned Wolf Kabob",
+      "minSkill": 100,
+      "orangeUntil": 139,
+      "yellowUntil": 159,
+      "greenUntil": 179,
+      "grayAt": 180,
+      "reagents": [
+        {
+          "itemId": 1015,
+          "qty": 2
+        },
+        {
+          "itemId": 2665,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "big-bear-steak",
+      "professionId": 185,
+      "name": "Big Bear Steak",
+      "minSkill": 110,
+      "orangeUntil": 149,
+      "yellowUntil": 169,
+      "greenUntil": 189,
+      "grayAt": 190,
+      "reagents": [
+        {
+          "itemId": 3730,
+          "qty": 1
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "gooey-spider-cake",
+      "professionId": 185,
+      "name": "Gooey Spider Cake",
+      "minSkill": 110,
+      "orangeUntil": 149,
+      "yellowUntil": 169,
+      "greenUntil": 189,
+      "grayAt": 190,
+      "reagents": [
+        {
+          "itemId": 2251,
+          "qty": 2
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "lean-venison",
+      "professionId": 185,
+      "name": "Lean Venison",
+      "minSkill": 110,
+      "orangeUntil": 149,
+      "yellowUntil": 169,
+      "greenUntil": 189,
+      "grayAt": 190,
+      "reagents": [
+        {
+          "itemId": 5471,
+          "qty": 1
+        },
+        {
+          "itemId": 2678,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "recipeId": "succulent-pork-ribs",
+      "professionId": 185,
+      "name": "Succulent Pork Ribs",
+      "minSkill": 110,
+      "orangeUntil": 129,
+      "yellowUntil": 149,
+      "greenUntil": 169,
+      "grayAt": 170,
+      "reagents": [
+        {
+          "itemId": 2677,
+          "qty": 2
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "crocolisk-gumbo",
+      "professionId": 185,
+      "name": "Crocolisk Gumbo",
+      "minSkill": 120,
+      "orangeUntil": 159,
+      "yellowUntil": 179,
+      "greenUntil": 199,
+      "grayAt": 200,
+      "reagents": [
+        {
+          "itemId": 3667,
+          "qty": 1
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "goblin-deviled-clams",
+      "professionId": 185,
+      "name": "Goblin Deviled Clams",
+      "minSkill": 125,
+      "orangeUntil": 164,
+      "yellowUntil": 184,
+      "greenUntil": 204,
+      "grayAt": 205,
+      "reagents": [
+        {
+          "itemId": 5504,
+          "qty": 1
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "hot-lion-chops",
+      "professionId": 185,
+      "name": "Hot Lion Chops",
+      "minSkill": 125,
+      "orangeUntil": 174,
+      "yellowUntil": 194,
+      "greenUntil": 214,
+      "grayAt": 215,
+      "reagents": [
+        {
+          "itemId": 3731,
+          "qty": 1
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "lean-wolf-steak",
+      "professionId": 185,
+      "name": "Lean Wolf Steak",
+      "minSkill": 125,
+      "orangeUntil": 164,
+      "yellowUntil": 184,
+      "greenUntil": 204,
+      "grayAt": 205,
+      "reagents": [
+        {
+          "itemId": 1015,
+          "qty": 1
+        },
+        {
+          "itemId": 2678,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "curiously-tasty-omelet",
+      "professionId": 185,
+      "name": "Curiously Tasty Omelet",
+      "minSkill": 130,
+      "orangeUntil": 169,
+      "yellowUntil": 189,
+      "greenUntil": 209,
+      "grayAt": 210,
+      "reagents": [
+        {
+          "itemId": 3685,
+          "qty": 1
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "heavy-crocolisk-stew",
+      "professionId": 185,
+      "name": "Heavy Crocolisk Stew",
+      "minSkill": 150,
+      "orangeUntil": 159,
+      "yellowUntil": 179,
+      "greenUntil": 199,
+      "grayAt": 200,
+      "reagents": [
+        {
+          "itemId": 3667,
+          "qty": 2
+        },
+        {
+          "itemId": 3713,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "tasty-lion-steak",
+      "professionId": 185,
+      "name": "Tasty Lion Steak",
+      "minSkill": 150,
+      "orangeUntil": 189,
+      "yellowUntil": 209,
+      "greenUntil": 229,
+      "grayAt": 230,
+      "reagents": [
+        {
+          "itemId": 3731,
+          "qty": 2
+        },
+        {
+          "itemId": 3713,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "barbecued-buzzard-wing",
+      "professionId": 185,
+      "name": "Barbecued Buzzard Wing",
+      "minSkill": 175,
+      "orangeUntil": 214,
+      "yellowUntil": 234,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 3404,
+          "qty": 1
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "carrion-surprise",
+      "professionId": 185,
+      "name": "Carrion Surprise",
+      "minSkill": 175,
+      "orangeUntil": 214,
+      "yellowUntil": 234,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 12037,
+          "qty": 1
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "giant-clam-scorcho",
+      "professionId": 185,
+      "name": "Giant Clam Scorcho",
+      "minSkill": 175,
+      "orangeUntil": 214,
+      "yellowUntil": 234,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 4655,
+          "qty": 1
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "goldthorn-tea",
+      "professionId": 185,
+      "name": "Goldthorn Tea",
+      "minSkill": 175,
+      "orangeUntil": 175,
+      "yellowUntil": 189,
+      "greenUntil": 204,
+      "grayAt": 205,
+      "reagents": [
+        {
+          "itemId": 3821,
+          "qty": 1
+        },
+        {
+          "itemId": 159,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "hot-wolf-ribs",
+      "professionId": 185,
+      "name": "Hot Wolf Ribs",
+      "minSkill": 175,
+      "orangeUntil": 214,
+      "yellowUntil": 234,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 12203,
+          "qty": 1
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "jungle-stew",
+      "professionId": 185,
+      "name": "Jungle Stew",
+      "minSkill": 175,
+      "orangeUntil": 214,
+      "yellowUntil": 234,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 12202,
+          "qty": 1
+        },
+        {
+          "itemId": 159,
+          "qty": 1
+        },
+        {
+          "itemId": 4536,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "mithril-headed-trout",
+      "professionId": 185,
+      "name": "Mithril Headed Trout",
+      "minSkill": 175,
+      "orangeUntil": 214,
+      "yellowUntil": 234,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 8365,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mystery-stew",
+      "professionId": 185,
+      "name": "Mystery Stew",
+      "minSkill": 175,
+      "orangeUntil": 214,
+      "yellowUntil": 234,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 12037,
+          "qty": 1
+        },
+        {
+          "itemId": 2596,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "roast-raptor",
+      "professionId": 185,
+      "name": "Roast Raptor",
+      "minSkill": 175,
+      "orangeUntil": 214,
+      "yellowUntil": 234,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 12184,
+          "qty": 1
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "rockscale-cod",
+      "professionId": 185,
+      "name": "Rockscale Cod",
+      "minSkill": 175,
+      "orangeUntil": 189,
+      "yellowUntil": 209,
+      "greenUntil": 229,
+      "grayAt": 230,
+      "reagents": [
+        {
+          "itemId": 6362,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "sagefish-delight",
+      "professionId": 185,
+      "name": "Sagefish Delight",
+      "minSkill": 175,
+      "orangeUntil": 214,
+      "yellowUntil": 234,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 21153,
+          "qty": 1
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "soothing-turtle-bisque",
+      "professionId": 185,
+      "name": "Soothing Turtle Bisque",
+      "minSkill": 175,
+      "orangeUntil": 214,
+      "yellowUntil": 234,
+      "greenUntil": 254,
+      "grayAt": 255,
+      "reagents": [
+        {
+          "itemId": 3712,
+          "qty": 1
+        },
+        {
+          "itemId": 3713,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "dragonbreath-chili",
+      "professionId": 185,
+      "name": "Dragonbreath Chili",
+      "minSkill": 200,
+      "orangeUntil": 224,
+      "yellowUntil": 236,
+      "greenUntil": 249,
+      "grayAt": 250,
+      "reagents": [
+        {
+          "itemId": 12037,
+          "qty": 1
+        },
+        {
+          "itemId": 4402,
+          "qty": 1
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "heavy-kodo-stew",
+      "professionId": 185,
+      "name": "Heavy Kodo Stew",
+      "minSkill": 200,
+      "orangeUntil": 224,
+      "yellowUntil": 236,
+      "greenUntil": 249,
+      "grayAt": 250,
+      "reagents": [
+        {
+          "itemId": 12204,
+          "qty": 2
+        },
+        {
+          "itemId": 3713,
+          "qty": 1
+        },
+        {
+          "itemId": 159,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "spider-sausage",
+      "professionId": 185,
+      "name": "Spider Sausage",
+      "minSkill": 200,
+      "orangeUntil": 224,
+      "yellowUntil": 236,
+      "greenUntil": 249,
+      "grayAt": 250,
+      "reagents": [
+        {
+          "itemId": 12205,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "cooked-glossy-mightfish",
+      "professionId": 185,
+      "name": "Cooked Glossy Mightfish",
+      "minSkill": 225,
+      "orangeUntil": 249,
+      "yellowUntil": 261,
+      "greenUntil": 274,
+      "grayAt": 275,
+      "reagents": [
+        {
+          "itemId": 13754,
+          "qty": 1
+        },
+        {
+          "itemId": 3713,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "filet-of-redgill",
+      "professionId": 185,
+      "name": "Filet of Redgill",
+      "minSkill": 225,
+      "orangeUntil": 249,
+      "yellowUntil": 261,
+      "greenUntil": 274,
+      "grayAt": 275,
+      "reagents": [
+        {
+          "itemId": 13758,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "monster-omelet",
+      "professionId": 185,
+      "name": "Monster Omelet",
+      "minSkill": 225,
+      "orangeUntil": 249,
+      "yellowUntil": 261,
+      "greenUntil": 274,
+      "grayAt": 275,
+      "reagents": [
+        {
+          "itemId": 12207,
+          "qty": 1
+        },
+        {
+          "itemId": 3713,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "spiced-chili-crab",
+      "professionId": 185,
+      "name": "Spiced Chili Crab",
+      "minSkill": 225,
+      "orangeUntil": 249,
+      "yellowUntil": 261,
+      "greenUntil": 274,
+      "grayAt": 275,
+      "reagents": [
+        {
+          "itemId": 12206,
+          "qty": 1
+        },
+        {
+          "itemId": 2692,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "spotted-yellowtail",
+      "professionId": 185,
+      "name": "Spotted Yellowtail",
+      "minSkill": 225,
+      "orangeUntil": 249,
+      "yellowUntil": 261,
+      "greenUntil": 274,
+      "grayAt": 275,
+      "reagents": [
+        {
+          "itemId": 4603,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "tender-wolf-steak",
+      "professionId": 185,
+      "name": "Tender Wolf Steak",
+      "minSkill": 225,
+      "orangeUntil": 249,
+      "yellowUntil": 261,
+      "greenUntil": 274,
+      "grayAt": 275,
+      "reagents": [
+        {
+          "itemId": 12208,
+          "qty": 1
+        },
+        {
+          "itemId": 3713,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "undermine-clam-chowder",
+      "professionId": 185,
+      "name": "Undermine Clam Chowder",
+      "minSkill": 225,
+      "orangeUntil": 249,
+      "yellowUntil": 261,
+      "greenUntil": 274,
+      "grayAt": 275,
+      "reagents": [
+        {
+          "itemId": 7974,
+          "qty": 2
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        },
+        {
+          "itemId": 1179,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "grilled-squid",
+      "professionId": 185,
+      "name": "Grilled Squid",
+      "minSkill": 240,
+      "orangeUntil": 264,
+      "yellowUntil": 276,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 13755,
+          "qty": 1
+        },
+        {
+          "itemId": 3713,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "hot-smoked-bass",
+      "professionId": 185,
+      "name": "Hot Smoked Bass",
+      "minSkill": 240,
+      "orangeUntil": 264,
+      "yellowUntil": 276,
+      "greenUntil": 289,
+      "grayAt": 290,
+      "reagents": [
+        {
+          "itemId": 13756,
+          "qty": 1
+        },
+        {
+          "itemId": 2692,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "recipeId": "charred-bear-kabobs",
+      "professionId": 185,
+      "name": "Charred Bear Kabobs",
+      "minSkill": 250,
+      "orangeUntil": 274,
+      "yellowUntil": 284,
+      "greenUntil": 294,
+      "grayAt": 295,
+      "reagents": [
+        {
+          "itemId": 35562,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "juicy-bear-burger",
+      "professionId": 185,
+      "name": "Juicy Bear Burger",
+      "minSkill": 250,
+      "orangeUntil": 274,
+      "yellowUntil": 284,
+      "greenUntil": 294,
+      "grayAt": 295,
+      "reagents": [
+        {
+          "itemId": 35562,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "nightfin-soup",
+      "professionId": 185,
+      "name": "Nightfin Soup",
+      "minSkill": 250,
+      "orangeUntil": 274,
+      "yellowUntil": 284,
+      "greenUntil": 294,
+      "grayAt": 295,
+      "reagents": [
+        {
+          "itemId": 13759,
+          "qty": 1
+        },
+        {
+          "itemId": 159,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "poached-sunscale-salmon",
+      "professionId": 185,
+      "name": "Poached Sunscale Salmon",
+      "minSkill": 250,
+      "orangeUntil": 274,
+      "yellowUntil": 284,
+      "greenUntil": 294,
+      "grayAt": 295,
+      "reagents": [
+        {
+          "itemId": 13760,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "baked-salmon",
+      "professionId": 185,
+      "name": "Baked Salmon",
+      "minSkill": 275,
+      "orangeUntil": 299,
+      "yellowUntil": 311,
+      "greenUntil": 324,
+      "grayAt": 325,
+      "reagents": [
+        {
+          "itemId": 13889,
+          "qty": 1
+        },
+        {
+          "itemId": 3713,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "lobster-stew",
+      "professionId": 185,
+      "name": "Lobster Stew",
+      "minSkill": 275,
+      "orangeUntil": 299,
+      "yellowUntil": 311,
+      "greenUntil": 324,
+      "grayAt": 325,
+      "reagents": [
+        {
+          "itemId": 13888,
+          "qty": 1
+        },
+        {
+          "itemId": 159,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mightfish-steak",
+      "professionId": 185,
+      "name": "Mightfish Steak",
+      "minSkill": 275,
+      "orangeUntil": 299,
+      "yellowUntil": 311,
+      "greenUntil": 324,
+      "grayAt": 325,
+      "reagents": [
+        {
+          "itemId": 13893,
+          "qty": 1
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        },
+        {
+          "itemId": 3713,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "runn-tum-tuber-surprise",
+      "professionId": 185,
+      "name": "Runn Tum Tuber Surprise",
+      "minSkill": 275,
+      "orangeUntil": 299,
+      "yellowUntil": 311,
+      "greenUntil": 324,
+      "grayAt": 325,
+      "reagents": [
+        {
+          "itemId": 18255,
+          "qty": 1
+        },
+        {
+          "itemId": 3713,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "smoked-desert-dumplings",
+      "professionId": 185,
+      "name": "Smoked Desert Dumplings",
+      "minSkill": 285,
+      "orangeUntil": 309,
+      "yellowUntil": 321,
+      "greenUntil": 334,
+      "grayAt": 335,
+      "reagents": [
+        {
+          "itemId": 20424,
+          "qty": 1
+        },
+        {
+          "itemId": 3713,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "blackened-trout",
+      "professionId": 185,
+      "name": "Blackened Trout",
+      "minSkill": 300,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 27422,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "broiled-bloodfin",
+      "professionId": 185,
+      "name": "Broiled Bloodfin",
+      "minSkill": 300,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 33823,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "buzzard-bites",
+      "professionId": 185,
+      "name": "Buzzard Bites",
+      "minSkill": 300,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 27671,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "clam-bar",
+      "professionId": 185,
+      "name": "Clam Bar",
+      "minSkill": 300,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 24477,
+          "qty": 2
+        },
+        {
+          "itemId": 3713,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "dirge-s-kickin-chimaerok-chops",
+      "professionId": 185,
+      "name": "Dirge's Kickin' Chimaerok Chops",
+      "minSkill": 300,
+      "orangeUntil": 324,
+      "yellowUntil": 336,
+      "greenUntil": 349,
+      "grayAt": 350,
+      "reagents": [
+        {
+          "itemId": 2692,
+          "qty": 1
+        },
+        {
+          "itemId": 9061,
+          "qty": 1
+        },
+        {
+          "itemId": 8150,
+          "qty": 1
+        },
+        {
+          "itemId": 21024,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "feltail-delight",
+      "professionId": 185,
+      "name": "Feltail Delight",
+      "minSkill": 300,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 27425,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "kibler-s-bits",
+      "professionId": 185,
+      "name": "Kibler's Bits",
+      "minSkill": 300,
+      "orangeUntil": 344,
+      "yellowUntil": 354,
+      "greenUntil": 364,
+      "grayAt": 365,
+      "reagents": [
+        {
+          "itemId": 27671,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "ravager-dog",
+      "professionId": 185,
+      "name": "Ravager Dog",
+      "minSkill": 300,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 27674,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "stormchops",
+      "professionId": 185,
+      "name": "Stormchops",
+      "minSkill": 300,
+      "orangeUntil": 319,
+      "yellowUntil": 329,
+      "greenUntil": 339,
+      "grayAt": 340,
+      "reagents": [
+        {
+          "itemId": 27678,
+          "qty": 1
+        },
+        {
+          "itemId": 13757,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "blackened-sporefish",
+      "professionId": 185,
+      "name": "Blackened Sporefish",
+      "minSkill": 310,
+      "orangeUntil": 329,
+      "yellowUntil": 339,
+      "greenUntil": 349,
+      "grayAt": 350,
+      "reagents": [
+        {
+          "itemId": 27429,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "sporeling-snack",
+      "professionId": 185,
+      "name": "Sporeling Snack",
+      "minSkill": 310,
+      "orangeUntil": 329,
+      "yellowUntil": 339,
+      "greenUntil": 349,
+      "grayAt": 350,
+      "reagents": [
+        {
+          "itemId": 27676,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "blackened-basilisk",
+      "professionId": 185,
+      "name": "Blackened Basilisk",
+      "minSkill": 315,
+      "orangeUntil": 334,
+      "yellowUntil": 344,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 27677,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "grilled-mudfish",
+      "professionId": 185,
+      "name": "Grilled Mudfish",
+      "minSkill": 320,
+      "orangeUntil": 339,
+      "yellowUntil": 349,
+      "greenUntil": 359,
+      "grayAt": 360,
+      "reagents": [
+        {
+          "itemId": 27435,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "poached-bluefish",
+      "professionId": 185,
+      "name": "Poached Bluefish",
+      "minSkill": 320,
+      "orangeUntil": 339,
+      "yellowUntil": 349,
+      "greenUntil": 359,
+      "grayAt": 360,
+      "reagents": [
+        {
+          "itemId": 27437,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "golden-fish-sticks",
+      "professionId": 185,
+      "name": "Golden Fish Sticks",
+      "minSkill": 325,
+      "orangeUntil": 344,
+      "yellowUntil": 354,
+      "greenUntil": 364,
+      "grayAt": 365,
+      "reagents": [
+        {
+          "itemId": 27438,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "hot-apple-cider",
+      "professionId": 185,
+      "name": "Hot Apple Cider",
+      "minSkill": 325,
+      "orangeUntil": 325,
+      "yellowUntil": 325,
+      "greenUntil": 325,
+      "grayAt": 326,
+      "reagents": [
+        {
+          "itemId": 34412,
+          "qty": 1
+        },
+        {
+          "itemId": 17196,
+          "qty": 1
+        },
+        {
+          "itemId": 17194,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "roasted-clefthoof",
+      "professionId": 185,
+      "name": "Roasted Clefthoof",
+      "minSkill": 325,
+      "orangeUntil": 344,
+      "yellowUntil": 354,
+      "greenUntil": 364,
+      "grayAt": 365,
+      "reagents": [
+        {
+          "itemId": 27678,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "skullfish-soup",
+      "professionId": 185,
+      "name": "Skullfish Soup",
+      "minSkill": 325,
+      "orangeUntil": 334,
+      "yellowUntil": 344,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 33824,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "spicy-hot-talbuk",
+      "professionId": 185,
+      "name": "Spicy Hot Talbuk",
+      "minSkill": 325,
+      "orangeUntil": 334,
+      "yellowUntil": 344,
+      "greenUntil": 354,
+      "grayAt": 355,
+      "reagents": [
+        {
+          "itemId": 27682,
+          "qty": 1
+        },
+        {
+          "itemId": 2692,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "talbuk-steak",
+      "professionId": 185,
+      "name": "Talbuk Steak",
+      "minSkill": 325,
+      "orangeUntil": 344,
+      "yellowUntil": 354,
+      "greenUntil": 364,
+      "grayAt": 365,
+      "reagents": [
+        {
+          "itemId": 27682,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "warp-burger",
+      "professionId": 185,
+      "name": "Warp Burger",
+      "minSkill": 325,
+      "orangeUntil": 344,
+      "yellowUntil": 354,
+      "greenUntil": 364,
+      "grayAt": 365,
+      "reagents": [
+        {
+          "itemId": 27681,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "crunchy-serpent",
+      "professionId": 185,
+      "name": "Crunchy Serpent",
+      "minSkill": 335,
+      "orangeUntil": 354,
+      "yellowUntil": 364,
+      "greenUntil": 374,
+      "grayAt": 375,
+      "reagents": [
+        {
+          "itemId": 31671,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "mok-nathal-shortribs",
+      "professionId": 185,
+      "name": "Mok'Nathal Shortribs",
+      "minSkill": 335,
+      "orangeUntil": 354,
+      "yellowUntil": 364,
+      "greenUntil": 374,
+      "grayAt": 375,
+      "reagents": [
+        {
+          "itemId": 31670,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "recipeId": "spicy-crawdad",
+      "professionId": 185,
+      "name": "Spicy Crawdad",
+      "minSkill": 350,
+      "orangeUntil": 369,
+      "yellowUntil": 379,
+      "greenUntil": 389,
+      "grayAt": 390,
+      "reagents": [
+        {
+          "itemId": 27439,
+          "qty": 1
+        }
       ]
     }
   ]
