@@ -22,8 +22,6 @@ jobs:
       matrix:
         rid:
           - win-x64
-          - linux-x64
-          - osx-x64
 
     steps:
       - name: Checkout
@@ -56,7 +54,6 @@ jobs:
             /p:IncludeNativeLibrariesForSelfExtract=true
 
       - name: Add run helpers (Windows)
-        if: startsWith(matrix.rid, 'win-')
         shell: pwsh
         run: |
           $dir = "publish/${{ matrix.rid }}"
@@ -73,36 +70,29 @@ jobs:
           '@ | Out-File -FilePath (Join-Path $dir "run.ps1") -Encoding utf8
 
           @'
+          @echo off
+          taskkill /F /IM WowAhPlanner.Web.exe >nul 2>&1
+          echo Stopped WowAhPlanner.Web.exe
+          '@ | Out-File -FilePath (Join-Path $dir "stop.cmd") -Encoding ascii
+
+          @'
           WowAhPlanner - quick start
 
-          1) Run: run.cmd
-          2) Open: http://localhost:5000
+          Recommended:
+          - Double-click WowAhPlanner.Web.exe (no console window) and it will open your browser.
+
+          Alternatives:
+          - Run: run.cmd (console)
+          - Stop: stop.cmd
+
+          Open: http://localhost:5000
 
           Data and databases are stored in ./App_Data next to the executable.
+
+          Addon:
+          - The in-game addon is included at ./addon/WowAhPlannerScan
+          - Copy that folder into your WoW AddOns directory.
           '@ | Out-File -FilePath (Join-Path $dir "README.txt") -Encoding utf8
-
-      - name: Add run helpers (Linux/macOS)
-        if: "!startsWith(matrix.rid, 'win-')"
-        shell: bash
-        run: |
-          dir="publish/${{ matrix.rid }}"
-          cat > "$dir/run.sh" <<'EOF'
-          #!/usr/bin/env bash
-          set -euo pipefail
-          DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-          export ASPNETCORE_URLS="${ASPNETCORE_URLS:-http://localhost:5000}"
-          exec "$DIR/WowAhPlanner.Web" "$@"
-          EOF
-          chmod +x "$dir/run.sh"
-
-          cat > "$dir/README.txt" <<'EOF'
-          WowAhPlanner - quick start
-
-          1) Run: ./run.sh
-          2) Open: http://localhost:5000
-
-          Data and databases are stored in ./App_Data next to the executable.
-          EOF
 
       - name: Package
         shell: bash

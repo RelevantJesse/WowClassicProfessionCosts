@@ -5,7 +5,6 @@
 @inject WowAhPlanner.Core.Ports.IVendorPriceRepository VendorPriceRepository
 @inject WowAhPlanner.Core.Services.PlannerService Planner
 @inject WowAhPlanner.Infrastructure.Owned.OwnedMaterialsService Owned
-@inject Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider AuthStateProvider
 
 <PageTitle>Plan</PageTitle>
 
@@ -46,7 +45,7 @@
 
         <label>
             <input type="checkbox" @bind="_useOwnedMaterials" />
-            Subtract owned materials (requires login)
+            Subtract owned materials
         </label>
     </div>
 
@@ -337,12 +336,7 @@
             IReadOnlyDictionary<int, long>? owned = null;
             if (_useOwnedMaterials)
             {
-                var auth = await AuthStateProvider.GetAuthenticationStateAsync();
-                var userId = auth.User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-                if (!string.IsNullOrWhiteSpace(userId))
-                {
-                    owned = await Owned.GetOwnedAsync(Selection.ToRealmKey().ToString(), userId);
-                }
+                owned = await Owned.GetOwnedAsync(Selection.ToRealmKey().ToString(), "local");
             }
 
             var request = new PlanRequest(

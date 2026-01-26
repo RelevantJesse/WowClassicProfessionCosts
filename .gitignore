@@ -422,3 +422,6 @@ src/WowAhPlanner.Web/App_Data/
 
 # Local datapack caches
 .wago-cache/
+
+# Local publish output
+.tmp_publish_*/

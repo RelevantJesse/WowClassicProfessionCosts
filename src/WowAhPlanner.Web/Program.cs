@@ -1,11 +1,12 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Hosting.Server;
+using Microsoft.AspNetCore.Hosting.Server.Features;
+using System.Diagnostics;
 using WowAhPlanner.Core.Ports;
 using WowAhPlanner.Core.Services;
 using WowAhPlanner.Infrastructure.DependencyInjection;
 using WowAhPlanner.Infrastructure.Persistence;
 using WowAhPlanner.Web.Api;
-using WowAhPlanner.Web.Auth;
 using WowAhPlanner.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,28 +25,9 @@ var dbDir = Path.Combine(builder.Environment.ContentRootPath, "App_Data");
 Directory.CreateDirectory(dbDir);
 
 var appDbPath = Path.Combine(dbDir, "wowahplanner.db");
-var authDbPath = Path.Combine(dbDir, "wowahplanner.auth.db");
 var appDbConnectionString = $"Data Source={appDbPath}";
-var authDbConnectionString = $"Data Source={authDbPath}";
 
 builder.Services.AddWowAhPlannerSqlite(appDbConnectionString);
-builder.Services.AddDbContext<AuthDbContext>(o => o.UseSqlite(authDbConnectionString));
-
-builder.Services
-    .AddIdentity<AppUser, IdentityRole>(o =>
-    {
-        o.SignIn.RequireConfirmedAccount = false;
-        o.User.RequireUniqueEmail = false;
-        o.Password.RequiredLength = 6;
-        o.Password.RequireDigit = false;
-        o.Password.RequireLowercase = false;
-        o.Password.RequireUppercase = false;
-        o.Password.RequireNonAlphanumeric = false;
-    })
-    .AddEntityFrameworkStores<AuthDbContext>()
-    .AddDefaultTokenProviders();
-
-builder.Services.AddAuthorization();
 
 builder.Services.AddWowAhPlannerInfrastructure(
     configureDataPacks: o =>
@@ -85,9 +67,6 @@ using (var scope = app.Services.CreateScope())
     await db.Database.EnsureCreatedAsync();
     await SqliteSchemaBootstrapper.EnsureAppSchemaAsync(db);
 
-    await using var authDb = scope.ServiceProvider.GetRequiredService<AuthDbContext>();
-    await authDb.Database.EnsureCreatedAsync();
-
     _ = scope.ServiceProvider.GetRequiredService<IRecipeRepository>();
 }
 
@@ -105,13 +84,31 @@ if (httpsEnabled)
 app.UseStaticFiles();
 app.UseRouting();
 
-app.UseAuthentication();
-app.UseAuthorization();
-
 app.MapWowAhPlannerApi();
 
 app.MapRazorPages();
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
+
+if (builder.Configuration.GetValue("Browser:AutoOpen", false) && Environment.UserInteractive)
+{
+    var configuredUrl = builder.Configuration["Browser:Url"] ?? "http://localhost:5000";
+    app.Lifetime.ApplicationStarted.Register(() =>
+    {
+        try
+        {
+            var server = app.Services.GetService<IServer>();
+            var url =
+                server?.Features.Get<IServerAddressesFeature>()?.Addresses.FirstOrDefault()
+                ?? configuredUrl;
+
+            Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+        }
+        catch
+        {
+            // no-op
+        }
+    });
+}
 
 app.Run();

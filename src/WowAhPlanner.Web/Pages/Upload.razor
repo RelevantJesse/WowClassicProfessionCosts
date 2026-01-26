@@ -1,9 +1,6 @@
 @page "/upload"
-@using Microsoft.AspNetCore.Authorization
-@attribute [Authorize]
 @inject SelectionState Selection
 @inject WowAhPlanner.Infrastructure.Pricing.UploadedSnapshotIngestService SnapshotIngest
-@inject Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider AuthStateProvider
 
 <PageTitle>Upload snapshot</PageTitle>
 
@@ -183,8 +180,7 @@
             }
 
             var realmKey = targetKey.ToString();
-            var authState = await AuthStateProvider.GetAuthenticationStateAsync();
-            var uploaderUserId = authState.User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            var uploaderUserId = "local";
 
             var result = await SnapshotIngest.IngestAsync(
                 realmKey: realmKey,

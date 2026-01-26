@@ -14,7 +14,9 @@ Then open the printed URL (default `https://localhost:5001`).
 
 ## Download + run (no .NET install)
 
-GitHub Releases include a self-contained build (Windows/Linux/macOS). Download the zip for your OS, extract it somewhere writable, then run the included `run` script and open `http://localhost:5000`.
+GitHub Releases include a self-contained Windows build. Download the zip, extract it somewhere writable, then double-click `WowAhPlanner.Web.exe` (it auto-opens your browser to `http://localhost:5000`).
+
+The in-game addon is included in the zip at `addon/WowAhPlannerScan`.
 
 ## Test
 

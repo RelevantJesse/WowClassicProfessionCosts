@@ -1,9 +1,6 @@
 @page "/owned"
-@using Microsoft.AspNetCore.Authorization
-@attribute [Authorize]
 @inject SelectionState Selection
 @inject WowAhPlanner.Infrastructure.Owned.OwnedMaterialsService OwnedService
-@inject Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider AuthStateProvider
 
 <PageTitle>Owned materials</PageTitle>
 
@@ -11,7 +8,7 @@
 
 <div class="card">
     <h3>Realm</h3>
-    <p>Saved per user for: <code>@Selection.ToRealmKey()</code></p>
+    <p>Saved locally for: <code>@Selection.ToRealmKey()</code></p>
 </div>
 
 <div class="card">
@@ -184,13 +181,7 @@
             return;
         }
 
-        var auth = await AuthStateProvider.GetAuthenticationStateAsync();
-        var userId = auth.User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-        if (string.IsNullOrWhiteSpace(userId))
-        {
-            _message = "Not logged in.";
-            return;
-        }
+        var userId = "local";
 
         var realmKey = targetKey.ToString();
         var rows = dto.Items
@@ -209,13 +200,7 @@
 
         try
         {
-            var auth = await AuthStateProvider.GetAuthenticationStateAsync();
-            var userId = auth.User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-            if (string.IsNullOrWhiteSpace(userId))
-            {
-                _message = "Not logged in.";
-                return;
-            }
+            var userId = "local";
 
             var realmKey = Selection.ToRealmKey().ToString();
             var owned = await OwnedService.GetOwnedAsync(realmKey, userId);
