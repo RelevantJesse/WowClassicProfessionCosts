@@ -5,6 +5,7 @@
 @inject WowAhPlanner.Core.Ports.IVendorPriceRepository VendorPriceRepository
 @inject WowAhPlanner.Core.Services.PlannerService Planner
 @inject WowAhPlanner.Infrastructure.Owned.OwnedMaterialsService Owned
+@inject PlannerPreferences PlannerPreferences
 
 <PageTitle>Plan</PageTitle>
 
@@ -260,14 +261,14 @@
                             {
                                 <span class="badge">vendor</span>
                             }
-                        </td>
-                        <td>@line.NeededQuantity.ToString("0.##")</td>
-                        <td>@line.OwnedQuantity.ToString("0.##")</td>
-                        <td>@line.BuyQuantity.ToString("0.##")</td>
-                        <td>@line.UnitPrice.ToGscString()</td>
-                        <td>@line.LineCost.ToGscString()</td>
-                    </tr>
-                }
+                          </td>
+                          <td>@line.NeededQuantity.ToString("0.##")</td>
+                          <td>@line.OwnedQuantity.ToString("0")</td>
+                          <td>@line.BuyQuantity.ToString("0.##")</td>
+                          <td>@line.UnitPrice.ToGscString()</td>
+                          <td>@line.LineCost.ToGscString()</td>
+                      </tr>
+                  }
                 </tbody>
             </table>
 
@@ -289,14 +290,15 @@
     private IReadOnlyList<Profession> _professions = [];
     private int _professionId;
     private int _currentSkill = 1;
-    private int _targetSkill = 75;
+    private int _targetSkill = 300;
     private bool _useCraftIntermediates = false;
     private bool _useSmeltIntermediates = true;
     private bool _useOwnedMaterials = true;
     private bool _ready;
-    private Dictionary<int, string> _itemNames = new();
-    private Dictionary<int, long> _vendorPricesCopper = new();
-    private IReadOnlyList<ShoppingRow> _shoppingRows = [];
+      private Dictionary<int, string> _itemNames = new();
+      private Dictionary<int, long> _vendorPricesCopper = new();
+      private Dictionary<int, long> _ownedByItemId = new();
+      private IReadOnlyList<ShoppingRow> _shoppingRows = [];
 
     private PlanComputationResult? _result;
     private string? _uiError;
@@ -306,6 +308,7 @@
         if (!firstRender) return;
 
         await Selection.EnsureLoadedAsync();
+        await PlannerPreferences.EnsureLoadedAsync();
         _professions = await RecipeRepository.GetProfessionsAsync(Selection.GameVersion, CancellationToken.None);
 
         var preferred = Selection.ProfessionId;
@@ -325,19 +328,22 @@
 
     private async Task GenerateAsync()
     {
-        _result = null;
-        _uiError = null;
-        _itemNames = new Dictionary<int, string>();
-        _vendorPricesCopper = new Dictionary<int, long>();
-        _shoppingRows = [];
+          _result = null;
+          _uiError = null;
+          _itemNames = new Dictionary<int, string>();
+          _vendorPricesCopper = new Dictionary<int, long>();
+          _ownedByItemId = new Dictionary<int, long>();
+          _shoppingRows = [];
 
-        try
-        {
-            IReadOnlyDictionary<int, long>? owned = null;
-            if (_useOwnedMaterials)
-            {
-                owned = await Owned.GetOwnedAsync(Selection.ToRealmKey().ToString(), "local");
-            }
+          try
+          {
+              IReadOnlyDictionary<int, long>? owned = null;
+              if (_useOwnedMaterials)
+              {
+                  owned = await Owned.GetOwnedAsync(Selection.ToRealmKey().ToString(), "local");
+              }
+
+              _ownedByItemId = owned?.ToDictionary(kvp => kvp.Key, kvp => kvp.Value) ?? new Dictionary<int, long>();
 
             var request = new PlanRequest(
                 RealmKey: Selection.ToRealmKey(),
@@ -347,7 +353,8 @@
                 PriceMode: PriceMode.Min,
                 UseCraftIntermediates: _useCraftIntermediates,
                 UseSmeltIntermediates: _useSmeltIntermediates,
-                OwnedMaterials: owned);
+                OwnedMaterials: owned,
+                ExcludedRecipeIds: PlannerPreferences.GetExcludedRecipeIds(Selection.GameVersion, _professionId));
 
             _result = await Planner.BuildPlanAsync(request, CancellationToken.None);
 
@@ -379,13 +386,13 @@
                     idsToName.Add(id);
                 }
 
-                foreach (var id in _result.Plan.OwnedMaterialsUsed.Select(s => s.ItemId))
-                {
-                    idsToName.Add(id);
-                }
+                  foreach (var id in _result.Plan.OwnedMaterialsUsed.Select(s => s.ItemId))
+                  {
+                      idsToName.Add(id);
+                  }
 
-                _shoppingRows = BuildShoppingRows(_result.Plan);
-            }
+                  _shoppingRows = BuildShoppingRows(_result.Plan, _ownedByItemId);
+              }
 
             foreach (var itemId in idsToName)
             {
@@ -402,47 +409,48 @@
         }
     }
 
-    private sealed record ShoppingRow(
-        int ItemId,
-        decimal NeededQuantity,
-        decimal OwnedQuantity,
-        decimal BuyQuantity,
-        Money UnitPrice,
-        Money LineCost);
+      private sealed record ShoppingRow(
+          int ItemId,
+          decimal NeededQuantity,
+          long OwnedQuantity,
+          decimal BuyQuantity,
+          Money UnitPrice,
+          Money LineCost);
 
-    private IReadOnlyList<ShoppingRow> BuildShoppingRows(PlanResult plan)
-    {
-        var ownedUsedByItemId = plan.OwnedMaterialsUsed
-            .GroupBy(x => x.ItemId)
-            .ToDictionary(g => g.Key, g => g.Sum(x => x.QuantityUsed));
+      private IReadOnlyList<ShoppingRow> BuildShoppingRows(PlanResult plan, IReadOnlyDictionary<int, long> ownedByItemId)
+      {
+          var ownedUsedByItemId = plan.OwnedMaterialsUsed
+              .GroupBy(x => x.ItemId)
+              .ToDictionary(g => g.Key, g => g.Sum(x => x.QuantityUsed));
 
         var buyByItemId = plan.ShoppingList.ToDictionary(x => x.ItemId, x => x);
 
         var allItemIds = new HashSet<int>(ownedUsedByItemId.Keys);
         foreach (var itemId in buyByItemId.Keys) allItemIds.Add(itemId);
 
-        return allItemIds
-            .OrderBy(x => x)
-            .Select(itemId =>
-            {
-                var ownedQty = ownedUsedByItemId.GetValueOrDefault(itemId);
-                var buyQty = buyByItemId.TryGetValue(itemId, out var buyLine) ? buyLine.Quantity : 0m;
+          return allItemIds
+              .OrderBy(x => x)
+              .Select(itemId =>
+              {
+                  var ownedUsedQty = ownedUsedByItemId.GetValueOrDefault(itemId);
+                  var ownedTotalQty = ownedByItemId.GetValueOrDefault(itemId);
+                  var buyQty = buyByItemId.TryGetValue(itemId, out var buyLine) ? buyLine.Quantity : 0m;
 
-                var unit = buyByItemId.TryGetValue(itemId, out buyLine)
-                    ? buyLine.UnitPrice
-                    : GetUnitPrice(itemId);
+                  var unit = buyByItemId.TryGetValue(itemId, out buyLine)
+                      ? buyLine.UnitPrice
+                      : GetUnitPrice(itemId);
 
-                var lineCost = unit * buyQty;
-                return new ShoppingRow(
-                    ItemId: itemId,
-                    NeededQuantity: ownedQty + buyQty,
-                    OwnedQuantity: ownedQty,
-                    BuyQuantity: buyQty,
-                    UnitPrice: unit,
-                    LineCost: lineCost);
-            })
-            .ToArray();
-    }
+                  var lineCost = unit * buyQty;
+                  return new ShoppingRow(
+                      ItemId: itemId,
+                      NeededQuantity: ownedUsedQty + buyQty,
+                      OwnedQuantity: ownedTotalQty,
+                      BuyQuantity: buyQty,
+                      UnitPrice: unit,
+                      LineCost: lineCost);
+              })
+              .ToArray();
+      }
 
     private Money GetUnitPrice(int itemId)
     {

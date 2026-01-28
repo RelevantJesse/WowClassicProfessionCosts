@@ -586,7 +586,7 @@ local function BuildWantedItemIdSet()
   return wanted, count
 end
 
-local function BuildOwnedCountsFromBagBrother(wantedSet)
+local function BuildOwnedCountsByCharacterFromBagBrother(wantedSet)
   local function IsAddOnLoadedSafe(addonName)
     if C_AddOns and C_AddOns.IsAddOnLoaded then
       return C_AddOns.IsAddOnLoaded(addonName)
@@ -623,6 +623,19 @@ local function BuildOwnedCountsFromBagBrother(wantedSet)
     return nil, nil
   end
 
+  local function IsGuildLikeKey(k)
+    if type(k) ~= "string" then return false end
+    local key = string.lower(k)
+    return string.find(key, "guild", 1, true) or string.find(key, "vault", 1, true)
+  end
+
+  local function ExtractCharacterName(k)
+    if type(k) ~= "string" then return nil end
+    local name = string.match(k, "^(.-)%s%-%s")
+    if name and name ~= "" then return name end
+    return k
+  end
+
   local bb, source = DetectBagDb()
   if type(bb) ~= "table" then
     local bbLoaded = IsAddOnLoadedSafe("BagBrother")
@@ -633,45 +646,47 @@ local function BuildOwnedCountsFromBagBrother(wantedSet)
   end
 
   if type(bb) ~= "table" then
-    return nil, "BagBrother/Bagnon data not found. Expected global BrotherBags (preferred) or BagBrother/BagnonDB. If you have Bagnon/BagBrother installed, enable BagBrother and /reload. Use /wahpscan owneddebug for diagnostics."
+    return nil, nil, "BagBrother/Bagnon data not found. Expected global BrotherBags (preferred) or BagBrother/BagnonDB. If you have Bagnon/BagBrother installed, enable BagBrother and /reload. Use /wahpscan owneddebug for diagnostics."
   end
 
   local realmName = GetRealmName()
+  local charRoots = {}
 
-  local nodes = {}
   if source == "BrotherBags" or source == "BagBrother" then
     local realmTable = bb[realmName] or bb[string.lower(realmName)] or bb[NormalizeRealmSlug(realmName)]
     if type(realmTable) == "table" then
-      table.insert(nodes, realmTable)
+      for k, v in pairs(realmTable) do
+        if type(v) == "table" and (not IsGuildLikeKey(k)) then
+          table.insert(charRoots, { name = ExtractCharacterName(k), node = v })
+        end
+      end
     end
   elseif source == "BagnonDB" or source == "BagnonDB2" or source == "BagnonDB3" then
     if type(bb.characters) == "table" then
       local suffix = " - " .. tostring(realmName)
       for k, v in pairs(bb.characters) do
-        if type(k) == "string" and string.sub(k, -string.len(suffix)) == suffix then
-          table.insert(nodes, v)
+        if type(k) == "string" and type(v) == "table" and string.sub(k, -string.len(suffix)) == suffix and (not IsGuildLikeKey(k)) then
+          table.insert(charRoots, { name = ExtractCharacterName(k), node = v })
         end
       end
     end
   end
 
-  if #nodes == 0 then
-    DebugPrint("Owned export: could not find realm-specific section in " .. tostring(source) .. "; scanning entire DB (may include other realms).")
-    table.insert(nodes, bb)
+  if #charRoots == 0 then
+    return nil, nil, "Owned export: could not find realm-specific section in " .. tostring(source) .. ". Refusing to scan entire DB to avoid counting guild bank/other realms. Use /wahpscan owneddebug for diagnostics."
   else
-    DebugPrint("Owned export: using " .. tostring(source) .. " realm=\"" .. tostring(realmName) .. "\" nodes=" .. tostring(#nodes))
+    DebugPrint("Owned export: using " .. tostring(source) .. " realm=\"" .. tostring(realmName) .. "\" characters=" .. tostring(#charRoots))
   end
 
-  local counts = {}
-  local visited = {}
-
-  local function Walk(node)
+  local function WalkCounts(node, counts, visited)
     local tt = type(node)
     if tt == "table" then
       if visited[node] then return end
       visited[node] = true
-      for _, v in pairs(node) do
-        Walk(v)
+      for k, v in pairs(node) do
+        if not IsGuildLikeKey(k) then
+          WalkCounts(v, counts, visited)
+        end
       end
       return
     end
@@ -684,11 +699,26 @@ local function BuildOwnedCountsFromBagBrother(wantedSet)
     end
   end
 
-  for _, root in ipairs(nodes) do
-    Walk(root)
+  local totals = {}
+  local byCharacter = {}
+
+  for _, c in ipairs(charRoots) do
+    local counts = {}
+    WalkCounts(c.node, counts, {})
+    if next(counts) ~= nil then
+      byCharacter[c.name or "Unknown"] = counts
+      for itemId, qty in pairs(counts) do
+        totals[itemId] = (totals[itemId] or 0) + qty
+      end
+    end
   end
 
-  return counts, nil
+  return totals, byCharacter, nil
+end
+
+local function BuildOwnedCountsFromBagBrother(wantedSet)
+  local totals, _, err = BuildOwnedCountsByCharacterFromBagBrother(wantedSet)
+  return totals, err
 end
 
 local function OwnedDebug()
@@ -728,7 +758,7 @@ local function OwnedDebug()
   DumpTableKeys("BagnonDB.characters", (_G and _G.BagnonDB and _G.BagnonDB.characters) or nil)
 end
 
-local function BuildOwnedExportJsonFromCounts(snapshot, items)
+local function BuildOwnedExportJsonFromCounts(snapshot, items, characters)
   local parts = {}
   table.insert(parts, '{"schema":"wowahplanner-owned-v1"')
   table.insert(parts, ',"snapshotTimestampUtc":"' .. (snapshot.snapshotTimestampUtc or "") .. '"')
@@ -741,6 +771,19 @@ local function BuildOwnedExportJsonFromCounts(snapshot, items)
   end
   if snapshot.realmSlug then
     table.insert(parts, ',"realmSlug":"' .. tostring(snapshot.realmSlug) .. '"')
+  end
+  if type(characters) == "table" then
+    table.insert(parts, ',"characters":[')
+    for cIdx, ch in ipairs(characters) do
+      if cIdx > 1 then table.insert(parts, ",") end
+      table.insert(parts, '{"name":"' .. tostring(ch.name or "") .. '","items":[')
+      for i, it in ipairs(ch.items or {}) do
+        if i > 1 then table.insert(parts, ",") end
+        table.insert(parts, string.format('{"itemId":%d,"qty":%d}', it.itemId, it.qty or 0))
+      end
+      table.insert(parts, "]}")
+    end
+    table.insert(parts, "]")
   end
   table.insert(parts, ',"items":[')
 
@@ -765,7 +808,7 @@ local function ExportOwned()
     return
   end
 
-  local counts, err = BuildOwnedCountsFromBagBrother(wantedSet)
+  local counts, byCharacter, err = BuildOwnedCountsByCharacterFromBagBrother(wantedSet)
   if not counts then
     Print("Owned export failed: " .. tostring(err))
     return
@@ -794,7 +837,24 @@ local function ExportOwned()
     items = items,
   }
 
-  local json = BuildOwnedExportJsonFromCounts(snapshot, items)
+  local characters = {}
+  if type(byCharacter) == "table" then
+    local names = {}
+    for name, _ in pairs(byCharacter) do table.insert(names, name) end
+    table.sort(names, function(a, b) return tostring(a) < tostring(b) end)
+    for _, name in ipairs(names) do
+      local cItems = {}
+      for itemId, qty in pairs(byCharacter[name] or {}) do
+        if qty and qty > 0 then
+          table.insert(cItems, { itemId = itemId, qty = qty })
+        end
+      end
+      table.sort(cItems, function(a, b) return a.itemId < b.itemId end)
+      table.insert(characters, { name = name, items = cItems })
+    end
+  end
+
+  local json = BuildOwnedExportJsonFromCounts(snapshot, items, characters)
   WowAhPlannerScanDB.lastOwnedSnapshot = snapshot
   WowAhPlannerScanDB.lastOwnedJson = json
 

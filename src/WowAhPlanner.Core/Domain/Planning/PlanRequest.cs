@@ -10,4 +10,5 @@ public sealed record PlanRequest(
     PriceMode PriceMode,
     bool UseCraftIntermediates = true,
     bool UseSmeltIntermediates = true,
-    IReadOnlyDictionary<int, long>? OwnedMaterials = null);
+    IReadOnlyDictionary<int, long>? OwnedMaterials = null,
+    IReadOnlySet<string>? ExcludedRecipeIds = null);

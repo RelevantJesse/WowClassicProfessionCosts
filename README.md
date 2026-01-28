@@ -4,15 +4,17 @@ Blazor Server app that loads versioned profession recipe data packs, ingests auc
 
 ## Quick start (recommended)
 
-1) Go to the repo’s **Releases** page
+1) Go to the repo's **Releases** page
 2) Click the latest version and download the `.zip`
 3) Extract the zip somewhere (like your Desktop) and open the extracted folder
+
+If you see `Failed to load resource ... 404` for `_framework/blazor.server.js`, you're usually running from the wrong folder (or directly from inside the `.zip`) instead of extracting the full release.
 
 ### Install the in-game addon
 
 1) Copy `addon/WowAhPlannerScan/` into your WoW Anniversary AddOns folder, for example:
    - `...\World of Warcraft\_anniversary_\Interface\AddOns\`
-2) This installs the addon, but it isn’t useful until you install targets from the web app (next step).
+2) This installs the addon, but it isn't useful until you install targets from the web app (next step).
 
 ### Run the web app
 
@@ -31,7 +33,7 @@ Blazor Server app that loads versioned profession recipe data packs, ingests auc
 
 ### Scan + upload prices
 
-1) Open the Auction House (use the default Blizzard AH UI; TSM isn’t supported yet)
+1) Open the Auction House (use the default Blizzard AH UI; TSM isn't supported yet)
 2) Find the addon widget and click **Scan**
    - By default it scans the next 100 profession skill points; you can change this in options
 3) When the scan finishes, click **Export** and copy all the text
@@ -41,7 +43,7 @@ Blazor Server app that loads versioned profession recipe data packs, ingests auc
 
 1) Go to **Plan**
 2) Choose your profession, current skill, and target skill
-   - Don’t set a target higher than what you scanned, or you won’t have pricing data yet
+   - Don't set a target higher than what you scanned, or you won't have pricing data yet
 3) Click **Generate plan**
 
 ## Build

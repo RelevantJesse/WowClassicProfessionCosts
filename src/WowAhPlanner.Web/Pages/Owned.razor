@@ -1,5 +1,6 @@
 @page "/owned"
 @inject SelectionState Selection
+@inject WowAhPlanner.Core.Ports.IItemRepository ItemRepository
 @inject WowAhPlanner.Infrastructure.Owned.OwnedMaterialsService OwnedService
 
 <PageTitle>Owned materials</PageTitle>
@@ -42,6 +43,46 @@
     }
 </div>
 
+@if (_preview?.Characters is { Count: > 0 })
+{
+    <div class="card">
+        <h3>Owned by character</h3>
+        <p>This breakdown comes from the addon export. Planning uses the combined totals.</p>
+
+        @foreach (var ch in _preview.Characters.OrderBy(c => c.Name, StringComparer.OrdinalIgnoreCase))
+        {
+            <h4>@ch.Name</h4>
+            @if (ch.Items is null || ch.Items.Count == 0)
+            {
+                <p class="badge">no matching items</p>
+            }
+            else
+            {
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Qty</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var it in ch.Items.OrderByDescending(x => x.Qty).ThenBy(x => x.ItemId))
+                    {
+                        <tr>
+                            <td>
+                                @(_itemNames.GetValueOrDefault(it.ItemId) ?? $"Item {it.ItemId}")
+                                <span class="badge">@it.ItemId</span>
+                            </td>
+                            <td>@it.Qty</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            }
+        }
+    </div>
+}
+
 @code {
     private string _json = """
 {"schema":"wowahplanner-owned-v1","items":[{"itemId":2589,"qty":200}]}
@@ -49,6 +90,8 @@
     private string _savedVariablesPath = "";
     private bool _allowSnapshotMismatch;
 
+    private OwnedDto? _preview;
+    private Dictionary<int, string> _itemNames = new();
     private string? _message;
     private bool _busy;
 
@@ -56,6 +99,8 @@
     {
         if (!firstRender) return;
         await Selection.EnsureLoadedAsync();
+        _itemNames = (await ItemRepository.GetItemsAsync(Selection.GameVersion, CancellationToken.None))
+            .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
         StateHasChanged();
     }
 
@@ -87,6 +132,7 @@
         {
             var json = await ReadLastOwnedJsonFromSavedVariablesAsync(_savedVariablesPath);
             _json = json;
+            TrySetPreview(json);
             _message = "Loaded owned mats JSON from SavedVariables. Click Save to store it.";
         }
         catch (Exception ex)
@@ -108,6 +154,7 @@
         {
             var json = await ReadLastOwnedJsonFromSavedVariablesAsync(_savedVariablesPath);
             _json = json;
+            TrySetPreview(json);
             await SaveJsonAsync(json);
         }
         catch (Exception ex)
@@ -131,6 +178,8 @@
             _message = "Invalid JSON (null).";
             return;
         }
+
+        _preview = dto;
 
         if (!string.Equals(dto.Schema, "wowahplanner-owned-v1", StringComparison.OrdinalIgnoreCase))
         {
@@ -213,6 +262,7 @@
                 },
                 new System.Text.Json.JsonSerializerOptions(System.Text.Json.JsonSerializerDefaults.Web) { WriteIndented = true });
 
+            _preview = null;
             _message = $"Loaded {owned.Count} items.";
         }
         catch (Exception ex)
@@ -232,6 +282,13 @@
         public string? Region { get; set; }
         public string? GameVersion { get; set; }
         public string? RealmSlug { get; set; }
+        public List<OwnedCharacterDto>? Characters { get; set; }
+        public List<OwnedItemDto>? Items { get; set; }
+    }
+
+    private sealed class OwnedCharacterDto
+    {
+        public string Name { get; set; } = "Unknown";
         public List<OwnedItemDto>? Items { get; set; }
     }
 
@@ -239,6 +296,20 @@
     {
         public int ItemId { get; set; }
         public long Qty { get; set; }
+    }
+
+    private void TrySetPreview(string json)
+    {
+        try
+        {
+            _preview = System.Text.Json.JsonSerializer.Deserialize<OwnedDto>(
+                json,
+                new System.Text.Json.JsonSerializerOptions(System.Text.Json.JsonSerializerDefaults.Web));
+        }
+        catch
+        {
+            _preview = null;
+        }
     }
 
     private static async Task<string> ReadLastOwnedJsonFromSavedVariablesAsync(string path)

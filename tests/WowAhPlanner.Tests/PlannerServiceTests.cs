@@ -162,6 +162,57 @@ public sealed class PlannerServiceTests
     }
 
     [Fact]
+    public async Task Excludes_selected_recipes_from_planning()
+    {
+        var recipes = new[]
+        {
+            new Recipe(
+                RecipeId: "cheap",
+                ProfessionId: 185,
+                Name: "Cheap",
+                MinSkill: 1,
+                OrangeUntil: 100,
+                YellowUntil: 101,
+                GreenUntil: 102,
+                GrayAt: 103,
+                Reagents: [new Reagent(100, 1)]),
+            new Recipe(
+                RecipeId: "expensive",
+                ProfessionId: 185,
+                Name: "Expensive",
+                MinSkill: 1,
+                OrangeUntil: 100,
+                YellowUntil: 101,
+                GreenUntil: 102,
+                GrayAt: 103,
+                Reagents: [new Reagent(200, 1)]),
+        };
+
+        var recipeRepo = new InMemoryRecipeRepository(recipes);
+        var priceService = new InMemoryPriceService(new Dictionary<int, long>
+        {
+            [100] = 10,
+            [200] = 999,
+        });
+        var vendorRepo = new InMemoryVendorPriceRepository(new Dictionary<int, long>());
+        var producerRepo = new InMemoryProducerRepository();
+
+        var planner = new PlannerService(recipeRepo, priceService, vendorRepo, producerRepo);
+        var result = await planner.BuildPlanAsync(
+            new PlanRequest(
+                RealmKey: new RealmKey(Region.US, GameVersion.Era, "whitemane"),
+                ProfessionId: 185,
+                CurrentSkill: 1,
+                TargetSkill: 2,
+                PriceMode: PriceMode.Min,
+                ExcludedRecipeIds: new HashSet<string>(StringComparer.OrdinalIgnoreCase) { "cheap" }),
+            CancellationToken.None);
+
+        Assert.NotNull(result.Plan);
+        Assert.Equal("expensive", result.Plan!.Steps.Single().RecipeId);
+    }
+
+    [Fact]
     public async Task Shopping_list_aggregates_quantities_across_steps()
     {
         var recipes = new[]

@@ -32,6 +32,16 @@ public sealed class PlannerService(
 
         var gameVersion = request.RealmKey.GameVersion;
         var recipes = await recipeRepository.GetRecipesAsync(gameVersion, request.ProfessionId, cancellationToken);
+
+        var excludedRecipeIds = request.ExcludedRecipeIds is { Count: > 0 }
+            ? request.ExcludedRecipeIds.ToHashSet(StringComparer.OrdinalIgnoreCase)
+            : null;
+
+        if (excludedRecipeIds is not null)
+        {
+            recipes = recipes.Where(r => !excludedRecipeIds.Contains(r.RecipeId)).ToArray();
+        }
+
         if (recipes.Count == 0)
         {
             return new PlanComputationResult(
@@ -44,7 +54,9 @@ public sealed class PlannerService(
                     ErrorMessage: null,
                     Prices: new Dictionary<int, PriceSummary>()),
                 MissingItemIds: [],
-                ErrorMessage: $"No recipes found for professionId={request.ProfessionId} ({gameVersion}).");
+                ErrorMessage: excludedRecipeIds is null
+                    ? $"No recipes found for professionId={request.ProfessionId} ({gameVersion})."
+                    : $"No eligible recipes found for professionId={request.ProfessionId} ({gameVersion}) after exclusions.");
         }
 
         var vendorPrices = await vendorPriceRepository.GetVendorPricesAsync(gameVersion, cancellationToken);
@@ -64,7 +76,9 @@ public sealed class PlannerService(
                 all.AddRange(pr);
             }
 
-            craftableRecipes = all;
+            craftableRecipes = excludedRecipeIds is null
+                ? all
+                : all.Where(r => !excludedRecipeIds.Contains(r.RecipeId)).ToArray();
         }
 
         var craftables = CraftableIndex.Build(craftableRecipes);

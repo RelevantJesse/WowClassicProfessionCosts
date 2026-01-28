@@ -12,6 +12,12 @@ public sealed class RealmCatalog
             new Realm("mankrik", "Mankrik"),
             new Realm("bloodsail-buccaneers", "Bloodsail Buccaneers"),
         ],
+        [(Region.US, GameVersion.Anniversary)] =
+        [
+            new Realm("dreamscythe", "Dreamscythe"),
+            new Realm("nightslayer", "Nightslayer"),
+            new Realm("maldath", "Maldath"),
+        ],
         [(Region.EU, GameVersion.Era)] =
         [
             new Realm("firemaw", "Firemaw"),

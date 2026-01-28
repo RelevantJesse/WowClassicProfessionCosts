@@ -78,6 +78,9 @@ jobs:
           @'
           WowAhPlanner - quick start
 
+          IMPORTANT:
+          - Extract the .zip first (don't run WowAhPlanner.Web.exe from inside the zip)
+
           Recommended:
           - Double-click WowAhPlanner.Web.exe (no console window) and it will open your browser.
 

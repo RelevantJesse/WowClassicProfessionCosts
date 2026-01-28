@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Hosting.Server.Features;
 using System.Diagnostics;
+using System.Reflection;
 using WowAhPlanner.Core.Ports;
 using WowAhPlanner.Core.Services;
 using WowAhPlanner.Infrastructure.DependencyInjection;
@@ -9,7 +10,41 @@ using WowAhPlanner.Infrastructure.Persistence;
 using WowAhPlanner.Web.Api;
 using WowAhPlanner.Web.Services;
 
-var builder = WebApplication.CreateBuilder(args);
+static string? FindBestContentRoot()
+{
+    // Blazor Server's static assets (e.g. wwwroot/_framework/blazor.server.js) must be present and discoverable.
+    // Users often launch the exe from a different working directory (or directly from inside a zip), which can
+    // cause the default ContentRoot (current directory) to not contain wwwroot.
+    var candidates = new[]
+    {
+        Directory.GetCurrentDirectory(),
+        AppContext.BaseDirectory,
+        Path.GetDirectoryName(Environment.ProcessPath ?? string.Empty),
+        Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location ?? string.Empty),
+    };
+
+    foreach (var candidate in candidates)
+    {
+        if (string.IsNullOrWhiteSpace(candidate))
+        {
+            continue;
+        }
+
+        var full = Path.GetFullPath(candidate);
+        if (Directory.Exists(Path.Combine(full, "wwwroot")))
+        {
+            return full;
+        }
+    }
+
+    return null;
+}
+
+var contentRoot = FindBestContentRoot();
+var builder = WebApplication.CreateBuilder(
+    string.IsNullOrWhiteSpace(contentRoot)
+        ? new WebApplicationOptions { Args = args }
+        : new WebApplicationOptions { Args = args, ContentRootPath = contentRoot });
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
@@ -18,6 +53,7 @@ builder.Services.AddHttpClient();
 builder.Services.AddSingleton<RealmCatalog>();
 builder.Services.AddScoped<LocalStorageService>();
 builder.Services.AddScoped<SelectionState>();
+builder.Services.AddScoped<PlannerPreferences>();
 builder.Services.AddSingleton<WowAddonInstaller>();
 builder.Services.AddScoped<PlannerService>();
 

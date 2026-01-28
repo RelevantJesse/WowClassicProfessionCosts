@@ -27,19 +27,41 @@ public sealed class OwnedMaterialsService(IDbContextFactory<AppDbContext> dbCont
         IReadOnlyCollection<(int ItemId, long Quantity)> items,
         CancellationToken cancellationToken = default)
     {
-        if (items.Count == 0) return 0;
+        // Treat this as a full replacement snapshot for (realmKey, userId).
+        // Items not present in the incoming set will be deleted so stale rows don't linger.
 
         await using var db = await dbContextFactory.CreateDbContextAsync(cancellationToken);
         await SqliteSchemaBootstrapper.EnsureAppSchemaAsync(db, cancellationToken);
 
-        var updated = 0;
-        foreach (var (itemId, qty) in items)
-        {
-            if (itemId <= 0) continue;
-            if (qty < 0) continue;
+        var incoming = items
+            .Where(x => x.ItemId > 0 && x.Quantity > 0)
+            .GroupBy(x => x.ItemId)
+            .Select(g => (ItemId: g.Key, Quantity: g.Max(x => x.Quantity)))
+            .ToDictionary(x => x.ItemId, x => x.Quantity);
 
-            var existing = await db.OwnedMaterials.FindAsync([realmKey, userId, itemId], cancellationToken);
-            if (existing is null)
+        var existingRows = await db.OwnedMaterials
+            .Where(x => x.RealmKey == realmKey && x.UserId == userId)
+            .ToListAsync(cancellationToken);
+
+        var existingByItemId = existingRows.ToDictionary(x => x.ItemId);
+        var incomingItemIds = incoming.Keys.ToHashSet();
+
+        foreach (var row in existingRows)
+        {
+            if (!incomingItemIds.Contains(row.ItemId))
+            {
+                db.OwnedMaterials.Remove(row);
+            }
+        }
+
+        foreach (var (itemId, qty) in incoming)
+        {
+            if (existingByItemId.TryGetValue(itemId, out var row))
+            {
+                row.Quantity = qty;
+                row.UpdatedAtUtc = DateTime.UtcNow;
+            }
+            else
             {
                 db.OwnedMaterials.Add(new OwnedMaterialEntity
                 {
@@ -50,17 +72,9 @@ public sealed class OwnedMaterialsService(IDbContextFactory<AppDbContext> dbCont
                     UpdatedAtUtc = DateTime.UtcNow,
                 });
             }
-            else
-            {
-                existing.Quantity = qty;
-                existing.UpdatedAtUtc = DateTime.UtcNow;
-            }
-
-            updated++;
         }
 
         await db.SaveChangesAsync(cancellationToken);
-        return updated;
+        return incoming.Count;
     }
 }
-

@@ -1,6 +1,7 @@
 @page "/recipes"
 @inject SelectionState Selection
 @inject WowAhPlanner.Core.Ports.IRecipeRepository RecipeRepository
+@inject PlannerPreferences PlannerPreferences
 
 <PageTitle>Recipes</PageTitle>
 
@@ -33,6 +34,7 @@
             <thead>
             <tr>
                 <th>Recipe</th>
+                <th>Exclude</th>
                 <th>Min</th>
                 <th>Orange</th>
                 <th>Yellow</th>
@@ -46,6 +48,11 @@
             {
                 <tr>
                     <td>@r.Name <span class="badge">@r.RecipeId</span></td>
+                    <td>
+                        <input type="checkbox"
+                               checked="@_excludedRecipeIds.Contains(r.RecipeId)"
+                               @onchange="e => SetExcludedAsync(r.RecipeId, e)" />
+                    </td>
                     <td>@r.MinSkill</td>
                     <td>@r.OrangeUntil</td>
                     <td>@r.YellowUntil</td>
@@ -68,12 +75,14 @@
     private IReadOnlyList<Profession> _professions = [];
     private int _professionId;
     private IReadOnlyList<Recipe> _recipes = [];
+    private HashSet<string> _excludedRecipeIds = new(StringComparer.OrdinalIgnoreCase);
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (!firstRender) return;
 
         await Selection.EnsureLoadedAsync();
+        await PlannerPreferences.EnsureLoadedAsync();
         await LoadProfessionsAndRecipes();
         StateHasChanged();
     }
@@ -99,9 +108,30 @@
 
     private async Task LoadRecipes()
     {
+        _excludedRecipeIds = new HashSet<string>(
+            PlannerPreferences.GetExcludedRecipeIds(Selection.GameVersion, _professionId),
+            StringComparer.OrdinalIgnoreCase);
+
         _recipes = _professionId == 0
             ? []
             : await RecipeRepository.GetRecipesAsync(Selection.GameVersion, _professionId, CancellationToken.None);
     }
-}
 
+    private async Task SetExcludedAsync(string recipeId, ChangeEventArgs e)
+    {
+        var excluded =
+            e.Value is bool b ? b :
+            e.Value is string s && bool.TryParse(s, out var parsed) && parsed;
+
+        await PlannerPreferences.SetRecipeExcludedAsync(Selection.GameVersion, _professionId, recipeId, excluded);
+
+        if (excluded)
+        {
+            _excludedRecipeIds.Add(recipeId);
+        }
+        else
+        {
+            _excludedRecipeIds.Remove(recipeId);
+        }
+    }
+}
