@@ -51,7 +51,9 @@ jobs:
             --self-contained true \
             -o "publish/${{ matrix.rid }}" \
             /p:PublishSingleFile=true \
-            /p:IncludeNativeLibrariesForSelfExtract=true
+            -p:UseAppHost=true \
+            /p:IncludeNativeLibrariesForSelfExtract=true \
+            -p:EnableCompressionInSingleFile=true
 
       - name: Add run helpers (Windows)
         shell: pwsh
