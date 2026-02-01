@@ -23,7 +23,7 @@ internal sealed class WowAddonInstaller
 
         foreach (var root in candidates.Where(p => !string.IsNullOrWhiteSpace(p)).Cast<string>())
         {
-            var addonFolder = Path.Combine(root, wowMode, "Interface", "AddOns", "WowAhPlannerScan");
+            var addonFolder = Path.Combine(root, wowMode, "Interface", "AddOns", "ProfessionLevelerScan");
             if (Directory.Exists(addonFolder))
             {
                 folderPath = addonFolder;
@@ -31,8 +31,7 @@ internal sealed class WowAddonInstaller
             }
         }
 
-        error = $"Could not find add-on folder. Expected something like 'C:\\Program Files (x86)\\World of Warcraft\\{wowMode}\\Interface\\AddOns\\WowAhPlannerScan'.";
+        error = $"Could not find add-on folder. Expected something like 'C:\\Program Files (x86)\\World of Warcraft\\{wowMode}\\Interface\\AddOns\\ProfessionLevelerScan'.";
         return false;
     }
 }
-

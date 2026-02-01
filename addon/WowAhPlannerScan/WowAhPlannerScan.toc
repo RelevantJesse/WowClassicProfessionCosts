@@ -1,9 +1,0 @@
-## Interface: 20501
-## Title: WowAhPlannerScan
-## Notes: Scans selected AH items and exports a snapshot JSON for WowAhPlanner.
-## Author: WowAhPlanner
-## Version: 0.1.0
-## SavedVariables: WowAhPlannerScanDB, WowAhPlannerScan_TargetItemIds
-
-WowAhPlannerScan_Targets.lua
-WowAhPlannerScan.lua

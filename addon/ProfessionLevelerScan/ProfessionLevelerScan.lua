@@ -1,5 +1,29 @@
 local ADDON_NAME = ...
-local OPTIONS_FRAME_NAME = "WowAhPlannerScanOptionsFrame"
+local OPTIONS_FRAME_NAME = "ProfessionLevelerScanOptionsFrame"
+
+local function BridgeSavedVariables()
+  ProfessionLevelerScanDB = ProfessionLevelerScanDB or WowAhPlannerScanDB
+  WowAhPlannerScanDB = ProfessionLevelerScanDB or {}
+
+  local function bridge(name)
+    local newName = "ProfessionLevelerScan_" .. name
+    local oldName = "WowAhPlannerScan_" .. name
+    if _G[newName] == nil then _G[newName] = _G[oldName] end
+    if _G[oldName] == nil then _G[oldName] = _G[newName] end
+  end
+
+  bridge("TargetItemIds")
+  bridge("TargetGameVersion")
+  bridge("TargetRegion")
+  bridge("TargetRealmSlug")
+  bridge("TargetProfessionId")
+  bridge("TargetProfessionName")
+  bridge("VendorItemIds")
+  bridge("RecipeTargets")
+  bridge("OwnedItemIds")
+end
+
+BridgeSavedVariables()
 
 local function EnsureDb()
   if type(WowAhPlannerScanDB) ~= "table" then

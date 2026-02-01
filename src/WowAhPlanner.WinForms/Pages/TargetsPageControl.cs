@@ -115,7 +115,7 @@ internal sealed class TargetsPageControl(
         helpLabel.Margin = new Padding(0);
         helpLabel.ForeColor = Ui.Theme.TextSecondary;
         helpLabel.Text =
-            "This writes WowAhPlannerScan_Targets.lua into your WoW AddOns folder.\r\n" +
+            "This writes ProfessionLevelerScan_Targets.lua into your WoW AddOns folder.\r\n" +
             $"The addon scans reagents for recipes from your current skill up to +{DefaultMaxSkillDelta} (configured in the addon).";
 
         inputsLayout.Controls.Add(professionLabel, 0, 0);
@@ -274,7 +274,7 @@ internal sealed class TargetsPageControl(
                 useSmeltIntermediates: smeltIntermediatesCheckBox.Checked,
                 CancellationToken.None);
 
-            var targetPath = Path.Combine(addonFolder, "WowAhPlannerScan_Targets.lua");
+            var targetPath = Path.Combine(addonFolder, "ProfessionLevelerScan_Targets.lua");
             File.WriteAllText(targetPath, lua);
 
             statusTextBox.Text =
@@ -305,8 +305,8 @@ internal sealed class TargetsPageControl(
 
             using var dialog = new SaveFileDialog
             {
-                Title = "Save WowAhPlannerScan_Targets.lua",
-                FileName = "WowAhPlannerScan_Targets.lua",
+                Title = "Save ProfessionLevelerScan_Targets.lua",
+                FileName = "ProfessionLevelerScan_Targets.lua",
                 Filter = "Lua files (*.lua)|*.lua|All files (*.*)|*.*",
                 OverwritePrompt = true,
             };
@@ -352,4 +352,3 @@ internal sealed class TargetsPageControl(
         }
     }
 }
-

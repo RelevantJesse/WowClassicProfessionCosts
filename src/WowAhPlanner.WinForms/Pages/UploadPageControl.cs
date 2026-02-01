@@ -99,7 +99,7 @@ internal sealed class UploadPageControl(
 
         savedVariablesPathTextBox.Dock = DockStyle.Top;
         savedVariablesPathTextBox.Margin = new Padding(0, 0, 0, 12);
-        savedVariablesPathTextBox.PlaceholderText = @"C:\Program Files (x86)\World of Warcraft\_anniversary_\WTF\Account\...\SavedVariables\WowAhPlannerScan.lua";
+        savedVariablesPathTextBox.PlaceholderText = @"C:\Program Files (x86)\World of Warcraft\_anniversary_\WTF\Account\...\SavedVariables\ProfessionLevelerScan.lua";
         savedVariablesPathTextBox.BackColor = Ui.Theme.AppBackground;
         savedVariablesPathTextBox.ForeColor = Ui.Theme.TextPrimary;
         savedVariablesPathTextBox.BorderStyle = BorderStyle.FixedSingle;
@@ -188,7 +188,7 @@ internal sealed class UploadPageControl(
     {
         using var dialog = new OpenFileDialog
         {
-            Title = "Select WowAhPlannerScan.lua (SavedVariables)",
+            Title = "Select ProfessionLevelerScan.lua (SavedVariables)",
             Filter = "Lua files (*.lua)|*.lua|All files (*.*)|*.*",
             CheckFileExists = true,
         };

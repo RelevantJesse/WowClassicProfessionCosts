@@ -7,7 +7,7 @@
 - `src/WowAhPlanner.WinForms`: WinForms desktop UI (composition root/DI, local state, page controls).
 - `tests/WowAhPlanner.Tests`: Unit tests (xUnit).
 - `data/{GameVersion}/`: Versioned data packs (e.g. `data/Anniversary/items.json`, `data/Anniversary/professions/tailoring.json`, `data/Anniversary/producers.json`).
-- `addon/WowAhPlannerScan`: In-game scan addon that exports price snapshots.
+- `addon/ProfessionLevelerScan`: In-game scan addon that exports price snapshots.
 - `docs/`: Notes, UX decisions, and status docs.
 - `tools/`: Utilities/scripts.
 

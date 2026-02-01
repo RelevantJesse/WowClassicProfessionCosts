@@ -1,4 +1,4 @@
-# WowAhPlannerScan addon (legacy AH API)
+# ProfessionLevelerScan addon (legacy AH API)
 
 Your client reports:
 - `C_AuctionHouse=no`
@@ -8,10 +8,10 @@ So the addon uses the legacy browse query API (`QueryAuctionItems`) and/or the b
 
 ## Install
 
-1) Copy `addon/WowAhPlannerScan` into your WoW AddOns folder:
-- `_anniversary_/Interface/AddOns/WowAhPlannerScan`
+1) Copy `addon/ProfessionLevelerScan` into your WoW AddOns folder:
+- `_anniversary_/Interface/AddOns/ProfessionLevelerScan`
 
-2) Ensure the `Interface` number in `addon/WowAhPlannerScan/WowAhPlannerScan.toc` matches your client build if needed.
+2) Ensure the `Interface` number in `addon/ProfessionLevelerScan/ProfessionLevelerScan.toc` matches your client build if needed.
 
 ## Load scan targets (recommended: recipe targets)
 
@@ -20,19 +20,19 @@ The web app generates a Lua file containing all recipes for a profession (minSki
 - `GET /api/scans/recipeTargets.lua?version=Anniversary&professionId=197&region=US&realmSlug=dreamscythe`
 
 Save the response as:
-- `_anniversary_/Interface/AddOns/WowAhPlannerScan/WowAhPlannerScan_Targets.lua`
+- `_anniversary_/Interface/AddOns/ProfessionLevelerScan/ProfessionLevelerScan_Targets.lua`
 
 If you're running the web app on the same machine as WoW, use `/targets` and click **Install targets** to write this file automatically.
 
 The file defines (among other things):
-- `WowAhPlannerScan_TargetGameVersion`
-- `WowAhPlannerScan_TargetRegion`
-- `WowAhPlannerScan_TargetRealmSlug`
-- `WowAhPlannerScan_TargetProfessionId`
-- `WowAhPlannerScan_TargetProfessionName`
-- `WowAhPlannerScan_VendorItemIds`
-- `WowAhPlannerScan_TargetItemIds` (fallback list)
-- `WowAhPlannerScan_RecipeTargets` (preferred list with recipe metadata)
+- `ProfessionLevelerScan_TargetGameVersion`
+- `ProfessionLevelerScan_TargetRegion`
+- `ProfessionLevelerScan_TargetRealmSlug`
+- `ProfessionLevelerScan_TargetProfessionId`
+- `ProfessionLevelerScan_TargetProfessionName`
+- `ProfessionLevelerScan_VendorItemIds`
+- `ProfessionLevelerScan_TargetItemIds` (fallback list)
+- `ProfessionLevelerScan_RecipeTargets` (preferred list with recipe metadata)
 
 ## In-game UI + options
 
@@ -67,8 +67,8 @@ Notes:
 ## SavedVariables workflow (no copy/paste)
 
 The addon stores the last exports as:
-- `WowAhPlannerScanDB.lastSnapshotJson`
-- `WowAhPlannerScanDB.lastOwnedJson`
+- `ProfessionLevelerScanDB.lastSnapshotJson`
+- `ProfessionLevelerScanDB.lastOwnedJson`
 
 WoW only writes SavedVariables to disk on:
 - `/reload`
@@ -90,8 +90,8 @@ Web app flow (owned):
 
 - Owned export reads your bag/bank/mail/alt inventory from the Bagnon/BagBrother database (`BrotherBags`).
 - It only exports counts for the "wanted" itemIds:
-  - `WowAhPlannerScan_TargetItemIds` (when present), otherwise reagent ids from `WowAhPlannerScan_RecipeTargets`
-  - plus `WowAhPlannerScan_VendorItemIds` (so vendor mats can be excluded from scanning but still counted as owned)
+  - `ProfessionLevelerScan_TargetItemIds` (when present), otherwise reagent ids from `ProfessionLevelerScan_RecipeTargets`
+  - plus `ProfessionLevelerScan_VendorItemIds` (so vendor mats can be excluded from scanning but still counted as owned)
 
 ## Troubleshooting
 

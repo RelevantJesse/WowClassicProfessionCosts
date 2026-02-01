@@ -6,6 +6,8 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>ProfessionLeveler</AssemblyName>
+    <RootNamespace>WowAhPlanner.WinForms</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,8 +26,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="..\..\addon\WowAhPlannerScan\**\*">
-      <Link>addon\WowAhPlannerScan\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    <Content Include="..\..\addon\ProfessionLevelerScan\**\*">
+      <Link>addon\ProfessionLevelerScan\%(RecursiveDir)%(Filename)%(Extension)</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>

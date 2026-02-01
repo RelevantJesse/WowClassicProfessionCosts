@@ -98,7 +98,7 @@ partial class MainForm
         ClientSize = new Size(1200, 760);
         MinimumSize = new Size(760, 560);
         StartPosition = FormStartPosition.CenterScreen;
-        Text = "WoW AH Planner";
+        Text = "Profession Leveler";
         Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
 
         // navMenuStrip
@@ -139,7 +139,7 @@ partial class MainForm
         brandLabel.AutoSize = true;
         brandLabel.Dock = DockStyle.Top;
         brandLabel.Margin = new Padding(0, 0, 0, 12);
-        brandLabel.Text = "WoW AH Planner";
+        brandLabel.Text = "Profession Leveler";
 
         // navFlowPanel
         navFlowPanel.Dock = DockStyle.Top;

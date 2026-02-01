@@ -17,10 +17,10 @@
 <div class="card">
     <h3>Import from SavedVariables (no copy/paste)</h3>
     <p>
-        Point this at your <code>WTF\Account\...\SavedVariables\WowAhPlannerScan.lua</code> file.
+        Point this at your <code>WTF\Account\...\SavedVariables\ProfessionLevelerScan.lua</code> file.
         Note: WoW writes SavedVariables on <code>/reload</code>, logout, or exit.
     </p>
-    <input type="text" @bind="_savedVariablesPath" style="width:100%" placeholder="C:\Program Files (x86)\World of Warcraft\_anniversary_\WTF\Account\...\SavedVariables\WowAhPlannerScan.lua" />
+    <input type="text" @bind="_savedVariablesPath" style="width:100%" placeholder="C:\Program Files (x86)\World of Warcraft\_anniversary_\WTF\Account\...\SavedVariables\ProfessionLevelerScan.lua" />
     <div style="margin-top:0.75rem">
         <button @onclick="LoadFromSavedVariablesAsync" disabled="@_busy">Load into textarea</button>
         <button @onclick="LoadAndUploadFromSavedVariablesAsync" disabled="@_busy">Load + Upload</button>

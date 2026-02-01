@@ -50,7 +50,8 @@ jobs:
             -r "${{ matrix.rid }}" \
             --self-contained true \
             -o "publish/${{ matrix.rid }}" \
-            -p:UseAppHost=true
+            -p:UseAppHost=true \
+            -p:EnableWindowsTargeting=true
 
       - name: Add run helpers (Windows)
         shell: pwsh
@@ -58,27 +59,27 @@ jobs:
           $dir = "publish/${{ matrix.rid }}"
           @'
           @echo off
-          start "" "%~dp0WowAhPlanner.WinForms.exe" %*
+          start "" "%~dp0ProfessionLeveler.exe" %*
           '@ | Out-File -FilePath (Join-Path $dir "run.cmd") -Encoding ascii
 
           @'
-          Start-Process "$PSScriptRoot\WowAhPlanner.WinForms.exe" -ArgumentList $args
+          Start-Process "$PSScriptRoot\ProfessionLeveler.exe" -ArgumentList $args
           '@ | Out-File -FilePath (Join-Path $dir "run.ps1") -Encoding utf8
 
           @'
           @echo off
-          taskkill /F /IM WowAhPlanner.WinForms.exe >nul 2>&1
-          echo Stopped WowAhPlanner.WinForms.exe
+          taskkill /F /IM ProfessionLeveler.exe >nul 2>&1
+          echo Stopped ProfessionLeveler.exe
           '@ | Out-File -FilePath (Join-Path $dir "stop.cmd") -Encoding ascii
 
           @'
-          WowAhPlanner (WinForms) - quick start
+          Profession Leveler - quick start
 
           IMPORTANT:
           - Extract the .zip first (don't run from inside the zip)
 
           Run:
-          - Double-click WowAhPlanner.WinForms.exe
+          - Double-click ProfessionLeveler.exe
           - Or use run.cmd / run.ps1
           - stop.cmd terminates the app if needed
 
@@ -86,22 +87,22 @@ jobs:
           - Local app data (SQLite, state) is stored under %LOCALAPPDATA%\\WowAhPlanner
 
           Addon:
-          - The in-game addon is included at .\\addon\\WowAhPlannerScan
+          - The in-game addon is included at .\\addon\\ProfessionLevelerScan
           - Copy that folder into your WoW AddOns directory (e.g., ...\\World of Warcraft\\_anniversary_\\Interface\\AddOns\\)
-          - Use the app Targets page to install WowAhPlannerScan_Targets.lua into the add-on folder, then /reload in-game
+          - Use the app Targets page to install ProfessionLevelerScan_Targets.lua into the add-on folder, then /reload in-game
           '@ | Out-File -FilePath (Join-Path $dir "README.txt") -Encoding utf8
 
       - name: Package
         shell: bash
         run: |
           cd "publish/${{ matrix.rid }}"
-          zip -r "../../WowAhPlanner-${{ steps.meta.outputs.tag }}-${{ matrix.rid }}.zip" .
+          zip -r "../../ProfessionLeveler-${{ steps.meta.outputs.tag }}-${{ matrix.rid }}.zip" .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: WowAhPlanner-${{ steps.meta.outputs.tag }}-${{ matrix.rid }}
-          path: WowAhPlanner-${{ steps.meta.outputs.tag }}-${{ matrix.rid }}.zip
+          name: ProfessionLeveler-${{ steps.meta.outputs.tag }}-${{ matrix.rid }}
+          path: ProfessionLeveler-${{ steps.meta.outputs.tag }}-${{ matrix.rid }}.zip
 
   release:
     needs: build

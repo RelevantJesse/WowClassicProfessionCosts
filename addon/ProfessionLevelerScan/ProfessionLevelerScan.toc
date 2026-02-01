@@ -1,0 +1,9 @@
+## Interface: 20501
+## Title: ProfessionLevelerScan
+## Notes: Scans selected AH items and exports a snapshot JSON for Profession Leveler.
+## Author: ProfessionLeveler
+## Version: 0.1.0
+## SavedVariables: ProfessionLevelerScanDB, WowAhPlannerScanDB, ProfessionLevelerScan_TargetItemIds, WowAhPlannerScan_TargetItemIds
+
+ProfessionLevelerScan_Targets.lua
+ProfessionLevelerScan.lua
