@@ -11,7 +11,7 @@ In-game addon suite that generates profession leveling plans using in-game scans
 
 ### Install the in-game addons
 
-1) Copy `addon/FrugalForge/` into your WoW Anniversary AddOns folder, for example:
+1) Copy `FrugalForge/` into your WoW Anniversary AddOns folder, for example:
    - `...\World of Warcraft\_anniversary_\Interface\AddOns\`
 2) In WoW, `/reload` so the addon initializes. Use `/frugal` to open the planner UI.
 

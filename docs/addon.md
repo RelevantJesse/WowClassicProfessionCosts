@@ -8,7 +8,7 @@ So the addon uses the legacy browse query API (`QueryAuctionItems`) and/or the b
 
 ## Install
 
-1) Copy `addon/FrugalForge` into your WoW AddOns folder:
+1) Copy `FrugalForge` into your WoW AddOns folder:
    - `_anniversary_/Interface/AddOns/FrugalForge`
 
 2) Ensure the `Interface` number in both `.toc` files matches your client build if needed.

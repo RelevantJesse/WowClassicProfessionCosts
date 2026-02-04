@@ -15,7 +15,7 @@ on:
     tags:
       - "v*"
     paths:
-      - "addon/FrugalForge/FrugalForge.toc"
+      - "FrugalForge/FrugalForge.toc"
 
 jobs:
   publish:
@@ -23,18 +23,28 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Locate addon zip
+      - name: Read version from toc
         id: zip
         run: |
           set -e
-          file=$(ls dist/FrugalForge-*.zip | sort -V | tail -n 1)
-          if [ -z "$file" ]; then
-            echo "No zip found in dist/" >&2
+          version=$(grep -E "^## Version:" FrugalForge/FrugalForge.toc | sed -E 's/^## Version: *//')
+          if [ -z "$version" ]; then
+            echo "No version found in FrugalForge.toc" >&2
             exit 1
           fi
-          echo "file=$file" >> $GITHUB_OUTPUT
-          version=$(basename "$file" | sed -E 's/FrugalForge-([0-9.]+)\.zip/\1/')
           echo "version=$version" >> $GITHUB_OUTPUT
+
+      - name: Build addon zip
+        id: pack
+        run: |
+          set -e
+          mkdir -p dist
+          file="dist/FrugalForge-${VERSION}.zip"
+          rm -f "$file"
+          (cd FrugalForge && zip -r "../$file" .)
+          echo "file=$file" >> $GITHUB_OUTPUT
+        env:
+          VERSION: ${{ steps.zip.outputs.version }}
 
       - name: Resolve CurseForge TBC version IDs
         id: cf_versions

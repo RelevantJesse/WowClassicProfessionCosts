@@ -109,6 +109,8 @@ end
 
 local ui = {}
 local buildTargetsForProfession
+local buildPriceMap
+local buildScanTargets
 
 local function updateScanStatus()
   if not ui.scanValue then return end
@@ -766,9 +768,16 @@ local function generatePlan()
     local crafts = math.ceil(qty / outputQty)
     addIntermediate(intermediates, itemId, crafts)
     visited[itemId] = true
-    for _, reg in ipairs(recipe.reagents or {}) do
-      local regId = tonumber(reg.itemId or reg.id or reg[1] or reg)
-      local regQty = reg.qty or reg.quantity or 1
+    local regs = recipe.reagentsWithQty or recipe.reagents or {}
+    for _, reg in ipairs(regs) do
+      local regId
+      local regQty = 1
+      if type(reg) == "table" then
+        regId = tonumber(reg.itemId or reg.id or reg[1])
+        regQty = reg.qty or reg.quantity or 1
+      else
+        regId = tonumber(reg)
+      end
       expandItem(regId, regQty * crafts, visited, leaf, intermediates)
     end
     visited[itemId] = nil
@@ -852,16 +861,32 @@ local function generatePlan()
     end
   end
 
+  if #recipeInfos == 0 then
+    local msg = "No viable recipes found for the selected skill range. Try increasing Skill + or building targets."
+    FrugalForgeDB.lastPlan = {
+      generatedAt = ts(),
+      generatedAtEpochUtc = time(),
+      snapshotTimestampUtc = snap and snap.snapshotTimestampUtc or nil,
+      ownedTimestampUtc = owned and owned.snapshotTimestampUtc or nil,
+      staleWarning = msg,
+      stepsText = "",
+      shoppingText = "",
+      summaryText = msg,
+    }
+    updateUi()
+    return
+  end
+
   local chosenBySkill = {}
   for skill = currentSkill, targetSkill - 1 do
     local best = nil
     for _, info in ipairs(recipeInfos) do
       if skill >= info.minSkill and skill < info.grayAt then
         local p = chanceForSkill(skill, info.recipe)
-        if p > 0 and info.missing == 0 then
+        if p > 0 then
           local score = info.costPerCraft / p
-          if not best or score < best.score then
-            best = { info = info, score = score, p = p }
+          if not best or info.missing < best.missing or (info.missing == best.missing and score < best.score) then
+            best = { info = info, score = score, p = p, missing = info.missing }
           end
         end
       end
