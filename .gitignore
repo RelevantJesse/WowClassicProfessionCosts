@@ -426,3 +426,4 @@ src/WowAhPlanner.Web/App_Data/
 # Local publish output
 .tmp_publish_*/
 /screenshots/
+/dist/
