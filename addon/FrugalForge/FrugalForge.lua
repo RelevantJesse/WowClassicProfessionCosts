@@ -359,28 +359,30 @@ buildTargetsForProfession = function(professionId, maxSkillDelta)
       local grayAt = r.grayAt or 0
       if minSkill <= maxSkill and grayAt > currentSkill then
         local outputItemId = tonumber(r.createsItemId or r.createsItem or r.createsId)
+        local allowRecipe = true
         if outputItemId and not isQualityAtMost(outputItemId, QUALITY_UNCOMMON) then
-          goto continue
+          allowRecipe = false
         end
-        if type(r.reagents) == "table" and #r.reagents > 0 and type(r.reagents[1]) == "table" then
-          r.reagentsWithQty = r.reagents
-          local ids = {}
-          for _, reg in ipairs(r.reagents) do
-            local itemId = tonumber((type(reg) == "table" and (reg.itemId or reg.id or reg[1])) or reg)
-            if itemId then table.insert(ids, itemId) end
+        if allowRecipe then
+          if type(r.reagents) == "table" and #r.reagents > 0 and type(r.reagents[1]) == "table" then
+            r.reagentsWithQty = r.reagents
+            local ids = {}
+            for _, reg in ipairs(r.reagents) do
+              local itemId = tonumber((type(reg) == "table" and (reg.itemId or reg.id or reg[1])) or reg)
+              if itemId then table.insert(ids, itemId) end
+            end
+            r.reagents = ids
           end
-          r.reagents = ids
-        end
-        table.insert(targets, r)
-        for _, reg in ipairs(r.reagents or {}) do
-          local itemId = tonumber((type(reg) == "table" and (reg.itemId or reg.id or reg[1])) or reg)
-          if itemId and not seen[itemId] then
-            seen[itemId] = true
-            table.insert(reagentIds, itemId)
+          table.insert(targets, r)
+          for _, reg in ipairs(r.reagents or {}) do
+            local itemId = tonumber((type(reg) == "table" and (reg.itemId or reg.id or reg[1])) or reg)
+            if itemId and not seen[itemId] then
+              seen[itemId] = true
+              table.insert(reagentIds, itemId)
+            end
           end
         end
       end
-      ::continue::
     end
 
   table.sort(targets, function(a, b)
