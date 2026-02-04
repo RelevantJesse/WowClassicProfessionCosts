@@ -14,6 +14,7 @@ local function ensureDb()
     selectedProfessionId = nil,
     debug = false,
     useCraftIntermediates = true,
+    minimapAngle = 45,
   }
   FrugalForgeDB.lastPlan = FrugalForgeDB.lastPlan or nil
 end
@@ -111,6 +112,10 @@ local ui = {}
 local buildTargetsForProfession
 local buildPriceMap
 local buildScanTargets
+local getProfessionByName
+local applyTargetsSafe
+local debugLog
+local showTextFrame
 
 local function updateScanStatus()
   if not ui.scanValue then return end
@@ -135,7 +140,22 @@ local function buildTargetsFromUi()
   if ui.profDrop then
     local dropdownText = UIDropDownMenu_GetText(ui.profDrop)
     if dropdownText and dropdownText ~= "" and dropdownText ~= "Select..." then
-      local byName = getProfessionByName(dropdownText)
+      local byName = nil
+      if type(getProfessionByName) == "function" then
+        byName = getProfessionByName(dropdownText)
+      else
+        local data = FrugalForgeData_Anniversary
+        if data and type(data.professions) == "table" then
+          local target = tostring(dropdownText or ""):lower()
+          for _, p in ipairs(data.professions) do
+            local name = tostring(p.name or ""):lower()
+            if name == target then
+              byName = p
+              break
+            end
+          end
+        end
+      end
       if byName and byName.professionId ~= selected then
         selected = byName.professionId
         FrugalForgeDB.settings.selectedProfessionId = selected
@@ -209,10 +229,10 @@ local function buildTargetsFromUi()
   FrugalForgeDB.lastBuildMessage = "Targets built for " .. tostring(built.profession.name) .. " (id=" .. tostring(built.profession.professionId) .. ")"
   log(FrugalForgeDB.lastBuildMessage)
   debugLog("applyTargets: prof=" .. tostring(built.profession.name) .. ", recipes=" .. tostring(#(built.targets or {})) .. ", reagents=" .. tostring(#(built.reagentIds or {})))
-  showTextFrame(FrugalForgeDB.lastBuildMessage, "FrugalForge Build Targets")
+  -- No success popup; keep UI quiet when auto-building
 end
 
-local function debugLog(msg)
+debugLog = function(msg)
   if FrugalForgeDB and FrugalForgeDB.settings and FrugalForgeDB.settings.debug == true then
     FrugalForgeDB.debugLog = FrugalForgeDB.debugLog or {}
     table.insert(FrugalForgeDB.debugLog, "DEBUG: " .. tostring(msg))
@@ -222,7 +242,7 @@ local function debugLog(msg)
   end
 end
 
-local function showTextFrame(text, title)
+showTextFrame = function(text, title)
   if not ui.debugFrame then
     local frame = CreateFrame("Frame", "FrugalForgeDebugFrame", UIParent, "BasicFrameTemplateWithInset")
     frame:SetSize(520, 420)
@@ -416,7 +436,7 @@ local function buildRecipeByOutput(profession)
   return map
 end
 
-local function buildPriceMap()
+buildPriceMap = function()
   local snap = latestSnapshot()
   local prices = {}
   if snap and type(snap.prices) == "table" then
@@ -430,7 +450,7 @@ local function buildPriceMap()
   return prices
 end
 
-local function buildScanTargets(fullTargets, prices)
+buildScanTargets = function(fullTargets, prices)
   if not fullTargets or type(fullTargets.targets) ~= "table" then return fullTargets end
   if not prices or next(prices) == nil then return fullTargets end
 
@@ -531,7 +551,7 @@ local function applyTargets(targets)
   FrugalScan_TargetItemIds = ProfessionLevelerScan_TargetItemIds
 end
 
-local function applyTargetsSafe(targets)
+applyTargetsSafe = function(targets)
   local ok, err = pcall(applyTargets, targets)
   if not ok then
     return false, tostring(err)
@@ -707,21 +727,9 @@ local function generatePlan()
     debugLog("snapshot profession mismatch: snap=" .. tostring(snapProfession) .. " targets=" .. tostring(activeTargetProfession))
   end
   local known, rank, maxRank = hasProfession(targetProfessionName)
+  local profWarning = nil
   if targetProfessionName and not known then
-    local msg = string.format("|cff7dd3fcFrugalForge|r: Targets are for %s but this character does not know it. Choose the profession in /frugal and Build Targets.", targetProfessionName)
-    log(msg)
-    FrugalForgeDB.lastPlan = {
-      generatedAt = ts(),
-      generatedAtEpochUtc = time(),
-      snapshotTimestampUtc = snap and snap.snapshotTimestampUtc or nil,
-      ownedTimestampUtc = owned and owned.snapshotTimestampUtc or nil,
-      staleWarning = msg,
-      stepsText = "",
-      shoppingText = "",
-      summaryText = msg,
-    }
-    updateUi()
-    return
+    profWarning = string.format("Targets are for %s but this character does not know it. Planning from skill 1.", targetProfessionName)
   end
 
   local stepLines = {}
@@ -784,7 +792,7 @@ local function generatePlan()
   end
 
   local currentSkill = nil
-  if targetProfessionName then
+  if targetProfessionName and not profWarning then
     currentSkill = select(1, getProfessionSkillByName(targetProfessionName))
   end
   if not currentSkill then currentSkill = 1 end
@@ -1071,6 +1079,9 @@ local function generatePlan()
     if known and rank and maxRank then
       table.insert(summaryLines, string.format("Your skill: %d/%d", rank, maxRank))
     end
+    if profWarning then
+      table.insert(summaryLines, profWarning)
+    end
   end
   local warnStaleHours = FrugalForgeDB.settings.warnStaleHours or 12
   local ageHours = hoursSince(getSnapshotEpoch(snap))
@@ -1281,6 +1292,17 @@ local function createUi()
         FrugalForgeDB.settings.selectedProfessionId = p.professionId
         UIDropDownMenu_SetSelectedID(ui.profDrop, nil)
         UIDropDownMenu_SetText(ui.profDrop, p.name)
+        FrugalForgeDB.lastPlan = nil
+        updateUi()
+        local function regen()
+          buildTargetsFromUi()
+          generatePlan()
+        end
+        if C_Timer and C_Timer.After then
+          C_Timer.After(0.05, regen)
+        else
+          regen()
+        end
       end
       UIDropDownMenu_AddButton(info, level)
     end
@@ -1351,6 +1373,85 @@ local function toggleUi()
   end
 end
 
+
+local function createMinimapButton()
+  if ui.minimapBtn or not Minimap then return end
+  ensureDb()
+
+  local btn = CreateFrame("Button", "FrugalForgeMinimapButton", Minimap)
+  btn:SetSize(32, 32)
+  btn:SetFrameStrata("MEDIUM")
+  btn:SetFrameLevel(8)
+  btn:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+  btn:RegisterForDrag("LeftButton")
+
+  local icon = btn:CreateTexture(nil, "BACKGROUND")
+  icon:SetTexture("Interface\\Icons\\INV_Misc_Gem_01")
+  icon:SetAllPoints()
+  btn.icon = icon
+
+  btn:SetHighlightTexture("Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight")
+
+  local function position()
+    local angle = (FrugalForgeDB.settings and FrugalForgeDB.settings.minimapAngle) or 45
+    local rad = (math.rad and math.rad(angle)) or (angle * math.pi / 180)
+    local radius = 80
+    local x = math.cos(rad) * radius
+    local y = math.sin(rad) * radius
+    btn:SetPoint("CENTER", Minimap, "CENTER", x, y)
+  end
+
+  btn:SetScript("OnClick", function(_, button)
+    if button == "RightButton" then
+      return
+    end
+    if IsControlKeyDown and IsControlKeyDown() then
+      if type(SlashCmdList) == "table" and SlashCmdList["FRUGALSCAN"] then
+        SlashCmdList["FRUGALSCAN"]("start")
+      else
+        DEFAULT_CHAT_FRAME:AddMessage("|cff7dd3fcFrugalForge|r: Scanner not loaded.")
+      end
+      return
+    end
+    toggleUi()
+  end)
+
+  btn:SetScript("OnEnter", function(self)
+    GameTooltip:SetOwner(self, "ANCHOR_LEFT")
+    GameTooltip:AddLine("FrugalForge", 1, 0.82, 0)
+    GameTooltip:AddLine("Left click:", 0.7, 0.7, 0.7, false)
+    GameTooltip:AddLine("Open FrugalForge window", 1, 1, 1, false)
+    GameTooltip:AddLine("Ctrl click:", 0.7, 0.7, 0.7, false)
+    GameTooltip:AddLine("Start AH scan for current targets", 1, 1, 1, false)
+    GameTooltip:Show()
+  end)
+
+  btn:SetScript("OnLeave", function()
+    GameTooltip:Hide()
+  end)
+
+  btn:SetScript("OnDragStart", function(self)
+    self:SetScript("OnUpdate", function()
+      local cx, cy = Minimap:GetCenter()
+      local mx, my = GetCursorPosition()
+      local scale = UIParent:GetScale()
+      mx, my = mx / scale, my / scale
+      local dx, dy = mx - cx, my - cy
+      local angle = (math.atan2 and math.atan2(dy, dx)) or math.atan(dy, dx)
+      local deg = angle * (180 / math.pi)
+      FrugalForgeDB.settings.minimapAngle = deg
+      position()
+    end)
+  end)
+
+  btn:SetScript("OnDragStop", function(self)
+    self:SetScript("OnUpdate", nil)
+  end)
+
+  position()
+  ui.minimapBtn = btn
+end
+
 SLASH_FRUGALFORGE1 = "/frugal"
 SLASH_FRUGALFORGE2 = "/frugalforge"
 SlashCmdList["FRUGALFORGE"] = function(msg)
@@ -1415,6 +1516,7 @@ eventFrame:RegisterEvent("ADDON_LOADED")
 eventFrame:SetScript("OnEvent", function(_, event, addon)
   if event == "ADDON_LOADED" and addon == ADDON_NAME then
     ensureDb()
+    createMinimapButton()
     createUi()
     if FrugalForgeDB.targets then
       local t = FrugalForgeDB.targets

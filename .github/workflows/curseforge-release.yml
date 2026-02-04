@@ -142,10 +142,19 @@ jobs:
 
       - name: Upload to CurseForge
         run: |
-          curl -sS -X POST "https://wow.curseforge.com/api/projects/${CURSEFORGE_PROJECT_ID}/upload-file" \
+          resp=$(mktemp)
+          status=$(curl -sS -o "$resp" -w "%{http_code}" \
+            -X POST "https://wow.curseforge.com/api/projects/${CURSEFORGE_PROJECT_ID}/upload-file" \
             -H "X-Api-Token: ${CURSEFORGE_API_TOKEN}" \
             -F "metadata=@cf-metadata.json" \
-            -F "file=@${ZIP_FILE}"
+            -F "file=@${ZIP_FILE}")
+          echo "Upload status: $status"
+          echo "Upload response:"
+          cat "$resp"
+          rm -f "$resp"
+          if [ "$status" -lt 200 ] || [ "$status" -ge 300 ]; then
+            exit 1
+          fi
         env:
           CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
           CURSEFORGE_PROJECT_ID: ${{ secrets.CURSEFORGE_PROJECT_ID }}
