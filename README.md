@@ -1,16 +1,16 @@
-# FrugalForge (Anniversary) — In‑Game Profession Leveling Planner
+# FrugalForge (Anniversary) — In-Game Profession Leveling Planner
 
-FrugalForge is a single‑addon solution for Classic/Anniversary that scans Auction House prices, tracks owned
-materials, and generates a full profession leveling plan entirely in‑game. No web app, no import/export.
+FrugalForge is a single-addon solution for Classic/Anniversary that scans Auction House prices, tracks owned
+materials, and generates a full profession leveling plan entirely in-game. No web app, no import/export.
 
 ---
 
-## ✅ Key Features
+## Key Features
 
-- All‑in‑game planning  
+- All-in-game planning  
   Build targets, scan prices, capture owned mats, and generate a plan without leaving WoW.
 - Auction House scanner  
-  Uses the legacy AH browse API (QueryAuctionItems) with exact‑name searches for reliable pricing.
+  Uses the legacy AH browse API (QueryAuctionItems) with exact-name searches for reliable pricing.
 - Owned materials support  
   Pulls inventory from BagBrother (Bagnon) and subtracts what you already own.
 - Crafting intermediates  
@@ -18,13 +18,13 @@ materials, and generates a full profession leveling plan entirely in‑game. No 
 - Clear shopping list  
   Shows item names, quantities needed, owned counts, and total costs.
 - Minimap button  
-  Left‑click opens FrugalForge, Ctrl‑click starts an AH scan.
+  Left-click opens FrugalForge, Ctrl-click starts an AH scan.
 - Planning options  
   Ignore owned mats for selection, limit to current character only, and tune owned value factor.
 
 ---
 
-## ⚙️ How It Works
+## How It Works
 
 1. Build Targets  
    Open `/frugal`, pick your profession, set skill range, click **Build Targets**.
@@ -34,13 +34,13 @@ materials, and generates a full profession leveling plan entirely in‑game. No 
    Run `/frugalscan owned` to record your inventory (requires BagBrother).
 4. Generate Plan  
    Click **Generate Plan** to get:
-   - Step‑by‑step recipe plan
+   - Step-by-step recipe plan
    - Intermediate crafts (if any)
    - Shopping list with prices
 
 ---
 
-## 📦 Requirements
+## Requirements
 
 - WoW Classic Anniversary
 - BagBrother (Bagnon) for owned material tracking  
@@ -48,7 +48,7 @@ materials, and generates a full profession leveling plan entirely in‑game. No 
 
 ---
 
-## 🧾 Commands
+## Commands
 
 Main UI
 
@@ -68,24 +68,24 @@ Scanner
 
 ---
 
-## ⚠️ Notes
+## Notes
 
-- Legacy AH API can be slow or rate‑limited.
-- Exact‑match searches are used to avoid bad pricing.
-- Bid‑only auctions are ignored (buyout only).
+- Legacy AH API can be slow or rate-limited.
+- Exact-match searches are used to avoid bad pricing.
+- Bid-only auctions are ignored (buyout only).
 - No reload required to use scans/owned for the planner.
 
 ---
 
-## ✅ Status
+## Status
 
-- Stable for Anniversary (single‑version for now)
+- Stable for Anniversary (single-version for now)
 - Actively developed
   Feedback welcome.
 
 ---
 
-## 🔗 Links
+## Links
 
 - Issues / feedback: https://github.com/RelevantJesse/FrugalForge
 

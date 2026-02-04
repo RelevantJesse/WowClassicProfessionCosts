@@ -1,4 +1,4 @@
-local ADDON_NAME = ...
+local ADDON_NAME = ... or "FrugalForge"
 
 local function ts()
   return date("%Y-%m-%d %H:%M:%S", time())
@@ -19,6 +19,7 @@ local function ensureDb()
     ownedValueFactor = 0.9,
     devMode = false,
     minimapAngle = 45,
+    includeNonTrainerRecipes = true,
   }
   FrugalForgeDB.lastPlan = FrugalForgeDB.lastPlan or nil
 end
@@ -383,16 +384,25 @@ buildTargetsForProfession = function(professionId, maxSkillDelta)
   local reagentIds = {}
   local seen = {}
 
+    local includeNonTrainer = (FrugalForgeDB.settings.includeNonTrainerRecipes ~= false)
     for _, r in ipairs(prof.recipes or {}) do
       local minSkill = r.minSkill or 0
       local grayAt = r.grayAt or 0
       if minSkill <= maxSkill and grayAt > currentSkill then
+        if r.learnedByTrainer == false and not includeNonTrainer then
+          -- skip recipes that require a purchased recipe item
+        else
         local outputItemId = tonumber(r.createsItemId or r.createsItem or r.createsId)
         local allowRecipe = true
         if outputItemId and not isQualityAtMost(outputItemId, QUALITY_UNCOMMON) then
           allowRecipe = false
         end
         if allowRecipe then
+          if r.learnedByTrainer == false then
+            r.requiresRecipe = true
+          else
+            r.requiresRecipe = nil
+          end
           if type(r.reagents) == "table" and #r.reagents > 0 and type(r.reagents[1]) == "table" then
             r.reagentsWithQty = r.reagents
             local ids = {}
@@ -410,6 +420,7 @@ buildTargetsForProfession = function(professionId, maxSkillDelta)
               table.insert(reagentIds, itemId)
             end
           end
+        end
         end
       end
     end
@@ -775,6 +786,8 @@ local function generatePlan()
 
   local stepLines = {}
   local shopping = {}
+  local recipeNeeds = {}
+  local recipeNeedList = {}
   local intermediatesAll = {}
   local intermediatesFirstNeedSkill = {}
   local totalCost = 0
@@ -788,6 +801,9 @@ local function generatePlan()
   if not ownedValueFactor then ownedValueFactor = 0.9 end
   if ownedValueFactor < 0 then ownedValueFactor = 0 end
   if ownedValueFactor > 1 then ownedValueFactor = 1 end
+  local nonTrainerPenalty = tonumber(FrugalForgeDB.settings.nonTrainerPenalty)
+  if not nonTrainerPenalty then nonTrainerPenalty = 1.5 end
+  if nonTrainerPenalty < 1 then nonTrainerPenalty = 1 end
   local professionData = targetProfessionName and getProfessionByName(targetProfessionName) or nil
   local recipeByOutput = buildRecipeByOutput(professionData)
   local skillCap = nil
@@ -859,6 +875,9 @@ local function generatePlan()
   local function estimateCostForCrafts(info, crafts, ownedRemaining)
     local cost = 0
     local missing = 0
+    if info.requiresRecipe then
+      missing = missing + 1
+    end
     for itemId, qty in pairs(info.leaf) do
       local need = qty * crafts
       local ownedQty = (ignoreOwnedSelection and 0) or (ownedRemaining[itemId] or 0)
@@ -870,6 +889,9 @@ local function generatePlan()
       else
         missing = missing + 1
       end
+    end
+    if info.requiresRecipe then
+      cost = cost * nonTrainerPenalty
     end
     return cost, missing
   end
@@ -967,6 +989,9 @@ local function generatePlan()
 
       local costPerCraft = 0
       local missing = 0
+      if r.requiresRecipe then
+        missing = missing + 1
+      end
       for itemId, qty in pairs(leaf) do
         local price = prices[itemId]
         local ownedQty = ownedMap[itemId] or 0
@@ -990,6 +1015,7 @@ local function generatePlan()
         inter = inter,
         costPerCraft = costPerCraft,
         missing = missing,
+        requiresRecipe = r.requiresRecipe == true,
       })
       end
     end
@@ -1010,6 +1036,37 @@ local function generatePlan()
       stepsText = "",
       shoppingText = "",
       summaryText = msg,
+    }
+    updateUi()
+    return
+  end
+
+  local missingForPlan = {}
+  for _, info in ipairs(recipeInfos) do
+    for itemId in pairs(info.leaf or {}) do
+      if not prices[itemId] then
+        missingForPlan[itemId] = true
+      end
+    end
+  end
+  local missingForPlanCount = 0
+  for _ in pairs(missingForPlan) do missingForPlanCount = missingForPlanCount + 1 end
+  if missingForPlanCount > 0 then
+    local missingIds = {}
+    for itemId in pairs(missingForPlan) do
+      table.insert(missingIds, itemId)
+    end
+    local msg = string.format("Pricing data missing for %d item(s). Run an AH scan (or Scan Missing) before generating a plan.", missingForPlanCount)
+    FrugalForgeDB.lastPlan = {
+      generatedAt = ts(),
+      generatedAtEpochUtc = time(),
+      snapshotTimestampUtc = snap and snap.snapshotTimestampUtc or nil,
+      ownedTimestampUtc = owned and owned.snapshotTimestampUtc or nil,
+      staleWarning = msg,
+      stepsText = "",
+      shoppingText = "",
+      summaryText = msg,
+      missingPriceItemIds = missingIds,
     }
     updateUi()
     return
@@ -1088,6 +1145,9 @@ local function generatePlan()
     local craftCount = math.ceil(r.crafts or 0)
     local rangeCost = 0
     local rangeMissing = 0
+    if r.info.requiresRecipe then
+      recipeNeeds[r.info.recipe.recipeId or r.info.name or "recipe"] = r.info
+    end
     for itemId, qty in pairs(r.info.leaf) do
       local need = qty * r.crafts
       local ownedQty = ownedForSteps[itemId] or 0
@@ -1109,9 +1169,11 @@ local function generatePlan()
     if rangeMissing > 0 then
       costText = costText .. " (missing prices)"
     end
-    table.insert(stepEntries, { skill = displayStart, text = string.format("- %s%s: cost %s (craft ~%d)",
+    local recipeTag = r.info.requiresRecipe and " (recipe required)" or ""
+    table.insert(stepEntries, { startSkill = displayStart, endSkill = displayEnd, text = string.format("- %s%s%s: cost %s (craft ~%d)",
       r.info.name,
       skillText,
+      recipeTag,
       costText,
       craftCount) })
   end
@@ -1153,11 +1215,15 @@ local function generatePlan()
       local outputQty = (recipe and recipe.createsQuantity) or 1
       if outputQty <= 0 then outputQty = 1 end
       local qtyNeeded = math.ceil(extra * outputQty)
-      local needSkill = intermediatesFirstNeedSkill[itemId] or (recipe and recipe.minSkill) or 0
-      table.insert(extraLines, {
-        sortKey = needSkill,
-        text = string.format("- Craft until you have %d %s (%d)", qtyNeeded, getItemName(itemId), itemId)
-      })
+      local ownedQty = ownedMap[itemId] or 0
+      if qtyNeeded > ownedQty then
+        local totalNeeded = qtyNeeded
+        local needSkill = intermediatesFirstNeedSkill[itemId] or (recipe and recipe.minSkill) or 0
+        table.insert(extraLines, {
+          sortKey = needSkill,
+          text = string.format("- Craft until you have %d %s (%d) (have %d)", totalNeeded, getItemName(itemId), itemId, ownedQty)
+        })
+      end
     end
   end
   table.sort(extraLines, function(a, b)
@@ -1168,7 +1234,7 @@ local function generatePlan()
   local mergedSteps = {}
   local iExtra = 1
   for _, step in ipairs(stepEntries) do
-    while iExtra <= #extraLines and extraLines[iExtra].sortKey <= step.skill do
+    while iExtra <= #extraLines and extraLines[iExtra].sortKey <= step.endSkill do
       table.insert(mergedSteps, extraLines[iExtra].text)
       iExtra = iExtra + 1
     end
@@ -1211,6 +1277,18 @@ local function generatePlan()
       getItemName(itemId), itemId, entry.need, entry.owned, ownedBreakdown, buy, priceText, totalText, missingTag)
     table.insert(shoppingLines, line)
   end
+  for _, info in pairs(recipeNeeds) do
+    table.insert(recipeNeedList, info)
+  end
+  table.sort(recipeNeedList, function(a, b)
+    return tostring(a.name or a.recipeId) < tostring(b.name or b.recipeId)
+  end)
+  if #recipeNeedList > 0 then
+    table.insert(shoppingLines, "Recipes needed:")
+    for _, info in ipairs(recipeNeedList) do
+      table.insert(shoppingLines, string.format("  - Recipe: %s (not trainer learned; vendor/AH/quest)", info.name or info.recipeId or "recipe"))
+    end
+  end
   for _ in pairs(missingPriceItems) do missingCount = missingCount + 1 end
 
   local summaryLines = {}
@@ -1237,6 +1315,9 @@ local function generatePlan()
   table.insert(summaryLines, string.format("Owned items counted: %d unique", ownedCount or 0))
   if missingCount > 0 then
     table.insert(summaryLines, string.format("Missing prices for %d item(s); those steps are marked accordingly.", missingCount))
+  end
+  if #recipeNeedList > 0 then
+    table.insert(summaryLines, string.format("Recipes needed: %d (see shopping list)", #recipeNeedList))
   end
   if snapCount == 0 then
     table.insert(summaryLines, "No prices found in snapshot. Run a scan at the AH.")
@@ -1313,21 +1394,24 @@ local function createUi()
   f.title:SetPoint("TOP", 0, -8)
   local version = "?"
   local function readVersion()
+    local name = ADDON_NAME or "FrugalForge"
     if C_AddOns and C_AddOns.GetAddOnMetadata then
-      return C_AddOns.GetAddOnMetadata(ADDON_NAME or "FrugalForge", "Version") or C_AddOns.GetAddOnMetadata("FrugalForge", "Version")
+      return C_AddOns.GetAddOnMetadata(name, "Version") or C_AddOns.GetAddOnMetadata("FrugalForge", "Version")
     end
     if GetAddOnMetadata then
-      return GetAddOnMetadata(ADDON_NAME or "FrugalForge", "Version") or GetAddOnMetadata("FrugalForge", "Version")
+      return GetAddOnMetadata(name, "Version") or GetAddOnMetadata("FrugalForge", "Version")
     end
     if GetAddOnInfo then
-      local name = ADDON_NAME or "FrugalForge"
       local _, _, _, ver = GetAddOnInfo(name)
+      if not ver or ver == "" then
+        _, _, _, ver = GetAddOnInfo("FrugalForge")
+      end
       return ver
     end
     return nil
   end
   version = readVersion() or "?"
-  f.title:SetText("FrugalForge (beta) v" .. tostring(version))
+  f.title:SetText("FrugalForge v" .. tostring(version))
 
   local y = -32
   local labels = {
@@ -1401,16 +1485,25 @@ local function createUi()
   ui.scanMissingBtn:SetPoint("LEFT", ui.scanBtn, "RIGHT", 8, 0)
   ui.scanMissingBtn:SetText("Scan Missing")
   ui.scanMissingBtn:SetScript("OnClick", function()
-    local missing = FrugalForgeDB.lastPlan and FrugalForgeDB.lastPlan.missingPriceItemIds or nil
-    if type(missing) ~= "table" or #missing == 0 then
-      log("No missing-price items to scan. Generate a plan first.")
-      return
-    end
     local ids = {}
-    for _, itemId in ipairs(missing) do
-      local n = tonumber(itemId)
-      if n and n > 0 and isQualityAtMost(n, QUALITY_UNCOMMON) then
-        table.insert(ids, n)
+    local missing = FrugalForgeDB.lastPlan and FrugalForgeDB.lastPlan.missingPriceItemIds or nil
+    if type(missing) == "table" and #missing > 0 then
+      for _, itemId in ipairs(missing) do
+        local n = tonumber(itemId)
+        if n and n > 0 and isQualityAtMost(n, QUALITY_UNCOMMON) then
+          table.insert(ids, n)
+        end
+      end
+    else
+      local scanTargets = FrugalForgeDB.scanTargets or FrugalForgeDB.targets
+      if scanTargets and type(scanTargets.reagentIds) == "table" then
+        local prices = buildPriceMap()
+        for _, itemId in ipairs(scanTargets.reagentIds) do
+          local n = tonumber(itemId)
+          if n and n > 0 and not prices[n] and isQualityAtMost(n, QUALITY_UNCOMMON) then
+            table.insert(ids, n)
+          end
+        end
       end
     end
     if #ids == 0 then

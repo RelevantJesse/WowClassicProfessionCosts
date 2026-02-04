@@ -103,6 +103,26 @@ jobs:
           import json, os
           release_type = (os.environ.get("RELEASE_TYPE") or "").strip() or "beta"
           changelog = os.environ.get("CHANGELOG", "").strip()
+          if not changelog:
+              for path in ("docs/CHANGELOG.md", "CHANGELOG.md", "docs/ReleaseNotes.md"):
+                  try:
+                      with open(path, "r", encoding="utf-8") as f:
+                          content = f.read().strip()
+                      if not content:
+                          continue
+                      if "## " in content:
+                          parts = content.split("## ")
+                          first = parts[1]
+                          section = "## " + first
+                          if "## " in section:
+                              section = section.split("\n## ", 1)[0].strip()
+                          changelog = section.strip()
+                      else:
+                          changelog = content
+                      if changelog:
+                          break
+                  except FileNotFoundError:
+                      continue
           version = os.environ.get("VERSION", "")
           data = {
               "changelog": changelog if changelog else f"Release {version}",
@@ -134,7 +154,7 @@ jobs:
           print("metadata:", data)
           PY
         env:
-          RELEASE_TYPE: ${{ github.event.inputs.release_type || 'beta' }}
+          RELEASE_TYPE: ${{ github.event.inputs.release_type || 'release' }}
           CHANGELOG: ${{ github.event.inputs.changelog }}
           VERSION: ${{ steps.zip.outputs.version }}
           CURSEFORGE_GAME_VERSION_TYPE_ID: ${{ steps.cf_versions.outputs.tbc_type_id }}
