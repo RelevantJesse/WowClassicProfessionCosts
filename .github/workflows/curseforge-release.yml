@@ -101,7 +101,7 @@ jobs:
         run: |
           python - <<'PY'
           import json, os
-          release_type = os.environ.get("RELEASE_TYPE", "beta")
+          release_type = (os.environ.get("RELEASE_TYPE") or "").strip() or "beta"
           changelog = os.environ.get("CHANGELOG", "").strip()
           version = os.environ.get("VERSION", "")
           data = {
@@ -134,7 +134,7 @@ jobs:
           print("metadata:", data)
           PY
         env:
-          RELEASE_TYPE: ${{ github.event.inputs.release_type }}
+          RELEASE_TYPE: ${{ github.event.inputs.release_type || 'beta' }}
           CHANGELOG: ${{ github.event.inputs.changelog }}
           VERSION: ${{ steps.zip.outputs.version }}
           CURSEFORGE_GAME_VERSION_TYPE_ID: ${{ steps.cf_versions.outputs.tbc_type_id }}
