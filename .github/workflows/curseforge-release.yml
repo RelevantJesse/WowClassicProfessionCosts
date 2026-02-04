@@ -66,11 +66,19 @@ jobs:
         id: cf_versions
         run: |
           set -e
-          game_id=$(curl -sS -H "x-api-key: ${CURSEFORGE_API_TOKEN}" \
-            "https://api.curseforge.com/v1/mods/${CURSEFORGE_PROJECT_ID}" \
-            | jq -r '.data.gameId')
+          resp=$(curl -sS -H "x-api-key: ${CURSEFORGE_API_TOKEN}" \
+            "https://api.curseforge.com/v1/mods/${CURSEFORGE_PROJECT_ID}")
+          game_id=$(echo "$resp" | jq -r '.data.gameId')
           if [ -z "$game_id" ] || [ "$game_id" = "null" ]; then
-            echo "Failed to resolve world-of-warcraft gameId" >&2
+            echo "Project lookup failed, falling back to games list." >&2
+            game_id=$(curl -sS -H "x-api-key: ${CURSEFORGE_API_TOKEN}" \
+              https://api.curseforge.com/v1/games \
+              | jq -r '.data[] | select(.slug=="world-of-warcraft") | .id' | head -n 1)
+          fi
+          if [ -z "$game_id" ] || [ "$game_id" = "null" ]; then
+            echo "Failed to resolve world-of-warcraft gameId." >&2
+            echo "Project response (first 300 chars):" >&2
+            echo "$resp" | head -c 300 >&2
             exit 1
           fi
 
