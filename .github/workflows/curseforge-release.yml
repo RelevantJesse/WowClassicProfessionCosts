@@ -41,7 +41,7 @@ jobs:
           mkdir -p dist
           file="dist/FrugalForge-${VERSION}.zip"
           rm -f "$file"
-          (cd FrugalForge && zip -r "../$file" .)
+          zip -r "$file" FrugalForge
           echo "file=$file" >> $GITHUB_OUTPUT
         env:
           VERSION: ${{ steps.zip.outputs.version }}

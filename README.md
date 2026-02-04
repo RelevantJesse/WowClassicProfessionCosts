@@ -87,6 +87,6 @@ Feedback welcome.
 
 ## 🔗 Links
 
-- Issues / feedback: https://github.com/RelevantJesse/WowClassicProfessionCosts
+- Issues / feedback: https://github.com/RelevantJesse/FrugalForge
 
 ———

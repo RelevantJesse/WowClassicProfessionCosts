@@ -132,11 +132,11 @@ end
 _G.FrugalForge_UpdateScanStatus = updateScanStatus
 local function buildTargetsFromUi()
   local selected = FrugalForgeDB.settings.selectedProfessionId
-  if not selected and ui.profDrop then
+  if ui.profDrop then
     local dropdownText = UIDropDownMenu_GetText(ui.profDrop)
     if dropdownText and dropdownText ~= "" and dropdownText ~= "Select..." then
       local byName = getProfessionByName(dropdownText)
-      if byName then
+      if byName and byName.professionId ~= selected then
         selected = byName.professionId
         FrugalForgeDB.settings.selectedProfessionId = selected
       end
