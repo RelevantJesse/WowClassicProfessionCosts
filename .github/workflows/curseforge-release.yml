@@ -66,14 +66,31 @@ jobs:
         id: cf_versions
         run: |
           set -e
-          resp=$(curl -sS -H "x-api-key: ${CURSEFORGE_API_TOKEN}" \
+          if [ -z "${CURSEFORGE_API_TOKEN}" ]; then
+            echo "CURSEFORGE_API_TOKEN is not set" >&2
+            exit 1
+          fi
+          if [ -z "${CURSEFORGE_PROJECT_ID}" ]; then
+            echo "CURSEFORGE_PROJECT_ID is not set" >&2
+            exit 1
+          fi
+          tmpfile=$(mktemp)
+          status=$(curl -sS -H "x-api-key: ${CURSEFORGE_API_TOKEN}" \
+            -o "$tmpfile" -w "%{http_code}" \
             "https://api.curseforge.com/v1/mods/${CURSEFORGE_PROJECT_ID}")
+          resp=$(cat "$tmpfile")
+          rm -f "$tmpfile"
+          echo "Project lookup status: $status"
           game_id=$(echo "$resp" | jq -r '.data.gameId')
           if [ -z "$game_id" ] || [ "$game_id" = "null" ]; then
             echo "Project lookup failed, falling back to games list." >&2
-            game_id=$(curl -sS -H "x-api-key: ${CURSEFORGE_API_TOKEN}" \
-              https://api.curseforge.com/v1/games \
-              | jq -r '.data[] | select(.slug=="world-of-warcraft") | .id' | head -n 1)
+            status2=$(curl -sS -H "x-api-key: ${CURSEFORGE_API_TOKEN}" \
+              -o "$tmpfile" -w "%{http_code}" \
+              https://api.curseforge.com/v1/games)
+            resp2=$(cat "$tmpfile")
+            rm -f "$tmpfile"
+            echo "Games list status: $status2"
+            game_id=$(echo "$resp2" | jq -r '.data[] | select(.slug=="world-of-warcraft") | .id' | head -n 1)
           fi
           if [ -z "$game_id" ] || [ "$game_id" = "null" ]; then
             echo "Failed to resolve world-of-warcraft gameId." >&2
