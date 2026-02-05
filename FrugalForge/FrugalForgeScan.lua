@@ -189,7 +189,20 @@ end
 
 local QUALITY_COMMON = 1
 local QUALITY_UNCOMMON = 2
+local ENCHANT_SHARD_IDS = {
+  [10978] = true, -- Small Glimmering Shard
+  [11084] = true, -- Large Glimmering Shard
+  [11138] = true, -- Small Glowing Shard
+  [11139] = true, -- Large Glowing Shard
+  [11177] = true, -- Small Radiant Shard
+  [11178] = true, -- Large Radiant Shard
+  [14343] = true, -- Small Brilliant Shard
+  [14344] = true, -- Large Brilliant Shard
+  [22448] = true, -- Small Prismatic Shard
+  [22449] = true, -- Large Prismatic Shard
+}
 local function IsScanQualityAllowed(itemId)
+  if ENCHANT_SHARD_IDS[itemId] then return true end
   local _, _, quality = GetItemInfo(itemId)
   if quality == nil then return true end
   return quality <= QUALITY_UNCOMMON

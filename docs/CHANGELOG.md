@@ -1,3 +1,10 @@
+## 1.1.3 - 2026-02-05
+
+- Essence conversions now work both ways (lesser↔greater) for planning and owned mats.
+- Materials list combines lesser/greater essences into greater-equivalents with cheapest pricing.
+- Enchanting: rods only added when required by planned enchants; missing-price filtering skips rods; shard scans bypass rarity filter.
+- Vendor recipe handling improved (vendor overrides + recipe prices only when actually vendor-sold).
+
 ## 1.1.2 - 2026-02-05
 
 - Selection tie-breaker now falls back to “no-owned” reagent cost when expected costs are equal, avoiding pricey recipes when owned mats zero out cost.
