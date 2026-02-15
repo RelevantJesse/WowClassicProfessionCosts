@@ -1,3 +1,7 @@
+## 1.1.4 - 2026-02-15
+
+- UI cleanup
+
 ## 1.1.3 - 2026-02-05
 
 - Essence conversions now work both ways (lesser↔greater) for planning and owned mats.
